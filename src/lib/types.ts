@@ -5,10 +5,13 @@ export enum ProductType
 
 export interface IPost
 {
-    userId: number,
-    id: number,
+    id: string,
     title: string,
-    body: string
+    tags: string[],
+    category: string;
+    summary: string,
+    markdownFileName: string;
+    dateCreated: string,
 }
 
 export interface IProduct
@@ -17,8 +20,25 @@ export interface IProduct
     image:string;
     thumb:string;
     title: string,
+    featured: boolean,
     type: ProductType,
-    description: string
+    description: string,
+    dateCreated: string,
+    printOptions: IPrintOption[]
+}
+
+export interface IPrintOption
+{
+    name: string;
+    sizes: IPrintOptionSize[]
+}
+
+export interface IPrintOptionSize
+{
+    name: string;
+    widthInches: number,
+    heightInches: number,
+    priceAUD: number
 }
 
 export interface IDB

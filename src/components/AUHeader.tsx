@@ -1,9 +1,5 @@
 import * as React from "react";
 
-import Link from 'next/link'
-import Head from 'next/head'
-import { IProduct } from "../lib/types";
-
 interface IProps {
 }
 
@@ -15,6 +11,7 @@ export class AUHeader extends React.Component<IProps, any> {
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/shop">Shop</a></li>
+        <li><a href="/blog">Blog</a></li>
       </ul>
     </header>
   }

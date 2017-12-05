@@ -20,7 +20,9 @@ async function run()
             var product : Partial<IProduct> = {
                 title: (json.post_title as string).substr(9),
                 image: json.image,
-                description: json.post_excerpt
+                description: json.post_excerpt,
+                featured: json._featured == "yes",
+                dateCreated: json.post_date
             };
 
             products.push(product);

@@ -1,12 +1,9 @@
 import * as React from "react";
 
 import Head from 'next/head'
-import * as fetch from 'isomorphic-unfetch'
-import Post from '../components/post'
-import { ProductThumbsList } from "../components/ProductThumbsList";
 import { getDb } from "../lib/db";
 import { IPost, IProduct } from "../lib/types";
-import { AUHeader } from "../components/AUHeader";
+import { HomePage } from "../components/HomePage";
 
 interface IProps
 {
@@ -33,27 +30,11 @@ export default class extends React.Component<IProps, any> {
         
         <Head>
           <title>Above Under</title>
+          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
         </Head>
 
-        <AUHeader />
-
-        <h1>Featured Images</h1>
-
-        <section>
-          <ProductThumbsList products={featuredProducts} />
-        </section>
-
-        <h1>All Images</h1>
-
-        <section>
-          <ProductThumbsList products={allProducts} />
-        </section>
-
-        <h1>Blog Posts</h1>
-
-        <section>
-          {latestPosts.map(post => <Post {...post} key={post.id} />)}
-        </section>
+        <HomePage featuredProducts={featuredProducts} allProducts={allProducts}
+          latestPosts={latestPosts}  />
 
       </main>
     )

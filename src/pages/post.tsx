@@ -1,40 +1,41 @@
 import * as React from "react";
-
-import Link from 'next/link'
 import Head from 'next/head'
 import {getDb} from "../lib/db"
 import { IPost } from "../lib/types";
-import { AUHeader } from "../components/AUHeader";
+import { PostPage } from "../components/PostPage";
 
-interface IProps extends IPost
-{
-
+interface IServerProps {
+  query: {
+    id: string
+  }
 }
+
+
+interface IProps {
+  post: IPost
+}
+
 
 export default class extends React.Component<IProps, any> {
 
-  static async getInitialProps () {
-    // fetch single post detail
-    const post = (await getDb()).posts[0];
-    return { ...post }
+  static async getInitialProps (props: IServerProps) {
+    const post = (await getDb()).posts.find(p => p.id == props.query.id);
+    //const body = fs.readFileSync(`/static/posts/${post.markdownFileName}`);
+    return { post }
   }
 
   render () {
+    const {post} = this.props;
     return (
       <main>
+
         <Head>
-          <title>{this.props.title}</title>
+          <title>Above Under - {post.title}</title>
+          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
         </Head>
 
-        <AUHeader />
+        <PostPage post={post} />
 
-        <h1>{this.props.title}</h1>
-
-        <p>{this.props.body}</p>
-
-        <Link href='/'>
-          <a>Go back to home</a>
-        </Link>
       </main>
     )
   }

@@ -16,6 +16,7 @@ module.exports = {
     
     config[`/`] = { page: `/` }
     config[`/shop`] = { page: `/shop` }
+    config[`/blog`] = { page: `/blog` }
 
     return config;
   }

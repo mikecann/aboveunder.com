@@ -1,7 +1,6 @@
 import * as React from "react";
 
 import Link from 'next/link'
-import Head from 'next/head'
 import { IProduct } from "../lib/types";
 
 interface IProps {
@@ -24,6 +23,8 @@ const ProductThumb = (product: IProduct) =>
     <div>
      
     </div>
+
+    
     {/* render the URL as /post/:id */}
     <Link href={{ pathname: '/product', query: { id: product.id } }} as={`/product/${product.id}`}>
       <a> 

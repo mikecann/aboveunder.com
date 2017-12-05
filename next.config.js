@@ -11,6 +11,7 @@ module.exports = {
             config[`/post/${p.id}`] = { page: `/post`, query: { id: p.id } };
         config[`/`] = { page: `/` };
         config[`/shop`] = { page: `/shop` };
+        config[`/blog`] = { page: `/blog` };
         return config;
     }
 };

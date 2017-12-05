@@ -1,12 +1,9 @@
 import * as React from "react";
 
 import Head from 'next/head'
-import * as fetch from 'isomorphic-unfetch'
-import Post from '../components/post'
-import { ProductThumbsList } from "../components/ProductThumbsList";
 import { getDb } from "../lib/db";
-import { IPost, IProduct } from "../lib/types";
-import { AUHeader } from "../components/AUHeader";
+import { IProduct } from "../lib/types";
+import { ShopPage } from "../components/ShopPage";
 
 interface IProps
 {
@@ -18,9 +15,7 @@ export default class extends React.Component<IProps, any> {
   static async getInitialProps () {
     const db = await getDb();
     return { 
-      featuredProducts: db.products.slice(0,10), 
-      allProducts: db.products.slice(0,20),
-      latestPosts: db.posts.slice(0, 10)
+      allProducts: db.products,
     }
   }
 
@@ -31,15 +26,10 @@ export default class extends React.Component<IProps, any> {
         
         <Head>
           <title>Above Under - Shop</title>
+          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
         </Head>
 
-        <AUHeader />
-
-        <h1>All Images</h1>
-
-        <section>
-          <ProductThumbsList products={allProducts} />
-        </section>
+        <ShopPage products={allProducts} />
 
       </main>
     )

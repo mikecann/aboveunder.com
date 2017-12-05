@@ -1,6 +1,14 @@
 import {leftpad} from "./utils"
 import * as printProducts from "./printProducts";
+import * as defaultPrintOptions from "./defaultPrintOptions";
+import * as blogPosts from "./blogPosts";
 import { IDB, IProduct, ProductType } from "./types";
+import * as moment from "moment"
+
+const data : IDB = {
+    posts: blogPosts.data,
+    products: transformProducts(printProducts.data)
+}
 
 export async function getDb() : Promise<IDB>
 {
@@ -24,24 +32,9 @@ function transformProducts(products:Partial<IProduct>[]) : IProduct[]
         type: p.type || ProductType.Print,
         description: p.description || "",
         image: p.image || "",
-        thumb: p.thumb || ""
+        thumb: p.thumb || "",
+        printOptions: p.printOptions || defaultPrintOptions.data,
+        featured: p.featured || false,
+        dateCreated: p.dateCreated || moment().format()
     }));
-}
-
-const data : IDB = {
-    posts: [
-        {
-            "userId": 1,
-            "id": 1,
-            "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-            "body": "mike is the best"
-        },
-        {
-            "userId": 2,
-            "id": 2,
-            "title": "balblablalb bdsfgdsfg sd",
-            "body": "yes he is"
-        }
-    ],
-    products: transformProducts(printProducts.data)
 }
