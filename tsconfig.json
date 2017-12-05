@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+      "outDir": ".",
+      "module": "commonjs",
+      "target": "es2017",
+      "jsx": "react",
+      "rootDir": "src",
+      "noImplicitReturns": true,
+      "noImplicitThis": true,
+      "noImplicitAny": true,
+      "strictNullChecks": true
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+      "node_modules",
+      "out",
+      "lib",
+      "components",
+      ".next",
+      "pages"
+    ]
+  }
