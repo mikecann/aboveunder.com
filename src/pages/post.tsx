@@ -2,7 +2,7 @@ import * as React from "react";
 
 import Link from 'next/link'
 import Head from 'next/head'
-import {getData, IPost} from "../lib/db"
+import {IPost, getDb} from "../lib/db"
 
 interface IProps extends IPost
 {
@@ -13,7 +13,7 @@ export default class extends React.Component<IProps, any> {
 
   static async getInitialProps () {
     // fetch single post detail
-    const post = (await getData()).posts[0];
+    const post = (await getDb()).posts[0];
     return { ...post }
   }
 
