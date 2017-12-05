@@ -2,7 +2,7 @@ import * as React from "react";
 
 import Link from 'next/link'
 import Head from 'next/head'
-import { IPost, IProduct } from "../lib/db"
+import { IProduct } from "../lib/types";
 
 interface IProps {
   products: IProduct[]

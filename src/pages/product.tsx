@@ -2,7 +2,8 @@ import * as React from "react";
 
 import Link from 'next/link'
 import Head from 'next/head'
-import {IPost, getDb, getProduct, IProduct} from "../lib/db"
+import {getDb, getProduct} from "../lib/db"
+import { IProduct } from "../lib/types";
 
 interface IServerProps
 {

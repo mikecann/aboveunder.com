@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import * as React from "react";
-import { IProduct, IPost } from '../lib/db';
+import { IPost } from '../lib/types';
 
 export default (props : IPost) =>
   <article>

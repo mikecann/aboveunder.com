@@ -2,11 +2,15 @@
   "name": "with-static-export",
   "main": "server.js",
   "dependencies": {
+    "@types/csvtojson": "^1.1.5",
+    "@types/fs-extra": "^4.0.5",
     "@types/isomorphic-fetch": "0.0.34",
     "@types/next": "^2.4.6",
+    "@types/node": "^8.0.54",
     "@types/react": "^16.0.27",
     "@types/react-dom": "^16.0.3",
     "concurrently": "^3.5.1",
+    "csvtojson": "^1.1.9",
     "express": "^4.15.3",
     "isomorphic-unfetch": "^2.0.0",
     "next": "latest",
@@ -22,6 +26,7 @@
     "preexport": "npm run build",
     "export": "next export",
     "prestart": "npm run export",
-    "start": "serve out"
+    "start": "serve out",
+    "importCSV": "node tools/importWPProductsCSV"
   }
 }

@@ -8,7 +8,10 @@
       "noImplicitReturns": true,
       "noImplicitThis": true,
       "noImplicitAny": true,
-      "strictNullChecks": true
+      "strictNullChecks": true,
+      "typeRoots": [
+        "./node_modules/@types"
+    ]
     },
     "include": [
         "src"
@@ -19,6 +22,8 @@
       "lib",
       "components",
       ".next",
-      "pages"
+      "pages",
+      "tools",
+      "data"
     ]
   }

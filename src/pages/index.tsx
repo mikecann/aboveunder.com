@@ -3,8 +3,9 @@ import * as React from "react";
 import Head from 'next/head'
 import * as fetch from 'isomorphic-unfetch'
 import Post from '../components/post'
-import { IPost, IProduct, getDb } from "../lib/db";
 import { ProductThumbsList } from "../components/ProductThumbsList";
+import { getDb } from "../lib/db";
+import { IPost, IProduct } from "../lib/types";
 
 interface IProps
 {
@@ -39,6 +40,12 @@ export default class extends React.Component<IProps, any> {
         </header>
 
         <h1>Featured Images</h1>
+
+        <section>
+          <ProductThumbsList products={products} />
+        </section>
+
+        <h1>All Images</h1>
 
         <section>
           <ProductThumbsList products={products} />

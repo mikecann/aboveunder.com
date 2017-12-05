@@ -2,7 +2,8 @@ import * as React from "react";
 
 import Link from 'next/link'
 import Head from 'next/head'
-import {IPost, getDb} from "../lib/db"
+import {getDb} from "../lib/db"
+import { IPost } from "../lib/types";
 
 interface IProps extends IPost
 {
