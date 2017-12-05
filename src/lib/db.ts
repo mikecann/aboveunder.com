@@ -22,7 +22,9 @@ function transformProducts(products:Partial<IProduct>[]) : IProduct[]
         id: `AU${leftpad(i,"0000")}-${(p.title || "").split(" ").join("-")}`.toLocaleLowerCase(),
         title: p.title || "",
         type: p.type || ProductType.Print,
-        description: p.description || ""
+        description: p.description || "",
+        image: p.image || "",
+        thumb: p.thumb || ""
     }));
 }
 
@@ -33,6 +35,12 @@ const data : IDB = {
             "id": 1,
             "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
             "body": "mike is the best"
+        },
+        {
+            "userId": 2,
+            "id": 2,
+            "title": "balblablalb bdsfgdsfg sd",
+            "body": "yes he is"
         }
     ],
     products: transformProducts(printProducts.data)

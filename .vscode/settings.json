@@ -8,6 +8,8 @@
         "components": true,
         "lib": true,
         "pages": true,
-        ".next": true
+        ".next": true,
+        "tools": true,
+        "next.config.js": true
     }
 }

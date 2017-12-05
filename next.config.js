@@ -1,26 +1,16 @@
-const fetch = require('isomorphic-unfetch')
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const db_1 = require("./lib/db");
 module.exports = {
-  async exportPathMap () {
-    // we fetch our list of posts, this allow us to dynamically generate the exported pages
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts?_page=1')
-    const postList = await response.json()
-
-    // tranform the list of posts into a map of pages with the pathname `/post/:id`
-    const pages = postList.reduce(
-      (pages, post) =>
-        Object.assign({}, pages, {
-          [`/post/${post.id}`]: {
-            page: '/post',
-            query: { id: post.id }
-          }
-        }),
-      {},
-    )
-
-    // combine the map of post pages with the home
-    return Object.assign({}, pages, {
-      '/': { page: '/' }
-    })
-  }
-}
+    async exportPathMap() {
+        var db = await db_1.getDb();
+        var config = {};
+        for (let p of db.products)
+            config[`/product/${p.id}`] = { page: `/product`, query: { id: p.id } };
+        for (let p of db.posts)
+            config[`/post/${p.id}`] = { page: `/post`, query: { id: p.id } };
+        config[`/`] = { page: `/` };
+        config[`/shop`] = { page: `/shop` };
+        return config;
+    }
+};

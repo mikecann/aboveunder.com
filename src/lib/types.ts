@@ -15,6 +15,7 @@ export interface IProduct
 {
     id: string,
     image:string;
+    thumb:string;
     title: string,
     type: ProductType,
     description: string

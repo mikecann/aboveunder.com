@@ -18,9 +18,17 @@ export class ProductThumbsList extends React.Component<IProps, any> {
 
 const ProductThumb = (product: IProduct) =>
   <article>
+    
     <h1>{product.title}</h1>
+    
+    <div>
+     
+    </div>
     {/* render the URL as /post/:id */}
     <Link href={{ pathname: '/product', query: { id: product.id } }} as={`/product/${product.id}`}>
-      <a>Read more...</a>
+      <a> 
+        <img width={300} src={product.thumb} /> 
+        <div>View</div>
+      </a>
     </Link>
   </article>

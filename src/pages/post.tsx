@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import {getDb} from "../lib/db"
 import { IPost } from "../lib/types";
+import { AUHeader } from "../components/AUHeader";
 
 interface IProps extends IPost
 {
@@ -24,6 +25,8 @@ export default class extends React.Component<IProps, any> {
         <Head>
           <title>{this.props.title}</title>
         </Head>
+
+        <AUHeader />
 
         <h1>{this.props.title}</h1>
 
