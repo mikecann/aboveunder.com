@@ -71,7 +71,7 @@ async function generateThumbnail(product:Partial<IProduct>) : Promise<void>
         console.log("Generating thumb for: ",product);
 
         var img = await Jimp.read(fullPath);
-        img.resize(680, Jimp.AUTO);
+        img.resize(800, Jimp.AUTO);
         img.quality(65);
         await writeImage(img, thumbPath);
     }

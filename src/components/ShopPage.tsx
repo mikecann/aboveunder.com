@@ -2,9 +2,9 @@ import * as React from "react";
 
 import { IProduct } from "../lib/types";
 import { AUHeader } from "./AUHeader";
-import { ProductThumbsList } from "./ProductThumbsList";
+import { ProductThumbGrid } from "./ProductThumbGrid";
 import { Dropdown } from "semantic-ui-react";
-import * as moment from "moment";
+import { sortLatest, sortOldest } from "../lib/utils";
 
 const orderOptions = [
   {
@@ -61,7 +61,7 @@ export class ShopPage extends React.Component<IProps, IState> {
       </div>
 
       <section>
-        <ProductThumbsList products={visibleProducts} />
+        <ProductThumbGrid products={visibleProducts} />
       </section>
     </div>
   }
@@ -77,10 +77,10 @@ export class ShopPage extends React.Component<IProps, IState> {
     var products = [...this.props.products];
 
     if (orderOptionValue == "latest")
-      products = products.sort((a,b) => moment(b.dateCreated).diff(moment(a.dateCreated).utc()))
+      products = sortLatest(products);
 
     if (orderOptionValue == "oldest")
-      products = products.sort((a,b) => moment(a.dateCreated).diff(moment(b.dateCreated).utc()))
+      products = sortOldest(products)
 
     if (orderOptionValue == "featured")
       products = products.sort((a,b) => a.featured ? (b.featured ? 0 : -1) : 1)

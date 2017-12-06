@@ -4,11 +4,12 @@ import Head from 'next/head'
 import { getDb } from "../lib/db";
 import { IPost, IProduct } from "../lib/types";
 import { HomePage } from "../components/HomePage";
+import { sortLatest, shuffle } from "../lib/utils";
 
 interface IProps
 {
   featuredProducts: IProduct[],
-  allProducts: IProduct[],
+  latestProducts: IProduct[],
   latestPosts: IPost[]
 }
 
@@ -17,14 +18,14 @@ export default class extends React.Component<IProps, any> {
   static async getInitialProps () {
     const db = await getDb();
     return { 
-      featuredProducts: db.products.slice(0,10), 
-      allProducts: db.products.slice(0,20),
+      featuredProducts: shuffle(db.products.filter(p => p.featured)).slice(0,9), 
+      latestProducts: sortLatest(db.products).slice(0,12),
       latestPosts: db.posts.slice(0, 10)
     }
   }
 
   render () {
-    const {featuredProducts, allProducts, latestPosts} = this.props;
+    const {featuredProducts, latestProducts, latestPosts} = this.props;
     return (
       <main>
         
@@ -33,7 +34,7 @@ export default class extends React.Component<IProps, any> {
           <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
         </Head>
 
-        <HomePage featuredProducts={featuredProducts} allProducts={allProducts}
+        <HomePage featuredProducts={featuredProducts} latestProducts={latestProducts}
           latestPosts={latestPosts}  />
 
       </main>

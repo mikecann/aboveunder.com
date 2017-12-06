@@ -1,3 +1,6 @@
+import { IProduct } from "./types";
+import * as moment from "moment";
+
 export function leftpad(num: number, pad: string = "0000"): string {
     var str = "" + num
     return pad.substring(0, pad.length - str.length) + str;
@@ -19,3 +22,18 @@ export function leftpad(num: number, pad: string = "0000"): string {
 //         });
 //     });
 // }
+
+export function sortLatest(products:IProduct[])
+{
+    return products.sort((a,b) => moment(b.dateCreated).diff(moment(a.dateCreated).utc()))
+}
+
+export function sortOldest(products:IProduct[])
+{
+    return products.sort((a,b) => moment(a.dateCreated).diff(moment(b.dateCreated).utc()))
+}
+
+export function shuffle<T>(arr:T[]) : T[]
+{
+    return arr.sort(() => Math.random() - 0.5);
+}
