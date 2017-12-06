@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { getDb } from "../lib/db";
 import { IPost, IProduct } from "../lib/types";
 import { HomePage } from "../components/HomePage";
-import { sortLatest, shuffle } from "../lib/utils";
+import { sortLatest, shuffle, sortLatestPosts } from "../lib/utils";
 
 interface IProps
 {
@@ -20,7 +20,7 @@ export default class extends React.Component<IProps, any> {
     return { 
       featuredProducts: shuffle(db.products.filter(p => p.featured)).slice(0,9), 
       latestProducts: sortLatest(db.products).slice(0,12),
-      latestPosts: db.posts.slice(0, 10)
+      latestPosts: sortLatestPosts(db.posts).slice(0, 10)
     }
   }
 

@@ -12,6 +12,7 @@ import {
   Visibility,
 } from 'semantic-ui-react'
 import { ProductThumbGrid } from "./ProductThumbGrid";
+import { BlogPostsThumbGrid } from "./BlogPostsThumbGrid";
 
 interface IProps {
   featuredProducts: IProduct[],
@@ -34,7 +35,7 @@ export class HomePage extends React.Component<IProps, IState> {
 
   render() {
     const { visible } = this.state
-    const { featuredProducts, latestProducts } = this.props
+    const { featuredProducts, latestProducts, latestPosts } = this.props
 
     return (
       <div>
@@ -48,8 +49,10 @@ export class HomePage extends React.Component<IProps, IState> {
           <Segment
             inverted
             textAlign='center'
-            style={{ minHeight: 700, backgroundImage:`url("/static/images/homepage-hero-image.jpg")`, 
-              backgroundSize: "cover", padding: '1em 0em', backroundColor: "black" }}
+            style={{
+              minHeight: 700, backgroundImage: `url("/static/images/homepage-hero-image.jpg")`,
+              backgroundSize: "cover", padding: '1em 0em', backroundColor: "black"
+            }}
             vertical
           >
             <Container>
@@ -59,12 +62,12 @@ export class HomePage extends React.Component<IProps, IState> {
                 <Menu.Item as='a' href="/blog">Blog</Menu.Item>
                 <Menu.Item as='a' href="/contact">Contact</Menu.Item>
                 <Menu.Item position='right'>
-                    <Button inverted href="/shop">
-                      <Icon name="add to cart" />
-                    </Button>
-                    <Button inverted href="/shop">
-                      <Icon name="search" />
-                    </Button>
+                  <Button inverted href="/shop">
+                    <Icon name="add to cart" />
+                  </Button>
+                  <Button inverted href="/shop">
+                    <Icon name="search" />
+                  </Button>
                 </Menu.Item>
               </Menu>
             </Container>
@@ -104,8 +107,15 @@ export class HomePage extends React.Component<IProps, IState> {
             <ProductThumbGrid products={latestProducts} />
           </Container>
         </Segment>
-        
-        
+
+
+        <Segment style={{ padding: '8em 0em' }} vertical>
+          <Container>
+            <Header as='h3' style={{ fontSize: '2em' }}>Latest Posts</Header>
+            <BlogPostsThumbGrid posts={latestPosts} />
+          </Container>
+        </Segment>
+
         <Segment inverted vertical style={{ padding: '5em 0em' }}>
           <Container>
             <Grid divided inverted stackable>
@@ -147,18 +157,18 @@ export class HomePage extends React.Component<IProps, IState> {
 const FixedMenu = () => (
   <Menu fixed='top' size='large'>
     <Container>
-      <Menu.Item as='a' active>Home</Menu.Item>
-      <Menu.Item as='a'>Work</Menu.Item>
-      <Menu.Item as='a'>Company</Menu.Item>
-      <Menu.Item as='a'>Careers</Menu.Item>
-      <Menu.Menu position='right'>
-        <Menu.Item className='item'>
-          <Button as='a'>Log in</Button>
-        </Menu.Item>
-        <Menu.Item>
-          <Button as='a' primary>Sign Up</Button>
-        </Menu.Item>
-      </Menu.Menu>
+      <Menu.Item as='a' active href="/">Home</Menu.Item>
+      <Menu.Item as='a' href="/shop">Shop</Menu.Item>
+      <Menu.Item as='a' href="/blog">Blog</Menu.Item>
+      <Menu.Item as='a' href="/contact">Contact</Menu.Item>
+      <Menu.Item position='right'>
+        <Button href="/shop">
+          <Icon name="add to cart" />
+        </Button>
+        <Button href="/shop">
+          <Icon name="search" />
+        </Button>
+      </Menu.Item>
     </Container>
   </Menu>
 )

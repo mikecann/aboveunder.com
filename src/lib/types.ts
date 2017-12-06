@@ -7,6 +7,7 @@ export interface IPost
 {
     id: string,
     title: string,
+    headerImage: string;
     tags: string[],
     category: string;
     summary: string,

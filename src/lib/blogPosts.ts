@@ -4,6 +4,7 @@ export const data: IPost[] = [
   {
     id: "camping-oz-2017-central-australia",
     title: "Camping Oz 2017 - Central Australia",
+    headerImage: "/static/posts/camping-oz-2017-the-south/header.png",
     tags: ["camping", "drone", "travel"],
     category: "2017 Camping Australia",
     summary: "After leaving Caloundra and the east coast we headed back inland towards Alice Springs in the centre of the country. It turns out Australia is a big place however and it took us about 5 days of long drives to reach Alice Springs. ",
@@ -13,6 +14,7 @@ export const data: IPost[] = [
   {
     id: "camping-oz-2017-east-kimberly",
     title: "Camping Oz 2017 - East Kimberly",
+    headerImage: "/static/posts/camping-oz-2017-east-kimberly/header.png",
     tags: ["camping", "drone", "travel"],
     category: "2017 Camping Australia",
     summary: "After the relaxing couple of weeks in Broome we were back on the road again. The original plan was to head along the Gibbs River road a 660 km long dirt road that has a number of beautiful stops at gorges along the way. We had done it once before in 2014 and enjoyed it so much that we wanted to do it again. This year however was one of the wettest wet season on record, the result is that the road has been closed much longer than usual and many of the gorges have been closed.",
@@ -22,6 +24,7 @@ export const data: IPost[] = [
   {
     id: "camping-oz-2017-exmouth",
     title: "Campin Oz 2017 - Exmouth",
+    headerImage: "/static/posts/camping-oz-2017-exmouth/header.png",
     tags: ["camping", "drone", "travel"],
     category: "2017 Camping Australia",
     summary: "After the beautiful but fly-infested Shark Bay I was so happy to get the Exmouth and experience some of the beautiful corals and beaches. Unfortunately however the swimming gods weren't on my side for the 4 days we were here as the entire coast was infested with stinging red jellyfish and deadly Irukandji jellyfish.",
@@ -31,6 +34,7 @@ export const data: IPost[] = [
   {
     id: "camping-oz-2017-kalbarri",
     title: "Camping Oz 2017 - Kalbarri",
+    headerImage: "/static/posts/camping-oz-2017-kalbarri/header.png",
     tags: ["camping", "drone", "travel"],
     category: "2017 Camping Australia",
     summary: "After the short one day stop in Lancelin we made our way north for 5 hours to the small sea side town of Kalbarri.",
@@ -40,6 +44,7 @@ export const data: IPost[] = [
   {
     id: "camping-oz-2017-lancelin",
     title: "Camping Oz 2017 - Lancelin",
+    headerImage: "/static/posts/camping-oz-2017-lancelin/header.png",
     tags: ["camping", "drone", "travel"],
     category: "2017 Camping Australia",
     summary: "First stop on our epic 5-month adventure was at the sea side town of Lancelin just a few hundred K's north of Perth.",
@@ -49,6 +54,7 @@ export const data: IPost[] = [
   {
     id: "camping-oz-2017-northern-territory",
     title: "Camping Oz 2017 - Northern Territory",
+    headerImage: "/static/posts/camping-oz-2017-northern-territory/header.png",
     tags: ["camping", "drone", "travel"],
     category: "2017 Camping Australia",
     summary: "Following on from our travels through the East Kimberly region we passed over the border from Western Australia into the Northern Territory. Our first port of call was the second largest city in the NT; Kathrine.",
@@ -58,6 +64,7 @@ export const data: IPost[] = [
   {
     id: "camping-oz-2017-north-queensland",
     title: "Camping Oz 2017 - North Queensland",
+    headerImage: "/static/posts/camping-oz-2017-north-queensland/header.png",
     tags: ["camping", "drone", "travel"],
     category: "2017 Camping Australia",
     summary: "A few days after leaving Daly Waters and the NT we arrived into Cairns in the north of Queensland.",
@@ -67,6 +74,7 @@ export const data: IPost[] = [
   {
     id: "camping-oz-2017-pilbara",
     title: "Camping Oz 2017 - Pilbara",
+    headerImage: "/static/posts/camping-oz-2017-pilbara/header.png",
     tags: ["camping", "drone", "travel"],
     category: "2017 Camping Australia",
     summary: "Karijini is a destination we have been looking forward to for a while. We are keen to get stuck into another one of our passions (other than drone photography); hiking.",
@@ -74,8 +82,9 @@ export const data: IPost[] = [
     dateCreated: "2017-04-22 02:02:00"
   },
   {
-    id: "camping-oz-2017-shark-bay",
+    id: "camping-oz-2017-pilbara",
     title: "Camping Oz 2017 - Shark Bay",
+    headerImage: "/static/posts/camping-oz-2017-pilbara/header.png",
     tags: ["camping", "drone", "travel"],
     category: "2017 Camping Australia",
     summary: "Shark Bay for us was a bit of a roller coast ride of highs and lows.",
@@ -85,6 +94,7 @@ export const data: IPost[] = [
   {
     id: "camping-oz-2017-south-queensland",
     title: "Camping Oz 2017- South Queensland",
+    headerImage: "/static/posts/camping-oz-2017-south-queensland/header.png",
     tags: ["camping", "drone", "travel"],
     category: "2017 Camping Australia",
     summary: "After Townsville we continued to work our way down the east coast of Australia. The next stop for us was Airlie Beach where we took the opportunity to visit the work famous Whitsunday islands.",
@@ -94,6 +104,7 @@ export const data: IPost[] = [
   {
     id: "camping-oz-2017-the-south",
     title: "Camping Oz 2017 - The South",
+    headerImage: "/static/posts/camping-oz-2017-the-south/header.png",
     tags: ["camping", "drone", "travel"],
     category: "2017 Camping Australia",
     summary: "After our adventures in Central Australia we started heading south, first stopping off at the curiously peculiar Coober Pedy.",
@@ -103,6 +114,7 @@ export const data: IPost[] = [
   {
     id: "camping-oz-2017-west-kimberly",
     title: "Camping Oz 2017 - West Kimberly",
+    headerImage: "/static/posts/camping-oz-2017-west-kimberly/James_Price_Point_Fire_Wave_-_Vertical_1024x1024.jpg",
     tags: ["camping", "drone", "travel"],
     category: "2017 Camping Australia",
     summary: "Wow, its been a while since I have written an update but so much has been going on I have struggled to find the time!",
@@ -112,6 +124,7 @@ export const data: IPost[] = [
   {
     id: "introducing-aboveunder-com",
     title: "Introducing AboveUnder.com",
+    headerImage: "/static/posts/camping-oz-2017-north-queensland/Port_Douglas_Bay_1024x1024.jpg",
     tags: ["camping", "drone", "travel"],
     category: "2017 Camping Australia",
     summary: "Im very proud to announce my latest project [AboveUnder.com](https://AboveUnder.com), a website and print store that will highlight some of the best drone photography and videos that I have taken and am going to take in the future.",
