@@ -20,7 +20,7 @@ export default class extends React.Component<IProps, any> {
     return { 
       featuredProducts: shuffle(db.products.filter(p => p.featured)).slice(0,9), 
       latestProducts: sortLatest(db.products).slice(0,12),
-      latestPosts: sortLatestPosts(db.posts).slice(0, 10)
+      latestPosts: sortLatestPosts(db.posts).slice(0, 3)
     }
   }
 

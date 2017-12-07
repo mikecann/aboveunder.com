@@ -95,7 +95,12 @@ export class HomePage extends React.Component<IProps, IState> {
 
         <Segment style={{ padding: '8em 0em' }} vertical>
           <Container>
-            <Header as='h3' style={{ fontSize: '2em' }}>Featured Prints</Header>
+            <Grid>
+              <Header as='h3' style={{ fontSize: '2em' }}>Featured Prints</Header>
+              <Button href="/shop">
+                View All
+              </Button>
+            </Grid>
             <ProductThumbGrid featureOneProduct products={featuredProducts} />
           </Container>
         </Segment>
@@ -103,7 +108,12 @@ export class HomePage extends React.Component<IProps, IState> {
 
         <Segment style={{ padding: '8em 0em' }} vertical>
           <Container>
-            <Header as='h3' style={{ fontSize: '2em' }}>Latest Prints</Header>
+            <Grid>
+              <Header as='h3' style={{ fontSize: '2em' }}>Latest Prints</Header>
+              <Button href="/shop">
+                View All
+              </Button>
+            </Grid>
             <ProductThumbGrid products={latestProducts} />
           </Container>
         </Segment>
@@ -111,10 +121,16 @@ export class HomePage extends React.Component<IProps, IState> {
 
         <Segment style={{ padding: '8em 0em' }} vertical>
           <Container>
-            <Header as='h3' style={{ fontSize: '2em' }}>Latest Posts</Header>
+            <Grid>
+                <Header as='h3' style={{ fontSize: '2em' }}>Latest Posts</Header>
+                <Button href="/blog">
+                  View All
+                </Button>
+            </Grid>
             <BlogPostsThumbGrid posts={latestPosts} />
           </Container>
         </Segment>
+
 
         <Segment inverted vertical style={{ padding: '5em 0em' }}>
           <Container>
@@ -123,24 +139,20 @@ export class HomePage extends React.Component<IProps, IState> {
                 <Grid.Column width={3}>
                   <Header inverted as='h4' content='About' />
                   <List link inverted>
-                    <List.Item as='a'>Sitemap</List.Item>
-                    <List.Item as='a'>Contact Us</List.Item>
-                    <List.Item as='a'>Religious Ceremonies</List.Item>
-                    <List.Item as='a'>Gazebo Plans</List.Item>
+                    <List.Item as='a' href="/contact">Contact Us</List.Item>
                   </List>
                 </Grid.Column>
                 <Grid.Column width={3}>
-                  <Header inverted as='h4' content='Services' />
+                  <Header inverted as='h4' content='Pages' />
                   <List link inverted>
-                    <List.Item as='a'>Banana Pre-Order</List.Item>
-                    <List.Item as='a'>DNA FAQ</List.Item>
-                    <List.Item as='a'>How To Access</List.Item>
-                    <List.Item as='a'>Favorite X-Men</List.Item>
+                    <List.Item as='a' href="/home">Home</List.Item>
+                    <List.Item as='a' href="/shop">Shop</List.Item>
+                    <List.Item as='a' href="/blog">Blog</List.Item>
                   </List>
                 </Grid.Column>
                 <Grid.Column width={7}>
-                  <Header as='h4' inverted>Footer Header</Header>
-                  <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+                  <Header as='h4' inverted>Above Under</Header>
+                  <p>Beautiful Australian Photography, taken from a unique perspective.</p>
                 </Grid.Column>
               </Grid.Row>
             </Grid>

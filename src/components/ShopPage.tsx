@@ -3,7 +3,7 @@ import * as React from "react";
 import { IProduct } from "../lib/types";
 import { AUHeader } from "./AUHeader";
 import { ProductThumbGrid } from "./ProductThumbGrid";
-import { Dropdown } from "semantic-ui-react";
+import { Dropdown, Menu, Button, Container, Icon, Header, Segment, Grid } from 'semantic-ui-react';
 import { sortLatest, sortOldest } from "../lib/utils";
 
 const orderOptions = [
@@ -50,19 +50,18 @@ export class ShopPage extends React.Component<IProps, IState> {
     const visibleProducts = this.state.visibleProducts;
 
     return <div>
-      <AUHeader />
+      <FixedMenu />
 
-      <h1>Shop</h1>
-
-      <div>
+      <Container>
+        <Header>Shop</Header>
         <Dropdown fluid selection options={orderOptions}
           value={selectedOrderValue}
           onChange={this.handleSelectedOrderValueChanged} />
-      </div>
 
-      <section>
         <ProductThumbGrid products={visibleProducts} />
-      </section>
+
+      </Container>
+
     </div>
   }
 
@@ -72,8 +71,7 @@ export class ShopPage extends React.Component<IProps, IState> {
       visibleProducts: this.orderProducts(dropdown.value)
     });
 
-  orderProducts(orderOptionValue:string) : IProduct[]
-  {
+  orderProducts(orderOptionValue: string): IProduct[] {
     var products = [...this.props.products];
 
     if (orderOptionValue == "latest")
@@ -83,9 +81,28 @@ export class ShopPage extends React.Component<IProps, IState> {
       products = sortOldest(products)
 
     if (orderOptionValue == "featured")
-      products = products.sort((a,b) => a.featured ? (b.featured ? 0 : -1) : 1)
+      products = products.sort((a, b) => a.featured ? (b.featured ? 0 : -1) : 1)
 
     return products.slice(0, numToShow);
   }
 
 }
+
+const FixedMenu = () => (
+  <Menu size='large'>
+    <Container>
+      <Menu.Item as='a' active href="/">Home</Menu.Item>
+      <Menu.Item as='a' href="/shop">Shop</Menu.Item>
+      <Menu.Item as='a' href="/blog">Blog</Menu.Item>
+      <Menu.Item as='a' href="/contact">Contact</Menu.Item>
+      <Menu.Item position='right'>
+        <Button href="/shop">
+          <Icon name="add to cart" />
+        </Button>
+        <Button href="/shop">
+          <Icon name="search" />
+        </Button>
+      </Menu.Item>
+    </Container>
+  </Menu>
+)
