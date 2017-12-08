@@ -8,6 +8,7 @@ import {
   Icon,
   Segment,
   Visibility,
+  Image,
 } from 'semantic-ui-react'
 import { ProductThumbGrid } from "./ProductThumbGrid";
 import { BlogPostsThumbGrid } from "./BlogPostsThumbGrid";
@@ -54,20 +55,21 @@ export class HomePage extends React.Component<IProps, IState> {
             }}
             vertical
           >
-            <HeaderMenu menuProps={{ inverted:true, pointing:true, secondary:true, style: {border:"none"}, size:"huge" }} activeMenu="home" />
+            <HeaderMenu showLogo={false} menuProps={{ inverted:true, pointing:true, secondary:true, style: {border:"none"}, size:"huge" }} activeMenu="home" />
 
             <Container text>
+              <Image centered src="/static/images/logo-inverted.png" style={{ marginTop: '5em' }} />
               <Header
-                as='h1'
-                content='Above Under'
+                as='h2'
+                content='Beautiful Australian Photography'
                 inverted
-                style={{ fontSize: '4em', fontWeight: 'normal', marginBottom: 0, marginTop: '3em' }}
+                style={{ fontSize: '2em', fontWeight: 'normal', marginBottom: 0 }}
               />
               <Header
                 as='h2'
-                content='Beautiful Australian Photography, taken from a unique perspective'
+                content='taken from a unique perspective'
                 inverted
-                style={{ fontSize: '1.7em', fontWeight: 'normal' }}
+                style={{ fontSize: '1.5em', fontWeight: 'normal', marginTop: 0 }}
               />
               <Button primary size='huge' href="/shop">
                 View Gallery

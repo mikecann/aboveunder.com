@@ -1,8 +1,8 @@
 import * as React from "react";
 
-import Link from 'next/link'
 import { IProduct } from "../lib/types";
-import { Grid, Image } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
+import { ProductThumb } from "./ProductThumb";
 
 interface IProps {
   products: IProduct[];
@@ -24,15 +24,15 @@ export class ProductThumbGrid extends React.Component<IProps, any> {
     return <Grid stackable centered relaxed>
       <Grid.Row columns={2} stretched>      
         <Grid.Column width={11} verticalAlign="middle">
-          <ProductThumb {...products[0]} />
+          <ProductThumb product={products[0]} />
         </Grid.Column>
         <Grid.Column width={5}>
-          <ProductThumb {...products[1]} />
-          <ProductThumb {...products[2]} />
+          <ProductThumb product={products[1]} />
+          <ProductThumb product={products[2]} />
         </Grid.Column>
       </Grid.Row>
       <Grid.Row columns={3}>
-        {products.slice(3).map(p => <ProductThumb key={p.id} {...p} />)}
+        {products.slice(3).map(p => <ProductThumb key={p.id} product={p} />)}
       </Grid.Row>
     </Grid>;
   }
@@ -40,17 +40,9 @@ export class ProductThumbGrid extends React.Component<IProps, any> {
   renderWithoutFeature(products: IProduct[]) {
     return <Grid stackable centered relaxed>
       <Grid.Row columns={3}>
-        {products.map(p => <ProductThumb key={p.id} {...p} />)}
+        {products.map(p => <ProductThumb key={p.id} product={p} />)}
       </Grid.Row>
     </Grid>;
   }
 }
 
-const ProductThumb = (product: IProduct) =>
-<Grid.Column>
-    <Link href={{ pathname: '/product', query: { id: product.id } }} as={`/product/${product.id}`}>
-      <a>
-        <Image rounded src={product.thumb} style={{ marginTop: "1em", marginBottom: "1em" }} />
-      </a>
-    </Link>
-</Grid.Column>

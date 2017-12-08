@@ -1,6 +1,7 @@
 import * as React from "react";
 import { IProduct, IPrintOptionSize, IPrintOption } from "../lib/types";
-import { Button, Dropdown, Segment, Container, Header } from "semantic-ui-react";
+import { Button, Dropdown, Segment, Container, Header, Grid, Image, Icon } from "semantic-ui-react";
+import * as moment from "moment";
 
 interface IProps {
   product: IProduct,
@@ -41,7 +42,7 @@ export class ProductPage extends React.Component<IProps, IState> {
 
     return <div>
 
-        {/* <Container>
+      {/* <Container>
           <Segment>
           <Breadcrumb>
             <Breadcrumb.Section link>Shop</Breadcrumb.Section>
@@ -53,41 +54,61 @@ export class ProductPage extends React.Component<IProps, IState> {
 
       <Segment style={{ padding: '4em 0em' }} vertical>
         <Container>
-          <Header as="h1">{product.title}</Header>
 
-          <div>
-            <img width={800} src={product.image} />
-          </div>
+          <Grid stackable>
+            <Grid.Row columns={2}>
+              <Grid.Column width={10}>
+                <a href={product.image} style={{ cursor: "zoom-in" }}>
+                  <Image src={product.image} rounded />
+                </a>                
+              </Grid.Column>
+              <Grid.Column width={6}>
+                <Segment>
 
-          <h1>{product.title}</h1>
+                  <Header as="h1">
+                    {product.title}
+                    <Header.Subheader>
+                      {moment(product.dateCreated).calendar()}
+                    </Header.Subheader>
+                  </Header>
 
-          <p dangerouslySetInnerHTML={{__html: product.description}}></p>
+                  <p dangerouslySetInnerHTML={{ __html: product.description }} style={{marginBottom:"2em"}}></p>
 
-          <div>
-            <Dropdown fluid selection options={selectedPrintOptions}
-              value={selectedPrintOption.name}
-              onChange={this.handleSelectedPrintOptionChange} />
+                  <div>
+                    <Dropdown fluid selection options={selectedPrintOptions}
+                      value={selectedPrintOption.name}
+                      onChange={this.handleSelectedPrintOptionChange} 
+                      style={{marginBottom:"0.5em"}}
+                      />
 
-            <Dropdown fluid selection options={selectedPrintSizes}
-              value={selectedPrintSize.name}
-              onChange={this.handleSelectedPrintSizeChange} />
+                    <Dropdown fluid selection options={selectedPrintSizes}
+                      value={selectedPrintSize.name}
+                      onChange={this.handleSelectedPrintSizeChange}
+                      style={{marginBottom:"1em"}}
+                       />
 
-          </div>
+                  </div>
 
-          <div>
+                  <div>
 
-            <Button className="snipcart-add-item"
-              data-item-id={product.id}
-              data-item-name={product.title}
-              data-item-image={product.thumb}
-              data-item-description={product.description}
-              data-item-url={"/"}
-              data-item-price={selectedPrintSize.priceAUD}>
-              Buy it for $ {selectedPrintSize.priceAUD} AUD
-          </Button>
+                    <Button primary className="snipcart-add-item"
+                      data-item-id={product.id}
+                      data-item-name={product.title}
+                      data-item-image={product.thumb}
+                      data-item-description={product.description}
+                      data-item-url={"/"}
+                      data-item-price={selectedPrintSize.priceAUD}>
+                      Buy it for $ {selectedPrintSize.priceAUD} AUD
+                      <Icon name='chevron right' />
+                    </Button>
 
-          </div>
+                  </div>
+                </Segment>
+              </Grid.Column>
 
+
+            </Grid.Row>
+          </Grid>
         </Container>
       </Segment>
 

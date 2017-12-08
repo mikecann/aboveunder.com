@@ -23,8 +23,7 @@ export class ContactPage extends React.Component<IProps, IState> {
         <Container>
           <Header as="h1">Contact Us</Header>
 
-          Just email us yo!
-
+          We'd love to hear from you. To contact us just email us: <a href="mailto:mike@aboveunder.com">mike@aboveunder.com</a> we will aim to get back to you as soon as we can.
         </Container>
       </Segment>
 
