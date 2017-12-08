@@ -1,8 +1,9 @@
 import * as React from "react";
-import Link from 'next/link'
 import { IPost } from "../lib/types";
-import { AUHeader } from "./AUHeader";
 import * as ReactMarkdown from "react-markdown";
+import { FixedMenu } from "./FixedMenu";
+import { Segment, Container, Header } from "semantic-ui-react";
+import { PageFooter } from "./PageFooter";
 
 interface IProps {
   post: IPost
@@ -25,25 +26,25 @@ export class PostPage extends React.Component<IProps, IState> {
     var response = await fetch(`/static/posts/${mdFile}`);
     var markdown = await response.text();
     this.setState({ markdown });
-  } 
- 
+  }
+
   render() {
 
-    const {post} = this.props;
+    const { post } = this.props;
     const markdown = this.state.markdown;
 
     return <div>
+
       
-      <AUHeader />
 
-        <h1>{post.title}</h1>
+      <Segment style={{ padding: '4em 0em' }} vertical>
+        <Container>
+          <Header as="h1">{post.title}</Header>
 
-        { markdown ? <ReactMarkdown source={markdown} /> : "Loading.." }
+          {markdown ? <ReactMarkdown source={markdown} /> : "Loading.."}
 
-        <Link href='/'>
-          <a>Go back to home</a>
-        </Link>
-
+        </Container>
+      </Segment>
 
     </div>
   }

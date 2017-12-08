@@ -1,9 +1,8 @@
 import * as React from "react";
 
 import { IProduct } from "../lib/types";
-import { AUHeader } from "./AUHeader";
 import { ProductThumbGrid } from "./ProductThumbGrid";
-import { Dropdown, Menu, Button, Container, Icon, Header, Segment, Grid } from 'semantic-ui-react';
+import { Dropdown, Container, Header, Segment, Grid } from 'semantic-ui-react';
 import { sortLatest, sortOldest } from "../lib/utils";
 
 const orderOptions = [
@@ -23,7 +22,7 @@ const orderOptions = [
 
 const defaultOrderValue = orderOptions[0].value;
 
-const numToShow = 20;
+const numToShow = 999;
 
 interface IProps {
   products: IProduct[]
@@ -50,17 +49,33 @@ export class ShopPage extends React.Component<IProps, IState> {
     const visibleProducts = this.state.visibleProducts;
 
     return <div>
-      <FixedMenu />
 
-      <Container>
-        <Header>Shop</Header>
-        <Dropdown fluid selection options={orderOptions}
-          value={selectedOrderValue}
-          onChange={this.handleSelectedOrderValueChanged} />
+      <Segment style={{ padding: '4em 0em' }} vertical>
+        <Container>
+          <Header>Shop</Header>
 
-        <ProductThumbGrid products={visibleProducts} />
+          <Grid columns={2}>
+              <Grid.Column>
+                <Dropdown fluid selection options={orderOptions}
+                  value={selectedOrderValue}
+                  onChange={this.handleSelectedOrderValueChanged} />
+              
+              </Grid.Column>
+              <Grid.Column>
+                {/* <Menu pagination>
+                  <Menu.Item name='1' active={activeItem === '1'} onClick={this.handleItemClick} />
+                  <Menu.Item disabled>...</Menu.Item>
+                  <Menu.Item name='10' active={activeItem === '10'} onClick={this.handleItemClick} />
+                  <Menu.Item name='11' active={activeItem === '11'} onClick={this.handleItemClick} />
+                  <Menu.Item name='12' active={activeItem === '12'} onClick={this.handleItemClick} />
+                </Menu> */}
+              </Grid.Column>
+            </Grid>
 
-      </Container>
+          <ProductThumbGrid products={visibleProducts} />
+
+        </Container>
+      </Segment>
 
     </div>
   }
@@ -88,21 +103,3 @@ export class ShopPage extends React.Component<IProps, IState> {
 
 }
 
-const FixedMenu = () => (
-  <Menu size='large'>
-    <Container>
-      <Menu.Item as='a' active href="/">Home</Menu.Item>
-      <Menu.Item as='a' href="/shop">Shop</Menu.Item>
-      <Menu.Item as='a' href="/blog">Blog</Menu.Item>
-      <Menu.Item as='a' href="/contact">Contact</Menu.Item>
-      <Menu.Item position='right'>
-        <Button href="/shop">
-          <Icon name="add to cart" />
-        </Button>
-        <Button href="/shop">
-          <Icon name="search" />
-        </Button>
-      </Menu.Item>
-    </Container>
-  </Menu>
-)

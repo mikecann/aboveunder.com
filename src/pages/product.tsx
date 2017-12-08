@@ -3,6 +3,8 @@ import Head from 'next/head'
 import { getProduct } from "../lib/db"
 import { IProduct } from "../lib/types";
 import { ProductPage } from "../components/ProductPage";
+import { PageFooter } from "../components/PageFooter";
+import { HeaderMenu } from "../components/HeaderMenu";
 
 interface IServerProps {
   query: {
@@ -39,7 +41,9 @@ export default class extends React.Component<IProps, any> {
           <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
         </Head>
 
+        <HeaderMenu menuProps={{ size:"huge" }} activeMenu="shop" />
         <ProductPage product={product} url={url.asPath} />
+        <PageFooter />
 
       </main>
     )

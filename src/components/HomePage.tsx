@@ -6,13 +6,12 @@ import {
   Grid,
   Header,
   Icon,
-  List,
-  Menu,
   Segment,
   Visibility,
 } from 'semantic-ui-react'
 import { ProductThumbGrid } from "./ProductThumbGrid";
 import { BlogPostsThumbGrid } from "./BlogPostsThumbGrid";
+import { HeaderMenu } from "./HeaderMenu";
 
 interface IProps {
   featuredProducts: IProduct[],
@@ -39,7 +38,7 @@ export class HomePage extends React.Component<IProps, IState> {
 
     return (
       <div>
-        {visible ? <FixedMenu /> : null}
+        {visible ? <HeaderMenu menuProps={{ fixed:"top", size:"huge" }} activeMenu="home" /> : null}
 
         <Visibility
           onBottomPassed={this.showFixedMenu}
@@ -55,22 +54,7 @@ export class HomePage extends React.Component<IProps, IState> {
             }}
             vertical
           >
-            <Container>
-              <Menu inverted pointing secondary size='large' style={{ border: "none" }}>
-                <Menu.Item as='a' active href="/">Home</Menu.Item>
-                <Menu.Item as='a' href="/shop">Shop</Menu.Item>
-                <Menu.Item as='a' href="/blog">Blog</Menu.Item>
-                <Menu.Item as='a' href="/contact">Contact</Menu.Item>
-                <Menu.Item position='right'>
-                  <Button inverted href="/shop">
-                    <Icon name="add to cart" />
-                  </Button>
-                  <Button inverted href="/shop">
-                    <Icon name="search" />
-                  </Button>
-                </Menu.Item>
-              </Menu>
-            </Container>
+            <HeaderMenu menuProps={{ inverted:true, pointing:true, secondary:true, style: {border:"none"}, size:"huge" }} activeMenu="home" />
 
             <Container text>
               <Header
@@ -130,34 +114,7 @@ export class HomePage extends React.Component<IProps, IState> {
             <BlogPostsThumbGrid posts={latestPosts} />
           </Container>
         </Segment>
-
-
-        <Segment inverted vertical style={{ padding: '5em 0em' }}>
-          <Container>
-            <Grid divided inverted stackable>
-              <Grid.Row>
-                <Grid.Column width={3}>
-                  <Header inverted as='h4' content='About' />
-                  <List link inverted>
-                    <List.Item as='a' href="/contact">Contact Us</List.Item>
-                  </List>
-                </Grid.Column>
-                <Grid.Column width={3}>
-                  <Header inverted as='h4' content='Pages' />
-                  <List link inverted>
-                    <List.Item as='a' href="/home">Home</List.Item>
-                    <List.Item as='a' href="/shop">Shop</List.Item>
-                    <List.Item as='a' href="/blog">Blog</List.Item>
-                  </List>
-                </Grid.Column>
-                <Grid.Column width={7}>
-                  <Header as='h4' inverted>Above Under</Header>
-                  <p>Beautiful Australian Photography, taken from a unique perspective.</p>
-                </Grid.Column>
-              </Grid.Row>
-            </Grid>
-          </Container>
-        </Segment>
+          
       </div>
     )
   }
@@ -165,22 +122,3 @@ export class HomePage extends React.Component<IProps, IState> {
   hideFixedMenu = () => this.setState({ visible: false })
   showFixedMenu = () => this.setState({ visible: true })
 }
-
-const FixedMenu = () => (
-  <Menu fixed='top' size='large'>
-    <Container>
-      <Menu.Item as='a' active href="/">Home</Menu.Item>
-      <Menu.Item as='a' href="/shop">Shop</Menu.Item>
-      <Menu.Item as='a' href="/blog">Blog</Menu.Item>
-      <Menu.Item as='a' href="/contact">Contact</Menu.Item>
-      <Menu.Item position='right'>
-        <Button href="/shop">
-          <Icon name="add to cart" />
-        </Button>
-        <Button href="/shop">
-          <Icon name="search" />
-        </Button>
-      </Menu.Item>
-    </Container>
-  </Menu>
-)
