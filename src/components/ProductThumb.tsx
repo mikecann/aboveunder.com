@@ -2,7 +2,7 @@ import * as React from "react";
 
 import Link from 'next/link'
 import { IProduct } from "../lib/types";
-import { Grid, Image, Segment, Label } from "semantic-ui-react";
+import { Grid, Image } from "semantic-ui-react";
 
 
 interface IProps {
@@ -24,7 +24,7 @@ export class ProductThumb extends React.Component<IProps, IState> {
 
     render() {
         const { product } = this.props;
-        const { mouseOver } = this.state;
+        //const { mouseOver } = this.state;
         return <Grid.Column>
             <Link href={{ pathname: '/product', query: { id: product.id } }} as={`/product/${product.id}`}>
                 <a onMouseOver={() => this.setState({ mouseOver: true })} onMouseOut={() => this.setState({ mouseOver: false })}>

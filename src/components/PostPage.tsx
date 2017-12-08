@@ -1,9 +1,7 @@
 import * as React from "react";
 import { IPost } from "../lib/types";
 import * as ReactMarkdown from "react-markdown";
-import { FixedMenu } from "./FixedMenu";
 import { Segment, Container, Header } from "semantic-ui-react";
-import { PageFooter } from "./PageFooter";
 
 interface IProps {
   post: IPost

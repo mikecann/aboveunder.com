@@ -11,6 +11,8 @@
     "@types/node": "^8.0.54",
     "@types/react": "^16.0.27",
     "@types/react-dom": "^16.0.3",
+    "azure-cli": "^0.10.17",
+    "azure-sync": "^1.0.22",
     "concurrently": "^3.5.1",
     "csvtojson": "^1.1.9",
     "express": "^4.15.3",
@@ -34,6 +36,7 @@
     "export": "next export",
     "prestart": "npm run export",
     "start": "serve out",
-    "importCSV": "node tools/importWPProductsCSV"
+    "importCSV": "node tools/importWPProductsCSV",
+    "deploy": "azure storage blob upload-batch -d 'https://aboveunder.blob.core.windows.net' -s out"
   }
 }

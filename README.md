@@ -13,3 +13,7 @@ The website for aboveunder.com
 ## To test prod
 
 `yarn serve`
+
+## To deploy 
+
+Grab: http://aka.ms/downloadazcopy
