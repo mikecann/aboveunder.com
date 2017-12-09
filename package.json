@@ -37,7 +37,7 @@
     "prestart": "npm run export",
     "start": "serve out",
     "importCSV": "node tools/importWPProductsCSV",
-    "deploy": "azure storage blob upload-batch -d 'https://aboveunder.blob.core.windows.net' -s out",
-    "deploy2": "azure storage blob upload-batch -d 'https://aboveunder.blob.core.windows.net' -s out"
+    "deploy": "node deploy.js",
+    "export-deploy": "yarn export && yarn deploy"
   }
 }

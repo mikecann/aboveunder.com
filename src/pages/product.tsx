@@ -8,12 +8,16 @@ import { CommonLibs } from "../components/CommonLibs";
 
 interface IServerProps {
   query: {
-    id: string
+    id: string,
+    option?: string,
+    size?: string
   }
 }
 
 interface IProps {
   product: IProduct,
+  option?:string,
+  size?:string,
   url: {
     asPath: string;
   }
@@ -22,14 +26,14 @@ interface IProps {
 export default class extends React.Component<IProps, any> {
 
   static async getInitialProps(props: IServerProps) {
-    // fetch single post detail
-    const product = await getProduct(props.query.id)
-    return { product }
+    const query = props.query;
+    const product = await getProduct(query.id)
+    return { product, option:query.option, size:query.size }
   }
 
   render() {
 
-    const { product, url } = this.props;
+    const { product, url, option, size } = this.props;
     return (
       <main>
 
@@ -39,7 +43,8 @@ export default class extends React.Component<IProps, any> {
         </Head>
 
         <CommonPageLayout activeMenu="shop">
-          <ProductPage product={product} url={url.asPath} />
+          <ProductPage product={product} url={url.asPath} 
+            initialPrintOption={option} initialPrintSize={size} />
         </CommonPageLayout>
 
       </main>

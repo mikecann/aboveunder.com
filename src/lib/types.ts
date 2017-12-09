@@ -30,13 +30,14 @@ export interface IProduct
 
 export interface IPrintOption
 {
+    id:string,
     name: string;
     sizes: IPrintOptionSize[]
 }
 
 export interface IPrintOptionSize
 {
-    name: string;
+    id:string,
     widthInches: number,
     heightInches: number,
     priceAUD: number

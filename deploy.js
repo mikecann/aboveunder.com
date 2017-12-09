@@ -1,10 +1,11 @@
+require('dotenv').config();
 const sync = require('azure-sync');
 const path = require('path');
 const chalk = require('chalk');
 
 const config = {
     account: "aboveunder",
-    accessKey: "SET ME",
+    accessKey: process.env.AZURE_STORAGE_ACCESS_KEY,
     container: {
         name: "web4",
         cache: [{

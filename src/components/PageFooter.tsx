@@ -20,6 +20,7 @@ export const PageFooter = () =>
                             <List.Item as='a' href="/home">Home</List.Item>
                             <List.Item as='a' href="/shop">Shop</List.Item>
                             <List.Item as='a' href="/blog">Blog</List.Item>
+                            <List.Item as='a' href="#" className="snipcart-user-profile">User Profile</List.Item>
                         </List>
                     </Grid.Column>
                     <Grid.Column width={7}>

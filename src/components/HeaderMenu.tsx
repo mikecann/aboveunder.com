@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Menu, Container, Button, Icon, Image, MenuProps } from "semantic-ui-react";
+import { Menu, Container, Icon, Image, MenuProps } from "semantic-ui-react";
 
 interface IProps
 {
@@ -24,20 +24,21 @@ export const HeaderMenu = (props:IProps) =>
         <Menu.Item as='a' active={props.activeMenu == "shop"} href="/shop">Shop</Menu.Item>
         <Menu.Item as='a' active={props.activeMenu == "blog"} href="/blog">Blog</Menu.Item>
         <Menu.Item as='a' active={props.activeMenu == "contact"} href="/contact">Contact</Menu.Item>
-        <Menu.Item position='right' style={{paddingRight: 0}}>
+        
+        <Menu.Item position='right'>
+          <Menu.Item as="a" className="snipcart-user-profile">
+                <Icon name="user circle outline" />
+          </Menu.Item>
           
-          <Button inverted={props.menuProps ? props.menuProps.inverted : false} basic className="snipcart-checkout">
-
-            <div className="snipcart-summary">
-              <Icon name="add to cart" />
-              <span className="snipcart-total-price" />
-            </div>
-            
-          </Button>
-          {/* <Button inverted={props.menuProps ? props.menuProps.inverted : false} href="/shop">
-            <Icon name="search" />
-          </Button> */}
+          <Menu.Item as="a" className="snipcart-checkout">
+              <div className="snipcart-summary">
+                <Icon name="add to cart" />
+                <span className="snipcart-total-price" />
+              </div>
+          </Menu.Item>
         </Menu.Item>
+      
+
       </Container>
     </Menu>
   

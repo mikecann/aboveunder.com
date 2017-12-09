@@ -17,9 +17,11 @@ app.prepare()
     })
   })
 
-  server.get('/product/:id', (req, res) => {
+  server.get('/product/:id/:option/:size', (req, res) => {
     return app.render(req, res, '/product', {
-      id: req.params.id
+      id: req.params.id,
+      option: req.params.option,
+      size: req.params.size
     })
   })
 
