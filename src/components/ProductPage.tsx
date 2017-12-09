@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IProduct, IPrintOptionSize, IPrintOption } from "../lib/types";
+import { IProduct, IPrintOptionSize, IPrintOption } from '../lib/types';
 import { Button, Dropdown, Segment, Container, Header, Grid, Image, Icon } from "semantic-ui-react";
 import * as moment from "moment";
 import { getPrintOptionOrDefault, getPrintSizeOrDefault } from "../lib/db";
@@ -8,7 +8,7 @@ import Router from 'next/router'
 interface IProps {
   product: IProduct,
   url: string,
-  initialPrintOption?:string,
+  initialPrintOption?: string,
   initialPrintSize?: string
 }
 
@@ -21,7 +21,7 @@ export class ProductPage extends React.Component<IProps, IState> {
 
   constructor(props: IProps) {
     super(props)
-    const {product, initialPrintOption, initialPrintSize} =  props;
+    const { product, initialPrintOption, initialPrintSize } = props;
     const option = getPrintOptionOrDefault(product, initialPrintOption);
     const size = getPrintSizeOrDefault(option, initialPrintSize);
     this.state = {
@@ -65,7 +65,7 @@ export class ProductPage extends React.Component<IProps, IState> {
               <Grid.Column width={10}>
                 <a href={product.image} style={{ cursor: "zoom-in" }}>
                   <Image src={product.image} rounded />
-                </a>                
+                </a>
               </Grid.Column>
               <Grid.Column width={6}>
                 <Segment>
@@ -77,20 +77,20 @@ export class ProductPage extends React.Component<IProps, IState> {
                     </Header.Subheader>
                   </Header>
 
-                  <p dangerouslySetInnerHTML={{ __html: product.description }} style={{marginBottom:"2em"}}></p>
+                  <p dangerouslySetInnerHTML={{ __html: product.description }} style={{ marginBottom: "2em" }}></p>
 
                   <div>
                     <Dropdown fluid selection options={selectedPrintOptions}
                       value={selectedPrintOption.id}
-                      onChange={this.handleSelectedPrintOptionChange} 
-                      style={{marginBottom:"0.5em"}}
-                      />
+                      onChange={this.handleSelectedPrintOptionChange}
+                      style={{ marginBottom: "0.5em" }}
+                    />
 
                     <Dropdown fluid selection options={selectedPrintSizes}
                       value={selectedPrintSize.id}
                       onChange={this.handleSelectedPrintSizeChange}
-                      style={{marginBottom:"1em"}}
-                       />
+                      style={{ marginBottom: "1em" }}
+                    />
 
                   </div>
 
@@ -101,7 +101,7 @@ export class ProductPage extends React.Component<IProps, IState> {
                       data-item-name={product.title}
                       data-item-image={product.thumb}
                       data-item-description={product.description}
-                      data-item-url={"/"}
+                      data-item-url={this.pageUrl}
                       data-item-price={selectedPrintSize.priceAUD}>
                       Buy it for $ {selectedPrintSize.priceAUD} AUD
                       <Icon name='chevron right' />
@@ -140,6 +140,12 @@ export class ProductPage extends React.Component<IProps, IState> {
     Router.push("/product", `/product/${product.id}/${option.id}/${size.id}`, { shallow: true });
   }
 
+  get pageUrl() {
+    const product = this.props.product;
+    const option = this.state.selectedPrintOption as IPrintOption;
+    const size = this.state.selectedPrintSize as IPrintOptionSize;
+    return `${process.env.ROOT_URL}/product/${product.id}/${option.id}/${size.id}`;
+  }
 
   handleSelectedPrintSizeChange = (e: any, dropdown: any) => {
 

@@ -7,7 +7,7 @@ const config = {
     account: "aboveunder",
     accessKey: process.env.AZURE_STORAGE_ACCESS_KEY,
     container: {
-        name: "web4",
+        name: process.argv[2],
         cache: [{
             match: [], // "path/to/your/file", "path/to/your/file2"
             rule: "no-cache, no-store, must-revalidate"
