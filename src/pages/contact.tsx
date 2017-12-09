@@ -1,9 +1,9 @@
 import * as React from "react";
 
 import Head from 'next/head'
-import { HeaderMenu } from "../components/HeaderMenu";
-import { PageFooter } from "../components/PageFooter";
 import { ContactPage } from "../components/ContactPage";
+import { CommonLibs } from "../components/CommonLibs";
+import { CommonPageLayout } from "../components/CommonPageLayout";
 
 interface IProps
 {
@@ -18,12 +18,12 @@ export default class extends React.Component<IProps, any> {
         
         <Head>
           <title>Above Under - Contact</title>
-          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
+          <CommonLibs />
         </Head>
 
-        <HeaderMenu menuProps={{ size:"huge" }} activeMenu="contact" />
-        <ContactPage />
-        <PageFooter />
+        <CommonPageLayout activeMenu="contact">
+          <ContactPage />
+        </CommonPageLayout>
 
       </main>
     )

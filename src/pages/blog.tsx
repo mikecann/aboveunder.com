@@ -4,8 +4,8 @@ import Head from 'next/head'
 import { getDb } from "../lib/db";
 import { IPost } from "../lib/types";
 import { BlogPage } from "../components/BlogPage";
-import { HeaderMenu } from "../components/HeaderMenu";
-import { PageFooter } from "../components/PageFooter";
+import { CommonPageLayout } from "../components/CommonPageLayout";
+import { CommonLibs } from "../components/CommonLibs";
 
 interface IProps
 {
@@ -31,12 +31,12 @@ export default class extends React.Component<IProps, any> {
         
         <Head>
           <title>Above Under - Shop</title>
-          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
+          <CommonLibs />
         </Head>
 
-        <HeaderMenu menuProps={{ size:"huge" }} activeMenu="blog" />
-        <BlogPage posts={allPosts} />
-        <PageFooter />
+        <CommonPageLayout activeMenu="blog">
+          <BlogPage posts={allPosts} />
+        </CommonPageLayout>
 
       </main>
     )

@@ -6,6 +6,7 @@ import { IPost, IProduct } from "../lib/types";
 import { HomePage } from "../components/HomePage";
 import { sortLatest, shuffle, sortLatestPosts } from "../lib/utils";
 import { PageFooter } from "../components/PageFooter";
+import { CommonLibs } from "../components/CommonLibs";
 
 interface IProps
 {
@@ -32,7 +33,7 @@ export default class extends React.Component<IProps, any> {
         
         <Head>
           <title>Above Under</title>
-          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
+          <CommonLibs />
         </Head>
 
         <HomePage featuredProducts={featuredProducts} latestProducts={latestProducts}

@@ -24,9 +24,15 @@ export const HeaderMenu = (props:IProps) =>
         <Menu.Item as='a' active={props.activeMenu == "shop"} href="/shop">Shop</Menu.Item>
         <Menu.Item as='a' active={props.activeMenu == "blog"} href="/blog">Blog</Menu.Item>
         <Menu.Item as='a' active={props.activeMenu == "contact"} href="/contact">Contact</Menu.Item>
-        <Menu.Item position='right'>
-          <Button inverted={props.menuProps ? props.menuProps.inverted : false} href="/shop">
-            <Icon name="add to cart" />
+        <Menu.Item position='right' style={{paddingRight: 0}}>
+          
+          <Button inverted={props.menuProps ? props.menuProps.inverted : false} basic className="snipcart-checkout">
+
+            <div className="snipcart-summary">
+              <Icon name="add to cart" />
+              <span className="snipcart-total-price" />
+            </div>
+            
           </Button>
           {/* <Button inverted={props.menuProps ? props.menuProps.inverted : false} href="/shop">
             <Icon name="search" />
