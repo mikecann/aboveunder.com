@@ -9,7 +9,7 @@ module.exports = {
       default: series.nps("build.ts", "build.next")
     },
     watch: {
-      ts: "nps build.ts -w"
+      ts: "tsc -w"
     },
     dev: {
       default: concurrent.nps('watch.ts', 'dev.node'),
@@ -26,11 +26,13 @@ module.exports = {
     },
     default: series("build", 'serve'),
     tools: {
-      importCsv: 'node tools/importWPProductsCSV'
+      importWp: 'node tools/importWPProducts',
+      importFitz: 'node tools/importFitzPrice',
     },
     deploy: {
       default: "node deploy.js",
-      staging: series("export.staging", "upload.staging")
+      staging: series("export.staging", "upload.staging"),
+      prod: series("export.prod", "upload.prod"),
     },
     upload: {
       staging: "node upload-azure.js web4",

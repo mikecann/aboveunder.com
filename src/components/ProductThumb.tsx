@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { IProduct } from "../lib/types";
 import { Grid, Image } from "semantic-ui-react";
 
-
 interface IProps {
     product: IProduct;
 }
