@@ -40,7 +40,8 @@ export interface IPrintOptionSize
     id:string,
     widthInches: number,
     heightInches: number,
-    priceAUD: number
+    priceAUD: number,
+    weight: number;
 }
 
 export interface IDB

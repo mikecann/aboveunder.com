@@ -33,6 +33,10 @@ export class HomePage extends React.Component<IProps, IState> {
     }
   }
 
+  componentDidMount() : any {
+    console.log("env", process.env);
+  }
+
   render() {
     const { visible } = this.state
     const { featuredProducts, latestProducts, latestPosts } = this.props

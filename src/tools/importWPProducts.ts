@@ -9,7 +9,7 @@ import * as Jimp from "jimp";
 async function run() 
 {
     const csvPath = `${__dirname}/../data/wpProducts.csv`;
-    const jsonPath = `${__dirname}/../src/lib/printProducts.ts`;
+    const tsPath = `${__dirname}/../src/lib/printProducts.ts`;
     var products : Partial<IProduct>[] = [];
 
     console.log(`Importing CSV from: ${csvPath}`);
@@ -46,7 +46,7 @@ async function run()
                     await generateThumbnail(product)
                 
                 if (!error)
-                    fs.writeFileSync(jsonPath, `export const data = ${JSON.stringify(products, null, 2)}`)
+                    fs.writeFileSync(tsPath, `export const data = ${JSON.stringify(products, null, 2)}`)
             }
             catch(e)
             {

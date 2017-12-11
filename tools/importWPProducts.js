@@ -8,7 +8,7 @@ const request = require("request");
 const Jimp = require("jimp");
 async function run() {
     const csvPath = `${__dirname}/../data/wpProducts.csv`;
-    const jsonPath = `${__dirname}/../src/lib/printProducts.ts`;
+    const tsPath = `${__dirname}/../src/lib/printProducts.ts`;
     var products = [];
     console.log(`Importing CSV from: ${csvPath}`);
     csvtojson()
@@ -35,7 +35,7 @@ async function run() {
             for (var product of products)
                 await generateThumbnail(product);
             if (!error)
-                fs.writeFileSync(jsonPath, `export const data = ${JSON.stringify(products, null, 2)}`);
+                fs.writeFileSync(tsPath, `export const data = ${JSON.stringify(products, null, 2)}`);
         }
         catch (e) {
             console.error("Whoops, error!", e);

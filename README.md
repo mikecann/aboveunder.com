@@ -16,4 +16,3 @@ The website for aboveunder.com
 
 ## To deploy 
 
-Grab: http://aka.ms/downloadazcopy

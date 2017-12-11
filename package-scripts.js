@@ -1,5 +1,8 @@
 const { series, concurrent, crossEnv } = require("nps-utils");
 
+const snipcartTestKey = "NDYwN2FhNmUtNzZmNy00Y2I4LTkyODUtMDMyOGNhMDIzZTFjNjM2NDc5ODczMzIxNTUyOTU5";
+const snipcartLiveKey = "NDdmNDI1NzYtZjhmNC00YzQxLWFjYWItY2U3OWQ5NTMzZWQ2NjM2NDc5ODczMzIxNTUyOTU5";
+
 module.exports = {
   scripts: {
     clean: series('rimraf out', 'rimraf', 'rimraf pages', 'rimraf components'),
@@ -17,8 +20,8 @@ module.exports = {
     },
     export: {
       next: "next export",
-      staging: crossEnv(`ROOT_URL="https://staging.aboveunder.com" nps export`),
-      prod: crossEnv(`ROOT_URL="https://aboveunder.com" nps export`),
+      staging: crossEnv(`ROOT_URL="https://staging.aboveunder.com" SNIPCART_KEY=${snipcartTestKey} nps export`),
+      prod: crossEnv(`ROOT_URL="https://aboveunder.com" SNIPCART_KEY=${snipcartLiveKey} nps export`),
       default: series.nps("build", "export.next")
     },
     serve: {
@@ -31,8 +34,8 @@ module.exports = {
     },
     deploy: {
       default: "node deploy.js",
-      staging: series("export.staging", "upload.staging"),
-      prod: series("export.prod", "upload.prod"),
+      staging: series.nps("export.staging", "upload.staging"),
+      prod: series.nps("export.prod", "upload.prod"),
     },
     upload: {
       staging: "node upload-azure.js web4",

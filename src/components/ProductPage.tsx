@@ -102,7 +102,11 @@ export class ProductPage extends React.Component<IProps, IState> {
                       data-item-image={product.thumb}
                       data-item-description={product.description}
                       data-item-url={this.pageUrl}
-                      data-item-price={selectedPrintSize.priceAUD}>
+                      data-item-weight={selectedPrintSize.weight}
+                      data-item-price={selectedPrintSize.priceAUD}
+                      data-item-custom1-name="Notes to us"
+                      data-item-custom1-type="textarea"
+                      >
                       Buy it for $ {selectedPrintSize.priceAUD} AUD
                       <Icon name='chevron right' />
                     </Button>
