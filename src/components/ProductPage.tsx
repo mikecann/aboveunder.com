@@ -106,7 +106,7 @@ export class ProductPage extends React.Component<IProps, IState> {
                       data-item-price={selectedPrintSize.priceAUD}
                       data-item-custom1-name="Notes to us"
                       data-item-custom1-type="textarea"
-                      >
+                    >
                       Buy it for $ {selectedPrintSize.priceAUD} AUD
                       <Icon name='chevron right' />
                     </Button>
@@ -141,7 +141,7 @@ export class ProductPage extends React.Component<IProps, IState> {
       selectedPrintSize: size
     });
 
-    Router.push("/product", `/product/${product.id}/${option.id}/${size.id}`, { shallow: true });
+    this.updatePath(product, option, size);
   }
 
   get pageUrl() {
@@ -165,7 +165,18 @@ export class ProductPage extends React.Component<IProps, IState> {
       selectedPrintSize: size
     })
 
-    Router.push("/product", `/product/${product.id}/${option.id}/${size.id}`, { shallow: true });
+    this.updatePath(product, option, size);
+  }
+
+  updatePath(product: IProduct, option: IPrintOption, size: IPrintOptionSize) {
+    Router.push({
+      pathname: "/product",
+      query: {
+        id: product.id,
+        option: option.id,
+        size: size.id
+      }
+    })
   }
 
 }
