@@ -25,7 +25,7 @@ export class ProductThumb extends React.Component<IProps, IState> {
         const { product } = this.props;
         //const { mouseOver } = this.state;
         return <Grid.Column>
-            <Link href={{ pathname: '/product', query: { id: product.id } }} as={`/product/${product.id}`}>
+            <Link href={{ pathname: '/product', query: { id: product.id } }}>
                 <a onMouseOver={() => this.setState({ mouseOver: true })} onMouseOut={() => this.setState({ mouseOver: false })}>
                     <Image rounded src={product.thumb} 
                         style={{ marginTop: "1em", marginBottom: "1em" }}

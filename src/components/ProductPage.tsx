@@ -147,8 +147,8 @@ export class ProductPage extends React.Component<IProps, IState> {
   get pageUrl() {
     const product = this.props.product;
     const option = this.state.selectedPrintOption as IPrintOption;
-    const size = this.state.selectedPrintSize as IPrintOptionSize;
-    return `${process.env.ROOT_URL}/product/${product.id}/${option.id}/${size.id}`;
+    const size = this.state.selectedPrintSize as IPrintOptionSize
+    return `${process.env.ROOT_URL}/product?id=${product.id}&options=${option.id}&size=${size.id}`;
   }
 
   handleSelectedPrintSizeChange = (e: any, dropdown: any) => {
