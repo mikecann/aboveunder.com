@@ -1,6 +1,6 @@
 import * as React from "react";
 import Head from 'next/head'
-import { getProduct } from "../lib/db"
+import { getProduct, getFirstProduct } from "../lib/db"
 import { IProduct } from "../lib/types";
 import { ProductPage } from "../components/ProductPage";
 import { CommonPageLayout } from "../components/CommonPageLayout";
@@ -27,7 +27,7 @@ export default class extends React.Component<IProps, any> {
 
   static async getInitialProps(props: IServerProps) {
     const query = props.query;
-    const product = await getProduct(query.id)
+    const product = query.id ? await getProduct(query.id) : await getFirstProduct();
     return { product, option:query.option, size:query.size }
   }
 

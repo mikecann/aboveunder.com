@@ -24,6 +24,11 @@ export async function getProduct(id:string) : Promise<IProduct>
     return Promise.resolve(p);
 }
 
+export async function getFirstProduct() : Promise<IProduct>
+{
+    return (await getDb()).products[0];
+}
+
 export function getPrintOptionOrDefault(product:IProduct, optionId?:string) : IPrintOption
 {
     if (optionId == null)

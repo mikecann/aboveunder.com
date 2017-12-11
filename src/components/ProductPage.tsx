@@ -169,6 +169,9 @@ export class ProductPage extends React.Component<IProps, IState> {
   }
 
   updatePath(product: IProduct, option: IPrintOption, size: IPrintOptionSize) {
+
+    // var url = `/product/${product.id}?option=${option.id}&size=${size.id}`;
+    // Router.push(url, url, { shallow: true })
     Router.push({
       pathname: "/product",
       query: {
