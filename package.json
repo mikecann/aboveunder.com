@@ -28,7 +28,8 @@
     "rimraf": "^2.6.2",
     "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "^0.77.0",
-    "serve": "^5.2.2"
+    "serve": "^5.2.2",
+    "typescript": "^2.6.2"
   },
   "scripts": {
     "start": "nps"
