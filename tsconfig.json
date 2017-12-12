@@ -18,6 +18,7 @@
     "noUnusedLocals": true
   },
   "exclude": [
+    "tools",
     "node_modules",
     "build",
     "scripts",
