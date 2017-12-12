@@ -1,6 +1,10 @@
 {
   "name": "with-static-export",
   "main": "server.js",
+  "engines": 
+  { 
+    "node" : ">=8.9.2" 
+  },
   "dependencies": {
     "@types/csvtojson": "^1.1.5",
     "@types/isomorphic-fetch": "0.0.34",
