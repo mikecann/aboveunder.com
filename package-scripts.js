@@ -25,9 +25,10 @@ module.exports = {
     },
     export: {
       next: "next export",
+      redirects: "copyfiles _redirects ./out",
       staging: crossEnv(`ROOT_URL="https://staging.aboveunder.com" SNIPCART_KEY=${snipcartTestKey} nps export`),
       prod: crossEnv(`ROOT_URL="https://aboveunder.com" SNIPCART_KEY=${snipcartLiveKey} nps export`),
-      default: series.nps("build", "export.next")
+      default: series.nps("build", "export.next", "export.redirects")
     },
     serve: {
       default: "serve out"

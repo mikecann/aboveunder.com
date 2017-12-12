@@ -14,6 +14,7 @@
     "azure-cli": "^0.10.17",
     "azure-sync": "^1.0.22",
     "babel-plugin-transform-define": "^1.3.0",
+    "copyfiles": "^1.2.0",
     "csvtojson": "^1.1.9",
     "express": "^4.15.3",
     "isomorphic-unfetch": "^2.0.0",
