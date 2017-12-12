@@ -32,6 +32,12 @@ export default class extends React.Component<IProps, any> {
     return { print, option:query.option, size:query.size }
   }
 
+  constructor(props:IProps)
+  {
+    super(props);
+    console.log("print page constructed", props);
+  }
+
   componentWillReceiveProps(nextProps:IProps) {
     console.log("got next props", nextProps);
   }
