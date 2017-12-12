@@ -1,11 +1,17 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import './index.css';
+import { App } from './App';
+import { getDb } from './lib/db';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root') as HTMLElement
-);
+async function init()
+{
+  var db = await getDb();
+  ReactDOM.render(
+    <App db={db} />,
+    document.getElementById('root') as HTMLElement
+  );
+}
+
+init();
 registerServiceWorker();
