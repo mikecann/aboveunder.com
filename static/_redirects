@@ -1,2 +1,4 @@
 # /print/* /print 200
-/*    /index.html   200
+# /*    /index.html   200
+/dave /shop
+/print/:id/:option/:size /print?id=:id&option=:option&size=:size

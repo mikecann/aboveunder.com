@@ -27,6 +27,7 @@ export default class extends React.Component<IProps, any> {
 
   static async getInitialProps(props: IServerProps) {
     const query = props.query;
+    console.log("getInitialProps", props);
     const print = query.id ? await getPrint(query.id) : await getFirstPrint();
     return { print, option:query.option, size:query.size }
   }
