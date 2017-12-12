@@ -20,12 +20,14 @@
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "eject": "react-scripts-ts eject",
+    "generate-data": "cd tools && ts-node generateProductsJson.ts"
   },
   "devDependencies": {
     "@types/jest": "^21.1.8",
     "@types/node": "^8.0.58",
     "@types/react": "^16.0.29",
-    "@types/react-dom": "^16.0.3"
+    "@types/react-dom": "^16.0.3",
+    "ts-node": "^4.0.1"
   }
 }
