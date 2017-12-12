@@ -2,12 +2,12 @@ import {leftpad} from "./utils"
 import * as printProducts from "./printProducts";
 import * as defaultPrintOptions from "./defaultPrintOptions";
 import * as blogPosts from "./blogPosts";
-import { IDB, IProduct, ProductType, IPrintOption, IPrintOptionSize } from "./types";
+import { IDB, IPrint, IPrintOption, IPrintOptionSize } from "./types";
 import * as moment from "moment"
 
 const data : IDB = {
     posts: blogPosts.data,
-    products: transformProducts(printProducts.data)
+    products: transformPrints(printProducts.data)
 }
 
 export async function getDb() : Promise<IDB>
@@ -15,7 +15,7 @@ export async function getDb() : Promise<IDB>
     return Promise.resolve(data);
 }
 
-export async function getProduct(id:string) : Promise<IProduct>
+export async function getPrint(id:string) : Promise<IPrint>
 {
     var p = data.products.find(p => p.id == id);
     if (p==null)
@@ -24,12 +24,12 @@ export async function getProduct(id:string) : Promise<IProduct>
     return Promise.resolve(p);
 }
 
-export async function getFirstProduct() : Promise<IProduct>
+export async function getFirstPrint() : Promise<IPrint>
 {
     return (await getDb()).products[0];
 }
 
-export function getPrintOptionOrDefault(product:IProduct, optionId?:string) : IPrintOption
+export function getPrintOptionOrDefault(product:IPrint, optionId?:string) : IPrintOption
 {
     if (optionId == null)
         return product.printOptions[0];
@@ -47,12 +47,11 @@ export function getPrintSizeOrDefault(option:IPrintOption, sizeId?:string) : IPr
     return size || option.sizes[0];
 }
 
-function transformProducts(products:Partial<IProduct>[]) : IProduct[]
+function transformPrints(prints:Partial<IPrint>[]) : IPrint[]
 {
-    return products.map((p,i) => ({
+    return prints.map((p,i) => ({
         id: `AU${leftpad(i,"0000")}-${(p.title || "").split(" ").join("-")}`.toLocaleLowerCase(),
         title: p.title || "",
-        type: p.type || ProductType.Print,
         description: p.description || "",
         image: p.image || "",
         thumb: p.thumb || "",

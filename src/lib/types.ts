@@ -1,8 +1,3 @@
-export enum ProductType
-{
-    Print
-}
-
 export interface IPost
 {
     id: string,
@@ -15,14 +10,13 @@ export interface IPost
     dateCreated: string,
 }
 
-export interface IProduct
+export interface IPrint
 {
     id: string,
     image:string;
     thumb:string;
     title: string,
     featured: boolean,
-    type: ProductType,
     description: string,
     dateCreated: string,
     printOptions: IPrintOption[]
@@ -47,5 +41,5 @@ export interface IPrintOptionSize
 export interface IDB
 {
     posts: IPost[],
-    products: IProduct[]
+    products: IPrint[]
 }

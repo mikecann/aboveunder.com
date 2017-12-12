@@ -1,11 +1,11 @@
 import * as React from "react";
 
-import { IProduct } from "../lib/types";
+import { IPrint } from "../lib/types";
 import { Grid } from "semantic-ui-react";
 import { ProductThumb } from "./ProductThumb";
 
 interface IProps {
-  products: IProduct[];
+  products: IPrint[];
   featureOneProduct?: boolean;
 }
 
@@ -20,7 +20,7 @@ export class ProductThumbGrid extends React.Component<IProps, any> {
       return this.renderWithoutFeature(products);
   }
 
-  renderWithFeature(products: IProduct[]) {
+  renderWithFeature(products: IPrint[]) {
     return <Grid stackable centered relaxed>
       <Grid.Row columns={2} stretched>      
         <Grid.Column width={11} verticalAlign="middle">
@@ -37,7 +37,7 @@ export class ProductThumbGrid extends React.Component<IProps, any> {
     </Grid>;
   }
 
-  renderWithoutFeature(products: IProduct[]) {
+  renderWithoutFeature(products: IPrint[]) {
     return <Grid stackable centered relaxed>
       <Grid.Row columns={3}>
         {products.map(p => <ProductThumb key={p.id} product={p} />)}

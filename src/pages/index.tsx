@@ -2,7 +2,7 @@ import * as React from "react";
 
 import Head from 'next/head'
 import { getDb } from "../lib/db";
-import { IPost, IProduct } from "../lib/types";
+import { IPost, IPrint } from "../lib/types";
 import { HomePage } from "../components/HomePage";
 import { sortLatest, shuffle, sortLatestPosts } from "../lib/utils";
 import { PageFooter } from "../components/PageFooter";
@@ -10,8 +10,8 @@ import { CommonLibs } from "../components/CommonLibs";
 
 interface IProps
 {
-  featuredProducts: IProduct[],
-  latestProducts: IProduct[],
+  featuredProducts: IPrint[],
+  latestProducts: IPrint[],
   latestPosts: IPost[]
 }
 

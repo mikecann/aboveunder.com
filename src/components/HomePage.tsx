@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IPost, IProduct } from "../lib/types";
+import { IPost, IPrint } from "../lib/types";
 import {
   Button,
   Container,
@@ -15,8 +15,8 @@ import { BlogPostsThumbGrid } from "./BlogPostsThumbGrid";
 import { HeaderMenu } from "./HeaderMenu";
 
 interface IProps {
-  featuredProducts: IProduct[],
-  latestProducts: IProduct[],
+  featuredProducts: IPrint[],
+  latestProducts: IPrint[],
   latestPosts: IPost[]
 }
 

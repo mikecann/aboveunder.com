@@ -1,12 +1,12 @@
 import * as React from "react";
-import { IProduct, IPrintOptionSize, IPrintOption } from '../lib/types';
+import { IPrint, IPrintOptionSize, IPrintOption } from '../lib/types';
 import { Button, Dropdown, Segment, Container, Header, Grid, Image, Icon } from "semantic-ui-react";
 import * as moment from "moment";
 import { getPrintOptionOrDefault, getPrintSizeOrDefault } from "../lib/db";
 import Router from 'next/router'
 
 interface IProps {
-  product: IProduct,
+  print: IPrint,
   url: string,
   initialPrintOption?: string,
   initialPrintSize?: string
@@ -17,12 +17,12 @@ interface IState {
   selectedPrintSize?: IPrintOptionSize;
 }
 
-export class ProductPage extends React.Component<IProps, IState> {
+export class PrintPage extends React.Component<IProps, IState> {
 
   constructor(props: IProps) {
     super(props)
-    const { product, initialPrintOption, initialPrintSize } = props;
-    const option = getPrintOptionOrDefault(product, initialPrintOption);
+    const { print, initialPrintOption, initialPrintSize } = props;
+    const option = getPrintOptionOrDefault(print, initialPrintOption);
     const size = getPrintSizeOrDefault(option, initialPrintSize);
     this.state = {
       selectedPrintOption: option,
@@ -31,11 +31,11 @@ export class ProductPage extends React.Component<IProps, IState> {
   }
 
   render() {
-    const { product } = this.props;
+    const { print } = this.props;
     const selectedPrintOption = this.state.selectedPrintOption as IPrintOption;
     const selectedPrintSize = this.state.selectedPrintSize as IPrintOptionSize;
 
-    const selectedPrintOptions = product.printOptions.map(o => ({
+    const selectedPrintOptions = print.printOptions.map(o => ({
       text: o.name,
       value: o.id
     }));
@@ -63,21 +63,21 @@ export class ProductPage extends React.Component<IProps, IState> {
           <Grid stackable>
             <Grid.Row columns={2}>
               <Grid.Column width={10}>
-                <a href={product.image} style={{ cursor: "zoom-in" }}>
-                  <Image src={product.image} rounded />
+                <a href={print.image} style={{ cursor: "zoom-in" }}>
+                  <Image src={print.image} rounded />
                 </a>
               </Grid.Column>
               <Grid.Column width={6}>
                 <Segment>
 
                   <Header as="h1">
-                    {product.title}
+                    {print.title}
                     <Header.Subheader>
-                      {moment(product.dateCreated).calendar()}
+                      {moment(print.dateCreated).calendar()}
                     </Header.Subheader>
                   </Header>
 
-                  <p dangerouslySetInnerHTML={{ __html: product.description }} style={{ marginBottom: "2em" }}></p>
+                  <p dangerouslySetInnerHTML={{ __html: print.description }} style={{ marginBottom: "2em" }}></p>
 
                   <div>
                     <Dropdown fluid selection options={selectedPrintOptions}
@@ -97,10 +97,10 @@ export class ProductPage extends React.Component<IProps, IState> {
                   <div>
 
                     <Button primary className="snipcart-add-item"
-                      data-item-id={product.id}
-                      data-item-name={product.title}
-                      data-item-image={product.thumb}
-                      data-item-description={product.description}
+                      data-item-id={print.id}
+                      data-item-name={print.title}
+                      data-item-image={print.thumb}
+                      data-item-description={print.description}
                       data-item-url={this.pageUrl}
                       data-item-weight={selectedPrintSize.weight}
                       data-item-price={selectedPrintSize.priceAUD}
@@ -128,7 +128,7 @@ export class ProductPage extends React.Component<IProps, IState> {
 
   handleSelectedPrintOptionChange = (e: any, dropdown: any) => {
 
-    const product = this.props.product;
+    const product = this.props.print;
     const option = product.printOptions.find(o => o.id == dropdown.value);
     if (option == null)
       return;
@@ -145,15 +145,15 @@ export class ProductPage extends React.Component<IProps, IState> {
   }
 
   get pageUrl() {
-    const product = this.props.product;
+    const product = this.props.print;
     const option = this.state.selectedPrintOption as IPrintOption;
     const size = this.state.selectedPrintSize as IPrintOptionSize
-    return `${process.env.ROOT_URL}/product?id=${product.id}&options=${option.id}&size=${size.id}`;
+    return `${process.env.ROOT_URL}/print/${product.id}/${option.id}/${size.id}`;
   }
 
   handleSelectedPrintSizeChange = (e: any, dropdown: any) => {
 
-    const product = this.props.product;
+    const product = this.props.print;
     const option = this.state.selectedPrintOption as IPrintOption;
     var size = option.sizes.find(o => o.id == dropdown.value);
     if (size == null)
@@ -168,18 +168,8 @@ export class ProductPage extends React.Component<IProps, IState> {
     this.updatePath(product, option, size);
   }
 
-  updatePath(product: IProduct, option: IPrintOption, size: IPrintOptionSize) {
-
-    // var url = `/product/${product.id}?option=${option.id}&size=${size.id}`;
-    // Router.push(url, url, { shallow: true })
-    Router.push({
-      pathname: "/product",
-      query: {
-        id: product.id,
-        option: option.id,
-        size: size.id
-      }
-    })
+  updatePath(product: IPrint, option: IPrintOption, size: IPrintOptionSize) {  
+    Router.push("/print", `/print/${product.id}/${option.id}/${size.id}`, { shallow: true }); 
   }
 
 }

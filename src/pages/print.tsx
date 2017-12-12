@@ -1,8 +1,8 @@
 import * as React from "react";
 import Head from 'next/head'
-import { getProduct, getFirstProduct } from "../lib/db"
-import { IProduct } from "../lib/types";
-import { ProductPage } from "../components/ProductPage";
+import { getPrint, getFirstPrint } from "../lib/db"
+import { IPrint } from "../lib/types";
+import { PrintPage } from "../components/PrintPage";
 import { CommonPageLayout } from "../components/CommonPageLayout";
 import { CommonLibs } from "../components/CommonLibs";
 
@@ -15,7 +15,7 @@ interface IServerProps {
 }
 
 interface IProps {
-  product: IProduct,
+  print: IPrint,
   option?:string,
   size?:string,
   url: {
@@ -27,23 +27,27 @@ export default class extends React.Component<IProps, any> {
 
   static async getInitialProps(props: IServerProps) {
     const query = props.query;
-    const product = query.id ? await getProduct(query.id) : await getFirstProduct();
-    return { product, option:query.option, size:query.size }
+    const print = query.id ? await getPrint(query.id) : await getFirstPrint();
+    return { print, option:query.option, size:query.size }
+  }
+
+  componentWillReceiveProps(nextProps:IProps) {
+    console.log("got next props", nextProps);
   }
 
   render() {
 
-    const { product, url, option, size } = this.props;
+    const { print, url, option, size } = this.props;
     return (
       <main>
 
         <Head>
-          <title>Above Under - {product.title}</title>
+          <title>Above Under - {print.title}</title>
           <CommonLibs />
         </Head>
 
         <CommonPageLayout activeMenu="shop">
-          <ProductPage product={product} url={url.asPath} 
+          <PrintPage print={print} url={url.asPath} 
             initialPrintOption={option} initialPrintSize={size} />
         </CommonPageLayout>
 

@@ -2,7 +2,7 @@ import * as csvtojson from "csvtojson";
 import * as fs from "fs";
 import * as path from "path";
 import * as request from "request";
-import { IProduct } from "../lib/types";
+import { IPrint } from "../lib/types";
 //import * as sharp from 'sharp';
 import * as Jimp from "jimp";
 import * as moment from "moment";
@@ -11,14 +11,14 @@ async function run()
 {
     const csvPath = `${__dirname}/../data/wpProducts.csv`;
     const tsPath = `${__dirname}/../src/lib/printProducts.ts`;
-    var products : Partial<IProduct>[] = [];
+    var products : Partial<IPrint>[] = [];
 
     console.log(`Importing CSV from: ${csvPath}`);
     csvtojson()
         .fromFile(csvPath)
         .on('json', (json:any) => {
 
-            var product : Partial<IProduct> = {
+            var product : Partial<IPrint> = {
                 title: (json.post_title as string).substr(9),
                 image: json.image,
                 description: json.post_excerpt,
@@ -60,12 +60,12 @@ async function run()
         });
 }
 
-async function loadProductImagesParallel(products:Partial<IProduct>[])
+async function loadProductImagesParallel(products:Partial<IPrint>[])
 {
     await Promise.all(products.map(p => loadProductImage(p)))
 }
 
-async function generateThumbnail(product:Partial<IProduct>) : Promise<void>
+async function generateThumbnail(product:Partial<IPrint>) : Promise<void>
 {
     const fname = path.basename(product.image + "");
     const fullPath = `${__dirname}/..${product.image}`;
@@ -97,7 +97,7 @@ async function writeImage(img:Jimp, path:string) : Promise<any>
     })
 }
 
-async function loadProductImage(product:Partial<IProduct>)
+async function loadProductImage(product:Partial<IPrint>)
 {
     const fname = path.basename(product.image + "");
     const fpath = `static/images/products/full/${fname}`;

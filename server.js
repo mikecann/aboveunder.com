@@ -17,6 +17,27 @@ app.prepare()
     })
   })
 
+  server.get('/print/:id/:option/:size', (req, res) => {
+    return app.render(req, res, '/print', {
+      id: req.params.id,
+      option: req.params.option,
+      size: req.params.size,
+    })
+  })
+
+  server.get('/print/:id/:option', (req, res) => {
+    return app.render(req, res, '/print', {
+      id: req.params.id,
+      option: req.params.option
+    })
+  })
+
+  server.get('/print/:id', (req, res) => {
+    return app.render(req, res, '/print', {
+      id: req.params.id
+    })
+  })
+
   server.get('*', (req, res) => {
     return handle(req, res)
   })

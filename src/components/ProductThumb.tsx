@@ -1,11 +1,11 @@
 import * as React from "react";
 
 import Link from 'next/link'
-import { IProduct } from "../lib/types";
+import { IPrint } from "../lib/types";
 import { Grid, Image } from "semantic-ui-react";
 
 interface IProps {
-    product: IProduct;
+    product: IPrint;
 }
 
 interface IState {
@@ -25,7 +25,7 @@ export class ProductThumb extends React.Component<IProps, IState> {
         const { product } = this.props;
         //const { mouseOver } = this.state;
         return <Grid.Column>
-            <Link href={{ pathname: '/product', query: { id: product.id } }}>
+            <Link href={{ pathname: '/print', query: { id: product.id } }} as={`/print/${product.id}`}>
                 <a onMouseOver={() => this.setState({ mouseOver: true })} onMouseOut={() => this.setState({ mouseOver: false })}>
                     <Image rounded src={product.thumb} 
                         style={{ marginTop: "1em", marginBottom: "1em" }}

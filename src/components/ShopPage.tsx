@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { IProduct } from "../lib/types";
+import { IPrint } from "../lib/types";
 import { ProductThumbGrid } from "./ProductThumbGrid";
 import { Dropdown, Container, Header, Segment, Grid } from 'semantic-ui-react';
 import { sortLatest, sortOldest } from "../lib/utils";
@@ -25,12 +25,12 @@ const defaultOrderValue = orderOptions[0].value;
 const numToShow = 999;
 
 interface IProps {
-  products: IProduct[]
+  products: IPrint[]
 }
 
 interface IState {
   selectedOrderValue: string;
-  visibleProducts: IProduct[];
+  visibleProducts: IPrint[];
 }
 
 export class ShopPage extends React.Component<IProps, IState> {
@@ -86,7 +86,7 @@ export class ShopPage extends React.Component<IProps, IState> {
       visibleProducts: this.orderProducts(dropdown.value)
     });
 
-  orderProducts(orderOptionValue: string): IProduct[] {
+  orderProducts(orderOptionValue: string): IPrint[] {
     var products = [...this.props.products];
 
     if (orderOptionValue == "latest")

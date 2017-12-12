@@ -1,4 +1,4 @@
-import { IProduct, IPost } from "./types";
+import { IPrint, IPost } from "./types";
 import * as moment from "moment";
 
 export function leftpad(num: number, pad: string = "0000"): string {
@@ -23,7 +23,7 @@ export function leftpad(num: number, pad: string = "0000"): string {
 //     });
 // }
 
-export function sortLatest(products:IProduct[])
+export function sortLatest(products:IPrint[])
 {
     return products.sort((a,b) => moment(b.dateCreated).diff(moment(a.dateCreated).utc()))
 }
@@ -33,7 +33,7 @@ export function sortLatestPosts(products:IPost[])
     return products.sort((a,b) => moment(b.dateCreated).diff(moment(a.dateCreated).utc()))
 }
 
-export function sortOldest(products:IProduct[])
+export function sortOldest(products:IPrint[])
 {
     return products.sort((a,b) => moment(a.dateCreated).diff(moment(b.dateCreated).utc()))
 }
