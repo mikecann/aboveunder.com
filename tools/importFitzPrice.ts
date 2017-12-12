@@ -1,5 +1,5 @@
 import * as csvtojson from "csvtojson";
-import { IPrintOption } from '../lib/types';
+import { IPrintOption } from '../src/lib/types';
 import * as fs from "fs";
 
 interface ICSVRow

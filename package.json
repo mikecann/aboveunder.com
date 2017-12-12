@@ -18,10 +18,10 @@
   },
   "scripts": {
     "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
+    "build": "react-scripts-ts build && yarn generate-data",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
-    "generate-data": "cd tools && ts-node generateProductsJson.ts"
+    "generate-data": "tsc -p ./tools/tsconfig.json && node dist/tools/generateProductsJson"
   },
   "devDependencies": {
     "@types/jest": "^21.1.8",

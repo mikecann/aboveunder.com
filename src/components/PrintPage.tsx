@@ -150,10 +150,11 @@ export class PrintPage extends React.Component<IProps, IState> {
   }
 
   get pageUrl() {
-    const print = this.state.print as IPrint;
-    const option = this.state.selectedPrintOption as IPrintOption;
-    const size = this.state.selectedPrintSize as IPrintOptionSize
-    return `${process.env.ROOT_URL}/print/${print.id}/${option.id}/${size.id}`;
+    return "/products.json";
+    // const print = this.state.print as IPrint;
+    // const option = this.state.selectedPrintOption as IPrintOption;
+    // const size = this.state.selectedPrintSize as IPrintOptionSize
+    // return `${process.env.ROOT_URL}/print/${print.id}/${option.id}/${size.id}`;
   }
 
   handleSelectedPrintSizeChange = (e: any, dropdown: any) => {

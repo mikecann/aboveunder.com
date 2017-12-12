@@ -2,7 +2,7 @@ import * as csvtojson from "csvtojson";
 import * as fs from "fs";
 import * as path from "path";
 import * as request from "request";
-import { IPrint } from "../lib/types";
+import { IPrint } from "../src/lib/types";
 //import * as sharp from 'sharp';
 import * as Jimp from "jimp";
 import * as moment from "moment";
