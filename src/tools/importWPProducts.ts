@@ -5,6 +5,7 @@ import * as request from "request";
 import { IProduct } from "../lib/types";
 //import * as sharp from 'sharp';
 import * as Jimp from "jimp";
+import * as moment from "moment";
 
 async function run() 
 {
@@ -44,9 +45,13 @@ async function run()
                 
                 for(var product of products)
                     await generateThumbnail(product)
+
+                products = products.sort((a,b) => moment(a.dateCreated).diff(moment(b.dateCreated).utc()));
                 
-                if (!error)
-                    fs.writeFileSync(tsPath, `export const data = ${JSON.stringify(products, null, 2)}`)
+                if (error)
+                    throw error;
+
+                fs.writeFileSync(tsPath, `export const data = ${JSON.stringify(products, null, 2)}`)
             }
             catch(e)
             {

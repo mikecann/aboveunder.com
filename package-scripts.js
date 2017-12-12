@@ -3,6 +3,11 @@ const { series, concurrent, crossEnv } = require("nps-utils");
 const snipcartTestKey = "NDYwN2FhNmUtNzZmNy00Y2I4LTkyODUtMDMyOGNhMDIzZTFjNjM2NDc5ODczMzIxNTUyOTU5";
 const snipcartLiveKey = "NDdmNDI1NzYtZjhmNC00YzQxLWFjYWItY2U3OWQ5NTMzZWQ2NjM2NDc5ODczMzIxNTUyOTU5";
 
+// const deploy = (target) => series(`nps export.${target}`,
+//   `aws s3 sync build ${config.markd[target].s3} --profile markd`, `nps invalidate.${target}`, open(config.markd[target].web));
+
+// const invalidate = (target) => `aws cloudfront create-invalidation --profile markd --distribution-id ${target.cloudfrontId} --paths /index.html`
+
 module.exports = {
   scripts: {
     clean: series('rimraf out', 'rimraf', 'rimraf pages', 'rimraf components'),
@@ -38,8 +43,14 @@ module.exports = {
       prod: series.nps("export.prod", "upload.prod"),
     },
     upload: {
-      staging: "node upload-azure.js web4",
-      prod: "node upload-azure.js web5"
+      staging:{
+        default: "aws s3 sync out s3://aboveunder-staging --profile aboveunder",
+        azure: "node upload-azure.js staging"
+      },
+      prod: {
+        default: "aws s3 sync out s3://aboveunder --profile aboveunder",
+        azure: "node upload-azure.js prod"
+      } 
     }
   }
 };

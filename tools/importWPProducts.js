@@ -6,6 +6,7 @@ const path = require("path");
 const request = require("request");
 //import * as sharp from 'sharp';
 const Jimp = require("jimp");
+const moment = require("moment");
 async function run() {
     const csvPath = `${__dirname}/../data/wpProducts.csv`;
     const tsPath = `${__dirname}/../src/lib/printProducts.ts`;
@@ -34,8 +35,10 @@ async function run() {
             console.log(`Generating ${products.length} thumnails..`);
             for (var product of products)
                 await generateThumbnail(product);
-            if (!error)
-                fs.writeFileSync(tsPath, `export const data = ${JSON.stringify(products, null, 2)}`);
+            products = products.sort((a, b) => moment(a.dateCreated).diff(moment(b.dateCreated).utc()));
+            if (error)
+                throw error;
+            fs.writeFileSync(tsPath, `export const data = ${JSON.stringify(products, null, 2)}`);
         }
         catch (e) {
             console.error("Whoops, error!", e);
