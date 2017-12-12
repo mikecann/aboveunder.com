@@ -5,6 +5,7 @@ import { IPrint } from "../lib/types";
 import { PrintPage } from "../components/PrintPage";
 import { CommonPageLayout } from "../components/CommonPageLayout";
 import { CommonLibs } from "../components/CommonLibs";
+import * as Route from "route-parser";
 
 interface IServerProps {
   query: {
@@ -32,10 +33,11 @@ export default class extends React.Component<IProps, any> {
     return { print, option:query.option, size:query.size }
   }
 
-  constructor(props:IProps)
+  componentDidMount()
   {
-    super(props);
-    console.log("print page constructed", props);
+    var route = new Route(window.location.href);
+    route.
+    console.log("print page constructed", {props:this.props, route});
   }
 
   componentWillReceiveProps(nextProps:IProps) {
