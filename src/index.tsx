@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import registerServiceWorker from './registerServiceWorker';
+//import registerServiceWorker from './registerServiceWorker';
 import { App } from './App';
 import { getDb } from './lib/db';
 
@@ -14,4 +14,4 @@ async function init()
 }
 
 init();
-registerServiceWorker();
+//registerServiceWorker();\
