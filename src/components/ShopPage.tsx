@@ -5,6 +5,7 @@ import { ProductThumbGrid } from "./ProductThumbGrid";
 import { Dropdown, Container, Header, Segment, Grid } from 'semantic-ui-react';
 import { sortLatest, sortOldest } from "../lib/utils";
 import { CommonPageLayout } from "./CommonPageLayout";
+import { Paginator } from "./Paginator";
 
 const orderOptions = [
   {
@@ -32,6 +33,7 @@ interface IProps {
 interface IState {
   selectedOrderValue: string;
   visibleProducts: IPrint[];
+  currentPage: number;
 }
 
 export class ShopPage extends React.Component<IProps, IState> {
@@ -40,7 +42,8 @@ export class ShopPage extends React.Component<IProps, IState> {
     super(props);
     this.state = {
       selectedOrderValue: defaultOrderValue,
-      visibleProducts: this.orderProducts(defaultOrderValue)
+      visibleProducts: this.orderProducts(defaultOrderValue),
+      currentPage: 0
     }
   }
 
@@ -63,13 +66,7 @@ export class ShopPage extends React.Component<IProps, IState> {
               
               </Grid.Column>
               <Grid.Column>
-                {/* <Menu pagination>
-                  <Menu.Item name='1' active={activeItem === '1'} onClick={this.handleItemClick} />
-                  <Menu.Item disabled>...</Menu.Item>
-                  <Menu.Item name='10' active={activeItem === '10'} onClick={this.handleItemClick} />
-                  <Menu.Item name='11' active={activeItem === '11'} onClick={this.handleItemClick} />
-                  <Menu.Item name='12' active={activeItem === '12'} onClick={this.handleItemClick} />
-                </Menu> */}
+                <Paginator allItems={visibleProducts} onPageChanged={this.handlePaginationChange} />               
               </Grid.Column>
             </Grid>
 
@@ -79,6 +76,10 @@ export class ShopPage extends React.Component<IProps, IState> {
       </Segment>
 
     </CommonPageLayout>
+  }
+
+  handlePaginationChange = (page:IPrint[]) => {
+
   }
 
   handleSelectedOrderValueChanged = (e: any, dropdown: any) =>

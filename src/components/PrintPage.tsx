@@ -109,7 +109,7 @@ export class PrintPage extends React.Component<IProps, IState> {
                       data-item-url={`https://${window.location.hostname}/products.json`}
                       data-item-weight={selectedPrintSize.weight}
                       data-item-price={selectedPrintSize.priceAUD}
-                      data-item-custom1-name="Notes to us"
+                      data-item-custom1-name="Note to Above Under"
                       data-item-custom1-type="textarea"
                     >
                       Buy it for $ {selectedPrintSize.priceAUD} AUD
