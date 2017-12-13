@@ -102,7 +102,7 @@ export class PrintPage extends React.Component<IProps, IState> {
                   <div>
 
                     <Button primary className="snipcart-add-item"
-                      data-item-id={print.id}
+                      data-item-id={`${print.id}-${selectedPrintOption.id}-${selectedPrintSize.id}`}
                       data-item-name={print.title}
                       data-item-image={print.thumb}
                       data-item-description={print.description}
