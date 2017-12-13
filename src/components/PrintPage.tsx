@@ -150,7 +150,7 @@ export class PrintPage extends React.Component<IProps, IState> {
   }
 
   get pageUrl() {
-    return "/products.json";
+    return "https://staging.aboveunder.com/products.json";
     // const print = this.state.print as IPrint;
     // const option = this.state.selectedPrintOption as IPrintOption;
     // const size = this.state.selectedPrintSize as IPrintOptionSize
