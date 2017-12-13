@@ -11,154 +11,154 @@ export const data : IPrintOption[] = [
         "id": "12x8",
         "widthInches": 12,
         "heightInches": 8,
-        "priceAUD": 21.94,
+        "priceAUD": 22,
         "weight": 500
       },
       {
         "id": "10x10",
         "widthInches": 10,
         "heightInches": 10,
-        "priceAUD": 31.79,
+        "priceAUD": 32,
         "weight": 500
       },
       {
         "id": "12x10",
         "widthInches": 12,
         "heightInches": 10,
-        "priceAUD": 31.79,
+        "priceAUD": 32,
         "weight": 500
       },
       {
         "id": "12x12",
         "widthInches": 12,
         "heightInches": 12,
-        "priceAUD": 46.78,
+        "priceAUD": 47,
         "weight": 500
       },
       {
         "id": "15x10",
         "widthInches": 15,
         "heightInches": 10,
-        "priceAUD": 46.78,
+        "priceAUD": 47,
         "weight": 500
       },
       {
         "id": "16x12",
         "widthInches": 16,
         "heightInches": 12,
-        "priceAUD": 46.78,
+        "priceAUD": 47,
         "weight": 500
       },
       {
         "id": "18x12",
         "widthInches": 18,
         "heightInches": 12,
-        "priceAUD": 46.78,
+        "priceAUD": 47,
         "weight": 500
       },
       {
         "id": "16x16",
         "widthInches": 16,
         "heightInches": 16,
-        "priceAUD": 72.23,
+        "priceAUD": 72,
         "weight": 500
       },
       {
         "id": "20x16",
         "widthInches": 20,
         "heightInches": 16,
-        "priceAUD": 72.23,
+        "priceAUD": 72,
         "weight": 500
       },
       {
         "id": "18x18",
         "widthInches": 18,
         "heightInches": 18,
-        "priceAUD": 80.28,
+        "priceAUD": 80,
         "weight": 500
       },
       {
         "id": "24x16",
         "widthInches": 24,
         "heightInches": 16,
-        "priceAUD": 72.23,
+        "priceAUD": 72,
         "weight": 500
       },
       {
         "id": "20x20",
         "widthInches": 20,
         "heightInches": 20,
-        "priceAUD": 88.11,
+        "priceAUD": 88,
         "weight": 500
       },
       {
         "id": "24x20",
         "widthInches": 24,
         "heightInches": 20,
-        "priceAUD": 88.11,
+        "priceAUD": 88,
         "weight": 500
       },
       {
         "id": "24x24",
         "widthInches": 24,
         "heightInches": 24,
-        "priceAUD": 103.12,
+        "priceAUD": 110,
         "weight": 500
       },
       {
         "id": "30x20",
         "widthInches": 30,
         "heightInches": 20,
-        "priceAUD": 122.99,
+        "priceAUD": 130,
         "weight": 500
       },
       {
         "id": "30x24",
         "widthInches": 30,
         "heightInches": 24,
-        "priceAUD": 124,
+        "priceAUD": 130,
         "weight": 500
       },
       {
         "id": "36x24",
         "widthInches": 36,
         "heightInches": 24,
-        "priceAUD": 142.92,
+        "priceAUD": 150,
         "weight": 1000
       },
       {
         "id": "30x30",
         "widthInches": 30,
         "heightInches": 30,
-        "priceAUD": 167.62,
+        "priceAUD": 170,
         "weight": 1000
       },
       {
         "id": "30x40",
         "widthInches": 30,
         "heightInches": 40,
-        "priceAUD": 189,
+        "priceAUD": 190,
         "weight": 1000
       },
       {
         "id": "45x30",
         "widthInches": 45,
         "heightInches": 30,
-        "priceAUD": 210.1,
+        "priceAUD": 210,
         "weight": 1000
       },
       {
         "id": "40x40",
         "widthInches": 40,
         "heightInches": 40,
-        "priceAUD": 216.59,
+        "priceAUD": 220,
         "weight": 1000
       },
       {
         "id": "60x40",
         "widthInches": 60,
         "heightInches": 40,
-        "priceAUD": 271.5,
+        "priceAUD": 280,
         "weight": 1000
       }
     ]
@@ -171,98 +171,98 @@ export const data : IPrintOption[] = [
         "id": "10x10",
         "widthInches": 10,
         "heightInches": 10,
-        "priceAUD": 168.75,
+        "priceAUD": 170,
         "weight": 1000
       },
       {
         "id": "12x12",
         "widthInches": 12,
         "heightInches": 12,
-        "priceAUD": 186.56,
+        "priceAUD": 190,
         "weight": 1000
       },
       {
         "id": "16x12",
         "widthInches": 16,
         "heightInches": 12,
-        "priceAUD": 186.56,
+        "priceAUD": 190,
         "weight": 1000
       },
       {
         "id": "18x12",
         "widthInches": 18,
         "heightInches": 12,
-        "priceAUD": 186.56,
+        "priceAUD": 190,
         "weight": 1000
       },
       {
         "id": "16x16",
         "widthInches": 16,
         "heightInches": 16,
-        "priceAUD": 198.99,
+        "priceAUD": 200,
         "weight": 1000
       },
       {
         "id": "20x16",
         "widthInches": 20,
         "heightInches": 16,
-        "priceAUD": 218.75,
+        "priceAUD": 220,
         "weight": 1000
       },
       {
         "id": "18x18",
         "widthInches": 18,
         "heightInches": 18,
-        "priceAUD": 222.11,
+        "priceAUD": 230,
         "weight": 1000
       },
       {
         "id": "24x16",
         "widthInches": 24,
         "heightInches": 16,
-        "priceAUD": 237,
+        "priceAUD": 240,
         "weight": 1000
       },
       {
         "id": "20x20",
         "widthInches": 20,
         "heightInches": 20,
-        "priceAUD": 224.36,
+        "priceAUD": 230,
         "weight": 1000
       },
       {
         "id": "24x20",
         "widthInches": 24,
         "heightInches": 20,
-        "priceAUD": 237,
+        "priceAUD": 240,
         "weight": 1000
       },
       {
         "id": "24x24",
         "widthInches": 24,
         "heightInches": 24,
-        "priceAUD": 322.5,
+        "priceAUD": 330,
         "weight": 1000
       },
       {
         "id": "30x20",
         "widthInches": 30,
         "heightInches": 20,
-        "priceAUD": 273,
+        "priceAUD": 280,
         "weight": 1000
       },
       {
         "id": "30x24",
         "widthInches": 30,
         "heightInches": 24,
-        "priceAUD": 322.5,
+        "priceAUD": 330,
         "weight": 2000
       },
       {
         "id": "36x24",
         "widthInches": 36,
         "heightInches": 24,
-        "priceAUD": 381,
+        "priceAUD": 390,
         "weight": 2000
       },
       {
@@ -276,7 +276,7 @@ export const data : IPrintOption[] = [
         "id": "45x30",
         "widthInches": 45,
         "heightInches": 30,
-        "priceAUD": 549,
+        "priceAUD": 550,
         "weight": 2000
       },
       {
@@ -296,49 +296,49 @@ export const data : IPrintOption[] = [
         "id": "9x6",
         "widthInches": 9,
         "heightInches": 6,
-        "priceAUD": 23.79,
+        "priceAUD": 24,
         "weight": 1500
       },
       {
         "id": "12x8",
         "widthInches": 12,
         "heightInches": 8,
-        "priceAUD": 58.98,
+        "priceAUD": 59,
         "weight": 1500
       },
       {
         "id": "12x12",
         "widthInches": 12,
         "heightInches": 12,
-        "priceAUD": 55.87,
+        "priceAUD": 56,
         "weight": 1500
       },
       {
         "id": "18x12",
         "widthInches": 18,
         "heightInches": 12,
-        "priceAUD": 87.64,
+        "priceAUD": 88,
         "weight": 1500
       },
       {
         "id": "20x20",
         "widthInches": 20,
         "heightInches": 20,
-        "priceAUD": 92.63,
+        "priceAUD": 93,
         "weight": 1500
       },
       {
         "id": "24x16",
         "widthInches": 24,
         "heightInches": 16,
-        "priceAUD": 137.3,
+        "priceAUD": 140,
         "weight": 1500
       },
       {
         "id": "30x20",
         "widthInches": 30,
         "heightInches": 20,
-        "priceAUD": 182.03,
+        "priceAUD": 190,
         "weight": 1500
       }
     ]
@@ -351,98 +351,98 @@ export const data : IPrintOption[] = [
         "id": "12x12",
         "widthInches": 12,
         "heightInches": 12,
-        "priceAUD": 162.59,
+        "priceAUD": 170,
         "weight": 1000
       },
       {
         "id": "14x11",
         "widthInches": 14,
         "heightInches": 11,
-        "priceAUD": 178.76,
+        "priceAUD": 180,
         "weight": 1000
       },
       {
         "id": "18x12",
         "widthInches": 18,
         "heightInches": 12,
-        "priceAUD": 205.64,
+        "priceAUD": 210,
         "weight": 1000
       },
       {
         "id": "16x16",
         "widthInches": 16,
         "heightInches": 16,
-        "priceAUD": 218.75,
+        "priceAUD": 220,
         "weight": 1000
       },
       {
         "id": "20x16",
         "widthInches": 20,
         "heightInches": 16,
-        "priceAUD": 223.04,
+        "priceAUD": 230,
         "weight": 1000
       },
       {
         "id": "24x16",
         "widthInches": 24,
         "heightInches": 16,
-        "priceAUD": 246,
+        "priceAUD": 250,
         "weight": 1000
       },
       {
         "id": "20x20",
         "widthInches": 20,
         "heightInches": 20,
-        "priceAUD": 255,
+        "priceAUD": 260,
         "weight": 1000
       },
       {
         "id": "30x20",
         "widthInches": 30,
         "heightInches": 20,
-        "priceAUD": 382.5,
+        "priceAUD": 390,
         "weight": 1000
       },
       {
         "id": "30x24",
         "widthInches": 30,
         "heightInches": 24,
-        "priceAUD": 460.5,
+        "priceAUD": 470,
         "weight": 1000
       },
       {
         "id": "36x24",
         "widthInches": 36,
         "heightInches": 24,
-        "priceAUD": 552,
+        "priceAUD": 560,
         "weight": 1500
       },
       {
         "id": "30x30",
         "widthInches": 30,
         "heightInches": 30,
-        "priceAUD": 574.5,
+        "priceAUD": 580,
         "weight": 1500
       },
       {
         "id": "40x30",
         "widthInches": 40,
         "heightInches": 30,
-        "priceAUD": 766.5,
+        "priceAUD": 770,
         "weight": 1500
       },
       {
         "id": "45x30",
         "widthInches": 45,
         "heightInches": 30,
-        "priceAUD": 843,
+        "priceAUD": 850,
         "weight": 3000
       },
       {
         "id": "60x38",
         "widthInches": 60,
         "heightInches": 38,
-        "priceAUD": 1456.5,
+        "priceAUD": 1460,
         "weight": 3000
       }
     ]
@@ -455,70 +455,70 @@ export const data : IPrintOption[] = [
         "id": "12x12",
         "widthInches": 12,
         "heightInches": 12,
-        "priceAUD": 209.79,
+        "priceAUD": 210,
         "weight": 2000
       },
       {
         "id": "16x12",
         "widthInches": 16,
         "heightInches": 12,
-        "priceAUD": 220.16,
+        "priceAUD": 220,
         "weight": 2000
       },
       {
         "id": "18x12",
         "widthInches": 18,
         "heightInches": 12,
-        "priceAUD": 222.75,
+        "priceAUD": 230,
         "weight": 2000
       },
       {
         "id": "16x16",
         "widthInches": 16,
         "heightInches": 16,
-        "priceAUD": 220.16,
+        "priceAUD": 220,
         "weight": 2000
       },
       {
         "id": "20x16",
         "widthInches": 20,
         "heightInches": 16,
-        "priceAUD": 228,
+        "priceAUD": 230,
         "weight": 2000
       },
       {
         "id": "18x18",
         "widthInches": 18,
         "heightInches": 18,
-        "priceAUD": 231,
+        "priceAUD": 240,
         "weight": 2000
       },
       {
         "id": "24x16",
         "widthInches": 24,
         "heightInches": 16,
-        "priceAUD": 277.5,
+        "priceAUD": 280,
         "weight": 2000
       },
       {
         "id": "20x20",
         "widthInches": 20,
         "heightInches": 20,
-        "priceAUD": 286.5,
+        "priceAUD": 290,
         "weight": 2000
       },
       {
         "id": "24x20",
         "widthInches": 24,
         "heightInches": 20,
-        "priceAUD": 334.5,
+        "priceAUD": 340,
         "weight": 2000
       },
       {
         "id": "30x20",
         "widthInches": 30,
         "heightInches": 20,
-        "priceAUD": 405,
+        "priceAUD": 410,
         "weight": 2000
       },
       {
@@ -532,21 +532,21 @@ export const data : IPrintOption[] = [
         "id": "30x24",
         "widthInches": 30,
         "heightInches": 24,
-        "priceAUD": 474,
+        "priceAUD": 480,
         "weight": 1500
       },
       {
         "id": "36x24",
         "widthInches": 36,
         "heightInches": 24,
-        "priceAUD": 559.5,
+        "priceAUD": 560,
         "weight": 1500
       },
       {
         "id": "40x30",
         "widthInches": 40,
         "heightInches": 30,
-        "priceAUD": 753,
+        "priceAUD": 760,
         "weight": 1500
       },
       {
@@ -560,7 +560,7 @@ export const data : IPrintOption[] = [
         "id": "40x40",
         "widthInches": 40,
         "heightInches": 40,
-        "priceAUD": 1168.5,
+        "priceAUD": 1170,
         "weight": 4000
       }
     ]
@@ -573,42 +573,42 @@ export const data : IPrintOption[] = [
         "id": "10x8",
         "widthInches": 10,
         "heightInches": 8,
-        "priceAUD": 170.24,
+        "priceAUD": 170,
         "weight": 1500
       },
       {
         "id": "12x8",
         "widthInches": 12,
         "heightInches": 8,
-        "priceAUD": 170.24,
+        "priceAUD": 170,
         "weight": 1500
       },
       {
         "id": "16x11",
         "widthInches": 16,
         "heightInches": 11,
-        "priceAUD": 196.91,
+        "priceAUD": 200,
         "weight": 1500
       },
       {
         "id": "18x12",
         "widthInches": 18,
         "heightInches": 12,
-        "priceAUD": 198.99,
+        "priceAUD": 200,
         "weight": 1500
       },
       {
         "id": "20x16",
         "widthInches": 20,
         "heightInches": 16,
-        "priceAUD": 224.36,
+        "priceAUD": 230,
         "weight": 1500
       },
       {
         "id": "24x16",
         "widthInches": 24,
         "heightInches": 16,
-        "priceAUD": 246,
+        "priceAUD": 250,
         "weight": 3000
       },
       {
@@ -622,105 +622,105 @@ export const data : IPrintOption[] = [
         "id": "10x8",
         "widthInches": 10,
         "heightInches": 8,
-        "priceAUD": 154.44,
+        "priceAUD": 160,
         "weight": 1500
       },
       {
         "id": "12x8",
         "widthInches": 12,
         "heightInches": 8,
-        "priceAUD": 164.16,
+        "priceAUD": 170,
         "weight": 1500
       },
       {
         "id": "12x12",
         "widthInches": 12,
         "heightInches": 12,
-        "priceAUD": 189,
+        "priceAUD": 190,
         "weight": 1500
       },
       {
         "id": "16x12",
         "widthInches": 16,
         "heightInches": 12,
-        "priceAUD": 203.84,
+        "priceAUD": 210,
         "weight": 1500
       },
       {
         "id": "18x12",
         "widthInches": 18,
         "heightInches": 12,
-        "priceAUD": 214.76,
+        "priceAUD": 220,
         "weight": 1500
       },
       {
         "id": "16x16",
         "widthInches": 16,
         "heightInches": 16,
-        "priceAUD": 218.75,
+        "priceAUD": 220,
         "weight": 1500
       },
       {
         "id": "20x16",
         "widthInches": 20,
         "heightInches": 16,
-        "priceAUD": 224,
+        "priceAUD": 230,
         "weight": 1500
       },
       {
         "id": "18x18",
         "widthInches": 18,
         "heightInches": 18,
-        "priceAUD": 224,
+        "priceAUD": 230,
         "weight": 1500
       },
       {
         "id": "20x20",
         "widthInches": 20,
         "heightInches": 20,
-        "priceAUD": 231,
+        "priceAUD": 240,
         "weight": 1500
       },
       {
         "id": "24x16",
         "widthInches": 24,
         "heightInches": 16,
-        "priceAUD": 231,
+        "priceAUD": 240,
         "weight": 1500
       },
       {
         "id": "24x20",
         "widthInches": 24,
         "heightInches": 20,
-        "priceAUD": 252,
+        "priceAUD": 260,
         "weight": 1500
       },
       {
         "id": "30x20",
         "widthInches": 30,
         "heightInches": 20,
-        "priceAUD": 297,
+        "priceAUD": 300,
         "weight": 4000
       },
       {
         "id": "30x24",
         "widthInches": 30,
         "heightInches": 24,
-        "priceAUD": 315,
+        "priceAUD": 320,
         "weight": 4000
       },
       {
         "id": "36x24",
         "widthInches": 36,
         "heightInches": 24,
-        "priceAUD": 345,
+        "priceAUD": 350,
         "weight": 4000
       },
       {
         "id": "45x30",
         "widthInches": 45,
         "heightInches": 30,
-        "priceAUD": 414,
+        "priceAUD": 420,
         "weight": 10000
       }
     ]

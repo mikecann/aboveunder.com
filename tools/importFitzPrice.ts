@@ -1,6 +1,7 @@
 import * as csvtojson from "csvtojson";
 import { IPrintOption } from '../src/lib/types';
 import * as fs from "fs";
+import { getMyRoundedPrice } from "../src/lib/utils";
 
 interface ICSVRow
 {
@@ -35,8 +36,8 @@ interface IOptions
 
 async function run() 
 {
-    const csvPath = `${__dirname}/../data/Above Under Pricing - Fitz Pricing.csv`;
-    const tsPath = `${__dirname}/../src/lib/defaultPrintOptions.ts`;
+    const csvPath = `${__dirname}/../../data/Above Under Pricing - Fitz Pricing.csv`;
+    const tsPath = `${__dirname}/../../src/lib/defaultPrintOptions.ts`;
 
     var options : IOptions = {};
 
@@ -66,7 +67,7 @@ async function run()
                     id: `${json.Width}x${json.Height}`,
                     widthInches: parseInt(json.Width),
                     heightInches: parseInt(json.Height),
-                    priceAUD: parseFloat(json["My Price"]),
+                    priceAUD: getMyRoundedPrice(parseFloat(json["My Price"])),
                     weight: parseFloat(json.Weight) * 1000, // from kg to g
                 })
             }

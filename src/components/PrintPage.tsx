@@ -106,7 +106,7 @@ export class PrintPage extends React.Component<IProps, IState> {
                       data-item-name={print.title}
                       data-item-image={print.thumb}
                       data-item-description={print.description}
-                      data-item-url={this.pageUrl}
+                      data-item-url={`https://${window.location.hostname}/products.json`}
                       data-item-weight={selectedPrintSize.weight}
                       data-item-price={selectedPrintSize.priceAUD}
                       data-item-custom1-name="Notes to us"
@@ -147,14 +147,6 @@ export class PrintPage extends React.Component<IProps, IState> {
     });
 
     this.updatePath(print, option, size);
-  }
-
-  get pageUrl() {
-    return "https://staging.aboveunder.com/products.json";
-    // const print = this.state.print as IPrint;
-    // const option = this.state.selectedPrintOption as IPrintOption;
-    // const size = this.state.selectedPrintSize as IPrintOptionSize
-    // return `${process.env.ROOT_URL}/print/${print.id}/${option.id}/${size.id}`;
   }
 
   handleSelectedPrintSizeChange = (e: any, dropdown: any) => {

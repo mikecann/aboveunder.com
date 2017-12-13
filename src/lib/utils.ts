@@ -42,3 +42,11 @@ export function shuffle<T>(arr:T[]) : T[]
 {
     return arr.sort(() => Math.random() - 0.5);
 }
+
+export function getMyRoundedPrice(price:number) : number
+{
+    if (price<100)
+        return Math.round(price);
+    
+    return Math.ceil(Math.round(price) / 10)*10
+}
