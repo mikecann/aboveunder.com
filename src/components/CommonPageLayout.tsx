@@ -14,8 +14,8 @@ export class CommonPageLayout extends React.Component<IProps, IState> {
   render() {
 
     return <div style={{ display: "flex", minHeight: "100vh", flexDirection: "column" }}>
-      <HeaderMenu menuProps={{ size: "huge" }} activeMenu={this.props.activeMenu} />
-      <div style={{ flex: 1 }}>
+      <HeaderMenu menuProps={{ size: "huge", fixed: "top" }} activeMenu={this.props.activeMenu} />
+      <div style={{ flex: 1, marginTop: 50 }}>
         {this.props.children}
       </div>
       <PageFooter />
