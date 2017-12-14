@@ -78,7 +78,12 @@ export class ShopPage extends React.Component<IProps, IState> {
           <ProductThumbGrid products={pagedPrints} />
 
           <Grid centered columns={1}>
-                <Paginator numItems={sortedPrints.length} pageIndex={pageIndex} onPageChanged={this.handlePageChange} pageSize={12} />               
+            <Grid.Row>
+              Showing {pagedPrints.length} of {sortedPrints.length}
+            </Grid.Row>
+            <Grid.Row>
+              <Paginator numItems={sortedPrints.length} pageIndex={pageIndex} onPageChanged={this.handlePageChange} pageSize={12} />      
+            </Grid.Row>
           </Grid>
 
         </Container>
@@ -96,11 +101,11 @@ export class ShopPage extends React.Component<IProps, IState> {
 
   handlePageChange = (pageIndex:number) => {
     this.setState({pageIndex});
-    this.props.history.push(`/shop/${pageIndex}`);
+    //this.props.history.push(`/shop/${pageIndex}`);
   }
 
   handleSelectedOrderValueChanged = (e: any, dropdown: any) => {
-    this.props.history.push(`/shop/0`);
+    //this.props.history.push(`/shop/0`);
     this.setState({
       selectedOrderValue: dropdown.value,
       pageIndex: 0,

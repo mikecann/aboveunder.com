@@ -1,6 +1,6 @@
 import * as React from "react";
 import { IPrint, IPrintOptionSize, IPrintOption, IDB } from '../lib/types';
-import { Button, Dropdown, Segment, Container, Header, Grid, Image, Icon } from "semantic-ui-react";
+import { Button, Dropdown, Segment, Container, Header, Grid, Image, Icon, Breadcrumb } from "semantic-ui-react";
 import * as moment from "moment";
 import { getPrintOptionOrDefault, getPrintSizeOrDefault, getPrint } from "../lib/db";
 import { CommonPageLayout } from "./CommonPageLayout";
@@ -23,7 +23,7 @@ export class PrintPage extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props)
 
-    const {db, match} = props;
+    const { db, match } = props;
     const print = getPrint(db, match.params.id);
     const option = getPrintOptionOrDefault(print, match.params.option);
     const size = getPrintSizeOrDefault(option, match.params.size);
@@ -52,18 +52,17 @@ export class PrintPage extends React.Component<IProps, IState> {
 
     return <CommonPageLayout activeMenu="shop">
 
-      {/* <Container>
-          <Segment>
-          <Breadcrumb>
-            <Breadcrumb.Section link>Shop</Breadcrumb.Section>
-            <Breadcrumb.Divider />
-            <Breadcrumb.Section link>{product.title}</Breadcrumb.Section>
-          </Breadcrumb>
-          </Segment>
-        </Container> */}
 
       <Segment style={{ padding: '4em 0em' }} vertical>
         <Container>
+
+          <div style={{ marginBottom: "2em" }}>
+            <Breadcrumb size='large'>
+              <Breadcrumb.Section link href="/shop"><Icon name="cart" />Shop</Breadcrumb.Section>
+              <Breadcrumb.Divider icon='right chevron' />
+              <Breadcrumb.Section>{print.title}</Breadcrumb.Section>
+            </Breadcrumb>
+          </div>
 
           <Grid stackable>
             <Grid.Row columns={2}>
@@ -166,7 +165,7 @@ export class PrintPage extends React.Component<IProps, IState> {
     this.updatePath(print, option, size);
   }
 
-  updatePath(product: IPrint, option: IPrintOption, size: IPrintOptionSize) {  
+  updatePath(product: IPrint, option: IPrintOption, size: IPrintOptionSize) {
     this.props.history.push(`/print/${product.id}/${option.id}/${size.id}`);
   }
 

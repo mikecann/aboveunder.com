@@ -49,6 +49,7 @@ export class BlogPage extends React.Component<IProps, IState> {
 
       <Segment style={{ padding: '4em 0em' }} vertical>
         <Container>
+         
           <Header as="h1">Blog Posts</Header>
 
           <Grid columns={2}>
