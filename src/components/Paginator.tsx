@@ -32,9 +32,10 @@ export class Paginator extends React.Component<IProps, IState> {
 
         const {numItems, pageSize} = this.props;
         const {pageIndex} = this.state;
-        const pageCount = Math.round(numItems / pageSize);
+        const pageCount = Math.ceil(numItems / pageSize);
         
         const pages = [];
+
         for(var i=0; i<pageCount; i++)
             pages.push(i);
 

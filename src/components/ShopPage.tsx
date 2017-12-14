@@ -2,10 +2,9 @@ import * as React from "react";
 
 import { IPrint } from "../lib/types";
 import { ProductThumbGrid } from "./ProductThumbGrid";
-import { Dropdown, Container, Header, Segment, Grid } from 'semantic-ui-react';
+import { Dropdown, Container, Header, Segment, Grid, Visibility, VisibilityEventData, Menu } from 'semantic-ui-react';
 import { sortLatest, sortOldest } from "../lib/utils";
 import { CommonPageLayout } from "./CommonPageLayout";
-import { Paginator } from "./Paginator";
 
 const orderOptions = [
   {
@@ -35,7 +34,9 @@ interface IProps {
 interface IState {
   selectedOrderValue: string;
   sortedPrints: IPrint[];
+  visiblePrints: IPrint[];
   pageIndex: number;
+  bottomMenuVisible?: boolean;
 }
 
 export class ShopPage extends React.Component<IProps, IState> {
@@ -43,19 +44,18 @@ export class ShopPage extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
 
-    const sorted = this.orderProducts(defaultOrderValue);
+    const sorted = this.orderPrints(defaultOrderValue);
     this.state = {
       selectedOrderValue: defaultOrderValue,
       sortedPrints: sorted,
+      visiblePrints: sorted.slice(0, pageSize),
       pageIndex: props.initialPageIndex || 0
     }
   }
 
   render() {
 
-    const {selectedOrderValue, sortedPrints, pageIndex} = this.state;
-
-    const pagedPrints = this.getPage();
+    const { selectedOrderValue, visiblePrints, bottomMenuVisible } = this.state;
 
     return <CommonPageLayout activeMenu="shop">
 
@@ -64,56 +64,57 @@ export class ShopPage extends React.Component<IProps, IState> {
           <Header>Shop</Header>
 
           <Grid columns={2}>
-              <Grid.Column>
-                <Dropdown fluid selection options={orderOptions}
-                  value={selectedOrderValue}
-                  onChange={this.handleSelectedOrderValueChanged} />
-              
-              </Grid.Column>
-              <Grid.Column>
-                {/* <Paginator allItems={sortedPrints} onPageChanged={this.handlePaginationChange} pageSize={12} />                */}
-              </Grid.Column>
-            </Grid>
+            <Grid.Column>
+              <Dropdown fluid selection options={orderOptions}
+                value={selectedOrderValue}
+                onChange={this.handleSelectedOrderValueChanged} />
 
-          <ProductThumbGrid products={pagedPrints} />
-
-          <Grid centered columns={1}>
-            <Grid.Row>
-              Showing {pagedPrints.length} of {sortedPrints.length}
-            </Grid.Row>
-            <Grid.Row>
-              <Paginator numItems={sortedPrints.length} pageIndex={pageIndex} onPageChanged={this.handlePageChange} pageSize={12} />      
-            </Grid.Row>
+            </Grid.Column>
+            <Grid.Column>
+            </Grid.Column>
           </Grid>
 
+          <Visibility onUpdate={this.handleInfiniteScrollVisibility}>
+            <ProductThumbGrid products={visiblePrints} />
+          </Visibility>
+
+          {bottomMenuVisible ?
+            <Menu fixed="bottom">
+              <Container>
+                <Menu.Item>
+                  <Dropdown fluid selection options={orderOptions} upward          
+                    value={selectedOrderValue}
+                    onChange={this.handleSelectedOrderValueChanged} />
+                </Menu.Item>
+              </Container>
+            </Menu>
+            : null}
         </Container>
       </Segment>
 
     </CommonPageLayout>
   }
 
-  getPage() : IPrint[]
-  {
-    const {sortedPrints, pageIndex} = this.state;
-    const from = pageIndex*pageSize;
-    return sortedPrints.slice(from,from+pageSize);
-  }
-
-  handlePageChange = (pageIndex:number) => {
-    this.setState({pageIndex});
-    //this.props.history.push(`/shop/${pageIndex}`);
+  handleInfiniteScrollVisibility = (e: null, data: VisibilityEventData) => {
+    if (data.calculations.bottomVisible) {
+      const { visiblePrints, sortedPrints } = this.state;
+      if (visiblePrints.length != sortedPrints.length)
+        this.setState({ visiblePrints: sortedPrints.slice(0, visiblePrints.length + pageSize) });
+    }
+    this.setState({ bottomMenuVisible: !data.calculations.topVisible });
   }
 
   handleSelectedOrderValueChanged = (e: any, dropdown: any) => {
-    //this.props.history.push(`/shop/0`);
+    var sortedPrints = this.orderPrints(dropdown.value);
     this.setState({
       selectedOrderValue: dropdown.value,
       pageIndex: 0,
-      sortedPrints: this.orderProducts(dropdown.value)
+      visiblePrints: sortedPrints.slice(0, pageSize),
+      sortedPrints
     });
   }
 
-  orderProducts(orderOptionValue: string): IPrint[] {
+  orderPrints(orderOptionValue: string): IPrint[] {
     var products = [...this.props.prints];
 
     if (orderOptionValue == "latest")
