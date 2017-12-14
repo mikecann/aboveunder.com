@@ -1,7 +1,7 @@
 import * as React from "react";
 import { IPost } from "../lib/types";
 import * as ReactMarkdown from "react-markdown";
-import { Segment, Container, Header } from "semantic-ui-react";
+import { Segment, Container, Header, Breadcrumb, Icon } from "semantic-ui-react";
 import { CommonPageLayout } from "./CommonPageLayout";
 
 interface IProps {
@@ -36,6 +36,15 @@ export class PostPage extends React.Component<IProps, IState> {
 
       <Segment style={{ padding: '4em 0em' }} vertical>
         <Container>
+
+          <div style={{ marginBottom: "2em" }}>
+            <Breadcrumb size='large'>
+              <Breadcrumb.Section link href="/shop"><Icon name="book" />Blog</Breadcrumb.Section>
+              <Breadcrumb.Divider icon='right chevron' />
+              <Breadcrumb.Section>{post.title}</Breadcrumb.Section>
+            </Breadcrumb>
+          </div>
+
           <Header as="h1">{post.title}</Header>
 
           {markdown ? <ReactMarkdown source={markdown} /> : "Loading.."}
