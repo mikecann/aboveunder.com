@@ -24,33 +24,38 @@ const orderOptions = [
 
 const defaultOrderValue = orderOptions[0].value;
 
-const numToShow = 999;
+const pageSize = 9;
 
 interface IProps {
-  prints: IPrint[]
+  prints: IPrint[],
+  initialPageIndex?: number,
+  history: any
 }
 
 interface IState {
   selectedOrderValue: string;
-  visibleProducts: IPrint[];
-  currentPage: number;
+  sortedPrints: IPrint[];
+  pageIndex: number;
 }
 
 export class ShopPage extends React.Component<IProps, IState> {
 
   constructor(props: IProps) {
     super(props);
+
+    const sorted = this.orderProducts(defaultOrderValue);
     this.state = {
       selectedOrderValue: defaultOrderValue,
-      visibleProducts: this.orderProducts(defaultOrderValue),
-      currentPage: 0
+      sortedPrints: sorted,
+      pageIndex: props.initialPageIndex || 0
     }
   }
 
   render() {
 
-    const selectedOrderValue = this.state.selectedOrderValue;
-    const visibleProducts = this.state.visibleProducts;
+    const {selectedOrderValue, sortedPrints, pageIndex} = this.state;
+
+    const pagedPrints = this.getPage();
 
     return <CommonPageLayout activeMenu="shop">
 
@@ -66,11 +71,15 @@ export class ShopPage extends React.Component<IProps, IState> {
               
               </Grid.Column>
               <Grid.Column>
-                <Paginator allItems={visibleProducts} onPageChanged={this.handlePaginationChange} />               
+                {/* <Paginator allItems={sortedPrints} onPageChanged={this.handlePaginationChange} pageSize={12} />                */}
               </Grid.Column>
             </Grid>
 
-          <ProductThumbGrid products={visibleProducts} />
+          <ProductThumbGrid products={pagedPrints} />
+
+          <Grid centered columns={1}>
+                <Paginator numItems={sortedPrints.length} pageIndex={pageIndex} onPageChanged={this.handlePageChange} pageSize={12} />               
+          </Grid>
 
         </Container>
       </Segment>
@@ -78,15 +87,26 @@ export class ShopPage extends React.Component<IProps, IState> {
     </CommonPageLayout>
   }
 
-  handlePaginationChange = (page:IPrint[]) => {
-
+  getPage() : IPrint[]
+  {
+    const {sortedPrints, pageIndex} = this.state;
+    const from = pageIndex*pageSize;
+    return sortedPrints.slice(from,from+pageSize);
   }
 
-  handleSelectedOrderValueChanged = (e: any, dropdown: any) =>
+  handlePageChange = (pageIndex:number) => {
+    this.setState({pageIndex});
+    this.props.history.push(`/shop/${pageIndex}`);
+  }
+
+  handleSelectedOrderValueChanged = (e: any, dropdown: any) => {
+    this.props.history.push(`/shop/0`);
     this.setState({
       selectedOrderValue: dropdown.value,
-      visibleProducts: this.orderProducts(dropdown.value)
+      pageIndex: 0,
+      sortedPrints: this.orderProducts(dropdown.value)
     });
+  }
 
   orderProducts(orderOptionValue: string): IPrint[] {
     var products = [...this.props.prints];
@@ -98,9 +118,9 @@ export class ShopPage extends React.Component<IProps, IState> {
       products = sortOldest(products)
 
     if (orderOptionValue == "featured")
-      products = products.sort((a, b) => a.featured ? (b.featured ? 0 : -1) : 1)
+      products = products.filter(p => p.featured)
 
-    return products.slice(0, numToShow);
+    return products;
   }
 
 }

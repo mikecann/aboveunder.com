@@ -1,39 +1,50 @@
 import * as React from "react";
 import { Menu } from "semantic-ui-react";
 
-interface IProps<T> {
-    allItems: T[],
-    onPageChanged: (page: T) => void;
+interface IProps {
+    numItems:number;
+    pageSize:number;
+    pageIndex:number;
+    onPageChanged: (page: number) => void;
 }
 
-interface IState<T> {
-    allItems: T[]
+interface IState {
+    pageIndex: number;
 }
 
-export class Paginator<T> extends React.Component<IProps<T>, IState<T>> {
+export class Paginator extends React.Component<IProps, IState> {
 
-    constructor(props: IProps<T>) {
+    constructor(props: IProps) {
         super(props);
         this.state = {
-            allItems: props.allItems
+            pageIndex: props.pageIndex
         }
     }
 
-    componentWillReceiveProps(nextProps: IProps<T>) {
-        this.setState({ allItems:nextProps.allItems });        
+    componentWillReceiveProps(nextProps: IProps) {
+        if (nextProps.pageIndex == this.state.pageIndex)
+            return;
+
+        this.setState({ pageIndex:nextProps.pageIndex });       
     }
 
     render() {
 
-        const allItems = this.state.allItems;
-        const pageCount = Math.round(allItems.length / 10);
+        const {numItems, pageSize} = this.props;
+        const {pageIndex} = this.state;
+        const pageCount = Math.round(numItems / pageSize);
         
-        const pages = new Array(pageCount);
-
-        console.log("pageCount", pageCount, pages)
+        const pages = [];
+        for(var i=0; i<pageCount; i++)
+            pages.push(i);
 
         return <Menu pagination>
-            {pages.map((_, i) => <Menu.Item name={`${i}`} active={false} />)}
+            {pages.map((i) => <Menu.Item key={`${i}`} name={`${i}`} active={i==pageIndex} onClick={() => this.handlePageClick(i)} />)}
         </Menu>
     }
+
+    handlePageClick = (pageIndex:number) => {
+        this.setState({pageIndex});       
+        this.props.onPageChanged(pageIndex);
+    } 
 }
