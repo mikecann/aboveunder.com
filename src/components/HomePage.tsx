@@ -55,11 +55,16 @@ export class HomePage extends React.Component<IProps, IState> {
             inverted
             textAlign='center'
             style={{
-              minHeight: 700, backgroundImage: `url("/images/homepage-hero-image.jpg")`,
+              minHeight: 700, backgroundImage: `url("/images/homepage-hero-image.jpg")`,              
               backgroundSize: "cover", padding: '1em 0em', backroundColor: "black"
             }}
             vertical
           >
+
+            <div style={{
+              width: "100%", height:"100%", background: "rgba(0, 0, 0, 0.1)", position: "absolute", top: 0, left: 0
+            }} />
+
             <HeaderMenu showLogo={false} menuProps={{ inverted: true, pointing: true, secondary: true, style: { border: "none" }, size: "huge" }} activeMenu="home" />
 
             <Container text>
@@ -68,13 +73,13 @@ export class HomePage extends React.Component<IProps, IState> {
                 as='h2'
                 content='Beautiful Australian Photography'
                 inverted
-                style={{ fontSize: '2em', fontWeight: 'normal', marginBottom: 0 }}
+                style={{ fontSize: '2em', fontWeight: 'normal', marginBottom: 0, textShadow: "#33333394 0px 2px;" }}
               />
               <Header
                 as='h2'
                 content='taken from a unique perspective'
                 inverted
-                style={{ fontSize: '1.5em', fontWeight: 'normal', marginTop: 0 }}
+                style={{ fontSize: '1.5em', fontWeight: 'normal', marginTop: 0, textShadow: "#33333394 0px 2px;" }}
               />
               <Button primary size='huge' href="/shop">
                 View Gallery
