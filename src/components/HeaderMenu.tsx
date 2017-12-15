@@ -56,7 +56,7 @@ function renderTinyMenu(props:IProps)
 
       <Dropdown item icon="bars">
         <Dropdown.Menu>
-          {menuItems.map(o => <Dropdown.Item as="a" href={o.url}> {o.label}</Dropdown.Item>)}
+          {menuItems.map(o => <Dropdown.Item as="a" href={o.url} style={{ borderBottom: "1px solid rgb(222, 222, 222)", width: 160 }}> {o.label}</Dropdown.Item>)}
         </Dropdown.Menu>
       </Dropdown>
     
