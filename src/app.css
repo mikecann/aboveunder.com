@@ -1,0 +1,4 @@
+.ui.dropdown .menu {
+    max-height: 300px !important;
+    /* You might also want to add `!important` to automatically override all media-queries. */
+}

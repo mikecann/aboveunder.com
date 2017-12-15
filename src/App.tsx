@@ -10,6 +10,7 @@ import { ShopPage } from './components/ShopPage';
 import { PostPage } from './components/PostPage';
 import { getPost } from './lib/db';
 import { PrintPage } from './components/PrintPage';
+import "./app.css";
 
 interface IProps
 {
