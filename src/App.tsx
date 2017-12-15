@@ -28,6 +28,8 @@ export class App extends React.Component<IProps,any> {
     return <BrowserRouter>
           <div>
 
+            <Route component={ScrollToTop} />
+
             <Route exact path="/" render={q => 
               <HomePage latestPrints={latestPrints} featuredPrints={featuredPrints} latestPosts={latestPosts} />} />
 
@@ -46,3 +48,8 @@ export class App extends React.Component<IProps,any> {
       </BrowserRouter>
   }
 }
+
+const ScrollToTop = () => {
+  window.scrollTo(0, 0);
+  return null;
+};
