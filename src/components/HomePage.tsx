@@ -14,6 +14,7 @@ import { ProductThumbGrid } from "./ProductThumbGrid";
 import { BlogPostsThumbGrid } from "./BlogPostsThumbGrid";
 import { HeaderMenu } from "./HeaderMenu";
 import { PageFooter } from "./PageFooter";
+import { Link } from "react-router-dom";
 
 interface IProps {
   featuredPrints: IPrint[],
@@ -55,14 +56,14 @@ export class HomePage extends React.Component<IProps, IState> {
             inverted
             textAlign='center'
             style={{
-              minHeight: 700, backgroundImage: `url("/images/homepage-hero-image.jpg")`,              
+              minHeight: 700, backgroundImage: `url("/images/homepage-hero-image.jpg")`,
               backgroundSize: "cover", padding: '1em 0em', backroundColor: "black"
             }}
             vertical
           >
 
             <div style={{
-              width: "100%", height:"100%", background: "rgba(0, 0, 0, 0.1)", position: "absolute", top: 0, left: 0
+              width: "100%", height: "100%", background: "rgba(0, 0, 0, 0.1)", position: "absolute", top: 0, left: 0, pointerEvents: "none"
             }} />
 
             <HeaderMenu showLogo={false} menuProps={{ inverted: true, pointing: true, secondary: true, style: { border: "none" }, size: "huge" }} activeMenu="home" />
@@ -73,15 +74,15 @@ export class HomePage extends React.Component<IProps, IState> {
                 as='h2'
                 content='Beautiful Australian Photography'
                 inverted
-                style={{ fontSize: '2em', fontWeight: 'normal', marginBottom: 0, textShadow: "#33333394 0px 2px;" }}
+                style={{ fontSize: '2em', fontWeight: 'normal', marginBottom: 0, textShadow: "#33333394 0px 2px" }}
               />
               <Header
                 as='h2'
                 content='taken from a unique perspective'
                 inverted
-                style={{ fontSize: '1.5em', fontWeight: 'normal', marginTop: 0, textShadow: "#33333394 0px 2px;" }}
+                style={{ fontSize: '1.5em', fontWeight: 'normal', marginTop: 0, textShadow: "#33333394 0px 2px" }}
               />
-              <Button primary size='huge' href="/shop">
+              <Button as={Link} primary size='huge' to="/shop">
                 View Gallery
                 <Icon name="arrow right" />
               </Button>
@@ -91,42 +92,24 @@ export class HomePage extends React.Component<IProps, IState> {
 
         <Segment style={{ padding: '8em 0em' }} vertical>
           <Container>
-            <Grid>
-              <Header as='h3' style={{ fontSize: '2em' }}>Featured Prints</Header>
-              <Button href="/shop">
-                View All
-              </Button>
-            </Grid>
+            <SectionHeading label="Featured Prints" href="/shop" />
             <ProductThumbGrid featureOneProduct products={featuredPrints} />
           </Container>
         </Segment>
 
-
         <Segment style={{ padding: '8em 0em' }} vertical>
           <Container>
-            <Grid>
-              <Header as='h3' style={{ fontSize: '2em' }}>Latest Prints</Header>
-              <Button href="/shop">
-                View All
-              </Button>
-            </Grid>
+          <SectionHeading label="Latest Prints" href="/shop" />
             <ProductThumbGrid products={latestPrints} />
           </Container>
         </Segment>
 
-
         <Segment style={{ padding: '8em 0em' }} vertical>
           <Container>
-            <Grid>
-              <Header as='h3' style={{ fontSize: '2em' }}>Latest Posts</Header>
-              <Button href="/blog">
-                View All
-                </Button>
-            </Grid>
+            <SectionHeading label="Latest Blog Posts" href="/blog" />
             <BlogPostsThumbGrid posts={latestPosts} />
           </Container>
         </Segment>
-
 
       </div>
       <PageFooter />
@@ -136,3 +119,15 @@ export class HomePage extends React.Component<IProps, IState> {
   hideFixedMenu = () => this.setState({ visible: false })
   showFixedMenu = () => this.setState({ visible: true })
 }
+
+const SectionHeading = (props:{href:string, label:string}) => 
+  <Grid>
+    <Grid.Column>
+      <Header as='h3' style={{ fontSize: '2em' }}>
+        {props.label}
+        <Button href={props.href} size="mini" style={{ marginLeft: 20, marginBottom: 10 }}>
+          View All
+        </Button>
+      </Header>
+    </Grid.Column>
+  </Grid>
