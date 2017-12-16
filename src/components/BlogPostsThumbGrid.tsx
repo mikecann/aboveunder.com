@@ -15,16 +15,15 @@ export class BlogPostsThumbGrid extends React.Component<IProps, any> {
     const { posts } = this.props;
     return <Grid stackable>
       <Grid.Row columns={3}>      
-        {posts.map(p => <BlogPostSummary {...p} />)}
+        {posts.map(p => <BlogPostSummary key={p.id} {...p} />)}
       </Grid.Row>
     </Grid>;
   }
 }
 
 const BlogPostSummary = (post: IPost) =>
-<Link to={`/post/${post.id}`} >
-  <Card spaced style={{ margin: 10 }}>
-    <Image src={post.headerImage} />
+  <Card style={{ margin: 10 }}>
+    <Image src={post.headerImage} href={`/post/${post.id}`} />
     <Card.Content>
       <Card.Header>
         {post.title}
@@ -40,7 +39,7 @@ const BlogPostSummary = (post: IPost) =>
     </Card.Content>
     <Card.Content extra>
       
-        <a>Read more...</a>
+        <Link to={`/post/${post.id}`}>Read more...</Link>
       
     </Card.Content>
-  </Card></Link>;
+  </Card>;
