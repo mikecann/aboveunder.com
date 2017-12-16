@@ -24,7 +24,7 @@ export class ProductThumb extends React.Component<IProps, IState> {
     render() {
         const { product } = this.props;
         //const { mouseOver } = this.state;
-        return <Grid.Column>
+        return <Grid.Column key={product.id}>
             <Link to={`/print/${product.id}`} onMouseOver={() => this.setState({ mouseOver: true })} onMouseOut={() => this.setState({ mouseOver: false })}>
                 <Image rounded src={product.thumb} 
                     style={{ marginTop: "1em", marginBottom: "1em" }}

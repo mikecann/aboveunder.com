@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Menu, Container, Icon, Image, MenuProps, Responsive, Dropdown } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 interface IProps
 {
@@ -56,7 +57,7 @@ function renderTinyMenu(props:IProps)
 
       <Dropdown item icon="bars">
         <Dropdown.Menu>
-          {menuItems.map(o => <Dropdown.Item as="a" href={o.url} style={{ borderBottom: "1px solid rgb(222, 222, 222)", width: 160 }}> {o.label}</Dropdown.Item>)}
+          {menuItems.map(o => <Dropdown.Item key={o.id} as={Link} to={o.url} style={{ borderBottom: "1px solid rgb(222, 222, 222)", width: 160 }}> {o.label}</Dropdown.Item>)}
         </Dropdown.Menu>
       </Dropdown>
     
@@ -91,7 +92,7 @@ function renderNormalMenu(props:IProps)
       : null     
     }
 
-    { menuItems.map(o => <Menu.Item as='a' active={props.activeMenu == o.id} href={o.url}>{o.label}</Menu.Item>) }
+    { menuItems.map(o => <Menu.Item key={o.id} as={Link} active={props.activeMenu == o.id} to={o.url}>{o.label}</Menu.Item>) }
     
     <Menu.Menu position='right'>
       <Menu.Item as="a" className="snipcart-user-profile">
