@@ -23,7 +23,8 @@
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "generate-data": "tsc -p ./tools/tsconfig.json && node dist/tools/generateProductsJson",
-    "import-fitz": "tsc -p ./tools/tsconfig.json && node dist/tools/importFitzPrice"
+    "import-fitz": "tsc -p ./tools/tsconfig.json && node dist/tools/importFitzPrice",
+    "thumbs": "tsc -p ./tools/tsconfig.json && node dist/tools/generateThumbs"
   },
   "devDependencies": {
     "@types/jest": "^21.1.8",
