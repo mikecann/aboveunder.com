@@ -62,8 +62,8 @@ function transformPrints(prints:Partial<IPrint>[]) : IPrint[]
         id: `AU${leftpad(i,"0000")}-${(p.title || "").split(" ").join("-")}`.toLocaleLowerCase(),
         title: p.title || "",
         description: p.description || "",
-        image: p.image || "",
-        thumb: p.thumb || "",
+        image: p.image || `/images/products/full/${(p.title+"").split(" ").join("-")}.jpg`,
+        thumb: p.thumb || `/images/products/thumb/${(p.title+"").split(" ").join("-")}.jpg`,
         printOptions: p.printOptions || defaultPrintOptions.data,
         featured: p.featured || false,
         dateCreated: p.dateCreated || moment().format()
