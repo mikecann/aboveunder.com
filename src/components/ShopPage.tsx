@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { IPrint } from "../lib/types";
 import { ProductThumbGrid } from "./ProductThumbGrid";
-import { Dropdown, Container, Header, Segment, Grid, Visibility, VisibilityEventData, Menu } from 'semantic-ui-react';
+import { Container, Segment, Visibility, VisibilityEventData, Menu, Input, MenuItemProps, InputOnChangeData } from 'semantic-ui-react';
 import { sortLatest, sortOldest } from "../lib/utils";
 import { CommonPageLayout } from "./CommonPageLayout";
 
@@ -33,10 +33,11 @@ interface IProps {
 
 interface IState {
   selectedOrderValue: string;
-  sortedPrints: IPrint[];
+  selectedPrints: IPrint[];
   visiblePrints: IPrint[];
   pageIndex: number;
   bottomMenuVisible?: boolean;
+  searchTerm: string;
 }
 
 export class ShopPage extends React.Component<IProps, IState> {
@@ -47,86 +48,102 @@ export class ShopPage extends React.Component<IProps, IState> {
     const sorted = this.orderPrints(defaultOrderValue);
     this.state = {
       selectedOrderValue: defaultOrderValue,
-      sortedPrints: sorted,
+      selectedPrints: sorted,
       visiblePrints: sorted.slice(0, pageSize),
-      pageIndex: props.initialPageIndex || 0
+      pageIndex: props.initialPageIndex || 0,
+      searchTerm: ""
     }
   }
 
   render() {
 
-    const { selectedOrderValue, visiblePrints, bottomMenuVisible } = this.state;
+    const { selectedOrderValue, visiblePrints, searchTerm, bottomMenuVisible } = this.state;
 
     return <CommonPageLayout activeMenu="shop">
 
       <Segment style={{ padding: '4em 0em' }} vertical>
         <Container>
-          <Header>Shop</Header>
 
-          <Grid columns={2}>
-            <Grid.Column>
-              <Dropdown fluid selection options={orderOptions}
-                value={selectedOrderValue}
-                onChange={this.handleSelectedOrderValueChanged} />
-
-            </Grid.Column>
-            <Grid.Column>
-            </Grid.Column>
-          </Grid>
+          <Menu pointing fixed={bottomMenuVisible ? "bottom" : undefined}>
+            <Container>
+              {orderOptions.map(o => <Menu.Item key={o.value} name={o.text} value={o.value} active={selectedOrderValue === o.value} onClick={this.handleSelectedOrderValueChanged} />)}
+              <Menu.Menu position='right'>
+                <Menu.Item>
+                  <Input icon='search' placeholder='Search...' value={searchTerm} onChange={this.handleSearchChange} />
+                </Menu.Item>
+              </Menu.Menu>
+            </Container>
+          </Menu>
 
           <Visibility onUpdate={this.handleInfiniteScrollVisibility}>
             <ProductThumbGrid products={visiblePrints} />
           </Visibility>
 
-          {bottomMenuVisible ?
-            <Menu fixed="bottom">
-              <Container>
-                <Menu.Item>
-                  <Dropdown fluid selection options={orderOptions} upward          
-                    value={selectedOrderValue}
-                    onChange={this.handleSelectedOrderValueChanged} />
-                </Menu.Item>
-              </Container>
-            </Menu>
-            : null}
         </Container>
+        
       </Segment>
 
     </CommonPageLayout>
   }
 
+  handleSearchChange = (e: any, data: InputOnChangeData) => {   
+    var prints = this.orderAndSearchPrints(this.state.selectedOrderValue, data.value);
+    this.setState({ 
+      searchTerm: data.value, 
+      selectedPrints:prints,
+      pageIndex: 0,
+      visiblePrints: prints.slice(0, pageSize),
+    });
+  }
+
   handleInfiniteScrollVisibility = (e: null, data: VisibilityEventData) => {
     if (data.calculations.bottomVisible) {
-      const { visiblePrints, sortedPrints } = this.state;
-      if (visiblePrints.length != sortedPrints.length)
-        this.setState({ visiblePrints: sortedPrints.slice(0, visiblePrints.length + pageSize) });
+      const { visiblePrints, selectedPrints } = this.state;
+      if (visiblePrints.length != selectedPrints.length)
+        this.setState({ visiblePrints: selectedPrints.slice(0, visiblePrints.length + pageSize) });
     }
     this.setState({ bottomMenuVisible: !data.calculations.topVisible });
   }
 
-  handleSelectedOrderValueChanged = (e: any, dropdown: any) => {
-    var sortedPrints = this.orderPrints(dropdown.value);
+  handleSelectedOrderValueChanged = (e: any, data: MenuItemProps) => {
+
+    var prints = this.orderAndSearchPrints(data.value, this.state.searchTerm);
     this.setState({
-      selectedOrderValue: dropdown.value,
+      selectedOrderValue: data.value,
       pageIndex: 0,
-      visiblePrints: sortedPrints.slice(0, pageSize),
-      sortedPrints
+      visiblePrints: prints.slice(0, pageSize),
+      selectedPrints: prints
     });
   }
 
+  orderAndSearchPrints(orderOptionValue: string, term: string): IPrint[] {
+    var sortedPrints = this.orderPrints(orderOptionValue);
+    var searchedPrints = this.searchPrints(term, sortedPrints);
+    return searchedPrints;
+  }
+
   orderPrints(orderOptionValue: string): IPrint[] {
-    var products = [...this.props.prints];
+    var prints = [...this.props.prints];
 
     if (orderOptionValue == "latest")
-      products = sortLatest(products);
+      prints = sortLatest(prints);
 
     if (orderOptionValue == "oldest")
-      products = sortOldest(products)
+      prints = sortOldest(prints)
 
     if (orderOptionValue == "featured")
-      products = products.filter(p => p.featured)
+      prints = prints.filter(p => p.featured)
 
-    return products;
+    return prints;
+  }
+
+  searchPrints(term: string, prints: IPrint[]): IPrint[] {
+
+    if (term==="")
+      return prints;
+
+    term = term.toLowerCase();
+    return prints.filter(p => p.title.toLocaleLowerCase().includes(term) || p.description.toLowerCase().includes(term));
   }
 
 }
