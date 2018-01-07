@@ -1126,5 +1126,40 @@ export const data = [
     "featured": false,
     "dateCreated": "2017-09-16 00:39:22",
     "thumb": "/images/products/thumb/Hellfire-Waves-1.jpg"
-  }
+  },
+  {
+    "title": "Busselton and Jetty",
+    "description": "Taken near the Jetty in Busselton.",
+    "dateCreated": "2017-12-24 21:11:22",
+  },
+  {
+    "title": "The Busselton Jetty Sheds",
+    "description": "Taken above the jetty in Busselton.",
+    "dateCreated": "2017-12-24 21:10:22",
+  },
+  {
+    "title": "The Iconic Busselton Jetty",
+    "description": "Taken on Xmas eve 2017 at Busselton.\n\nBusselton is a beautiful part of Australia and this is one of the most iconic landmarks of the town.",
+    "featured": true,
+    "dateCreated": "2017-12-24 21:09:22",
+  },
+
+  {
+    "title": "Meelup Coast From Afar",
+    "description": "Taken above Meelup in South West Australia.\n\nStunningly clear water and beautiful little beaches make this a popular spot for the holiday period.",
+    "featured": false,
+    "dateCreated": "2017-12-29 21:09:22",
+  },
+  {
+    "title": "Meelup Coast Up Close",
+    "description": "Taken above Meelup in South West Australia.\n\nUp close you can really get a sense of how shallow and clear the water is in this beautiful part of the world.",
+    "featured": true,
+    "dateCreated": "2017-12-29 21:09:22",
+  },
+  {
+    "title": "Meelup Coastal Road",
+    "description": "Taken above Meelup in South West Australia.\n\The elegant curves of the road as it hugs the coastline is one of those things you can only really appreciate from the air.",
+    "featured": false,
+    "dateCreated": "2017-12-29 21:09:22",
+  },
 ]

@@ -31,7 +31,6 @@ export class ProductThumb extends React.Component<IProps, IState> {
                     label={{ content: product.title, ribbon: true }}
                     />
             </Link>
-
         </Grid.Column>;
     }
 }
