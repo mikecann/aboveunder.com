@@ -29,6 +29,11 @@ const menuItems = [
     id: "contact",
     url: "/contact",
     label: "Contact"
+  },
+  {
+    id: "videos",
+    url: "https://www.youtube.com/channel/UCrgLfQ1_Z5QQx4JKmtxkxIg/videos",
+    label: "Videos"
   }
 ]
 
