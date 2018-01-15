@@ -2,9 +2,10 @@ import * as React from "react";
 
 import { IPrint } from "../lib/types";
 import { ProductThumbGrid } from "./ProductThumbGrid";
-import { Container, Segment, Visibility, VisibilityEventData, Menu, Input, MenuItemProps, InputOnChangeData } from 'semantic-ui-react';
+import { Container, Segment, Visibility, VisibilityEventData, InputOnChangeData } from 'semantic-ui-react';
 import { sortLatest, sortOldest } from "../lib/utils";
 import { CommonPageLayout } from "./CommonPageLayout";
+import { ShopPageMenu } from "./ShopPageMenu";
 
 const orderOptions = [
   {
@@ -63,17 +64,15 @@ export class ShopPage extends React.Component<IProps, IState> {
 
       <Segment style={{ padding: '4em 0em' }} vertical>
         <Container>
-
-          <Menu pointing fixed={bottomMenuVisible ? "bottom" : undefined}>
-            <Container>
-              {orderOptions.map(o => <Menu.Item key={o.value} name={o.text} value={o.value} active={selectedOrderValue === o.value} onClick={this.handleSelectedOrderValueChanged} />)}
-              <Menu.Menu position='right'>
-                <Menu.Item>
-                  <Input icon='search' placeholder='Search...' value={searchTerm} onChange={this.handleSearchChange} />
-                </Menu.Item>
-              </Menu.Menu>
-            </Container>
-          </Menu>
+        
+          <ShopPageMenu 
+            searchTerm={searchTerm} 
+            selectedOrderValue={selectedOrderValue} 
+            fixToBottom={bottomMenuVisible}
+            orderOptions={orderOptions}
+            onSelectedOrderValueChanged={this.handleSelectedOrderValueChanged}
+            onSearchTermChanged={this.handleSearchChange}
+            />          
 
           <Visibility onUpdate={this.handleInfiniteScrollVisibility}>
             <ProductThumbGrid products={visiblePrints} />
@@ -105,11 +104,11 @@ export class ShopPage extends React.Component<IProps, IState> {
     this.setState({ bottomMenuVisible: !data.calculations.topVisible });
   }
 
-  handleSelectedOrderValueChanged = (e: any, data: MenuItemProps) => {
+  handleSelectedOrderValueChanged = (value:string) => {
 
-    var prints = this.orderAndSearchPrints(data.value, this.state.searchTerm);
+    var prints = this.orderAndSearchPrints(value, this.state.searchTerm);
     this.setState({
-      selectedOrderValue: data.value,
+      selectedOrderValue: value,
       pageIndex: 0,
       visiblePrints: prints.slice(0, pageSize),
       selectedPrints: prints
@@ -147,4 +146,3 @@ export class ShopPage extends React.Component<IProps, IState> {
   }
 
 }
-
