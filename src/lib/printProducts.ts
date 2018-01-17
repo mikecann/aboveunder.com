@@ -906,8 +906,8 @@ export const data = [
   {
     "title": "Whale Time",
     "image": "/images/products/full/Whale-Time-2.jpg",
-    "description": "Taken west of Alice Springs in the NT.\r\n\r\nThis stunning set of hills was a real surprise when we stumbled across them, on our way to Uluru.",
-    "featured": false,
+    "description": "Taken near Fowlers Bay in South Australia.\r\n\r\nIf you look closely there are actually two whales here, the mother and calf.",
+    "featured": false, 
     "dateCreated": "2017-09-05 12:44:41",
     "thumb": "/images/products/thumb/Whale-Time-2.jpg"
   },
