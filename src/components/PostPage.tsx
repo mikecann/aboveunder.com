@@ -34,12 +34,12 @@ export class PostPage extends React.Component<IProps, IState> {
 
     return <CommonPageLayout activeMenu="blog">
 
-      <Segment style={{ padding: '4em 0em' }} vertical>
+      <Segment className="blogPostPage" style={{ padding: '4em 0em' }} vertical>
         <Container>
 
           <div style={{ marginBottom: "2em" }}>
             <Breadcrumb size='large'>
-              <Breadcrumb.Section link href="/shop"><Icon name="book" />Blog</Breadcrumb.Section>
+              <Breadcrumb.Section link href="/blog"><Icon name="book" />Blog</Breadcrumb.Section>
               <Breadcrumb.Divider icon='right chevron' />
               <Breadcrumb.Section>{post.title}</Breadcrumb.Section>
             </Breadcrumb>
