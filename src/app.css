@@ -2,3 +2,7 @@
     max-height: 300px !important;
     /* You might also want to add `!important` to automatically override all media-queries. */
 }
+
+.blogPostPage img {
+    max-width: 100%;
+}

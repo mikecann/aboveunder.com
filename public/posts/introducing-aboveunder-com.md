@@ -10,6 +10,4 @@ The site was built using Shopify. I looked at quite a few shopping platforms and
 
 I decided to go with Shopify in the end because it was really fast, did everything that I needed and had a nice theme right out of the box. So I decided that in the interest of time I would just use that and perhaps later on when I have more time I an revisit it.
 
-Anyways check it out let me know what you think! 
-
-[http://aboveunder.azurewebsites.net/](http://aboveunder.azurewebsites.net/)
+Anyways check it out let me know what you think!

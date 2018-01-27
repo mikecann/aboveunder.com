@@ -24,7 +24,7 @@ export const PageFooter = () =>
                         </List>
                     </Grid.Column>
                     <Grid.Column width={7}>
-                        <Header as='h4' inverted>Above Under</Header>
+                        <Header as='h4' inverted>© Above Under 2018</Header>
                         <p>Beautiful Australian Photography, taken from a unique perspective.</p>
                         <a href="//twitter.com/aboveunder_"><Icon inverted name='twitter' /></a>
                         <a href="//instagram.com/aboveunder_"><Icon inverted name='instagram' /></a>
