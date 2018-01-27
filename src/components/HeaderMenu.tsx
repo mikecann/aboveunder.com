@@ -32,7 +32,7 @@ const menuItems = [
   },
   {
     id: "videos",
-    url: "https://www.youtube.com/channel/UCrgLfQ1_Z5QQx4JKmtxkxIg/videos",
+    url: "/videos",
     label: "Videos"
   }
 ]

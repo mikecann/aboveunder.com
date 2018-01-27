@@ -11,6 +11,7 @@ import { PostPage } from './components/PostPage';
 import { getPost } from './lib/db';
 import { PrintPage } from './components/PrintPage';
 import "./app.css";
+import { VideosPage } from './components/VideosPage';
 
 interface IProps
 {
@@ -24,7 +25,7 @@ export class App extends React.Component<IProps,any> {
     const { db } = this.props;
     const latestPrints = sortLatest(db.prints).slice(0,12);
     const featuredPrints = shuffle(db.prints.filter(p => p.featured)).slice(0,9);
-    const latestPosts = sortLatestPosts(db.posts).slice(0, 3);
+    const latestPosts = sortLatestPosts(db.posts).slice(0, 6);
 
     return <BrowserRouter>
           <div>
@@ -36,6 +37,7 @@ export class App extends React.Component<IProps,any> {
 
             <Route exact path="/contact" render={q => <ContactPage />} />
             <Route exact path="/about" render={q => <AboutPage />} />
+            <Route exact path="/videos" render={q => <VideosPage />} />
             <Route exact path="/blog" render={q => <BlogPage posts={db.posts} />} />
             <Route exact path="/shop/:page?" render={q => <ShopPage prints={db.prints} initialPageIndex={q.match.params.page} history={q.history} />} />
             <Route exact path="/post/:id" render={q => <PostPage post={getPost(db, q.match.params.id)} />} />

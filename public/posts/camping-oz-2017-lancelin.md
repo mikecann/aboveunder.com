@@ -4,21 +4,11 @@ A seaside town that was super windy which the numerous Kite Surfers were taking 
 
 We only had one night here so not much time to explore around but I was keen to take some drone photography one of the main attractions here; the dunes.
 
-![AU0006 - Lancelin Dune](/posts/camping-oz-2017-lancelin/DJI_0235_grande.jpg?v=1490696915)
-
-[AU0006 - Lancelin Dune](http://aboveunder.azurewebsites.net/products/au0006-lancelin-dune "lancelin dune")
-
-![](/posts/camping-oz-2017-lancelin/DJI_0249_grande.jpg?v=1490696981)
-
-[AU0007 - Lancelin Dune Lady](http://aboveunder.azurewebsites.net/products/au0007-lancelin-dune-lady "Lancelin dune lady")
-
-![](/posts/camping-oz-2017-lancelin/DJI_0267_grande.jpg?v=1490697028)
-
-[AU0008 - Lancelin Dune People](http://aboveunder.azurewebsites.net/products/au0008-lancelin-dune-people "lancelin dune people")
+![AU0006 - Lancelin Dune](/posts/camping-oz-2017-lancelin/Lancelin-Dune-People.jpg)
 
 We took a bunch of other pics, you can find them all on our [Facebook Page](https://www.facebook.com/aboveunder/ "above under facebook page") soon!
 
-![](/posts/camping-oz-2017-lancelin/IMG_9487_grande.jpg?v=1490697847)
+![](/posts/camping-oz-2017-lancelin/Lancelin-Dune.jpg)
 
 We finished off the day with a beautiful sunset and a glass on wine by the sea.
 
