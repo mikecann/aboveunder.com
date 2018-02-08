@@ -10,7 +10,7 @@ export const data = [
   {
     "title": "Meelup Beach",
     "image": "/images/products/full/Meelup_Beach-1.jpg",
-    "description": "The gorgeous Meelup Beach in South West Austalia on a busy summers day over Christmas 2016.<br><br>Shallow waters clear waters and large sandy beaches make this an ideal spot for family friendly days out. We spent an entire day here playing cricket on the grass, swimming in the water and of course flying the drone.",
+    "description": "The gorgeous Meelup Beach in South West Australia on a busy summers day over Christmas 2016.<br><br>Shallow waters clear waters and large sandy beaches make this an ideal spot for family friendly days out. We spent an entire day here playing cricket on the grass, swimming in the water and of course flying the drone.",
     "featured": false,
     "dateCreated": "2017-08-21 13:03:50",
     "thumb": "/images/products/thumb/Meelup_Beach-1.jpg"
