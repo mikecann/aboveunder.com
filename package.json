@@ -23,9 +23,13 @@
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "deploy": "yarn build && yarn generate-data",
-    "generate-data": "tsc -p ./tools/tsconfig.json && node dist/tools/generateProductsJson",
-    "import-fitz": "tsc -p ./tools/tsconfig.json && node dist/tools/importFitzPrice",
-    "thumbs": "tsc -p ./tools/tsconfig.json && node dist/tools/generateThumbs"
+    "build-tools": "tsc -p ./tools/tsconfig.json",
+    "dev-tools": "tsc -p ./tools/tsconfig.json -w",
+    "generate-data": "node dist/tools/generateProductsJson",
+    "import-fitz": "node dist/tools/importFitzPrice",
+    "detectAndAddPrints": "node dist/tools/detectAndAddPrints",
+    "generateThumbs": "node dist/tools/generateThumbs",
+    "processImages": "node dist/tools/processImages"
   },
   "devDependencies": {
     "@types/jest": "^21.1.8",

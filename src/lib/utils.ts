@@ -1,5 +1,7 @@
 import { IPrint, IPost } from "./types";
 import * as moment from "moment";
+import { lstatSync, readdirSync } from "fs";
+import { join } from "path";
 
 export function leftpad(num: number, pad: string = "0000"): string {
     var str = "" + num
@@ -23,7 +25,7 @@ export function leftpad(num: number, pad: string = "0000"): string {
 //     });
 // }
 
-export function sortLatest(products:IPrint[])
+export function sortByLatestFirst(products:IPrint[])
 {
     return products.sort((a,b) => moment(b.dateCreated).diff(moment(a.dateCreated).utc()))
 }
@@ -33,7 +35,7 @@ export function sortLatestPosts(products:IPost[])
     return products.sort((a,b) => moment(b.dateCreated).diff(moment(a.dateCreated).utc()))
 }
 
-export function sortOldest(products:IPrint[])
+export function sortByOldestFirst(products:IPrint[])
 {
     return products.sort((a,b) => moment(a.dateCreated).diff(moment(b.dateCreated).utc()))
 }
@@ -62,3 +64,6 @@ export function areEqual<T>(a:T[], b:T[])
 
     return true;
 }
+
+export const isDirectory = (source:string) => lstatSync(source).isDirectory()
+export const getDirectories = (source:string) => readdirSync(source).map(name => join(source, name)).filter(isDirectory);
