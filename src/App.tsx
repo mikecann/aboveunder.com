@@ -2,7 +2,7 @@ import * as React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { IDB } from './lib/types';
 import { HomePage } from './components/HomePage';
-import { sortLatest, shuffle, sortLatestPosts } from './lib/utils';
+import { sortByLatestFirst, shuffle, sortLatestPosts } from './lib/utils';
 import { ContactPage } from './components/ContactPage';
 import { AboutPage } from './components/AboutPage';
 import { BlogPage } from './components/BlogPage';
@@ -23,7 +23,7 @@ export class App extends React.Component<IProps,any> {
   render() {
 
     const { db } = this.props;
-    const latestPrints = sortLatest(db.prints).slice(0,12);
+    const latestPrints = sortByLatestFirst(db.prints).slice(0,12);
     const featuredPrints = shuffle(db.prints.filter(p => p.featured)).slice(0,9);
     const latestPosts = sortLatestPosts(db.posts).slice(0, 6);
 

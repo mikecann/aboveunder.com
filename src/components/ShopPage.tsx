@@ -3,7 +3,7 @@ import * as React from "react";
 import { IPrint } from "../lib/types";
 import { ProductThumbGrid } from "./ProductThumbGrid";
 import { Container, Segment, Visibility, VisibilityEventData, InputOnChangeData } from 'semantic-ui-react';
-import { sortLatest, sortOldest } from "../lib/utils";
+import { sortByLatestFirst, sortByOldestFirst } from "../lib/utils";
 import { CommonPageLayout } from "./CommonPageLayout";
 import { ShopPageMenu } from "./ShopPageMenu";
 
@@ -125,10 +125,10 @@ export class ShopPage extends React.Component<IProps, IState> {
     var prints = [...this.props.prints];
 
     if (orderOptionValue == "latest")
-      prints = sortLatest(prints);
+      prints = sortByLatestFirst(prints);
 
     if (orderOptionValue == "oldest")
-      prints = sortOldest(prints)
+      prints = sortByOldestFirst(prints)
 
     if (orderOptionValue == "featured")
       prints = prints.filter(p => p.featured)

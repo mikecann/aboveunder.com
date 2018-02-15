@@ -68,7 +68,7 @@ export class PrintPage extends React.Component<IProps, IState> {
             <Grid.Row columns={2}>
               <Grid.Column width={10}>
                 <a href={print.image} style={{ cursor: "zoom-in" }}>
-                  <Image src={print.thumb} rounded />
+                  <Image src={print.image} rounded />
                 </a>
               </Grid.Column>
               <Grid.Column width={6}>

@@ -24,7 +24,7 @@ export class ProductThumbGrid extends React.Component<IProps, any> {
     return <Grid stackable centered relaxed>
       <Grid.Row columns={2} stretched>      
         <Grid.Column width={11} verticalAlign="middle">
-          <ProductThumb product={products[0]} />
+          <ProductThumb useFull product={products[0]} />
         </Grid.Column>
         <Grid.Column width={5}>
           <ProductThumb product={products[1]} />
