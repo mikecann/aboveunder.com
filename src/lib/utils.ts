@@ -65,5 +65,10 @@ export function areEqual<T>(a:T[], b:T[])
     return true;
 }
 
+export function randomOne(arr:any[]) : any
+{
+    return arr[Math.floor(Math.random()*arr.length)];
+}
+
 export const isDirectory = (source:string) => lstatSync(source).isDirectory()
 export const getDirectories = (source:string) => readdirSync(source).map(name => join(source, name)).filter(isDirectory);
