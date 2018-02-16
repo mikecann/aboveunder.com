@@ -15,6 +15,7 @@ import { BlogPostsThumbGrid } from "./BlogPostsThumbGrid";
 import { HeaderMenu } from "./HeaderMenu";
 import { PageFooter } from "./PageFooter";
 import { Link } from "react-router-dom";
+import { HomePageVideo } from "./HomePageVideo";
 
 interface IProps {
   featuredPrints: IPrint[],
@@ -94,6 +95,13 @@ export class HomePage extends React.Component<IProps, IState> {
           <Container>
             <SectionHeading label="Featured Prints" href="/shop" />
             <ProductThumbGrid featureOneProduct products={featuredPrints} />
+          </Container>
+        </Segment>
+
+        <Segment style={{ padding: '8em 0em' }} vertical>
+          <Container>
+            <SectionHeading label="Video Feed" href="/videos" />
+            <HomePageVideo />
           </Container>
         </Segment>
 
