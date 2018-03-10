@@ -24,7 +24,7 @@ const orderOptions = [
 
 const defaultOrderValue = orderOptions[0].value;
 
-const pageSize = 9;
+const pageSize = 18;
 
 interface IProps {
   prints: IPrint[],
