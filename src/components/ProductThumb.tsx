@@ -1,11 +1,11 @@
 import * as React from "react";
 
 import { IPrint } from "../lib/types";
-import { Grid, Image } from "semantic-ui-react";
+import { Grid, Image, Button, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 interface IProps {
-    product: IPrint;
+    print: IPrint;
     useFull?: boolean;
 }
 
@@ -23,15 +23,24 @@ export class ProductThumb extends React.Component<IProps, IState> {
     }
 
     render() {
-        const { product, useFull } = this.props;
+        const { print, useFull } = this.props;
         //const { mouseOver } = this.state;
-        return <Grid.Column key={product.id}>
-            <Link to={`/print/${product.id}`} onMouseOver={() => this.setState({ mouseOver: true })} onMouseOut={() => this.setState({ mouseOver: false })}>
-                <Image rounded src={useFull ? product.image : product.thumb} 
-                    style={{ marginTop: "1em", marginBottom: "1em" }}
-                    label={{ content: product.title, ribbon: true }}
-                    />
-            </Link>
+        return <Grid.Column key={print.id}>
+            <div>
+                <Link to={`/print/${print.id}`} onMouseOver={() => this.setState({ mouseOver: true })} onMouseOut={() => this.setState({ mouseOver: false })}>
+                    <Image rounded src={useFull ? print.image : print.thumb}
+                        style={{ marginTop: "1em", marginBottom: "1em", minWidth: 200, minHeight: 200 }}
+                        label={{ content: print.title, ribbon: true, icon: print.featured ? "star" : undefined }}
+                    >
+                    </ Image>
+
+                </Link>
+
+                <Button circular size="mini" as={Link} to={`/map/${print.id}`} icon style={{ position:"absolute", bottom: 20, right: 25 }}>
+                    <Icon name="marker" />
+                </Button>
+            </div>
+
         </Grid.Column>;
     }
 }

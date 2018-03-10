@@ -31,9 +31,9 @@ const menuItems = [
     label: "Contact"
   },
   {
-    id: "videos",
-    url: "/videos",
-    label: "Videos"
+    id: "map",
+    url: "/map",
+    label: "Map"
   }
 ]
 

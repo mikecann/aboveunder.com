@@ -12,6 +12,7 @@ import { getPost } from './lib/db';
 import { PrintPage } from './components/PrintPage';
 import "./app.css";
 import { VideosPage } from './components/VideosPage';
+import { MapPage } from './components/Map/MapPage';
 
 interface IProps
 {
@@ -33,10 +34,11 @@ export class App extends React.Component<IProps,any> {
             <Route component={ScrollToTop} />
 
             <Route exact path="/" render={q => 
-              <HomePage latestPrints={latestPrints} featuredPrints={featuredPrints} latestPosts={latestPosts} />} />
+              <HomePage latestPrints={latestPrints} featuredPrints={featuredPrints} latestPosts={latestPosts} allPrints={db.prints} />} />
 
             <Route exact path="/contact" render={q => <ContactPage />} />
             <Route exact path="/about" render={q => <AboutPage />} />
+            <Route exact path="/map/:print?" render={q => <MapPage prints={db.prints} selectedPrintId={q.match.params.print} history={q.history} />} />
             <Route exact path="/videos" render={q => <VideosPage />} />
             <Route exact path="/blog" render={q => <BlogPage posts={db.posts} />} />
             <Route exact path="/shop/:page?" render={q => <ShopPage prints={db.prints} initialPageIndex={q.match.params.page} history={q.history} />} />

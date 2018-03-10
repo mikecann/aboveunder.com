@@ -24,15 +24,15 @@ export class ProductThumbGrid extends React.Component<IProps, any> {
     return <Grid stackable centered relaxed>
       <Grid.Row columns={2} stretched>      
         <Grid.Column width={11} verticalAlign="middle">
-          <ProductThumb useFull product={products[0]} />
+          <ProductThumb useFull print={products[0]} />
         </Grid.Column>
         <Grid.Column width={5}>
-          <ProductThumb product={products[1]} />
-          <ProductThumb product={products[2]} />
+          <ProductThumb print={products[1]} />
+          <ProductThumb print={products[2]} />
         </Grid.Column>
       </Grid.Row>
       <Grid.Row columns={3}>
-        {products.slice(3).map(p => <ProductThumb key={p.id} product={p} />)}
+        {products.slice(3).map(p => <ProductThumb key={p.id} print={p} />)}
       </Grid.Row>
     </Grid>;
   }
@@ -40,7 +40,7 @@ export class ProductThumbGrid extends React.Component<IProps, any> {
   renderWithoutFeature(products: IPrint[]) {
     return <Grid stackable centered relaxed>
       <Grid.Row columns={3}>
-        {products.map(p => <ProductThumb key={p.id} product={p} />)}
+        {products.map(p => <ProductThumb key={p.id} print={p} />)}
       </Grid.Row>
     </Grid>;
   }

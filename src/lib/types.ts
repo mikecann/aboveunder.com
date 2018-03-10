@@ -13,9 +13,10 @@ export interface IPost
 export interface IPrint
 {
     id: string,
-    image:string;
-    thumb:string;
+    image: string;
+    thumb: string;
     title: string,
+    gps?: google.maps.LatLngLiteral;
     featured: boolean,
     description: string,
     dateCreated: string,

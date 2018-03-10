@@ -66,6 +66,7 @@ function transformPrints(prints:Partial<IPrint>[]) : IPrint[]
         thumb: p.thumb || `/images/products/thumb/${(p.title+"").split(" ").join("-")}.jpg`,
         printOptions: p.printOptions || defaultPrintOptions.data,
         featured: p.featured || false,
-        dateCreated: p.dateCreated || moment().format()
+        dateCreated: p.dateCreated || moment().format(),
+        gps: p.gps
     }));
 }

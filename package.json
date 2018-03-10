@@ -4,13 +4,20 @@
   "private": true,
   "dependencies": {
     "@types/csvtojson": "^1.1.5",
+    "@types/google-map-react": "^0.23.2",
+    "@types/googlemaps": "^3.30.7",
     "@types/jimp": "^0.2.1",
+    "@types/lodash": "^4.14.104",
+    "@types/markerclustererplus": "^2.1.33",
     "@types/react-router-dom": "^4.2.3",
     "csvtojson": "^1.1.9",
+    "exif": "^0.6.0",
     "jimp": "^0.2.28",
+    "loadash": "^1.0.0",
     "moment": "^2.19.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-google-maps": "^9.4.5",
     "react-markdown": "^3.1.1",
     "react-router-dom": "^4.2.2",
     "react-scripts-ts": "2.8.0",
@@ -39,4 +46,3 @@
     "ts-node": "^4.0.1"
   }
 }
-
