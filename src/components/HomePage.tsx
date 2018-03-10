@@ -15,12 +15,13 @@ import { BlogPostsThumbGrid } from "./BlogPostsThumbGrid";
 import { HeaderMenu } from "./HeaderMenu";
 import { PageFooter } from "./PageFooter";
 import { Link } from "react-router-dom";
-import { HomePageVideo } from "./HomePageVideo";
+import { PrintsMap } from "./Map/PrintsMap";
 
 interface IProps {
   featuredPrints: IPrint[],
   latestPrints: IPrint[],
-  latestPosts: IPost[]
+  latestPosts: IPost[],
+  allPrints: IPrint[]
 }
 
 interface IState {
@@ -42,7 +43,7 @@ export class HomePage extends React.Component<IProps, IState> {
 
   render() {
     const { visible } = this.state
-    const { featuredPrints, latestPrints, latestPosts } = this.props
+    const { featuredPrints, latestPrints, latestPosts, allPrints } = this.props
 
     return <div>
       <div>
@@ -98,10 +99,23 @@ export class HomePage extends React.Component<IProps, IState> {
           </Container>
         </Segment>
 
-        <Segment style={{ padding: '8em 0em' }} vertical>
+        {/* <Segment style={{ padding: '8em 0em' }} vertical>
           <Container>
             <SectionHeading label="Video Feed" href="/videos" />
             <HomePageVideo />
+          </Container>
+        </Segment> */}
+
+        <Segment style={{ padding: '8em 0em' }} vertical>
+          <Container>
+            <Grid>
+              <Grid.Column>
+                <Header as='h3' style={{ fontSize: '2em' }}>
+                  Photo Map                
+                </Header>
+              </Grid.Column>
+            </Grid>
+            <PrintsMap prints={allPrints} />
           </Container>
         </Segment>
 

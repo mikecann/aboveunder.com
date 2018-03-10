@@ -7,30 +7,22 @@ import { Image } from "semantic-ui-react";
 interface IMapMarkerProps {
     position: google.maps.LatLng,
     print?: IPrint
-}
-
-interface IMapMarkerState {
     isOpen: boolean;
+    onClick: ()=>void;
+    onCloseClick: ()=>void;
 }
 
-export class MyMapMarker extends React.Component<IMapMarkerProps, IMapMarkerState> {
+export class MyMapMarker extends React.Component<IMapMarkerProps, any> {
 
-    constructor(props: IMapMarkerProps) {
-        super(props);
-        this.state = {
-            isOpen: false
-        }
-    }
 
     render() {
-        const { position, print } = this.props;
-        const isOpen = this.state.isOpen;
+        const { position, print, isOpen, onClick, onCloseClick } = this.props;
         return <Marker
             position={position}
-            onClick={() => this.setState({ isOpen: true })}>
+            onClick={onClick}>
 
             {isOpen ?
-                <InfoWindow onCloseClick={() => this.setState({ isOpen: false })}>
+                <InfoWindow onCloseClick={onCloseClick}>
                     <div>{
                         print ? this.renderMarker(print)  : null
                     }
@@ -44,7 +36,7 @@ export class MyMapMarker extends React.Component<IMapMarkerProps, IMapMarkerStat
     renderMarker(print:IPrint) {
         return <Link to={`/print/${print.id}`}>
             <Image rounded src={print.thumb} 
-                style={{ marginTop: "1em", marginBottom: "1em", maxWidth: 300 }}
+                style={{ maxWidth: 300 }}
                 label={{ content: print.title, ribbon: true }}
             />
         </Link>

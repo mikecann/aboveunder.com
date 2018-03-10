@@ -7,20 +7,27 @@ export const PageFooter = () =>
         <Container>
             <Grid divided inverted stackable>
                 <Grid.Row>
-                    <Grid.Column width={3}>
-                        <Header inverted as='h4' content='About' />
-                        <List link inverted>
-                            <List.Item as='a' href="/contact">Contact Us</List.Item>
-                            <List.Item as='a' href="/about">About</List.Item>
-                        </List>
-                    </Grid.Column>
-                    <Grid.Column width={3}>
+                    <Grid.Column width={2}>
                         <Header inverted as='h4' content='Pages' />
                         <List link inverted>
                             <List.Item as='a' href="/home">Home</List.Item>
                             <List.Item as='a' href="/shop">Shop</List.Item>
-                            <List.Item as='a' href="/blog">Blog</List.Item>
                             <List.Item as='a' href="#" className="snipcart-user-profile">User Profile</List.Item>
+                        </List>
+                    </Grid.Column>
+                    <Grid.Column width={2}>
+                        <Header inverted as='h4' content='Media' />
+                        <List link inverted>
+                            <List.Item as='a' href="/blog">Blog</List.Item>
+                            <List.Item as='a' href="/videos">Videos</List.Item>
+                            <List.Item as='a' href="/map">Map</List.Item>
+                        </List>
+                    </Grid.Column>
+                    <Grid.Column width={2}>
+                        <Header inverted as='h4' content='About' />
+                        <List link inverted>
+                            <List.Item as='a' href="/contact">Contact Us</List.Item>
+                            <List.Item as='a' href="/about">About</List.Item>
                         </List>
                     </Grid.Column>
                     <Grid.Column width={7}>

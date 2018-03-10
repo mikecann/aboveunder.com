@@ -1,11 +1,11 @@
 export const data = [
   {
-    "image": "/images/products/full/Lancelin Dune.jpg",
-    "thumb": "/images/products/thumb/Lancelin Dune.jpg",
     "title": "Lancelin Dune",
-    "dateCreated": "2017-03-24T17:05:22+08:00",
     "description": "",
+    "image": "/images/products/full/Lancelin-Dune.jpg",
+    "thumb": "/images/products/thumb/Lancelin-Dune.jpg",
     "featured": true,
+    "dateCreated": "2017-03-24T17:05:22+08:00",
     "gps": {
       "lat": -30.99616333333333,
       "lng": 115.332115
@@ -886,8 +886,8 @@ export const data = [
   {
     "title": "Magnetic Vibrance",
     "description": "Taken at Magnetic Island in Northern Queensland.\\r\\n\\r\\nSometimes it isn't until you get home that you realise how vibrant the colours you took are.",
-    "image": "/images/products/full/Magnetic Vibrance.jpg",
-    "thumb": "/images/products/thumb/Magnetic Vibrance.jpg",
+    "image": "/images/products/full/Magnetic-Vibrance.jpg",
+    "thumb": "/images/products/thumb/Magnetic-Vibrance.jpg",
     "featured": false,
     "dateCreated": "2017-06-23T11:10:02+08:00",
     "gps": {

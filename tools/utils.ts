@@ -238,8 +238,8 @@ export async function createPrint(image:CollectionImage , db:IDB) : Promise<IPri
     const print : IPrint = {
         id: undefined,
         printOptions: undefined,
-        image: `/images/products/full/${image.filename}`,
-        thumb: `/images/products/thumb/${image.filename}`,
+        image: `/images/products/full/${image.filenameNoSpaces}`,
+        thumb: `/images/products/thumb/${image.filenameNoSpaces}`,
         title: image.name,
         dateCreated: moment().format(),
         description: await askQuestion("Description?", ""),

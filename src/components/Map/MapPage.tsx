@@ -1,39 +1,21 @@
 import * as React from "react";
 import { Segment, Container, Header } from "semantic-ui-react";
-import SearchBox from "react-google-maps/lib/components/places/SearchBox";
-import * as _ from "lodash";
-import GoogleMap from "react-google-maps/lib/components/GoogleMap";
-import { ComposedMyMap } from "./MyMap";
-import { IMyMapMarker } from "./IMyMapMarker";
 import { IPrint } from "../../lib/types";
 import { CommonPageLayout } from "../CommonPageLayout";
+import * as H from 'history';
+import { PrintsMap } from "./PrintsMap";
 
 interface IProps {
   prints: IPrint[];
+  selectedPrintId?: string;
+  history: H.History;
 }
 
-interface IState {
-  center: google.maps.LatLngLiteral;
-  markers: IMyMapMarker[];
-}
-
-export class MapPage extends React.Component<IProps, IState> {
-
-  searchBox: SearchBox;
-  map: GoogleMap;
-
-  constructor(props: IProps) {
-    super(props);
-    this.state = {
-      center: { lat: -34.397, lng: 150.644 },
-      markers: []
-    }
-  }
+export class MapPage extends React.Component<IProps, any> {
 
   render() {
 
-    const key = "AIzaSyBCVEVAJP-manM_C8v8q9s3lAblDhgaoIM";
-    const mapUrl = `https://maps.googleapis.com/maps/api/js?key=${key}&v=3.exp&libraries=geometry,drawing,places`
+    const { prints, selectedPrintId } = this.props;
 
     return <CommonPageLayout activeMenu="home">
 
@@ -41,20 +23,12 @@ export class MapPage extends React.Component<IProps, IState> {
         <Container>
           <Header as="h1">Above Under Photo Map</Header>
 
-          <div style={{ width: "100%", height: 600 }}>
-            <ComposedMyMap
-              isMarkerShown
-              googleMapURL={mapUrl}
-              loadingElement={<div style={{ height: `100%` }} />}
-              containerElement={<div style={{ height: `600px` }} />}
-              mapElement={<div style={{ height: `100%` }} />}
-              onPlacesChanged={this.onMapPlacesChanged}
-              onSearchBoxMounted={ref => this.searchBox = ref}
-              onMapMounted={this.onMapMounted}
-              center={this.state.center}
-              markers={this.state.markers}
+          <div style={{ width: "100%", height: 800 }}>
+            <PrintsMap
+              prints={prints}
+              initialPrintId={selectedPrintId}
+              selectedPrintChanged={this.selectedPrintChanged}
             />
-
           </div>
 
         </Container>
@@ -63,38 +37,11 @@ export class MapPage extends React.Component<IProps, IState> {
     </CommonPageLayout>
   }
 
-  onMapMounted = (ref: GoogleMap) => {
-    this.map = ref;
-    const prints = this.props.prints.filter(p => p.gps);
-    this.setState({
-      markers: prints.map(p => ({
-        position: new google.maps.LatLng((p.gps as any).lat, (p.gps as any).lng),
-        print: p
-      }))
-    });
+  selectedPrintChanged = (print?: IPrint) => {
+    if (print)
+      this.props.history.push(`/map/${print.id}`);
+    else
+      this.props.history.push("/map");
   }
 
-  onMapPlacesChanged = () => {
-    const places = this.searchBox.getPlaces();
-    const bounds = new google.maps.LatLngBounds();
-
-    places.forEach(place => {
-      if (place.geometry.viewport) {
-        bounds.union(place.geometry.viewport)
-      } else {
-        bounds.extend(place.geometry.location)
-      }
-    });
-    const nextMarkers = places.map(place => ({
-      position: place.geometry.location
-    }));
-    const nextCenter: google.maps.LatLngLiteral = _.get(nextMarkers, '0.position', this.state.center);
-
-    this.setState({
-      center: nextCenter,
-      markers: nextMarkers,
-    });
-
-    this.map.fitBounds(bounds);
-  }
 }

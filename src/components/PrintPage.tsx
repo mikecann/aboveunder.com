@@ -1,10 +1,11 @@
 import * as React from "react";
 import { IPrint, IPrintOptionSize, IPrintOption, IDB } from '../lib/types';
-import { Button, Dropdown, Segment, Container, Header, Grid, Image, Icon, Breadcrumb } from "semantic-ui-react";
+import { Button, Dropdown, Segment, Container, Header, Grid, Image, Icon, Breadcrumb, Label } from "semantic-ui-react";
 import * as moment from "moment";
 import { getPrintOptionOrDefault, getPrintSizeOrDefault, getPrint } from "../lib/db";
 import { CommonPageLayout } from "./CommonPageLayout";
 import { match } from "react-router";
+import { Link } from "react-router-dom";
 
 interface IProps {
   db: IDB,
@@ -69,6 +70,9 @@ export class PrintPage extends React.Component<IProps, IState> {
               <Grid.Column width={10}>
                 <a href={print.image} style={{ cursor: "zoom-in" }}>
                   <Image src={print.image} rounded />
+                  <Button icon basic style={{ top: 10, right: 20, position:"absolute" }}>
+                    <Icon name="expand" />
+                  </Button>
                 </a>
               </Grid.Column>
               <Grid.Column width={6}>
@@ -76,12 +80,19 @@ export class PrintPage extends React.Component<IProps, IState> {
 
                   <Header as="h1">
                     {print.title}
-                    <Header.Subheader>
-                      {moment(print.dateCreated).calendar()}
-                    </Header.Subheader>
+                   
                   </Header>
 
-                  <p dangerouslySetInnerHTML={{ __html: print.description }} style={{ marginBottom: "2em" }}></p>
+                  <div>
+                    <Label basic><Icon name="calendar" />{moment(print.dateCreated).calendar()}</Label>
+                    <Label basic as={Link} to={`/map/${print.id}`}><Icon name="marker" /> View on Map</Label>
+                    {print.featured ? <Label basic><Icon name="star" />Featured</Label>  : null }
+                  </div>
+
+                  <Segment color='grey'
+                    dangerouslySetInnerHTML={{ __html: print.description }} style={{ marginBottom: "2em" }}
+                    >
+                  </Segment>
 
                   <div>
                     <Dropdown fluid selection options={selectedPrintOptions}
