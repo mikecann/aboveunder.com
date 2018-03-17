@@ -71,28 +71,32 @@ export class PrintPage extends React.Component<IProps, IState> {
               <Grid.Column width={10}>
                 <a href={print.image}>
 
+                  <div style={{ position:"relative" }}>
 
-                  {/* <Image src={print.image} rounded /> */}
-                  <ReactImageMagnify 
-                    alt={print.title}
-                    hoverDelayInMs={100}
-                    style={{ cursor: "zoom-in", boxShadow: "0 10px 15px 0 rgba(34,36,38,.35)" }}
-                    enlargedImagePosition="over"
-                    smallImage={({
-                      src: print.image,
-                      isFluidWidth: true
-                    })}  
-                    largeImage={({
-                      src: print.image,
-                      width: 1600,
-                      height: 1199
-                    })}                    
+
+                    {/* <Image src={print.image} rounded /> */}
+                    <ReactImageMagnify
+                      alt={print.title}
+                      hoverDelayInMs={100}
+                      style={{ cursor: "zoom-in", boxShadow: "0 10px 15px 0 rgba(34,36,38,.35)" }}
+                      enlargedImagePosition="over"
+                      smallImage={({
+                        src: print.image,
+                        isFluidWidth: true
+                      })}
+                      largeImage={({
+                        src: print.image,
+                        width: 1600,
+                        height: 1199
+                      })}
                     />
 
+                    <Button icon circle size="tiny" style={{ top: 10, right: 20, position: "absolute" }}>
+                      <Icon name="expand" />
+                    </Button>
 
-                  <Button icon circle size="tiny" style={{ top: 10, right: 20, position:"absolute" }}>
-                    <Icon name="expand" />
-                  </Button>
+                  </div>
+
                 </a>
               </Grid.Column>
               <Grid.Column width={6}>
@@ -100,18 +104,18 @@ export class PrintPage extends React.Component<IProps, IState> {
 
                   <Header as="h1">
                     {print.title}
-                   
+
                   </Header>
 
                   <div>
                     <Label basic><Icon name="calendar" />{moment(print.dateCreated).calendar()}</Label>
                     <Label basic as={Link} to={`/map/${print.id}`}><Icon name="marker" /> View on Map</Label>
-                    {print.featured ? <Label basic><Icon name="star" />Featured</Label>  : null }
+                    {print.featured ? <Label basic><Icon name="star" />Featured</Label> : null}
                   </div>
 
                   <Segment color='grey'
                     dangerouslySetInnerHTML={{ __html: print.description }} style={{ marginBottom: "2em" }}
-                    >
+                  >
                   </Segment>
 
                   <div>
