@@ -26,7 +26,7 @@ export class ProductThumb extends React.Component<IProps, IState> {
         const { print, useFull } = this.props;
         //const { mouseOver } = this.state;
         return <Grid.Column key={print.id}>
-            <div>
+            <div className="print-thumb">
                 <Link to={`/print/${print.id}`} onMouseOver={() => this.setState({ mouseOver: true })} onMouseOut={() => this.setState({ mouseOver: false })}>
                     <Image rounded src={useFull ? print.image : print.thumb}
                         style={{ marginTop: "1em", marginBottom: "1em", minWidth: 200, minHeight: 200 }}

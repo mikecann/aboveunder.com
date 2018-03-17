@@ -1,11 +1,12 @@
 import * as React from "react";
 import { IPrint, IPrintOptionSize, IPrintOption, IDB } from '../lib/types';
-import { Button, Dropdown, Segment, Container, Header, Grid, Image, Icon, Breadcrumb, Label } from "semantic-ui-react";
+import { Button, Dropdown, Segment, Container, Header, Grid, Icon, Breadcrumb, Label } from "semantic-ui-react";
 import * as moment from "moment";
 import { getPrintOptionOrDefault, getPrintSizeOrDefault, getPrint } from "../lib/db";
 import { CommonPageLayout } from "./CommonPageLayout";
 import { match } from "react-router";
 import { Link } from "react-router-dom";
+import ReactImageMagnify from 'react-image-magnify';
 
 interface IProps {
   db: IDB,
@@ -68,9 +69,28 @@ export class PrintPage extends React.Component<IProps, IState> {
           <Grid stackable>
             <Grid.Row columns={2}>
               <Grid.Column width={10}>
-                <a href={print.image} style={{ cursor: "zoom-in" }}>
-                  <Image src={print.image} rounded />
-                  <Button icon basic style={{ top: 10, right: 20, position:"absolute" }}>
+                <a href={print.image}>
+
+
+                  {/* <Image src={print.image} rounded /> */}
+                  <ReactImageMagnify 
+                    alt={print.title}
+                    hoverDelayInMs={100}
+                    style={{ cursor: "zoom-in", boxShadow: "0 10px 15px 0 rgba(34,36,38,.35)" }}
+                    enlargedImagePosition="over"
+                    smallImage={({
+                      src: print.image,
+                      isFluidWidth: true
+                    })}  
+                    largeImage={({
+                      src: print.image,
+                      width: 1600,
+                      height: 1199
+                    })}                    
+                    />
+
+
+                  <Button icon circle size="tiny" style={{ top: 10, right: 20, position:"absolute" }}>
                     <Icon name="expand" />
                   </Button>
                 </a>

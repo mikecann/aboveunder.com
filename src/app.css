@@ -6,3 +6,11 @@
 .blogPostPage img {
     max-width: 100%;
 }
+
+.print-thumb img {
+    transition: box-shadow filter .3s;
+}
+
+.print-thumb:hover img {
+    box-shadow: 0 5px 15px rgba(33,33,33,.5);
+}

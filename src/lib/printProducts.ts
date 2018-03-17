@@ -1568,18 +1568,18 @@ export const data = [
     }
   },
   {
-    "title": "Daintree Coast Rock",
-    "description": "Taken at the Daintree in Northern Queensland.",
-    "image": "/images/products/full/Daintree-Coast-Rock.jpg",
-    "thumb": "/images/products/thumb/Daintree-Coast-Rock.jpg",
-    "featured": false,
-    "dateCreated": "2017-08-22 02:10:18"
-  },
-  {
     "title": "Arthur Bay",
     "description": "Taken in Northern Queensland.",
     "image": "/images/products/full/Arthur-Bay.jpg",
     "thumb": "/images/products/thumb/Arthur-Bay.jpg",
+    "featured": false,
+    "dateCreated": "2017-08-22 02:10:18"
+  },
+  {
+    "title": "Daintree Coast Rock",
+    "description": "Taken at the Daintree in Northern Queensland.",
+    "image": "/images/products/full/Daintree-Coast-Rock.jpg",
+    "thumb": "/images/products/thumb/Daintree-Coast-Rock.jpg",
     "featured": false,
     "dateCreated": "2017-08-22 02:10:18"
   },
@@ -1837,6 +1837,150 @@ export const data = [
     "gps": {
       "lat": -33.79819333333333,
       "lng": 115.06568666666666
+    }
+  },
+  {
+    "image": "/images/products/full/The-Length-of-the-Busselton-Jetty.jpg",
+    "thumb": "/images/products/thumb/The-Length-of-the-Busselton-Jetty.jpg",
+    "title": "The Length of the Busselton Jetty",
+    "dateCreated": "2018-02-17T18:29:45+08:00",
+    "description": "Taken near the Busselton Jetty\n\nAt 1.8km long this thing is a beast to swim around.",
+    "featured": true,
+    "gps": {
+      "lat": -33.628301666666665,
+      "lng": 115.33881
+    }
+  },
+  {
+    "image": "/images/products/full/The-Little-Busselton-Jetty.jpg",
+    "thumb": "/images/products/thumb/The-Little-Busselton-Jetty.jpg",
+    "title": "The Little Busselton Jetty",
+    "dateCreated": "2018-02-17T18:51:18+08:00",
+    "description": "Taken near the Busselton Jetty\n\nIn summer we just love going down here and jumping off into the cool waters.",
+    "featured": false,
+    "gps": {
+      "lat": -33.64364333333333,
+      "lng": 115.34340333333333
+    }
+  },
+  {
+    "image": "/images/products/full/The-Sheds-of-the-Jetty-Afar.jpg",
+    "thumb": "/images/products/thumb/The-Sheds-of-the-Jetty-Afar.jpg",
+    "title": "The Sheds of the Jetty Afar",
+    "dateCreated": "2018-02-17T18:56:25+08:00",
+    "description": "Taken near the Busselton Jetty\n\nThe Busselton Jetty sheds in all their glory.",
+    "featured": true,
+    "gps": {
+      "lat": -33.643633333333334,
+      "lng": 115.34611166666667
+    }
+  },
+  {
+    "image": "/images/products/full/The-Sheds-of-the-Jetty-Close.jpg",
+    "thumb": "/images/products/thumb/The-Sheds-of-the-Jetty-Close.jpg",
+    "title": "The Sheds of the Jetty Close",
+    "dateCreated": "2018-02-17T18:57:12+08:00",
+    "description": "Taken near the Busselton Jetty\n\nYet another beautiful sunset over the busselton Jetty.",
+    "featured": false,
+    "gps": {
+      "lat": -33.64378,
+      "lng": 115.34529833333333
+    }
+  },
+  {
+    "image": "/images/products/full/Waves-of-Watermans-Reef.jpg",
+    "thumb": "/images/products/thumb/Waves-of-Watermans-Reef.jpg",
+    "title": "Waves of Watermans Reef",
+    "dateCreated": "2018-02-24T17:44:14+08:00",
+    "description": "Taken near Watermans Reef Observation Area in Perth.\n\nSome beautiful patterns in the sand here, reminds me of Esperance.",
+    "featured": true,
+    "gps": {
+      "lat": -31.851213333333334,
+      "lng": 115.75088166666667
+    }
+  },
+  {
+    "image": "/images/products/full/Waves-of-Watermans-Aftermath.jpg",
+    "thumb": "/images/products/thumb/Waves-of-Watermans-Aftermath.jpg",
+    "title": "Waves of Watermans Aftermath",
+    "dateCreated": "2018-02-24T17:44:28+08:00",
+    "description": "Taken near Watermans Reef Observation Area in Perth.\n\nThe epic aftermath.",
+    "featured": true,
+    "gps": {
+      "lat": -31.851213333333334,
+      "lng": 115.75087833333333
+    }
+  },
+  {
+    "image": "/images/products/full/Watermans-Observatory.jpg",
+    "thumb": "/images/products/thumb/Watermans-Observatory.jpg",
+    "title": "Watermans Observatory",
+    "dateCreated": "2018-02-24T17:50:32+08:00",
+    "description": "Taken near Watermans Reef Observation Area in Perth.\n\nThe observation area we were parked, if you look really closely you can see us with the doors open.",
+    "featured": true,
+    "gps": {
+      "lat": -31.85082,
+      "lng": 115.75072
+    }
+  },
+  {
+    "image": "/images/products/full/Watermans-Lookout.jpg",
+    "thumb": "/images/products/thumb/Watermans-Lookout.jpg",
+    "title": "Watermans Lookout",
+    "dateCreated": "2018-02-24T17:58:28+08:00",
+    "description": "Taken near Watermans Reef Observation Area in Perth.\n\nJust a beautiful sunset looking out over the reef.",
+    "featured": false,
+    "gps": {
+      "lat": -31.850726666666667,
+      "lng": 115.75095
+    }
+  },
+  {
+    "image": "/images/products/full/Watermans-Rocks.jpg",
+    "thumb": "/images/products/thumb/Watermans-Rocks.jpg",
+    "title": "Watermans Rocks",
+    "dateCreated": "2018-02-24T18:00:29+08:00",
+    "description": "Taken near Watermans Reef Observation Area in Perth.\n\nI just love the detail you get from the rocks here, definately click on the image to view it up close.",
+    "featured": true,
+    "gps": {
+      "lat": -31.85077,
+      "lng": 115.75085666666666
+    }
+  },
+  {
+    "image": "/images/products/full/Watermans-Oncoming.jpg",
+    "thumb": "/images/products/thumb/Watermans-Oncoming.jpg",
+    "title": "Watermans Oncoming",
+    "dateCreated": "2018-02-24T18:01:36+08:00",
+    "description": "Taken near Watermans Reef Observation Area in Perth.\n\nIts like theres an oncoming tsunami.",
+    "featured": true,
+    "gps": {
+      "lat": -31.850736666666666,
+      "lng": 115.75084833333334
+    }
+  },
+  {
+    "image": "/images/products/full/Watermans-Reef.jpg",
+    "thumb": "/images/products/thumb/Watermans-Reef.jpg",
+    "title": "Watermans Reef",
+    "dateCreated": "2018-02-24T18:02:21+08:00",
+    "description": "Taken near Watermans Reef Observation Area in Perth.\n\nWe hadnt been here before but when we saw the incredible detail on the rocks we knew we had to put the drone up.",
+    "featured": false,
+    "gps": {
+      "lat": -31.8503,
+      "lng": 115.75077833333333
+    }
+  },
+  {
+    "image": "/images/products/full/Jetski-Blues.jpg",
+    "thumb": "/images/products/thumb/Jetski-Blues.jpg",
+    "title": "Jetski Blues",
+    "dateCreated": "2018-02-24T18:04:46+08:00",
+    "description": "Taken near Watermans Reef Observation Area in Perth.\n\nThese guys were doing some fishing off the back of the jetski, a clever idea I thought.",
+    "featured": false,
+    "gps": {
+      "lat": -31.85212,
+      "lng": 115.75033666666667
     }
   }
 ]
