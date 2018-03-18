@@ -7,6 +7,7 @@ import { CommonPageLayout } from "./CommonPageLayout";
 import { match } from "react-router";
 import { Link } from "react-router-dom";
 import ReactImageMagnify from 'react-image-magnify';
+import { wrap } from "normalize-range";
 
 interface IProps {
   db: IDB,
@@ -24,13 +25,20 @@ export class PrintPage extends React.Component<IProps, IState> {
 
   constructor(props: IProps) {
     super(props)
+    this.state = this.getInitialState(props);
+  }
 
+  componentWillReceiveProps(nextProps: IProps) {
+    this.setState(this.getInitialState(nextProps));
+  }
+
+  private getInitialState(props: IProps) {
     const { db, match } = props;
     const print = getPrint(db, match.params.id);
     const option = getPrintOptionOrDefault(print, match.params.option);
     const size = getPrintSizeOrDefault(option, match.params.size);
 
-    this.state = {
+    return {
       print,
       selectedPrintOption: option,
       selectedPrintSize: size
@@ -38,6 +46,7 @@ export class PrintPage extends React.Component<IProps, IState> {
   }
 
   render() {
+    const { db } = this.props;
     const print = this.state.print as IPrint;
     const selectedPrintOption = this.state.selectedPrintOption as IPrintOption;
     const selectedPrintSize = this.state.selectedPrintSize as IPrintOptionSize;
@@ -52,6 +61,10 @@ export class PrintPage extends React.Component<IProps, IState> {
       value: o.id
     }));
 
+    const thisIndex = db.prints.indexOf(print);
+    const prevPrintUrl = `/print/${db.prints[wrap(0, db.prints.length - 1, thisIndex - 1)].id}`;
+    const nextPrintUrl = `/print/${db.prints[wrap(0, db.prints.length - 1, thisIndex + 1)].id}`;
+
     return <CommonPageLayout activeMenu="shop">
 
 
@@ -60,7 +73,7 @@ export class PrintPage extends React.Component<IProps, IState> {
 
           <div style={{ marginBottom: "2em" }}>
             <Breadcrumb size='large'>
-              <Breadcrumb.Section link href="/shop"><Icon name="cart" />Shop</Breadcrumb.Section>
+              <Breadcrumb.Section link to="/shop"><Icon name="cart" />Shop</Breadcrumb.Section>
               <Breadcrumb.Divider icon='right chevron' />
               <Breadcrumb.Section>{print.title}</Breadcrumb.Section>
             </Breadcrumb>
@@ -69,16 +82,17 @@ export class PrintPage extends React.Component<IProps, IState> {
           <Grid stackable>
             <Grid.Row columns={2}>
               <Grid.Column width={10}>
-                <a href={print.image}>
 
-                  <div style={{ position:"relative" }}>
+
+                <div style={{ position: "relative" }}>
+                  <a href={print.image}>
 
 
                     {/* <Image src={print.image} rounded /> */}
                     <ReactImageMagnify
                       alt={print.title}
                       hoverDelayInMs={100}
-                      style={{ cursor: "zoom-in", boxShadow: "0 10px 15px 0 rgba(34,36,38,.35)" }}
+                      style={{ cursor: "zoom-in", boxShadow: "0 5px 10px 0 rgba(34,36,38,.35)" }}
                       enlargedImagePosition="over"
                       smallImage={({
                         src: print.image,
@@ -91,13 +105,25 @@ export class PrintPage extends React.Component<IProps, IState> {
                       })}
                     />
 
-                    <Button icon circle size="tiny" style={{ top: 10, right: 20, position: "absolute" }}>
+                    <Button icon size="tiny" style={{ top: 10, right: 20, position: "absolute" }}>
                       <Icon name="expand" />
                     </Button>
+                  </a>
 
-                  </div>
+                </div>
 
-                </a>
+                <div style={{ textAlign: "center", marginTop: 20 }}>
+                  <Button as={Link} to={prevPrintUrl}>
+                    <Icon name="arrow left" />
+                    Prev
+                    </Button>
+                  <Button as={Link} to={nextPrintUrl}>
+                    Next
+                      <Icon name="arrow right" />
+                  </Button>
+                </div>
+
+
               </Grid.Column>
               <Grid.Column width={6}>
                 <Segment>

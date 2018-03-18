@@ -21,7 +21,12 @@ export class MapPage extends React.Component<IProps, any> {
 
       <Segment style={{ padding: '4em 0em' }} vertical>
         <Container>
-          <Header as="h1">Above Under Photo Map</Header>
+          <Header as="h1">
+            Above Under Photo Map
+            <Header.Subheader>
+              Click a location on the map to see the image that was taken there.
+            </Header.Subheader>
+          </Header>
 
           <div style={{ width: "100%", height: 800 }}>
             <PrintsMap

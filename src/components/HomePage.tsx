@@ -44,6 +44,7 @@ export class HomePage extends React.Component<IProps, IState> {
   render() {
     const { visible } = this.state
     const { featuredPrints, latestPrints, latestPosts, allPrints } = this.props
+    const numberPrintsMore = allPrints.length - latestPrints.length;
 
     return <div>
       <div>
@@ -96,6 +97,12 @@ export class HomePage extends React.Component<IProps, IState> {
           <Container>
             <SectionHeading label="Featured Prints" href="/shop" />
             <ProductThumbGrid featureOneProduct products={featuredPrints} />
+            <div style={{ textAlign: "center", marginTop: 20 }}>
+              <Button as={Link} to="/shop" size="huge" primary>
+                View All
+                <Icon name="arrow right" />
+              </Button>
+            </div>
           </Container>
         </Segment>
 
@@ -111,7 +118,10 @@ export class HomePage extends React.Component<IProps, IState> {
             <Grid>
               <Grid.Column>
                 <Header as='h3' style={{ fontSize: '2em' }}>
-                  Photo Map                
+                  Photo Map
+                  <Header.Subheader>
+                    Click a location on the map to see the image that was taken there.
+                </Header.Subheader>
                 </Header>
               </Grid.Column>
             </Grid>
@@ -121,9 +131,15 @@ export class HomePage extends React.Component<IProps, IState> {
 
         <Segment style={{ padding: '8em 0em' }} vertical>
           <Container>
-          <SectionHeading label="Latest Prints" href="/shop" />
+            <SectionHeading label="Latest Prints" href="/shop" />
             <ProductThumbGrid products={latestPrints} />
           </Container>
+          <div style={{ textAlign: "center", marginTop: 20 }}>
+            <Button as={Link} to="/shop" size="huge" primary>
+              {numberPrintsMore} More
+                <Icon name="arrow right" />
+            </Button>
+          </div>
         </Segment>
 
         <Segment style={{ padding: '8em 0em' }} vertical>
@@ -131,6 +147,12 @@ export class HomePage extends React.Component<IProps, IState> {
             <SectionHeading label="Latest Blog Posts" href="/blog" />
             <BlogPostsThumbGrid posts={latestPosts} />
           </Container>
+          <div style={{ textAlign: "center", marginTop: 20 }}>
+            <Button as={Link} to="/blog" size="huge" primary>
+              Blog Roll
+                <Icon name="arrow right" />
+            </Button>
+          </div>
         </Segment>
 
       </div>
@@ -142,14 +164,16 @@ export class HomePage extends React.Component<IProps, IState> {
   showFixedMenu = () => this.setState({ visible: true })
 }
 
-const SectionHeading = (props:{href:string, label:string}) => 
+const SectionHeading = (props: { href: string, label: string }) =>
   <Grid>
     <Grid.Column>
-      <Header as='h3' style={{ fontSize: '2em' }}>
-        {props.label}
-        <Button href={props.href} size="mini" style={{ marginLeft: 20, marginBottom: 10 }}>
-          View All
-        </Button>
-      </Header>
+      <Link to={props.href}>
+        <Header as='h3' style={{ fontSize: '2em' }}>
+          {props.label}
+          {/* <Button href={props.href} size="mini" style={{ marginLeft: 20, marginBottom: 10 }}>
+            View All
+          </Button> */}
+        </Header>
+      </Link>
     </Grid.Column>
   </Grid>

@@ -13,8 +13,8 @@ export class BlogPostsThumbGrid extends React.Component<IProps, any> {
 
   render() {
     const { posts } = this.props;
-    return <Grid stackable>
-      <Grid.Row columns={3}>      
+    return <Grid stackable relaxed>
+      <Grid.Row columns={3}>              
         {posts.map(p => <BlogPostSummary key={p.id} {...p} />)}
       </Grid.Row>
     </Grid>;
@@ -22,24 +22,26 @@ export class BlogPostsThumbGrid extends React.Component<IProps, any> {
 }
 
 const BlogPostSummary = (post: IPost) =>
-  <Card style={{ margin: 10 }}>
-    <Image src={post.headerImage} href={`/post/${post.id}`} />
-    <Card.Content>
-      <Card.Header>
-        {post.title}
-      </Card.Header>
-      <Card.Meta>
-        <span className='date'>
-          {moment(post.dateCreated).calendar()}
-        </span>
-      </Card.Meta>
-      <Card.Description>
-        {post.summary}
-      </Card.Description>
-    </Card.Content>
-    <Card.Content extra>
-      
-        <Link to={`/post/${post.id}`}>Read more...</Link>
-      
-    </Card.Content>
-  </Card>;
+  <Grid.Column key={post.id}>
+    <Card fluid className="blog-post-thumb" style={{ margin: 10 }}>
+      <Image src={post.headerImage} href={`/post/${post.id}`} />
+      <Card.Content>
+        <Card.Header>
+          {post.title}
+        </Card.Header>
+        <Card.Meta>
+          <span className='date'>
+            {moment(post.dateCreated).calendar()}
+          </span>
+        </Card.Meta>
+        <Card.Description>
+          {post.summary}
+        </Card.Description>
+      </Card.Content>
+      <Card.Content extra>
+        
+          <Link to={`/post/${post.id}`}>Read more...</Link>
+        
+      </Card.Content>
+    </Card>
+  </Grid.Column>;

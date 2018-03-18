@@ -8,9 +8,19 @@
 }
 
 .print-thumb img {
-    transition: box-shadow filter .3s;
+    box-shadow: 0 3px 5px rgba(33,33,33,.3);
+    transition: box-shadow .3s;
 }
 
 .print-thumb:hover img {
-    box-shadow: 0 5px 15px rgba(33,33,33,.5);
+    box-shadow: 0 8px 20px rgba(33,33,33,.5);
+}
+
+.blog-post-thumb {
+    box-shadow: 0 3px 5px rgba(33,33,33,.3);
+    transition: box-shadow .3s;
+}
+
+.blog-post-thumb:hover {
+    box-shadow: 0 8px 20px rgba(33,33,33,.5);
 }

@@ -25,7 +25,7 @@ export class App extends React.Component<IProps,any> {
 
     const { db } = this.props;
     const latestPrints = sortByLatestFirst(db.prints).slice(0,12);
-    const featuredPrints = shuffle(db.prints.filter(p => p.featured)).slice(0,9);
+    const featuredPrints = shuffle(db.prints.filter(p => p.featured)).slice(0,12);
     const latestPosts = sortLatestPosts(db.posts).slice(0, 6);
 
     return <BrowserRouter>

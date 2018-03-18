@@ -50,7 +50,7 @@ export class CollectionImage
     }
 
     private exportLowres() {
-        return resizeImg(this.sourcePath, this.lowresExportPath, 1600, 65);
+        return resizeImg(this.sourcePath, this.lowresExportPath, 1600, 75);
     }
 
     private exportWebsiteFull() {
@@ -63,6 +63,7 @@ export class CollectionImage
     }
 
     async updateOrAddNewPrintToDB(db:IDB) {
+        const found = db.prints.find(p => p.title == this.name);
         const print = db.prints.find(p => p.title == this.name) || await createPrint(this, db);
         return await this.updatePrint(print);        
     }
