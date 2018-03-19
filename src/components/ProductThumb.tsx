@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { IPrint } from "../lib/types";
-import { Grid, Image, Button, Icon } from "semantic-ui-react";
+import { Grid, Image, Button, Icon, Dimmer, Loader } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 interface IProps {
@@ -11,6 +11,7 @@ interface IProps {
 
 interface IState {
     mouseOver?: boolean;
+    isLoading?: boolean;
 }
 
 export class ProductThumb extends React.Component<IProps, IState> {
@@ -18,27 +19,33 @@ export class ProductThumb extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
         this.state = {
-
+            isLoading: true
         }
     }
 
     render() {
         const { print, useFull } = this.props;
-        //const { mouseOver } = this.state;
+        const { isLoading } = this.state;
         return <Grid.Column key={print.id}>
-            <div className="print-thumb" style={{minHeight: 200, minWidth: 200}}>
+            <div className="print-thumb" style={{ minHeight: 300, minWidth: 250 }}>
 
-                <div style={{position: "relative"}}>
+                <div style={{ position: "relative" }}>
+
+                    <Dimmer active={isLoading} inverted style={{ minHeight: 300, minWidth: 250 }}>
+                        <Loader />
+                    </Dimmer>
+
                     <Link to={`/print/${print.id}`} onMouseOver={() => this.setState({ mouseOver: true })} onMouseOut={() => this.setState({ mouseOver: false })}>
                         <Image rounded src={useFull ? print.image : print.thumb}
                             style={{ marginTop: "1em", marginBottom: "1em" }}
                             label={{ content: print.title, ribbon: true, icon: print.featured ? "star" : undefined }}
+                            onLoad={() => this.setState({ isLoading: false })}
                         >
                         </ Image>
 
                     </Link>
 
-                    <Button circular size="mini" as={Link} to={`/map/${print.id}`} icon style={{ position:"absolute", bottom: 20, right: 5 }}>
+                    <Button circular size="mini" as={Link} to={`/map/${print.id}`} icon style={{ position: "absolute", bottom: 20, right: 5 }}>
                         <Icon name="marker" />
                     </Button>
                 </div>

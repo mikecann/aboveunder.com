@@ -1,6 +1,6 @@
 import * as React from "react";
 import { IPrint, IPrintOptionSize, IPrintOption, IDB } from '../lib/types';
-import { Button, Dropdown, Segment, Container, Header, Grid, Icon, Breadcrumb, Label } from "semantic-ui-react";
+import { Button, Dropdown, Segment, Container, Header, Grid, Icon, Breadcrumb, Label, Dimmer, Loader } from "semantic-ui-react";
 import * as moment from "moment";
 import { getPrintOptionOrDefault, getPrintSizeOrDefault, getPrint } from "../lib/db";
 import { CommonPageLayout } from "./CommonPageLayout";
@@ -19,6 +19,7 @@ interface IState {
   print?: IPrint;
   selectedPrintOption?: IPrintOption;
   selectedPrintSize?: IPrintOptionSize;
+  loadState: number;
 }
 
 export class PrintPage extends React.Component<IProps, IState> {
@@ -41,12 +42,14 @@ export class PrintPage extends React.Component<IProps, IState> {
     return {
       print,
       selectedPrintOption: option,
-      selectedPrintSize: size
+      selectedPrintSize: size,
+      loadState: 0
     }
   }
 
   render() {
     const { db } = this.props;
+    const { loadState } = this.state;
     const print = this.state.print as IPrint;
     const selectedPrintOption = this.state.selectedPrintOption as IPrintOption;
     const selectedPrintSize = this.state.selectedPrintSize as IPrintOptionSize;
@@ -85,6 +88,11 @@ export class PrintPage extends React.Component<IProps, IState> {
 
 
                 <div style={{ position: "relative" }}>
+
+                  <Dimmer active={loadState==0} inverted>
+                    <Loader />
+                  </Dimmer>
+
                   <a href={print.image}>
 
 
@@ -95,11 +103,12 @@ export class PrintPage extends React.Component<IProps, IState> {
                       style={{ cursor: "zoom-in", boxShadow: "0 5px 10px 0 rgba(34,36,38,.35)" }}
                       enlargedImagePosition="over"
                       smallImage={({
-                        src: print.image,
-                        isFluidWidth: true
+                        src: loadState == 0 ? print.thumb : print.image,
+                        isFluidWidth: true,
+                        onLoad: () => this.setState({loadState: loadState+1})
                       })}
                       largeImage={({
-                        src: print.image,
+                        src: loadState == 0 ? print.thumb : print.image,
                         width: 1600,
                         height: 1199
                       })}
