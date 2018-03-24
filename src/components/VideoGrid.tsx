@@ -1,6 +1,6 @@
 import * as React from "react";
 import { shuffle } from '../lib/utils';
-import { Embed, Grid } from "semantic-ui-react";
+import { Embed, Grid, Segment, Button, Icon } from "semantic-ui-react";
 
 interface IProps {
 }
@@ -30,7 +30,7 @@ interface IYouTubeVideo {
     }
 }
 
-export class HomePageVideo extends React.Component<IProps, IState> {
+export class VideoGrid extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
         super(props);
@@ -70,22 +70,30 @@ export class HomePageVideo extends React.Component<IProps, IState> {
         if (videos == null)
             return "loading..";
 
-        return <Grid stackable centered relaxed>
+        return <Segment vertical>
+                <Grid stackable centered relaxed>
 
-            <Grid.Row columns={2} stretched >
-                {videos.map(v =>
-                    <Grid.Column key={v.id.videoId} style={{ paddingBottom: 10 }}>
-                        <Embed
-                            brandedUI
-                            aspectRatio="16:9"
-                            placeholder={v.snippet.thumbnails.high.url}
-                            id={v.id.videoId}
-                            source='youtube'
-                        />
-                    </Grid.Column>
-                )}
-            </Grid.Row>
+                <Grid.Row columns={2} stretched >
+                    {videos.map(v =>
+                        <Grid.Column key={v.id.videoId} style={{ paddingBottom: 10 }}>
+                            <Embed
+                                brandedUI
+                                aspectRatio="16:9"
+                                placeholder={v.snippet.thumbnails.high.url}
+                                id={v.id.videoId}
+                                source='youtube'
+                            />
+                        </Grid.Column>
+                    )}
+                </Grid.Row>
 
-        </Grid>
+            </Grid>
+            <div style={{ textAlign: "center", marginTop: 20 }}>
+                <Button href="https://www.youtube.com/channel/UCrgLfQ1_Z5QQx4JKmtxkxIg/videos" size="huge" primary>
+                    View All on Youtube
+                    <Icon name="arrow right" />
+                </Button>
+            </div>
+        </Segment>
     }
 }
