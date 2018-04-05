@@ -31,7 +31,8 @@ interface IState {
   loadState: number;
 }
 
-type PrinterDropdownOptions = {text:string, value:Printer}[];
+type PrinterDropdownOption = {text:string, value:Printer};
+type PrinterDropdownOptions = PrinterDropdownOption[];
 
 const printers : PrinterDropdownOptions = [
   { text: "🌎 Global Printer", value: "printful" },
@@ -77,6 +78,7 @@ export class PrintPage extends React.Component<IProps, IState> {
     const selectedPrintOption = this.state.selectedPrintOption as IPrintOption;
     const selectedPrintSize = this.state.selectedPrintSize as IPrintOptionSize;
     const selectedPrinter = this.state.selectedPrinter as Printer;
+    const printerText = (printers.find(p => p.value == selectedPrinter) as PrinterDropdownOption).text;
 
     console.log("selectedPrintOption", selectedPrintOption)
 
@@ -203,10 +205,10 @@ export class PrintPage extends React.Component<IProps, IState> {
                   <div>
 
                     <Button primary className="snipcart-add-item"
-                      data-item-id={`${print.id}-${selectedPrintOption.id}-${selectedPrintSize.id}`}
+                      data-item-id={`${print.id}-${selectedPrintOption.id}-${selectedPrintSize.id}-${selectedPrinter}`}
                       data-item-name={print.title}
                       data-item-image={print.thumb}
-                      data-item-description={`'${print.title}' printed on '${selectedPrintOption.name}' at size '${selectedPrintSize.widthInches}" x ${selectedPrintSize.heightInches}"'`}
+                      data-item-description={`'${print.title}' printed on '${selectedPrintOption.name}' at size '${selectedPrintSize.widthInches}" x ${selectedPrintSize.heightInches}"' using '${printerText}'`}
                       data-item-url={`https://${window.location.hostname}/products/${print.id}.json`}
                       data-item-weight={selectedPrintSize.weight}
                       data-item-price={selectedPrintSize.priceAUD}
