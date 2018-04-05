@@ -44,7 +44,7 @@ export class App extends React.Component<IProps,any> {
             <Route exact path="/shop/:page?" render={q => <ShopPage prints={db.prints} initialPageIndex={q.match.params.page} history={q.history} />} />
             <Route exact path="/post/:id" render={q => <PostPage post={getPost(db, q.match.params.id)} />} />
 
-            <Route exact path="/print/:id/:option?/:size?" render={q => <PrintPage db={db} {...q} />} />
+            <Route exact path="/print/:id/:option?/:size?/:printer?" render={q => <PrintPage db={db} {...q} />} />
             
           </div>
           

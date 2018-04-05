@@ -20,7 +20,15 @@ export interface IPrint
     featured: boolean,
     description: string,
     dateCreated: string,
-    printOptions: IPrintOption[]
+    printOptions: IPrintOptions
+}
+
+export type Printer = "printful" | "fitzgeralds";
+
+export interface IPrintOptions
+{
+    printful: IPrintOption[],
+    fitzgeralds: IPrintOption[]
 }
 
 export interface IPrintOption

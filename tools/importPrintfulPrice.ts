@@ -8,11 +8,12 @@ interface ICSVRow
     Product: string;
     Width: string;
     Height: string;
-    "Fitz Price": string;
-    "My Price": string;
-    Ratio: string;
-    Area: string;
     Weight: string;
+    "Printful Price": string;
+    "My Price": string;
+    "Printful Shipping": string;
+    Ratio: string;
+    Area: string;  
 }
 
 interface IProdMappings {
@@ -20,12 +21,8 @@ interface IProdMappings {
 } 
 
 const prodMapping : IProdMappings = {
-    "Metallic": { id:"photo-paper-poster", name:"Photo Paper Poster" },
+    "Poster": { id:"photo-paper-poster", name:"Photo Paper Poster" },
     "Canvas": { id:"canvas", name:"Canvas" },
-    "Acrylic": { id:"acrylic", name:"Acrylic" },
-    "Matboard": { id:"matboard", name:"Matboard" },
-    "Alumalux": { id:"alumalux", name:"Alumalux" },
-    "Standard Frame": { id:"photo-paper-framed", name:"Photo Paper Framed" },
     "Frame": { id:"photo-paper-framed", name:"Photo Paper Framed" },
 };
 
@@ -36,8 +33,8 @@ interface IOptions
 
 async function run() 
 {
-    const csvPath = `${__dirname}/../../data/Above Under Pricing - Fitz Pricing.csv`;
-    const tsPath = `${__dirname}/../../src/lib/fitzPrintOptions.ts`;
+    const csvPath = `${__dirname}/../../data/Above Under Pricing - Printful Pricing.csv`;
+    const tsPath = `${__dirname}/../../src/lib/printfulPrintOptions.ts`;
 
     var options : IOptions = {};
 

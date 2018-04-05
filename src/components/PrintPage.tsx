@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IPrint, IPrintOptionSize, IPrintOption, IDB } from '../lib/types';
+import { IPrint, IPrintOptionSize, IPrintOption, IDB, Printer } from '../lib/types';
 import { Button, Dropdown, Segment, Container, Header, Grid, Icon, Breadcrumb, Label, Dimmer, Loader } from "semantic-ui-react";
 import * as moment from "moment";
 import { getPrintOptionOrDefault, getPrintSizeOrDefault, getPrint } from "../lib/db";
@@ -8,19 +8,35 @@ import { match } from "react-router";
 import { Link } from "react-router-dom";
 import ReactImageMagnify from 'react-image-magnify';
 import { wrap } from "normalize-range";
+import * as H from 'history';
+
+interface IRouteMatch {
+  option?: string;
+  size?: string;
+  printer?: Printer;
+  id?: string;
+}
 
 interface IProps {
   db: IDB,
-  history: any,
-  match: match<any>
+  history: H.History,
+  match: match<IRouteMatch>
 }
 
 interface IState {
   print?: IPrint;
+  selectedPrinter?: Printer;
   selectedPrintOption?: IPrintOption;
   selectedPrintSize?: IPrintOptionSize;
   loadState: number;
 }
+
+type PrinterDropdownOptions = {text:string, value:Printer}[];
+
+const printers : PrinterDropdownOptions = [
+  { text: "🌎 Global Printer", value: "printful" },
+  { text: "🐨 Australian Printer", value: "fitzgeralds" }
+]
 
 export class PrintPage extends React.Component<IProps, IState> {
 
@@ -33,18 +49,25 @@ export class PrintPage extends React.Component<IProps, IState> {
     this.setState(this.getInitialState(nextProps));
   }
 
-  private getInitialState(props: IProps) {
+  private getInitialState(props: IProps) : IState {
     const { db, match } = props;
     const print = getPrint(db, match.params.id);
-    const option = getPrintOptionOrDefault(print, match.params.option);
+    const printer = match.params.printer || "fitzgeralds";
+    const option = getPrintOptionOrDefault(print, printer, match.params.option);
     const size = getPrintSizeOrDefault(option, match.params.size);
 
     return {
       print,
+      selectedPrinter: printer,
       selectedPrintOption: option,
       selectedPrintSize: size,
       loadState: 0
     }
+  }
+
+  componentDidUpdate(prevProps:IProps, prevState:IState) {
+    // Update the path in the browser bar every time we render
+    this.updatePath();
   }
 
   render() {
@@ -53,8 +76,11 @@ export class PrintPage extends React.Component<IProps, IState> {
     const print = this.state.print as IPrint;
     const selectedPrintOption = this.state.selectedPrintOption as IPrintOption;
     const selectedPrintSize = this.state.selectedPrintSize as IPrintOptionSize;
+    const selectedPrinter = this.state.selectedPrinter as Printer;
 
-    const selectedPrintOptions = print.printOptions.map(o => ({
+    console.log("selectedPrintOption", selectedPrintOption)
+
+    const selectedPrintOptions = print.printOptions[selectedPrinter].map(o => ({
       text: o.name,
       value: o.id
     }));
@@ -95,8 +121,6 @@ export class PrintPage extends React.Component<IProps, IState> {
 
                   <a href={print.image}>
 
-
-                    {/* <Image src={print.image} rounded /> */}
                     <ReactImageMagnify
                       alt={print.title}
                       hoverDelayInMs={100}
@@ -122,6 +146,7 @@ export class PrintPage extends React.Component<IProps, IState> {
                 </div>
 
                 <div style={{ textAlign: "center", marginTop: 20 }}>
+
                   <Button as={Link} to={prevPrintUrl}>
                     <Icon name="arrow left" />
                     Prev
@@ -154,6 +179,13 @@ export class PrintPage extends React.Component<IProps, IState> {
                   </Segment>
 
                   <div>
+
+                     <Dropdown fluid selection options={printers}
+                      value={selectedPrinter}
+                      onChange={this.handleSelectedPrinterChange}
+                      style={{ marginBottom: "0.5em" }}
+                    />
+
                     <Dropdown fluid selection options={selectedPrintOptions}
                       value={selectedPrintOption.id}
                       onChange={this.handleSelectedPrintOptionChange}
@@ -175,7 +207,7 @@ export class PrintPage extends React.Component<IProps, IState> {
                       data-item-name={print.title}
                       data-item-image={print.thumb}
                       data-item-description={`'${print.title}' printed on '${selectedPrintOption.name}' at size '${selectedPrintSize.widthInches}" x ${selectedPrintSize.heightInches}"'`}
-                      data-item-url={`https://${window.location.hostname}/products.json`}
+                      data-item-url={`https://${window.location.hostname}/products/${print.id}.json`}
                       data-item-weight={selectedPrintSize.weight}
                       data-item-price={selectedPrintSize.priceAUD}
                       data-item-custom1-name="Note to Above Under"
@@ -200,10 +232,28 @@ export class PrintPage extends React.Component<IProps, IState> {
 
   }
 
+
+  handleSelectedPrinterChange = (e: any, dropdown: any) => {
+
+    const print = this.state.print as IPrint;
+    const printer : Printer = dropdown.value;
+    const option = print.printOptions[printer][0];
+    const size = option.sizes[0];
+
+    console.log("Selected printer changed", printer);
+
+    this.setState({
+      selectedPrinter: printer,
+      selectedPrintOption: option,
+      selectedPrintSize: size
+    })
+  }
+
   handleSelectedPrintOptionChange = (e: any, dropdown: any) => {
 
     const print = this.state.print as IPrint;
-    const option = print.printOptions.find(o => o.id == dropdown.value);
+    const selectedPrinter = this.state.selectedPrinter as Printer;
+    const option = print.printOptions[selectedPrinter].find(o => o.id == dropdown.value);
     if (option == null)
       return;
 
@@ -214,13 +264,10 @@ export class PrintPage extends React.Component<IProps, IState> {
       selectedPrintOption: option,
       selectedPrintSize: size
     });
-
-    this.updatePath(print, option, size);
   }
 
   handleSelectedPrintSizeChange = (e: any, dropdown: any) => {
 
-    const print = this.state.print as IPrint;
     const option = this.state.selectedPrintOption as IPrintOption;
     var size = option.sizes.find(o => o.id == dropdown.value);
     if (size == null)
@@ -231,12 +278,19 @@ export class PrintPage extends React.Component<IProps, IState> {
     this.setState({
       selectedPrintSize: size
     })
-
-    this.updatePath(print, option, size);
   }
 
-  updatePath(product: IPrint, option: IPrintOption, size: IPrintOptionSize) {
-    this.props.history.push(`/print/${product.id}/${option.id}/${size.id}`);
+
+  updatePath() {
+    const print = this.state.print as IPrint;
+    const option = this.state.selectedPrintOption as IPrintOption;
+    const size = this.state.selectedPrintSize as IPrintOptionSize;
+    const printer = this.state.selectedPrinter as Printer;
+
+    const path = `/print/${print.id}/${option.id}/${size.id}/${printer}`;
+
+    if (this.props.history.location.pathname != path)
+      this.props.history.push(path);
   }
 
 }

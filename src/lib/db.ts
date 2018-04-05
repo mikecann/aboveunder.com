@@ -1,8 +1,9 @@
 import {leftpad} from "./utils"
 import * as printProducts from "./printProducts";
-import * as defaultPrintOptions from "./defaultPrintOptions";
+import * as fitzPrintOptions from "./fitzPrintOptions";
+import * as printfulPrintOptions from "./printfulPrintOptions";
 import * as blogPosts from "./blogPosts";
-import { IDB, IPrint, IPrintOption, IPrintOptionSize, IPost } from "./types";
+import { IDB, IPrint, IPrintOption, IPrintOptionSize, IPost, Printer } from "./types";
 import * as moment from "moment"
 
 const data : IDB = {
@@ -15,7 +16,7 @@ export async function getDb() : Promise<IDB>
     return Promise.resolve(data);
 }
 
-export function getPrint(db:IDB, id:string) : IPrint
+export function getPrint(db:IDB, id?:string) : IPrint
 {
     var p = db.prints.find(p => p.id == id);
     if (p==null)
@@ -38,13 +39,16 @@ export async function getFirstPrint() : Promise<IPrint>
     return (await getDb()).prints[0];
 }
 
-export function getPrintOptionOrDefault(product:IPrint, optionId?:string) : IPrintOption
+export function getPrintOptionOrDefault(product:IPrint, printer?:Printer, optionId?:string) : IPrintOption
 {
     if (optionId == null)
-        return product.printOptions[0];
+        return product.printOptions.fitzgeralds[0];
 
-    var option = product.printOptions.find(o => o.id == optionId);
-    return option ||  product.printOptions[0];
+    if (!printer)
+        printer = "fitzgeralds";
+
+    var option = product.printOptions[printer].find(o => o.id == optionId);
+    return option ||  product.printOptions[printer][0];
 }
 
 export function getPrintSizeOrDefault(option:IPrintOption, sizeId?:string) : IPrintOptionSize
@@ -64,7 +68,7 @@ function transformPrints(prints:Partial<IPrint>[]) : IPrint[]
         description: p.description || "",
         image: p.image || `/images/products/full/${(p.title+"").split(" ").join("-")}.jpg`,
         thumb: p.thumb || `/images/products/thumb/${(p.title+"").split(" ").join("-")}.jpg`,
-        printOptions: p.printOptions || defaultPrintOptions.data,
+        printOptions: p.printOptions || { fitzgeralds: fitzPrintOptions.data, printful: printfulPrintOptions.data },
         featured: p.featured || false,
         dateCreated: p.dateCreated || moment().format(),
         gps: p.gps
