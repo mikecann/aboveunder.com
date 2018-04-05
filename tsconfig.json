@@ -19,6 +19,9 @@
   },
   "exclude": [
     "tools",
+    "lambda",
+    "functions",
+    "dist",
     "node_modules",
     "build",
     "scripts",
