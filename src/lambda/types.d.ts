@@ -14,3 +14,10 @@ export type LambdaCallback = (error?:LambdaCallbackError, result?:LambdaCallResu
 export type LambdaCallbackResult = { error: LambdaCallbackError | null, result: LambdaCallResult | null };
 
 export type LambdaFunction = (event: any, context: any, callback: LambdaCallback) => void;
+
+export type LambdaEvent<T> = {
+    httpMethod: "GET" | "POST",
+    headers: any,
+    queryStringParameters: any,
+    body: T
+}
