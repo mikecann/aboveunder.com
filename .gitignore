@@ -24,3 +24,5 @@ yarn-error.log*
 
 /public/products.json
 /public/products
+
+/functions
