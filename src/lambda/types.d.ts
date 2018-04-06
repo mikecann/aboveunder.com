@@ -18,9 +18,9 @@ export type LambdaCallbackResult = { error: LambdaCallbackError | null, result: 
 
 export type LambdaFunction = (event: any, context: any, callback: LambdaCallback) => void;
 
-export type LambdaEvent<T> = {
+export type LambdaEvent = {
     httpMethod: "GET" | "POST",
     headers: any,
     queryStringParameters: any,
-    body: T
+    body: string
 }

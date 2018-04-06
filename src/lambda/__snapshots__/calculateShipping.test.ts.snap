@@ -4,7 +4,7 @@ exports[`GET event returns error 1`] = `
 Object {
   "error": null,
   "result": Object {
-    "body": "{\\"errors\\":[{\\"key\\":\\"exception\\",\\"message\\":\\"Error: Improperly formatted event\\"}]}",
+    "body": "{\\"errors\\":[{\\"key\\":\\"exception\\",\\"message\\":\\"Error: Event must be POST\\"}]}",
     "headers": Object {
       "Content-Type": "application/json",
     },
@@ -17,7 +17,7 @@ exports[`no event returns error 1`] = `
 Object {
   "error": null,
   "result": Object {
-    "body": "{\\"errors\\":[{\\"key\\":\\"exception\\",\\"message\\":\\"Error: Improperly formatted event\\"}]}",
+    "body": "{\\"errors\\":[{\\"key\\":\\"exception\\",\\"message\\":\\"Error: Event must be POST\\"}]}",
     "headers": Object {
       "Content-Type": "application/json",
     },

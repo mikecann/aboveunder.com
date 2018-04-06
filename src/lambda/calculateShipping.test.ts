@@ -10,7 +10,7 @@ test('no event returns error', async () =>
 
 test('GET event returns error', async () => 
 {
-    const event : LambdaEvent<any> = {
+    const event : LambdaEvent = {
       httpMethod: "GET",
       body: "",
       headers: {},
@@ -22,15 +22,15 @@ test('GET event returns error', async () =>
 
 test('it returns the correct response', async () => 
 {
-    const event : LambdaEvent<any> = {
+    const event : LambdaEvent = {
       httpMethod: "POST",
-      body: {
+      body: JSON.stringify({
         content: {
           items: [{
             
           }]
         }
-      },
+      }),
       headers: {},
       queryStringParameters: ""
     }
