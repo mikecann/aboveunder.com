@@ -62,7 +62,7 @@ const exampleBody = {
   }
 }
 
-type HTTPBody = typeof exampleBody;
+export type HTTPBody = typeof exampleBody;
 
 const exampleResponse = {
   "rates": [{
@@ -78,39 +78,56 @@ const exampleResponse = {
 
 type SuccessResponse = typeof exampleResponse;
 
-// const exampleError = {
-//   "errors": [{
-//     "key": "invalid_postal_code",
-//     "message": "The postal code is invalid."
-//     },
-//   ]
-// };
+const exampleError = {
+  "errors": [{
+    "key": "invalid_postal_code",
+    "message": "The postal code is invalid."
+    },
+  ]
+};
 
-// type ErrorResponse = typeof exampleError;
+type ErrorResponse = typeof exampleError;
 
 export function handler(event: LambdaEvent<HTTPBody>, context: any, callback: LambdaCallback) {
 
-  if (event.httpMethod != "POST" || !event.body || !event.body.content || !event.body.content.items ||
-    event.body.content.items.length == 0)
-    throw new Error("Improperly formatted event");
+  try {
+    if (event.httpMethod != "POST" || !event.body || !event.body.content || !event.body.content.items ||
+      event.body.content.items.length == 0)
+      throw new Error("Improperly formatted event");
 
-  const items = event.body.content.items;
-  console.log("Calculating shipping..", { items });
+    const items = event.body.content.items;
+    console.log("Calculating shipping..", { items });
 
-  const response: SuccessResponse = {
-    rates: [
-      { cost: 33, description: "33 bucks shipping" }
-    ]
+    const response: SuccessResponse = {
+      rates: [
+        { cost: 33, description: "33 bucks shipping" }
+      ]
+    }
+
+    console.log("Sending response", { response });
+
+    callback(null, {
+      statusCode: 200,
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(response)
+    })
   }
+  catch (e) {
+    const response : ErrorResponse = {
+      errors: [{
+        key: "exception",
+        message: e+""
+      }]
+    };
 
-  console.log("Sending response", { response });
-
-  callback(null, {
-    statusCode: 200,
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(response)
-  })
-
+    callback(null, {
+      statusCode: 500,
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(response)
+    })
+  }
 }

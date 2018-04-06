@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+Object {
+  "error": null,
+  "result": Object {
+    "body": "{\\"errors\\":[{\\"key\\":\\"exception\\",\\"message\\":\\"Error: Improperly formatted event\\"}]}",
+    "headers": Object {
+      "Content-Type": "application/json",
+    },
+    "statusCode": 500,
+  },
+}
+`;
+
+exports[`GET event returns error 1`] = `
+Object {
+  "error": null,
+  "result": Object {
+    "body": "{\\"errors\\":[{\\"key\\":\\"exception\\",\\"message\\":\\"Error: Improperly formatted event\\"}]}",
+    "headers": Object {
+      "Content-Type": "application/json",
+    },
+    "statusCode": 500,
+  },
+}
+`;
+
+exports[`GET event returns error 2`] = `
+Object {
+  "error": null,
+  "result": Object {
+    "body": "{\\"errors\\":[{\\"key\\":\\"exception\\",\\"message\\":\\"Error: Improperly formatted event\\"}]}",
+    "headers": Object {
+      "Content-Type": "application/json",
+    },
+    "statusCode": 500,
+  },
+}
+`;
+
+exports[`To return  1`] = `
+Object {
+  "error": null,
+  "result": Object {
+    "body": "{\\"errors\\":[{\\"key\\":\\"exception\\",\\"message\\":\\"Error: Improperly formatted event\\"}]}",
+    "headers": Object {
+      "Content-Type": "application/json",
+    },
+    "statusCode": 500,
+  },
+}
+`;
+
+exports[`it  1`] = `
+Object {
+  "error": null,
+  "result": Object {
+    "body": "{\\"errors\\":[{\\"key\\":\\"exception\\",\\"message\\":\\"Error: Improperly formatted event\\"}]}",
+    "headers": Object {
+      "Content-Type": "application/json",
+    },
+    "statusCode": 500,
+  },
+}
+`;
+
+exports[`it returns  1`] = `
+Object {
+  "error": null,
+  "result": Object {
+    "body": "{\\"errors\\":[{\\"key\\":\\"exception\\",\\"message\\":\\"Error: Improperly formatted event\\"}]}",
+    "headers": Object {
+      "Content-Type": "application/json",
+    },
+    "statusCode": 500,
+  },
+}
+`;
+
+exports[`it returns the correct response 1`] = `
+Object {
+  "error": null,
+  "result": Object {
+    "body": "{\\"errors\\":[{\\"key\\":\\"exception\\",\\"message\\":\\"Error: Improperly formatted event\\"}]}",
+    "headers": Object {
+      "Content-Type": "application/json",
+    },
+    "statusCode": 500,
+  },
+}
+`;
+
+exports[`no event returns error 1`] = `
+Object {
+  "error": null,
+  "result": Object {
+    "body": "{\\"errors\\":[{\\"key\\":\\"exception\\",\\"message\\":\\"Error: Improperly formatted event\\"}]}",
+    "headers": Object {
+      "Content-Type": "application/json",
+    },
+    "statusCode": 500,
+  },
+}
+`;
+
+exports[`no event returns error 2`] = `
+Object {
+  "error": null,
+  "result": Object {
+    "body": "{\\"errors\\":[{\\"key\\":\\"exception\\",\\"message\\":\\"Error: Improperly formatted event\\"}]}",
+    "headers": Object {
+      "Content-Type": "application/json",
+    },
+    "statusCode": 500,
+  },
+}
+`;
+
+exports[`no event throws  1`] = `
+Object {
+  "error": null,
+  "result": Object {
+    "body": "{\\"errors\\":[{\\"key\\":\\"exception\\",\\"message\\":\\"Error: Improperly formatted event\\"}]}",
+    "headers": Object {
+      "Content-Type": "application/json",
+    },
+    "statusCode": 500,
+  },
+}
+`;
+
+exports[`something 1`] = `
+Object {
+  "error": null,
+  "result": Object {
+    "body": "{\\"msg\\":\\"Hello, World!\\"}",
+    "statusCode": 200,
+  },
+}
+`;
