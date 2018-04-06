@@ -34,11 +34,11 @@ test('it returns the correct response', async () =>
       headers: {},
       queryStringParameters: ""
     }
-    
+
     const result = await callFunction(event, {}, handler);
     expect(result.result.body).toMatch(JSON.stringify({
       rates: [
-        { cost: 3, description: "33 bucks shipping" }
+        { cost: 33, description: "33 bucks shipping" }
       ]
     }))
 });
