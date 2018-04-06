@@ -7,6 +7,7 @@
     "sourceMap": true,
     "allowJs": true,
     "jsx": "react",
+    "baseUrl": ".",
     "moduleResolution": "node",
     "rootDir": "src",
     "forceConsistentCasingInFileNames": true,
@@ -18,10 +19,9 @@
     "noUnusedLocals": true
   },
   "exclude": [
-    "tools",
-    "lambda",
     "functions",
-    "dist",
+    "lambda",
+    "tools",
     "node_modules",
     "build",
     "scripts",

@@ -9,7 +9,7 @@
     "@types/jimp": "^0.2.1",
     "@types/lodash": "^4.14.104",
     "@types/markerclustererplus": "^2.1.33",
-    "@types/react-router-dom": "^4.2.3",
+    "@types/react-router-dom": "^4.2.6",
     "concurrently": "^3.5.1",
     "csvtojson": "^1.1.9",
     "exif": "^0.6.0",
@@ -17,21 +17,21 @@
     "loadash": "^1.0.0",
     "moment": "^2.19.4",
     "normalize-range": "^0.1.2",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
     "react-google-maps": "^9.4.5",
     "react-image-magnify": "^2.5.2",
     "react-markdown": "^3.1.1",
     "react-router-dom": "^4.2.2",
-    "react-scripts-ts": "2.8.0",
-    "semantic-ui-react": "^0.77.1",
-    "typescript": "^2.6.2"
+    "react-scripts-ts": "2.14.0",
+    "semantic-ui-react": "^0.77.1"
   },
   "scripts": {
-    "dev": "concurrently -n src,tools,lambda \"yarn dev-src\" \"yarn dev-tools\" \"yarn dev-lambda\"",
-    "dev-src": "tsc -p ./tools/tsconfig.json -w",
+    "dev": "concurrently -n src,tools,lambda,test \"yarn dev-src\" \"yarn dev-tools\" \"yarn dev-lambda\" \"yarn dev-test\"",
+    "dev-src": "react-scripts-ts start",
     "dev-tools": "tsc -p ./tools/tsconfig.json -w",
-    "dev-lambda": "tsc -p ./lambda/tsconfig.json -w",
+    "dev-lambda": "tsc -p ./src/lambda/tsconfig.json -w",
+    "dev-test": "jest --watch",
     "build": "react-scripts-ts build",
     "build-tools": "tsc -p ./tools/tsconfig.json",
     "build-lambda": "tsc -p ./lambda/tsconfig.json",
@@ -39,7 +39,6 @@
     "eject": "react-scripts-ts eject",
     "deploy": "yarn build-tools && yarn generateProductsJson && yarn build && yarn build-lambda",
     "serve-lambda": "netlify-lambda serve functions",
-    
     "generateProductsJson": "node dist/tools/generateProductsJson",
     "importFitz": "node dist/tools/importFitzPrice",
     "importPrintful": "node dist/tools/importPrintfulPrice",
@@ -48,10 +47,11 @@
     "processImages": "node dist/tools/processImages"
   },
   "devDependencies": {
-    "@types/jest": "^21.1.8",
-    "@types/node": "^8.0.58",
-    "@types/react": "^16.0.29",
-    "@types/react-dom": "^16.0.3",
-    "ts-node": "^4.0.1"
+    "@types/jest": "^22.2.2",
+    "@types/node": "^9.6.2",
+    "@types/react": "^16.3.5",
+    "@types/react-dom": "^16.0.4",
+    "ts-node": "^4.0.1",
+    "typescript": "^2.8.1"
   }
 }
