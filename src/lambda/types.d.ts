@@ -1,8 +1,11 @@
 
 export type LambdaCallbackError = string | {} | null;
 export type LambdaCallResult = {
-    statusCode: number,
-    body: string
+    statusCode?: number,
+    body?: string,
+    headers?: {
+        "Content-Type": "application/json"
+    }
 }
 
 export type LambdaCallbackWithError = (error:LambdaCallbackError) => void;

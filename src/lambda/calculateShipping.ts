@@ -68,11 +68,11 @@ const exampleResponse = {
   "rates": [{
     "cost": 10,
     "description": "10$ shipping"
-    }, {
+  }, {
     "cost": 20,
     "description": "20$ shipping",
     "guaranteedDaysToDelivery": 5
-    },
+  },
   ]
 }
 
@@ -88,17 +88,24 @@ type SuccessResponse = typeof exampleResponse;
 
 // type ErrorResponse = typeof exampleError;
 
-export function handler(event: LambdaEvent<HTTPBody>, context:any, callback: LambdaCallback) {
+export function handler(event: LambdaEvent<HTTPBody>, context: any, callback: LambdaCallback) {
 
-    const response : SuccessResponse = {
-      rates: [
-        { cost: 33, description: "33 bucks shipping" }
-      ]
-    }
+  console.log("Calculating shipping..");
 
-    callback(null, {
-      statusCode: 200,
-      body: JSON.stringify(response)
-    })
-
+  const response: SuccessResponse = {
+    rates: [
+      { cost: 33, description: "33 bucks shipping" }
+    ]
   }
+
+  console.log("Sending response", { response });
+
+  callback(null, {
+    statusCode: 200,
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(response)
+  })
+
+}
