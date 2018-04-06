@@ -33,7 +33,7 @@ interface IOptions
 
 async function run() 
 {
-    const csvPath = `${__dirname}/../../data/Above Under Pricing - Printful Pricing.csv`;
+    const csvPath = `${__dirname}/../../tools/data/Above Under Pricing - Printful Pricing.csv`;
     const tsPath = `${__dirname}/../../src/lib/printfulPrintOptions.ts`;
 
     var options : IOptions = {};

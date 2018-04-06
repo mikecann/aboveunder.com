@@ -21,6 +21,7 @@
   "exclude": [
     "functions",
     "lambda",
+    "src/lambda/**",
     "tools",
     "node_modules",
     "build",

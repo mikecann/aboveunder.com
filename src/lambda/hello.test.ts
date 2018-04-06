@@ -5,7 +5,7 @@ async function callFunction(event:any, context:any, lambda: LambdaFunction) : Pr
 {
     return new Promise<LambdaCallbackResult>(resolve => {
         lambda(event, context, (error?:LambdaCallbackError, result?:LambdaCallResult) => {
-            resolve({ error, result })
+            resolve({ error, result });
         })
     });
 }

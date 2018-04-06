@@ -36,7 +36,7 @@ interface IOptions
 
 async function run() 
 {
-    const csvPath = `${__dirname}/../../data/Above Under Pricing - Fitz Pricing.csv`;
+    const csvPath = `${__dirname}/../../tools/data/Above Under Pricing - Fitz Pricing.csv`;
     const tsPath = `${__dirname}/../../src/lib/fitzPrintOptions.ts`;
 
     var options : IOptions = {};

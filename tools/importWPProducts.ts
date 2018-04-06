@@ -9,7 +9,7 @@ import * as moment from "moment";
 
 async function run() 
 {
-    const csvPath = `${__dirname}/../data/wpProducts.csv`;
+    const csvPath = `${__dirname}/../tools/data/wpProducts.csv`;
     const tsPath = `${__dirname}/../src/lib/printProducts.ts`;
     var products : Partial<IPrint>[] = [];
 
