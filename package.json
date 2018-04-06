@@ -31,7 +31,7 @@
     "dev-src": "react-scripts-ts start",
     "dev-tools": "yarn build-tools -w",
     "dev-lambda": "yarn build-lambda -w",
-    "test": "react-scripts-ts test --env=jsdom",
+    "test": "react-scripts-ts test --env=jsdom -u",
     "build": "yarn build-src && yarn build-tools && yarn build-lambda",
     "build-src": "react-scripts-ts build",
     "build-tools": "tsc -p ./tools/tsconfig.json",
