@@ -1,14 +1,5 @@
 import { handler } from "./hello";
-import { LambdaCallResult, LambdaCallbackError, LambdaFunction, LambdaCallbackResult } from "./types";
-
-async function callFunction(event:any, context:any, lambda: LambdaFunction) : Promise<LambdaCallbackResult>
-{
-    return new Promise<LambdaCallbackResult>(resolve => {
-        lambda(event, context, (error?:LambdaCallbackError, result?:LambdaCallResult) => {
-            resolve({ error, result });
-        })
-    });
-}
+import { callFunction } from "./testUtils";
 
 test('something', async () => 
 {

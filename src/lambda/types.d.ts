@@ -11,6 +11,6 @@ export type LambdaCallbackWithResult = (error:null, result:LambdaCallResult) => 
 
 export type LambdaCallback = (error?:LambdaCallbackError, result?:LambdaCallResult) => void;
 
-export type LambdaCallbackResult = { error: LambdaCallbackError, result: LambdaCallResult | null };
+export type LambdaCallbackResult = { error: LambdaCallbackError | null, result: LambdaCallResult | null };
 
 export type LambdaFunction = (event: any, context: any, callback: LambdaCallback) => void;
