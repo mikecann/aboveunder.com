@@ -1,4 +1,4 @@
-import { LambdaEvent, LambdaCallback, LambdaCallbackResult, LambdaCallResult } from "./types";
+import { LambdaEvent, LambdaCallback, LambdaCallResult } from "./types";
 
 const exampleBody = {
   "eventName": "shippingrates.fetch",
