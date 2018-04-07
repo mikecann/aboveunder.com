@@ -30,4 +30,9 @@
       visibility: hidden;
       display: none;
     }
+
+    #fb-root {
+        visibility: hidden;
+        display: none;
+    }
   }
