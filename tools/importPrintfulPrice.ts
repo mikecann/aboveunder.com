@@ -12,6 +12,7 @@ interface ICSVRow
     "Printful Price": string;
     "My Price": string;
     "Printful Shipping": string;
+    "Printful Variant ID": string;
     Ratio: string;
     Area: string;  
 }
@@ -65,7 +66,10 @@ async function run()
                     widthInches: parseInt(json.Width),
                     heightInches: parseInt(json.Height),
                     priceAUD: getMyRoundedPrice(parseFloat(json["My Price"])),
-                    weight: parseFloat(json.Weight) * 1000, // from kg to g
+                    weight: parseFloat(json.Weight),
+                    meta: {
+                        printfulVariantId: json["Printful Variant ID"]
+                    }
                 })
             }
         })

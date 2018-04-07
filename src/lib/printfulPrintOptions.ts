@@ -12,63 +12,100 @@ export const data : IPrintOption[] = [
         "widthInches": 10,
         "heightInches": 10,
         "priceAUD": 37,
-        "weight": 500
+        "weight": 12.8,
+        "meta": {
+          "printfulVariantId": "6872"
+        }
       },
       {
         "id": "12x12",
         "widthInches": 12,
         "heightInches": 12,
         "priceAUD": 41,
-        "weight": 500
+        "weight": 18.4,
+        "meta": {
+          "printfulVariantId": "6873"
+        }
+      },
+      {
+        "id": "14x14",
+        "widthInches": 14,
+        "heightInches": 14,
+        "priceAUD": 44,
+        "weight": 24.9,
+        "meta": {
+          "printfulVariantId": "6874"
+        }
       },
       {
         "id": "16x12",
         "widthInches": 16,
         "heightInches": 12,
-        "priceAUD": 44,
-        "weight": 500
+        "priceAUD": 48,
+        "weight": 25.5,
+        "meta": {
+          "printfulVariantId": "6875"
+        }
       },
       {
         "id": "18x12",
         "widthInches": 18,
         "heightInches": 12,
-        "priceAUD": 48,
-        "weight": 500
+        "priceAUD": 49,
+        "weight": 28.3,
+        "meta": {
+          "printfulVariantId": "6876"
+        }
       },
       {
         "id": "16x16",
         "widthInches": 16,
         "heightInches": 16,
-        "priceAUD": 49,
-        "weight": 500
+        "priceAUD": 50,
+        "weight": 32.6,
+        "meta": {
+          "printfulVariantId": "6877"
+        }
       },
       {
         "id": "20x16",
         "widthInches": 20,
         "heightInches": 16,
         "priceAUD": 51,
-        "weight": 500
+        "weight": 41.1,
+        "meta": {
+          "printfulVariantId": "6878"
+        }
       },
       {
         "id": "18x18",
         "widthInches": 18,
         "heightInches": 18,
         "priceAUD": 55,
-        "weight": 500
+        "weight": 42.5,
+        "meta": {
+          "printfulVariantId": "6879"
+        }
       },
       {
         "id": "24x18",
         "widthInches": 24,
         "heightInches": 18,
         "priceAUD": 58,
-        "weight": 500
+        "weight": 56.7,
+        "meta": {
+          "printfulVariantId": "6880"
+        }
       },
       {
         "id": "36x24",
         "widthInches": 36,
         "heightInches": 24,
         "priceAUD": 78,
-        "weight": 1000
+        "weight": 107.7,
+        "meta": {
+          "printfulVariantId": "7845"
+        }
       }
     ]
   },
@@ -77,39 +114,54 @@ export const data : IPrintOption[] = [
     "name": "Canvas",
     "sizes": [
       {
-        "id": "16x12",
-        "widthInches": 16,
-        "heightInches": 12,
-        "priceAUD": 120,
-        "weight": 1000
-      },
-      {
-        "id": "16x16",
-        "widthInches": 16,
-        "heightInches": 16,
-        "priceAUD": 130,
-        "weight": 1000
-      },
-      {
         "id": "20x16",
         "widthInches": 20,
         "heightInches": 16,
         "priceAUD": 130,
-        "weight": 1000
+        "weight": 1236,
+        "meta": {
+          "printfulVariantId": "6"
+        }
       },
       {
         "id": "24x18",
         "widthInches": 24,
         "heightInches": 18,
         "priceAUD": 160,
-        "weight": 1000
+        "weight": 1718,
+        "meta": {
+          "printfulVariantId": "7"
+        }
+      },
+      {
+        "id": "12x12",
+        "widthInches": 12,
+        "heightInches": 12,
+        "priceAUD": 120,
+        "weight": 739.9,
+        "meta": {
+          "printfulVariantId": "823"
+        }
+      },
+      {
+        "id": "16x16",
+        "widthInches": 16,
+        "heightInches": 16,
+        "priceAUD": 130,
+        "weight": 1451.5,
+        "meta": {
+          "printfulVariantId": "824"
+        }
       },
       {
         "id": "36x24",
         "widthInches": 36,
         "heightInches": 24,
         "priceAUD": 190,
-        "weight": 2000
+        "weight": 2795.3,
+        "meta": {
+          "printfulVariantId": "825"
+        }
       }
     ]
   },
@@ -122,63 +174,100 @@ export const data : IPrintOption[] = [
         "widthInches": 10,
         "heightInches": 10,
         "priceAUD": 87,
-        "weight": 1500
+        "weight": 453.6,
+        "meta": {
+          "printfulVariantId": "6883"
+        }
       },
       {
         "id": "12x12",
         "widthInches": 12,
         "heightInches": 12,
         "priceAUD": 99,
-        "weight": 1500
+        "weight": 567,
+        "meta": {
+          "printfulVariantId": "6884"
+        }
+      },
+      {
+        "id": "14x14",
+        "widthInches": 14,
+        "heightInches": 14,
+        "priceAUD": 120,
+        "weight": 708.7,
+        "meta": {
+          "printfulVariantId": "6885"
+        }
       },
       {
         "id": "16x12",
         "widthInches": 16,
         "heightInches": 12,
         "priceAUD": 120,
-        "weight": 1500
+        "weight": 595.3,
+        "meta": {
+          "printfulVariantId": "6886"
+        }
       },
       {
         "id": "18x12",
         "widthInches": 18,
         "heightInches": 12,
         "priceAUD": 120,
-        "weight": 1500
+        "weight": 623.7,
+        "meta": {
+          "printfulVariantId": "6887"
+        }
       },
       {
         "id": "16x16",
         "widthInches": 16,
         "heightInches": 16,
         "priceAUD": 130,
-        "weight": 1500
+        "weight": 850.5,
+        "meta": {
+          "printfulVariantId": "6888"
+        }
       },
       {
         "id": "20x16",
         "widthInches": 20,
         "heightInches": 16,
         "priceAUD": 150,
-        "weight": 1500
+        "weight": 765.4,
+        "meta": {
+          "printfulVariantId": "6889"
+        }
       },
       {
         "id": "18x18",
         "widthInches": 18,
         "heightInches": 18,
         "priceAUD": 150,
-        "weight": 1500
+        "weight": 1048.9,
+        "meta": {
+          "printfulVariantId": "6890"
+        }
       },
       {
         "id": "24x18",
         "widthInches": 24,
         "heightInches": 18,
         "priceAUD": 170,
-        "weight": 1500
+        "weight": 1445.8,
+        "meta": {
+          "printfulVariantId": "6891"
+        }
       },
       {
         "id": "36x24",
         "widthInches": 36,
         "heightInches": 24,
         "priceAUD": 220,
-        "weight": 1500
+        "weight": 2466.4,
+        "meta": {
+          "printfulVariantId": "7846"
+        }
       }
     ]
   }

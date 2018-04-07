@@ -45,6 +45,7 @@ export interface IPrintOptionSize
     heightInches: number,
     priceAUD: number,
     weight: number;
+    meta?: any;
 }
 
 export interface IDB
