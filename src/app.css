@@ -24,3 +24,10 @@
 .blog-post-thumb:hover {
     box-shadow: 0 8px 20px rgba(33,33,33,.5);
 }
+
+@media screen and (max-width: 600px) {
+    .fb-customerchat {
+      visibility: hidden;
+      display: none;
+    }
+  }
