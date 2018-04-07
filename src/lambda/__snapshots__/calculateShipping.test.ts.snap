@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GET event returns error 1`] = `
+Object {
+  "error": null,
+  "result": Object {
+    "body": "{\\"errors\\":[{\\"key\\":\\"exception\\",\\"message\\":\\"Error: Event must be POST\\"}]}",
+    "headers": Object {
+      "Content-Type": "application/json",
+    },
+    "statusCode": 200,
+  },
+}
+`;
+
+exports[`no event returns error 1`] = `
+Object {
+  "error": null,
+  "result": Object {
+    "body": "{\\"errors\\":[{\\"key\\":\\"exception\\",\\"message\\":\\"Error: Event must be POST\\"}]}",
+    "headers": Object {
+      "Content-Type": "application/json",
+    },
+    "statusCode": 200,
+  },
+}
+`;

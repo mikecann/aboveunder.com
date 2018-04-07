@@ -1,189 +1,12 @@
 import { LambdaEvent, LambdaCallback, LambdaCallResult } from "./types";
-// import * as https from "https";
-// import { RequestOptions } from "https";
-import axios from "axios";
+import * as https from "https";
+import { RequestOptions } from "https";
 
-// const exampleBody = {
-//   "eventName": "shippingrates.fetch",
-//   "mode": "Live",
-//   "createdOn": "2018-04-06T07:26:32.7493853Z",
-//   "content": {
-//     "token": "e8c340d6-4d7b-4b75-ae2d-bc0e283df8bc",
-//     "isRecurringOrder": false,
-//     "parentToken": null,
-//     "parentInvoiceNumber": null,
-//     "subscriptionId": null,
-//     "currency": "aud",
-//     "creationDate": "2018-04-06T03:02:50Z",
-//     "modificationDate": "2018-04-06T03:02:51Z",
-//     "recoveredFromCampaignId": null,
-//     "status": "InProgress",
-//     "paymentStatus": null,
-//     "email": "mike.cann@gmail.com",
-//     "willBePaidLater": false,
-//     "billingAddressFirstName": null,
-//     "billingAddressName": "Mike",
-//     "billingAddressCompanyName": "",
-//     "billingAddressAddress1": "3 / 25 Hardy Street",
-//     "billingAddressAddress2": "",
-//     "billingAddressCity": "South Perth",
-//     "billingAddressCountry": "AU",
-//     "billingAddressProvince": "",
-//     "billingAddressPostalCode": "6151",
-//     "billingAddressPhone": "",
-//     "billingAddress": {
-//       "fullName": "Mike",
-//       "firstName": null,
-//       "name": "Mike",
-//       "company": "",
-//       "address1": "3 / 25 Hardy Street",
-//       "address2": "",
-//       "fullAddress": "3 / 25 Hardy Street",
-//       "city": "South Perth",
-//       "country": "AU",
-//       "postalCode": "6151",
-//       "province": "",
-//       "phone": "",
-//       "vatNumber": null
-//     },
-//     "shippingAddressFirstName": null,
-//     "shippingAddressName": "Mike",
-//     "shippingAddressCompanyName": "",
-//     "shippingAddressAddress1": "3 / 25 Hardy Street",
-//     "shippingAddressAddress2": "",
-//     "shippingAddressCity": "South Perth",
-//     "shippingAddressCountry": "AU",
-//     "shippingAddressProvince": "",
-//     "shippingAddressPostalCode": "6151",
-//     "shippingAddressPhone": "",
-//     "shippingAddress": {
-//       "fullName": "Mike",
-//       "firstName": null,
-//       "name": "Mike",
-//       "company": "",
-//       "address1": "3 / 25 Hardy Street",
-//       "address2": "",
-//       "fullAddress": "3 / 25 Hardy Street",
-//       "city": "South Perth",
-//       "country": "AU",
-//       "postalCode": "6151",
-//       "province": "",
-//       "phone": "",
-//       "vatNumber": null
-//     },
-//     "shippingAddressSameAsBilling": false,
-//     "creditCardLast4Digits": null,
-//     "trackingNumber": null,
-//     "trackingUrl": null,
-//     "shippingFees": null,
-//     "shippingProvider": null,
-//     "shippingMethod": null,
-//     "cardHolderName": null,
-//     "paymentMethod": 0,
-//     "notes": null,
-//     "customFieldsJson": "[]",
-//     "userId": "064c296c-5e74-40dd-9338-e40b763e96de",
-//     "completionDate": null,
-//     "paymentGatewayUsed": "None",
-//     "taxProvider": "Default",
-//     "discounts": [],
-//     "plans": [],
-//     "taxes": [],
-//     "user": null,
-//     "items": [
-//       {
-//         "paymentSchedule": {
-//           "interval": 0,
-//           "intervalCount": 1,
-//           "trialPeriodInDays": null,
-//           "startsOn": "2018-04-06T00:00:00Z"
-//         },
-//         "token": "e8c340d6-4d7b-4b75-ae2d-bc0e283df8bc",
-//         "name": "Watermans Observatory",
-//         "price": 22,
-//         "quantity": 1,
-//         "fileGuid": null,
-//         "url": "https://aboveunder.com/products/au0162-watermans-observatory.json",
-//         "id": "au0162-watermans-observatory-photo-paper-poster-12x8-fitzgeralds",
-//         "initialData": "",
-//         "description": `'Watermans Observatory' printed on 'Photo Paper Poster' at size '12" x 8"' using '🐨 Australian Printer'`,
-//         "categories": [],
-//         "weight": 500,
-//         "image": "/images/products/thumb/Watermans-Observatory.jpg",
-//         "originalPrice": null,
-//         "uniqueId": "26e4c45a-56ce-4498-8734-ca49339dd018",
-//         "stackable": true,
-//         "minQuantity": null,
-//         "maxQuantity": null,
-//         "addedOn": "2018-04-06T03:02:51Z",
-//         "modificationDate": "2018-04-06T03:02:51Z",
-//         "shippable": true,
-//         "taxable": true,
-//         "duplicatable": false,
-//         "width": null,
-//         "height": null,
-//         "length": null,
-//         "metadata": null,
-//         "totalPrice": 22,
-//         "totalWeight": 500,
-//         "taxes": [],
-//         "alternatePrices": {},
-//         "customFields": [
-//           {
-//             "name": "Note to Above Under",
-//             "displayValue": "",
-//             "operation": null,
-//             "type": "textarea",
-//             "options": "",
-//             "required": false,
-//             "value": "",
-//             "optionsArray": null
-//           }
-//         ],
-//         "unitPrice": 22,
-//         "hasDimensions": false
-//       }
-//     ],
-//     "refunds": [],
-//     "lang": "en",
-//     "refundsAmount": 0,
-//     "adjustedAmount": 22,
-//     "finalGrandTotal": 22,
-//     "totalNumberOfItems": 0,
-//     "invoiceNumber": "e8c340d6-4d7b-4b75-ae2d-bc0e283df8bc",
-//     "billingAddressComplete": true,
-//     "shippingAddressComplete": true,
-//     "shippingMethodComplete": false,
-//     "rebateAmount": 0,
-//     "subtotal": 22,
-//     "baseTotal": 22,
-//     "itemsTotal": 22,
-//     "taxableTotal": 22,
-//     "grandTotal": 22,
-//     "total": 22,
-//     "totalWeight": 500,
-//     "totalRebateRate": 0,
-//     "customFields": [],
-//     "shippingEnabled": true,
-//     "numberOfItemsInOrder": 1,
-//     "paymentTransactionId": "",
-//     "metadata": {},
-//     "taxesTotal": 0,
-//     "itemsCount": 1,
-//     "summary": {
-//       "subtotal": 22,
-//       "taxableTotal": 22,
-//       "total": 22,
-//       "payableNow": 22,
-//       "paymentMethod": 0,
-//       "taxes": [],
-//       "adjustedTotal": 22,
-//       "shipping": null
-//     },
-//     "ipAddress": "61.245.143.206",
-//     "hasSubscriptions": false
-//   }
-// } 
+export type PrintfulAPIItemInfo = {
+  variant_id: string,
+  quantity: number,
+  value: string
+}
 
 export type ProductJsonImport = {
   id: string,
@@ -194,14 +17,18 @@ export type ProductJsonImport = {
 
 export type CalculateShippingEventBody = {
   content: {
+    shippingAddressAddress1: string,
     shippingAddressCountry: string,
+    shippingAddressCity: string,
     shippingAddressPostalCode: string,
+    shippingAddressProvince: string,
     items: SnipcartItem[]
   }
 }
 
 export const freeShippingToPerthMessage = "Free shipping to Perth";
 export const standardShippingMessage = "Standard shipping";
+export const combinedShippingMessage = "Combined shipping";
 
 export type SnipcartItem = {
   id: string,
@@ -214,6 +41,14 @@ export type SnipcartItem = {
 export type SnipcartRate = {
   cost: number;
   description: string;
+}
+
+export type PrintfulAddress = {
+  "address1": string,
+  "city": string,
+  "country_code": string,
+  "state_code": string,
+  "zip": number
 }
 
 const exampleResponse = {
@@ -240,6 +75,18 @@ const exampleError = {
 
 type ErrorResponse = typeof exampleError;
 
+export type PrintfulAPIResult<T> = {
+  code: number,
+  result: T
+}
+
+export type PrintfulAPIShippingEntry = {
+  id: string,
+  name: string,
+  rate: string,
+  currency: string
+}
+
 export function handler(event: LambdaEvent, context: any, callback: LambdaCallback) {
 
   handle(callback, async () => {
@@ -259,38 +106,56 @@ export function handler(event: LambdaEvent, context: any, callback: LambdaCallba
       throw new Error("No items supplied in body");
 
     const items = body.content.items;
-    console.log("Calculating shipping..", { items });
 
-    const rates: SnipcartRate[] = [];
-    for (let i = 0; i < items.length; i++) {
-      rates.push(await calculateShipping(body, i));
+    // Prevent multiple printers in one order, this complicates things a little too
+    // much right now
+    guardAgainstMultiplePrinters(items);
+
+    console.log("Calculating shipping..");
+
+    const response: SuccessResponse = {
+      rates: await calculateShipping(body)
     }
-
-    const response: SuccessResponse = { rates }
 
     return response;
   })
 }
 
-async function calculateShipping(body: CalculateShippingEventBody, itemIndex: number): Promise<SnipcartRate> {
-  const item = body.content.items[itemIndex];
-  const idParts = item.id.split("-");
-  const printer = idParts[idParts.length - 1];
-  if (printer == "fitzgeralds")
-    return await Promise.resolve(calculateFitzShipping(body, itemIndex));
-
-  if (printer == "printful")
-    return await calculatePrintfulShipping(body, itemIndex);
-
-  throw new Error(`Unkown printer '${printer}'`)
+function guardAgainstMultiplePrinters(items: SnipcartItem[]) {
+  var printer = getPrinter(items[0]);
+  for (var i = 1; i < items.length; i++)
+    if (getPrinter(items[i]) != printer)
+      throw new Error("Cannot have multiple printers in one order");
 }
 
-function calculateFitzShipping(body: CalculateShippingEventBody, itemIndex: number): SnipcartRate {
+function getPrinter(item: SnipcartItem): string {
+  const idParts = item.id.split("-");
+  const printer = idParts[idParts.length - 1];
+  return printer;
+}
+
+function getPrintOption(item: SnipcartItem): string {
+  const idParts = item.id.split("-");
+  const printer = idParts[idParts.length - 3];
+  return printer;
+}
+
+async function calculateShipping(body: CalculateShippingEventBody): Promise<SnipcartRate[]> {
+  const printer = getPrinter(body.content.items[0]);
+  if (printer == "fitzgeralds")
+    return await Promise.resolve([calculateFitzShipping(body)]);
+
+  if (printer == "printful")
+    return await calculatePrintfulShipping(body);
+
+  throw new Error(`Unknown printer '${printer}'`)
+}
+
+function calculateFitzShipping(body: CalculateShippingEventBody): SnipcartRate {
 
   const country = body.content.shippingAddressCountry;
   const postalCode = body.content.shippingAddressPostalCode;
-  const item = body.content.items[itemIndex];
-  const weight = item.weight;
+  const items = body.content.items;
 
   // If they are perth based then free shipping
   if (country == "AU" && postalCode.startsWith("6"))
@@ -299,9 +164,12 @@ function calculateFitzShipping(body: CalculateShippingEventBody, itemIndex: numb
       description: freeShippingToPerthMessage
     }
 
+  // Use wegith as the method for calculating fitz shipping
+  const totalCost = items.reduce((prev, item) => prev + getFitzPriceFromWeight(item.weight), 0);
+
   return {
-    cost: getFitzPriceFromWeight(weight),
-    description: standardShippingMessage
+    cost: totalCost,
+    description: items.length == 1 ? standardShippingMessage : combinedShippingMessage
   }
 }
 
@@ -327,10 +195,40 @@ export function getFitzPriceFromWeight(weight: number): number {
   return 150;
 }
 
-async function calculatePrintfulShipping(body: CalculateShippingEventBody, itemIndex: number): Promise<SnipcartRate> {
+async function calculatePrintfulShipping(body: CalculateShippingEventBody): Promise<SnipcartRate[]> {
 
-  const item = body.content.items[itemIndex];
+  guardAgaintCanvasShippingFromPrintfulToAU(body);
 
+  const itemInfos = await getVariantIdsForItems(body.content.items);
+
+  const address: PrintfulAddress = {
+    address1: body.content.shippingAddressAddress1,
+    city: body.content.shippingAddressCity,
+    country_code: body.content.shippingAddressCountry,
+    zip: parseInt(body.content.shippingAddressPostalCode),
+    state_code: body.content.shippingAddressProvince
+  }
+
+  console.log("Loaded product size info from json, getting shipping rates from printful", { itemInfos, address });
+
+  const printfulRates = await getShippingRatesFromPrintfulAPI(itemInfos, address);
+
+  console.log("Loaded printful rates", printfulRates);
+
+  return [getFirstMatchingRate(["USPS_FIRST", "APC_PARCEL_CONFIRM", "APC_PARCEL_CONNECT", "STANDARD"], printfulRates)];
+}
+
+function guardAgaintCanvasShippingFromPrintfulToAU(body: CalculateShippingEventBody) {
+  for (var item of body.content.items)
+    if (getPrintOption(item) == "canvas")
+      throw new Error("Cannot ship canvas to the AU, from global printer due to Australian customs rules.")
+}
+
+function getVariantIdsForItems(items: SnipcartItem[]): Promise<PrintfulAPIItemInfo[]> {
+  return Promise.all(items.map(i => getPrintfulInfoForItem(i)));
+}
+
+async function getPrintfulInfoForItem(item: SnipcartItem): Promise<PrintfulAPIItemInfo> {
   console.log("Loading item info from: ", item.url);
 
   const sizes = await fetchJson<ProductJsonImport>(item.url);
@@ -346,99 +244,81 @@ async function calculatePrintfulShipping(body: CalculateShippingEventBody, itemI
   if (!size.meta || !size.meta.printfulVariantId)
     throw new Error(`Could not find the 'printfulVariantId' in the size meta in the data at '${item.url}'`);
 
-  const printfulVariantId: string = size.meta.printfulVariantId;
-
-  console.log("Loaded product size info from json", { size, printfulVariantId });
-
-  // var recipient = {
-  //   "address1": "3 25 Hardy Street",
-  //   "city": "South Perth",
-  //   "country_code": "AU",
-  //   "state_code": "WA",
-  //   "zip": 5151
-  // };
-
-  // var formData = {
-  //   "recipient": recipient,
-  //   "items": [{
-  //     "quantity": item.quantity,
-  //     "variant_id": printfulVariantId
-  //   }]
-  // };
-
-  // const requestOptions : RequestOptions = {
-  //   hostname: "api.printful.com",
-  //   path: "/shipping/rates",
-  //   method: "POST",
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //   }
-
-  // }
-
-  // const options = {
-  //   contentType: "application/json",
-  //   method: 'post',
-  //   payload: JSON.stringify(formData),
-  //   headers: {
-  //     authorization: "Basic ZHk4cWN2d24tZGE1eS1hcjlkOjJpMG0taGlweXpqM2dlZWV1"
-  //   }
-  // }
-  // const rates = await fetchJson<ProductJsonImport>('https://api.printful.com/shipping/rates');
-
-  
-
   return {
-    cost: 66,
-    description: standardShippingMessage
+    variant_id: size.meta.printfulVariantId,
+    quantity: item.quantity,
+    value: item.price + ""
   }
 }
 
-async function fetchJson<T>(url:string) {
+function getFirstMatchingRate(printfulShippingOptionIds: string[], entries: PrintfulAPIShippingEntry[]): SnipcartRate {
 
-  var response =  await axios.get<T>(url)
-  return response.data;
+  for (var shippingOptionId of printfulShippingOptionIds) {
+    const option = entries.find(r => r.id == shippingOptionId);
+    if (option)
+      return {
+        description: option.name,
+        cost: Math.round(parseFloat(option.rate))
+      };
+  }
 
-  // return new Promise<T>((resolve, reject) => {
-  //   https.get(options, resp => {
-  //     let data = '';
-
-  //     // A chunk of data has been recieved.
-  //     resp.on('data', (chunk) => {
-  //       data += chunk;
-  //     });
-
-  //     resp.on('end', () => {
-  //       resolve(JSON.parse(data));
-  //     });
-
-  //   }).on("error", (err) => {
-  //     reject(err);
-  //   });
-  // });
+  throw new Error("No valid shipping options found in printful rates.")
 }
 
-// export function getPrintfulPriceFromWeight(weight:number) : number {
-//   if (weight < 500)
-//     return 0;
+async function getShippingRatesFromPrintfulAPI(itemInfos: PrintfulAPIItemInfo[], address: PrintfulAddress): Promise<PrintfulAPIShippingEntry[]> {
 
-//   if (weight < 1000)
-//     return 6;
+  var formData = {
+    recipient: address,
+    currency: "AUD",
+    items: itemInfos
+  };
 
-//   if (weight < 1500)
-//     return 11;
+  const requestOptions: RequestOptions = {
+    hostname: "api.printful.com",
+    port: 443,
+    path: "/shipping/rates",
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+      'Content-Length': JSON.stringify(formData).length,
+      "Authorization": "Basic ZHk4cWN2d24tZGE1eS1hcjlkOjJpMG0taGlweXpqM2dlZWV1"
+    }
+  }
 
-//   if (weight < 2000)
-//     return 15;
+  const result = await fetchJson<PrintfulAPIResult<PrintfulAPIShippingEntry[]>>(requestOptions, formData);
+  if (result.code != 200)
+    throw new Error("Printful API error: " + JSON.stringify(result));
 
-//   if (weight < 3000)
-//     return 20;
+  return result.result;
+}
 
-//   if (weight < 4000)
-//     return 40;
+async function fetchJson<T>(options: RequestOptions | string, body?: any) {
+  return new Promise<T>((resolve, reject) => {
 
-//   return 50;
-// }
+    const request = https.request(options, resp => {
+      let data = '';
+
+      // A chunk of data has been recieved.
+      resp.on('data', (chunk) => {
+        data += chunk;
+      });
+
+      resp.on('end', () => {
+        resolve(JSON.parse(data));
+      });
+
+    }).on("error", (err) => {
+      reject(err);
+    });
+
+    if (body) {
+      const data = JSON.stringify(body);
+      request.write(data);
+    }
+
+    request.end();
+  });
+}
 
 async function handle(callback: LambdaCallback, fn: () => Promise<any>) {
   try {
@@ -462,7 +342,7 @@ async function handle(callback: LambdaCallback, fn: () => Promise<any>) {
     };
 
     callback(null, {
-      statusCode: 500,
+      statusCode: 200,
       headers: {
         "Content-Type": "application/json"
       },

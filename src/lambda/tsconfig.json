@@ -20,6 +20,7 @@
   },
   "exclude": [
     "__snapshots__/**",
+    "examples",
     "*.test.ts",
     "testUtils.ts"
   ]
