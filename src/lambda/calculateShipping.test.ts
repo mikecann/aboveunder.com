@@ -78,7 +78,7 @@ test('printful prices loaded dynamically', async () =>
       shippingAddressCountry: "AU",
       shippingAddressPostalCode: "3221",
       items: [{ 
-        id:"au0162-watermans-observatory-photo-paper-poster-12x8-printful", 
+        id:"au0162-watermans-observatory-photo-paper-poster-10x10-printful", 
         price:0, 
         weight: 44 ,
         url: "https://aboveunder.com/products/au0162-watermans-observatory.json"

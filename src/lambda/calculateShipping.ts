@@ -1,5 +1,7 @@
 import { LambdaEvent, LambdaCallback, LambdaCallResult } from "./types";
-import * as https from "https";
+// import * as https from "https";
+// import { RequestOptions } from "https";
+import axios from "axios";
 
 // const exampleBody = {
 //   "eventName": "shippingrates.fetch",
@@ -181,7 +183,14 @@ import * as https from "https";
 //     "ipAddress": "61.245.143.206",
 //     "hasSubscriptions": false
 //   }
-// }
+// } 
+
+export type ProductJsonImport = {
+  id: string,
+  price: number,
+  urls: string,
+  meta?: any
+}[]
 
 export type CalculateShippingEventBody = {
   content: {
@@ -198,7 +207,8 @@ export type SnipcartItem = {
   id: string,
   weight: number,
   price: number,
-  url: string
+  url: string,
+  quantity: number
 }
 
 export type SnipcartRate = {
@@ -251,9 +261,8 @@ export function handler(event: LambdaEvent, context: any, callback: LambdaCallba
     const items = body.content.items;
     console.log("Calculating shipping..", { items });
 
-    const rates : SnipcartRate[] = [];
-    for(let i = 0; i<items.length; i++)
-    {
+    const rates: SnipcartRate[] = [];
+    for (let i = 0; i < items.length; i++) {
       rates.push(await calculateShipping(body, i));
     }
 
@@ -296,13 +305,13 @@ function calculateFitzShipping(body: CalculateShippingEventBody, itemIndex: numb
   }
 }
 
-export function getFitzPriceFromWeight(weight:number) : number {
+export function getFitzPriceFromWeight(weight: number): number {
   if (weight < 500)
     return 0;
-  
+
   if (weight < 1000)
     return 16.5;
-  
+
   if (weight < 1500)
     return 25;
 
@@ -319,13 +328,65 @@ export function getFitzPriceFromWeight(weight:number) : number {
 }
 
 async function calculatePrintfulShipping(body: CalculateShippingEventBody, itemIndex: number): Promise<SnipcartRate> {
-  
+
   const item = body.content.items[itemIndex];
 
   console.log("Loading item info from: ", item.url);
 
-  const json = await fetchJson<any>(item.url);
-  console.log("got response", json);
+  const sizes = await fetchJson<ProductJsonImport>(item.url);
+
+  if (!sizes)
+    throw new Error(`Loading of product data at url failed '${item.url}'`);
+
+  const size = sizes.find(s => s.id == item.id);
+
+  if (!size)
+    throw new Error(`Cannot find '${item.id}' in the products at the URL '${item.url}'`);
+
+  if (!size.meta || !size.meta.printfulVariantId)
+    throw new Error(`Could not find the 'printfulVariantId' in the size meta in the data at '${item.url}'`);
+
+  const printfulVariantId: string = size.meta.printfulVariantId;
+
+  console.log("Loaded product size info from json", { size, printfulVariantId });
+
+  // var recipient = {
+  //   "address1": "3 25 Hardy Street",
+  //   "city": "South Perth",
+  //   "country_code": "AU",
+  //   "state_code": "WA",
+  //   "zip": 5151
+  // };
+
+  // var formData = {
+  //   "recipient": recipient,
+  //   "items": [{
+  //     "quantity": item.quantity,
+  //     "variant_id": printfulVariantId
+  //   }]
+  // };
+
+  // const requestOptions : RequestOptions = {
+  //   hostname: "api.printful.com",
+  //   path: "/shipping/rates",
+  //   method: "POST",
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   }
+
+  // }
+
+  // const options = {
+  //   contentType: "application/json",
+  //   method: 'post',
+  //   payload: JSON.stringify(formData),
+  //   headers: {
+  //     authorization: "Basic ZHk4cWN2d24tZGE1eS1hcjlkOjJpMG0taGlweXpqM2dlZWV1"
+  //   }
+  // }
+  // const rates = await fetchJson<ProductJsonImport>('https://api.printful.com/shipping/rates');
+
+  
 
   return {
     cost: 66,
@@ -334,32 +395,36 @@ async function calculatePrintfulShipping(body: CalculateShippingEventBody, itemI
 }
 
 async function fetchJson<T>(url:string) {
-  return new Promise<T>((resolve,reject) => {
-    https.get(url, resp => {
-      let data = '';
- 
-      // A chunk of data has been recieved.
-      resp.on('data', (chunk) => {
-        data += chunk;
-      });
 
-      resp.on('end', () => {
-        resolve(JSON.parse(data));
-      });
+  var response =  await axios.get<T>(url)
+  return response.data;
 
-    }).on("error", (err) => {
-      reject(err);
-    });
-  });
+  // return new Promise<T>((resolve, reject) => {
+  //   https.get(options, resp => {
+  //     let data = '';
+
+  //     // A chunk of data has been recieved.
+  //     resp.on('data', (chunk) => {
+  //       data += chunk;
+  //     });
+
+  //     resp.on('end', () => {
+  //       resolve(JSON.parse(data));
+  //     });
+
+  //   }).on("error", (err) => {
+  //     reject(err);
+  //   });
+  // });
 }
 
 // export function getPrintfulPriceFromWeight(weight:number) : number {
 //   if (weight < 500)
 //     return 0;
-  
+
 //   if (weight < 1000)
 //     return 6;
-  
+
 //   if (weight < 1500)
 //     return 11;
 

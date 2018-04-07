@@ -15,7 +15,8 @@ async function run() {
                     products.push({
                         id: `${p.id}-${o.id}-${s.id}-${printer}`,
                         price: s.priceAUD,
-                        url: `/products/${p.id}.json`
+                        url: `/products/${p.id}.json`,
+                        meta: s.meta
                     })
                 }
             }
