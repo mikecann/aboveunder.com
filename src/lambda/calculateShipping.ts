@@ -1,4 +1,5 @@
 import { LambdaEvent, LambdaCallback, LambdaCallResult } from "./types";
+import * as https from "https";
 
 // const exampleBody = {
 //   "eventName": "shippingrates.fetch",
@@ -322,17 +323,34 @@ async function calculatePrintfulShipping(body: CalculateShippingEventBody, itemI
   const item = body.content.items[itemIndex];
 
   console.log("Loading item info from: ", item.url);
-  
-  const response = await fetch(item.url);
-  console.log("got response", response);
-  const json = await response.json();
 
-  console.log("Got JSON", json);
+  const json = await fetchJson<any>(item.url);
+  console.log("got response", json);
 
   return {
     cost: 66,
     description: standardShippingMessage
   }
+}
+
+async function fetchJson<T>(url:string) {
+  return new Promise<T>((resolve,reject) => {
+    https.get(url, resp => {
+      let data = '';
+ 
+      // A chunk of data has been recieved.
+      resp.on('data', (chunk) => {
+        data += chunk;
+      });
+
+      resp.on('end', () => {
+        resolve(JSON.parse(data));
+      });
+
+    }).on("error", (err) => {
+      reject(err);
+    });
+  });
 }
 
 // export function getPrintfulPriceFromWeight(weight:number) : number {
