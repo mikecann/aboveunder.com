@@ -236,7 +236,7 @@ test('illegal item to AU address', async () => {
   });
 
   const result = await callFunction(event, {}, handler);
-  expect(result.result.body).toContain("Error: Cannot ship canvas to the AU");
+  expect(result.result.body).toContain("Cannot ship canvas to Australia");
 })
 
 test('one illegal item to AU address', async () => {
@@ -266,7 +266,7 @@ test('one illegal item to AU address', async () => {
   });
 
   const result = await callFunction(event, {}, handler);
-  expect(result.result.body).toContain("Error: Cannot ship canvas to the AU");
+  expect(result.result.body).toContain("Cannot ship canvas to Australia");
 })
 
 test('example0', async () => {
@@ -284,5 +284,5 @@ test('example1', async () => {
 test('example2', async () => {
   const event = getEvent(require("./examples/example2"));
   const result = await callFunction(event, {}, handler);
-  expect(result.result.body).toContain("Error: Cannot ship canvas to the AU");
+  expect(result.result.body).toContain("Cannot ship canvas to Australia");
 });

@@ -221,7 +221,7 @@ async function calculatePrintfulShipping(body: CalculateShippingEventBody): Prom
 function guardAgaintCanvasShippingFromPrintfulToAU(body: CalculateShippingEventBody) {
   for (var item of body.content.items)
     if (getPrintOption(item) == "canvas")
-      throw new Error("Cannot ship canvas to the AU, from global printer due to Australian customs rules.")
+      throw new Error("Cannot ship canvas to Australia from the global printer due to Australian customs rules.")
 }
 
 function getVariantIdsForItems(items: SnipcartItem[]): Promise<PrintfulAPIItemInfo[]> {
