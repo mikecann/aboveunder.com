@@ -936,7 +936,7 @@ export const data = [
     "description": "Taken at Magnetic Island in Northern Queensland.\r\n\r\nI love the shoreline on this island, there's something about seeing rocks next to blue water and green trees that I love.",
     "image": "/images/products/full/Magnetic-Pebbles-Horizontal.jpg",
     "thumb": "/images/products/thumb/Magnetic-Pebbles-Horizontal.jpg",
-    "featured": true,
+    "featured": false,
     "dateCreated": "2017-06-23T15:25:51+08:00",
     "gps": {
       "lat": -19.135555,
@@ -1568,18 +1568,18 @@ export const data = [
     }
   },
   {
-    "title": "Arthur Bay",
-    "description": "Taken in Northern Queensland.",
-    "image": "/images/products/full/Arthur-Bay.jpg",
-    "thumb": "/images/products/thumb/Arthur-Bay.jpg",
-    "featured": false,
-    "dateCreated": "2017-08-22 02:10:18"
-  },
-  {
     "title": "Daintree Coast Rock",
     "description": "Taken at the Daintree in Northern Queensland.",
     "image": "/images/products/full/Daintree-Coast-Rock.jpg",
     "thumb": "/images/products/thumb/Daintree-Coast-Rock.jpg",
+    "featured": false,
+    "dateCreated": "2017-08-22 02:10:18"
+  },
+  {
+    "title": "Arthur Bay",
+    "description": "Taken in Northern Queensland.",
+    "image": "/images/products/full/Arthur-Bay.jpg",
+    "thumb": "/images/products/thumb/Arthur-Bay.jpg",
     "featured": false,
     "dateCreated": "2017-08-22 02:10:18"
   },
@@ -1652,7 +1652,7 @@ export const data = [
     "description": "Taken on Xmas eve 2017 at Busselton.\n\nBusselton is a beautiful part of Australia and this is one of the most iconic landmarks of the town.",
     "image": "/images/products/full/The-Iconic-Busselton-Jetty.jpg",
     "thumb": "/images/products/thumb/The-Iconic-Busselton-Jetty.jpg",
-    "featured": true,
+    "featured": false,
     "dateCreated": "2017-12-24T18:57:14+08:00",
     "gps": {
       "lat": -33.643735,
@@ -1772,7 +1772,7 @@ export const data = [
     "description": "Taken near Eagle way in WA",
     "image": "/images/products/full/Eaglebay-Serenity.jpg",
     "thumb": "/images/products/thumb/Eaglebay-Serenity.jpg",
-    "featured": true,
+    "featured": false,
     "dateCreated": "2018-02-12T13:15:32+08:00",
     "gps": {
       "lat": -33.56102833333333,
@@ -1892,7 +1892,7 @@ export const data = [
     "description": "Taken near Watermans Reef Observation Area in Perth.\n\nSome beautiful patterns in the sand here, reminds me of Esperance.",
     "image": "/images/products/full/Waves-of-Watermans-Reef.jpg",
     "thumb": "/images/products/thumb/Waves-of-Watermans-Reef.jpg",
-    "featured": true,
+    "featured": false,
     "dateCreated": "2018-02-24T17:44:14+08:00",
     "gps": {
       "lat": -31.851213333333334,
@@ -1904,7 +1904,7 @@ export const data = [
     "description": "Taken near Watermans Reef Observation Area in Perth.\n\nThe epic aftermath.",
     "image": "/images/products/full/Waves-of-Watermans-Aftermath.jpg",
     "thumb": "/images/products/thumb/Waves-of-Watermans-Aftermath.jpg",
-    "featured": true,
+    "featured": false,
     "dateCreated": "2018-02-24T17:44:28+08:00",
     "gps": {
       "lat": -31.851213333333334,
@@ -1916,7 +1916,7 @@ export const data = [
     "description": "Taken near Watermans Reef Observation Area in Perth.\n\nThe observation area we were parked, if you look really closely you can see us with the doors open.",
     "image": "/images/products/full/Watermans-Observatory.jpg",
     "thumb": "/images/products/thumb/Watermans-Observatory.jpg",
-    "featured": true,
+    "featured": false,
     "dateCreated": "2018-02-24T17:50:32+08:00",
     "gps": {
       "lat": -31.85082,
@@ -1940,7 +1940,7 @@ export const data = [
     "description": "Taken near Watermans Reef Observation Area in Perth.\n\nI just love the detail you get from the rocks here, definately click on the image to view it up close.",
     "image": "/images/products/full/Watermans-Rocks.jpg",
     "thumb": "/images/products/thumb/Watermans-Rocks.jpg",
-    "featured": true,
+    "featured": false,
     "dateCreated": "2018-02-24T18:00:29+08:00",
     "gps": {
       "lat": -31.85077,
@@ -1952,7 +1952,7 @@ export const data = [
     "description": "Taken near Watermans Reef Observation Area in Perth.\n\nIts like theres an oncoming tsunami.",
     "image": "/images/products/full/Watermans-Oncoming.jpg",
     "thumb": "/images/products/thumb/Watermans-Oncoming.jpg",
-    "featured": true,
+    "featured": false,
     "dateCreated": "2018-02-24T18:01:36+08:00",
     "gps": {
       "lat": -31.850736666666666,
@@ -1981,6 +1981,54 @@ export const data = [
     "gps": {
       "lat": -31.85212,
       "lng": 115.75033666666667
+    }
+  },
+  {
+    "title": "Paddle Dalyellup Beach",
+    "description": "This was taken near Dalyellup Beach in South West Australia. This was 'Just Another Day in WA' the beautiful beach based life that we enjoy over here.",
+    "image": "/images/products/full/Paddle-Dalyellup-Beach.jpg",
+    "thumb": "/images/products/thumb/Paddle-Dalyellup-Beach.jpg",
+    "featured": true,
+    "dateCreated": "2018-03-30T11:36:57+08:00",
+    "gps": {
+      "lat": -33.420968333333334,
+      "lng": 115.593345
+    }
+  },
+  {
+    "title": "Landsurfing",
+    "description": "This was taken at Surfers Point in Margret river and is about as close as im ever going to get to surfing down here!",
+    "image": "/images/products/full/Landsurfing.jpg",
+    "thumb": "/images/products/thumb/Landsurfing.jpg",
+    "featured": false,
+    "dateCreated": "2018-04-14T17:12:41+08:00",
+    "gps": {
+      "lat": -33.97703333333333,
+      "lng": 114.98591833333333
+    }
+  },
+  {
+    "title": "Margret River Surfing",
+    "description": "This was taken above Surfers Point in Margret River. This was the day before the start of the 2018 Margret River Pro surfing comp. Im not sure exactly what lighting caused the sea to look like this but I like it.",
+    "image": "/images/products/full/Margret-River-Surfing.jpg",
+    "thumb": "/images/products/thumb/Margret-River-Surfing.jpg",
+    "featured": true,
+    "dateCreated": "2018-04-14T17:14:43+08:00",
+    "gps": {
+      "lat": -33.97649833333333,
+      "lng": 114.980595
+    }
+  },
+  {
+    "title": "Margret River Ruins",
+    "description": "This was taken near Surfers point in Margret River. Im not sure what these ruins are of but the gardens around them are incredibly well manicured.",
+    "image": "/images/products/full/Margret-River-Ruins.jpg",
+    "thumb": "/images/products/thumb/Margret-River-Ruins.jpg",
+    "featured": false,
+    "dateCreated": "2018-04-15T17:09:08+08:00",
+    "gps": {
+      "lat": -33.970391666666664,
+      "lng": 114.99784166666667
     }
   }
 ]

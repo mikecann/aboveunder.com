@@ -1,8 +1,9 @@
 import { Collection } from "./Collection";
-import * as fs from "fs";
+import * as fs from "fs-extra";
 import { areEqual, wait, resizeImg, getEXIFData, extractLatLngFromExif, extractDateCreatedFromExif, askQuestion, askConfirmation, createPrint } from "./utils";
 import { promisify } from "util";
 import { IDB, IPrint } from "../src/lib/types";
+import * as path from 'path';
 
 export class CollectionImage
 {
@@ -44,9 +45,8 @@ export class CollectionImage
         await this.exportWebsiteThumb();
     }
 
-    private async exportHighres() {
-        const copy = promisify(fs.copyFile);
-        return await copy(this.sourcePath, this.highresExportPath);
+    private exportHighres() {
+        return this.copyFile(this.sourcePath, this.highresExportPath);
     }
 
     private exportLowres() {
@@ -54,8 +54,7 @@ export class CollectionImage
     }
 
     private exportWebsiteFull() {
-        const copy = promisify(fs.copyFile);
-        return copy(this.lowresExportPath, this.websiteFullPath);
+        return this.copyFile(this.lowresExportPath, this.websiteFullPath);
     }
 
     private exportWebsiteThumb() {
@@ -66,6 +65,11 @@ export class CollectionImage
         const found = db.prints.find(p => p.title == this.name);
         const print = db.prints.find(p => p.title == this.name) || await createPrint(this, db);
         return await this.updatePrint(print);        
+    }
+
+    private async copyFile(src: string, dest: string) {
+        await fs.ensureDir(path.dirname(dest));
+        await fs.copy(src, dest);
     }
 
     private async updatePrint(print:IPrint) {

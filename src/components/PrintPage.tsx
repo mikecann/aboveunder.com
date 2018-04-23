@@ -20,7 +20,8 @@ interface IRouteMatch {
 interface IProps {
   db: IDB,
   history: H.History,
-  match: match<IRouteMatch>
+  match: match<IRouteMatch>,
+  allPrints: IPrint[]
 }
 
 interface IState {
@@ -31,10 +32,10 @@ interface IState {
   loadState: number;
 }
 
-type PrinterDropdownOption = {text:string, value:Printer};
+type PrinterDropdownOption = { text: string, value: Printer };
 type PrinterDropdownOptions = PrinterDropdownOption[];
 
-const printers : PrinterDropdownOptions = [
+const printers: PrinterDropdownOptions = [
   { text: "🌎 Global Printer", value: "printful" },
   { text: "🐨 Australian Printer", value: "fitzgeralds" }
 ]
@@ -50,7 +51,7 @@ export class PrintPage extends React.Component<IProps, IState> {
     this.setState(this.getInitialState(nextProps));
   }
 
-  private getInitialState(props: IProps) : IState {
+  private getInitialState(props: IProps): IState {
     const { db, match } = props;
     const print = getPrint(db, match.params.id);
     const printer = match.params.printer || "fitzgeralds";
@@ -66,7 +67,7 @@ export class PrintPage extends React.Component<IProps, IState> {
     }
   }
 
-  componentDidUpdate(prevProps:IProps, prevState:IState) {
+  componentDidUpdate(prevProps: IProps, prevState: IState) {
     // Update the path in the browser bar every time we render
     this.updatePath();
   }
@@ -117,7 +118,7 @@ export class PrintPage extends React.Component<IProps, IState> {
 
                 <div style={{ position: "relative" }}>
 
-                  <Dimmer active={loadState==0} inverted>
+                  <Dimmer active={loadState == 0} inverted>
                     <Loader />
                   </Dimmer>
 
@@ -131,7 +132,7 @@ export class PrintPage extends React.Component<IProps, IState> {
                       smallImage={({
                         src: loadState == 0 ? print.thumb : print.image,
                         isFluidWidth: true,
-                        onLoad: () => this.setState({loadState: loadState+1})
+                        onLoad: () => this.setState({ loadState: loadState + 1 })
                       })}
                       largeImage={({
                         src: loadState == 0 ? print.thumb : print.image,
@@ -162,6 +163,7 @@ export class PrintPage extends React.Component<IProps, IState> {
 
               </Grid.Column>
               <Grid.Column width={6}>
+
                 <Segment>
 
                   <Header as="h1">
@@ -182,7 +184,7 @@ export class PrintPage extends React.Component<IProps, IState> {
 
                   <div>
 
-                     <Dropdown fluid selection options={printers}
+                    <Dropdown fluid selection options={printers}
                       value={selectedPrinter}
                       onChange={this.handleSelectedPrinterChange}
                       style={{ marginBottom: "0.5em" }}
@@ -221,6 +223,15 @@ export class PrintPage extends React.Component<IProps, IState> {
 
                   </div>
                 </Segment>
+
+
+                {/* <Segment>
+                  <PrintsMap
+                    prints={this.props.allPrints}
+                    initialPrintId={print.id}
+                  />
+                </Segment> */}
+
               </Grid.Column>
 
 
@@ -238,7 +249,7 @@ export class PrintPage extends React.Component<IProps, IState> {
   handleSelectedPrinterChange = (e: any, dropdown: any) => {
 
     const print = this.state.print as IPrint;
-    const printer : Printer = dropdown.value;
+    const printer: Printer = dropdown.value;
     const option = print.printOptions[printer][0];
     const size = option.sizes[0];
 
