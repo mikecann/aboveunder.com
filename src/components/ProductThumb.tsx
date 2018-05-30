@@ -38,9 +38,10 @@ export class ProductThumb extends React.Component<IProps, IState> {
                     <Link to={`/print/${print.id}`} onMouseOver={() => this.setState({ mouseOver: true })} onMouseOut={() => this.setState({ mouseOver: false })}>
                         <Image rounded src={useFull ? print.image : print.thumb}
                             style={{ marginTop: "1em", marginBottom: "1em" }}
-                            label={{ content: print.title, ribbon: true, icon: print.featured ? "star" : undefined }}
+                            label={{ content: print.title, ribbon: true, icon: print.featured ? <Icon name="star" style={{ color: "gold" }} /> : null }}
                             onLoad={() => this.setState({ isLoading: false })}
                         >
+                        
                         </ Image>
 
                     </Link>

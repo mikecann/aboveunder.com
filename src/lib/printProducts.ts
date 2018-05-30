@@ -1676,7 +1676,7 @@ export const data = [
     "description": "Taken above Meelup in South West Australia.\n\nUp close you can really get a sense of how shallow and clear the water is in this beautiful part of the world.",
     "image": "/images/products/full/Meelup-Coast-Up-Close.jpg",
     "thumb": "/images/products/thumb/Meelup-Coast-Up-Close.jpg",
-    "featured": true,
+    "featured": false,
     "dateCreated": "2017-12-30T14:55:44+08:00",
     "gps": {
       "lat": -33.56449833333333,
@@ -1700,7 +1700,7 @@ export const data = [
     "description": "I bet you never knew Fremeantle could look so good!",
     "image": "/images/products/full/South-Beach-Platform.jpg",
     "thumb": "/images/products/thumb/South-Beach-Platform.jpg",
-    "featured": true,
+    "featured": false,
     "dateCreated": "2018-01-28T17:06:57+08:00",
     "gps": {
       "lat": -32.075985,
@@ -1736,7 +1736,7 @@ export const data = [
     "description": "Just another beautiful day in WA, perfefct for some Kayaking",
     "image": "/images/products/full/Meelup-Kayak.jpg",
     "thumb": "/images/products/thumb/Meelup-Kayak.jpg",
-    "featured": true,
+    "featured": false,
     "dateCreated": "2018-02-12T12:10:48+08:00",
     "gps": {
       "lat": -33.577753333333334,
@@ -1748,7 +1748,7 @@ export const data = [
     "description": "Taken near Eagle Bay in WA\\n\\nWe found this lovely litttle stretch of beach, seemed like a perfect oppertunity for some drone action.",
     "image": "/images/products/full/Eaglebay-Outloook.jpg",
     "thumb": "/images/products/thumb/Eaglebay-Outloook.jpg",
-    "featured": true,
+    "featured": false,
     "dateCreated": "2018-02-12T13:10:12+08:00",
     "gps": {
       "lat": -33.56115833333333,
@@ -2029,6 +2029,162 @@ export const data = [
     "gps": {
       "lat": -33.970391666666664,
       "lng": 114.99784166666667
+    }
+  },
+  {
+    "image": "/images/products/full/Sunset-over-Jurien-Bay.jpg",
+    "thumb": "/images/products/thumb/Sunset-over-Jurien-Bay.jpg",
+    "title": "Sunset over Jurien Bay",
+    "dateCreated": "2018-05-20T17:24:59+08:00",
+    "description": "This was the first time we had been to Jurien Bay and were lucky with how beautiful the weather was for us, perfect for droning!",
+    "featured": false,
+    "gps": {
+      "lat": -30.302728333333334,
+      "lng": 115.03765333333334
+    }
+  },
+  {
+    "image": "/images/products/full/Sunset-over-Jurien-Bay-Jetty.jpg",
+    "thumb": "/images/products/thumb/Sunset-over-Jurien-Bay-Jetty.jpg",
+    "title": "Sunset over Jurien Bay Jetty",
+    "dateCreated": "2018-05-20T17:25:13+08:00",
+    "description": "Heres another sunset shot of the jetty at Jurien Bay. Its kind of a unique jetty in the way it bends round like this.",
+    "featured": false,
+    "gps": {
+      "lat": -30.302363333333332,
+      "lng": 115.03691
+    }
+  },
+  {
+    "image": "/images/products/full/Jurien-Bay-Jetty-Up.jpg",
+    "thumb": "/images/products/thumb/Jurien-Bay-Jetty-Up.jpg",
+    "title": "Jurien Bay Jetty Up",
+    "dateCreated": "2018-05-22T07:12:39+08:00",
+    "description": "The best time for droning is sunrise. The way the light falls producing soft shades of yellow and orange on the water is something worth waking up for!",
+    "featured": false,
+    "gps": {
+      "lat": -30.30223833333333,
+      "lng": 115.03572666666666
+    }
+  },
+  {
+    "image": "/images/products/full/Jurien-Bay-Jetty-Down.jpg",
+    "thumb": "/images/products/thumb/Jurien-Bay-Jetty-Down.jpg",
+    "title": "Jurien Bay Jetty Down",
+    "dateCreated": "2018-05-22T07:13:48+08:00",
+    "description": "Another one of the new Jurien Bay jetty at sunrise. This one of it facing down. It just looks beautiful at this time of the day.",
+    "featured": true,
+    "gps": {
+      "lat": -30.30200333333333,
+      "lng": 115.03592
+    }
+  },
+  {
+    "image": "/images/products/full/Old-Jurien-Bay-Jetty-Horizontal.jpg",
+    "thumb": "/images/products/thumb/Old-Jurien-Bay-Jetty-Horizontal.jpg",
+    "title": "Old Jurien Bay Jetty Horizontal",
+    "dateCreated": "2018-05-22T07:16:04+08:00",
+    "description": "Heres a rather nice shot of the old jetty of Jurien Bay. Again this shot was taken at sunrise leading to stunning lighting on the water and sand.",
+    "featured": true,
+    "gps": {
+      "lat": -30.300678333333334,
+      "lng": 115.03743666666666
+    }
+  },
+  {
+    "image": "/images/products/full/Sunrise-over-Old-Jurien-Bay-Jetty.jpg",
+    "thumb": "/images/products/thumb/Sunrise-over-Old-Jurien-Bay-Jetty.jpg",
+    "title": "Sunrise over Old Jurien Bay Jetty",
+    "dateCreated": "2018-05-22T07:18:10+08:00",
+    "description": "A front-on shot of the old jetty at Jurien Bay. I didnt want to disturb that seagull, he looked like he as enjoying the sunrise as much as I was ;)",
+    "featured": true,
+    "gps": {
+      "lat": -30.300631666666668,
+      "lng": 115.03728333333333
+    }
+  },
+  {
+    "image": "/images/products/full/Old-Jurien-Bay-Jetty-Vertical.jpg",
+    "thumb": "/images/products/thumb/Old-Jurien-Bay-Jetty-Vertical.jpg",
+    "title": "Old Jurien Bay Jetty Vertical",
+    "dateCreated": "2018-05-22T07:19:34+08:00",
+    "description": "A different perspective on the old Jurien Bay jetty. Im not sure if I prefer this one or the horizontal one. ",
+    "featured": true,
+    "gps": {
+      "lat": -30.300675,
+      "lng": 115.03743833333333
+    }
+  },
+  {
+    "image": "/images/products/full/Jurien-Bay-Dolphin.jpg",
+    "thumb": "/images/products/thumb/Jurien-Bay-Dolphin.jpg",
+    "title": "Jurien Bay Dolphin",
+    "dateCreated": "2018-05-22T07:23:59+08:00",
+    "description": "It seems like wherever I go droning or fishing in WA theres bound to be dolphins about. Jurien Bay is no exception with this guy splashing in the water hunting squiddies each morning.",
+    "featured": true,
+    "gps": {
+      "lat": -30.301861666666667,
+      "lng": 115.03517
+    }
+  },
+  {
+    "image": "/images/products/full/Jurien-Bay-Bush.jpg",
+    "thumb": "/images/products/thumb/Jurien-Bay-Bush.jpg",
+    "title": "Jurien Bay Bush",
+    "dateCreated": "2018-05-22T10:02:14+08:00",
+    "description": "Heres just a shot of some typical WA bushland around Jurien Bay. I like taking 'abstract art' style pictures like this",
+    "featured": false,
+    "gps": {
+      "lat": -30.526506666666666,
+      "lng": 115.08089166666667
+    }
+  },
+  {
+    "image": "/images/products/full/Pinacles.jpg",
+    "thumb": "/images/products/thumb/Pinacles.jpg",
+    "title": "Pinacles",
+    "dateCreated": "2018-05-22T10:34:43+08:00",
+    "description": "And one final shot from our Jurien Bay collection. This one isnt technically Jurien bay and is actually the Pinacles which we visited on our way back from the trip. An awesomely surreal place.",
+    "featured": false,
+    "gps": {
+      "lat": -30.604265,
+      "lng": 115.160725
+    }
+  },
+  {
+    "image": "/images/products/full/Half-Dune-of-Jurien-Bay.jpg",
+    "thumb": "/images/products/thumb/Half-Dune-of-Jurien-Bay.jpg",
+    "title": "Half Dune of Jurien Bay",
+    "dateCreated": "2018-05-22T10:55:16+08:00",
+    "description": "There are some pretty stunning sand dunes around Jurien Bay and Lanclin. I couldn't resist throwing the drone up to take some abstract pics.",
+    "featured": false,
+    "gps": {
+      "lat": -30.650573333333334,
+      "lng": 115.13879666666666
+    }
+  },
+  {
+    "image": "/images/products/full/Side-June-of-Jurien-Bay.jpg",
+    "thumb": "/images/products/thumb/Side-June-of-Jurien-Bay.jpg",
+    "title": "Side June of Jurien Bay",
+    "dateCreated": "2018-05-22T10:55:33+08:00",
+    "description": "One last from my sand-dune-abstract collection today. I love these shots that make you go hmmmm 🤔",
+    "featured": true,
+    "gps": {
+      "lat": -30.650568333333332,
+      "lng": 115.13881166666667
+    }
+  },
+  {
+    "image": "/images/products/full/Sand-Pattern-of-Jurien-Bay.jpg",
+    "thumb": "/images/products/thumb/Sand-Pattern-of-Jurien-Bay.jpg",
+    "title": "Sand Pattern of Jurien Bay",
+    "dateCreated": "2018-05-22T10:55:44+08:00",
+    "description": "Another from my 'abstract art' collection. Theres something so satisfying about these irregular patterns.",
+    "featured": true,
+    "gps": {
+      "lat": -30.650555,
+      "lng": 115.138855
     }
   }
 ]

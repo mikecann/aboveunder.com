@@ -22,7 +22,7 @@ const orderOptions = [
   }
 ];
 
-const defaultOrderValue = orderOptions[0].value;
+const defaultOrderValue = orderOptions[2].value;
 
 const pageSize = 18;
 
