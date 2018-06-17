@@ -11,7 +11,7 @@ export const data : IPrintOption[] = [
         "id": "10x10",
         "widthInches": 10,
         "heightInches": 10,
-        "priceAUD": 37,
+        "priceAUD": 39,
         "weight": 12.8,
         "meta": {
           "printfulVariantId": "6872"
@@ -21,7 +21,7 @@ export const data : IPrintOption[] = [
         "id": "12x12",
         "widthInches": 12,
         "heightInches": 12,
-        "priceAUD": 41,
+        "priceAUD": 42,
         "weight": 18.4,
         "meta": {
           "printfulVariantId": "6873"
@@ -31,7 +31,7 @@ export const data : IPrintOption[] = [
         "id": "14x14",
         "widthInches": 14,
         "heightInches": 14,
-        "priceAUD": 44,
+        "priceAUD": 46,
         "weight": 24.9,
         "meta": {
           "printfulVariantId": "6874"
@@ -41,7 +41,7 @@ export const data : IPrintOption[] = [
         "id": "16x12",
         "widthInches": 16,
         "heightInches": 12,
-        "priceAUD": 48,
+        "priceAUD": 49,
         "weight": 25.5,
         "meta": {
           "printfulVariantId": "6875"
@@ -51,7 +51,7 @@ export const data : IPrintOption[] = [
         "id": "18x12",
         "widthInches": 18,
         "heightInches": 12,
-        "priceAUD": 49,
+        "priceAUD": 50,
         "weight": 28.3,
         "meta": {
           "printfulVariantId": "6876"
@@ -61,7 +61,7 @@ export const data : IPrintOption[] = [
         "id": "16x16",
         "widthInches": 16,
         "heightInches": 16,
-        "priceAUD": 50,
+        "priceAUD": 51,
         "weight": 32.6,
         "meta": {
           "printfulVariantId": "6877"
@@ -71,7 +71,7 @@ export const data : IPrintOption[] = [
         "id": "20x16",
         "widthInches": 20,
         "heightInches": 16,
-        "priceAUD": 51,
+        "priceAUD": 53,
         "weight": 41.1,
         "meta": {
           "printfulVariantId": "6878"
@@ -81,7 +81,7 @@ export const data : IPrintOption[] = [
         "id": "18x18",
         "widthInches": 18,
         "heightInches": 18,
-        "priceAUD": 55,
+        "priceAUD": 56,
         "weight": 42.5,
         "meta": {
           "printfulVariantId": "6879"
@@ -91,7 +91,7 @@ export const data : IPrintOption[] = [
         "id": "24x18",
         "widthInches": 24,
         "heightInches": 18,
-        "priceAUD": 58,
+        "priceAUD": 60,
         "weight": 56.7,
         "meta": {
           "printfulVariantId": "6880"
@@ -101,7 +101,7 @@ export const data : IPrintOption[] = [
         "id": "36x24",
         "widthInches": 36,
         "heightInches": 24,
-        "priceAUD": 78,
+        "priceAUD": 80,
         "weight": 107.7,
         "meta": {
           "printfulVariantId": "7845"
@@ -117,7 +117,7 @@ export const data : IPrintOption[] = [
         "id": "20x16",
         "widthInches": 20,
         "heightInches": 16,
-        "priceAUD": 130,
+        "priceAUD": 140,
         "weight": 1236,
         "meta": {
           "printfulVariantId": "6"
@@ -157,7 +157,7 @@ export const data : IPrintOption[] = [
         "id": "36x24",
         "widthInches": 36,
         "heightInches": 24,
-        "priceAUD": 190,
+        "priceAUD": 200,
         "weight": 2795.3,
         "meta": {
           "printfulVariantId": "825"
@@ -173,7 +173,7 @@ export const data : IPrintOption[] = [
         "id": "10x10",
         "widthInches": 10,
         "heightInches": 10,
-        "priceAUD": 87,
+        "priceAUD": 89,
         "weight": 453.6,
         "meta": {
           "printfulVariantId": "6883"
@@ -183,7 +183,7 @@ export const data : IPrintOption[] = [
         "id": "12x12",
         "widthInches": 12,
         "heightInches": 12,
-        "priceAUD": 99,
+        "priceAUD": 110,
         "weight": 567,
         "meta": {
           "printfulVariantId": "6884"
@@ -213,7 +213,7 @@ export const data : IPrintOption[] = [
         "id": "18x12",
         "widthInches": 18,
         "heightInches": 12,
-        "priceAUD": 120,
+        "priceAUD": 130,
         "weight": 623.7,
         "meta": {
           "printfulVariantId": "6887"
@@ -233,7 +233,7 @@ export const data : IPrintOption[] = [
         "id": "20x16",
         "widthInches": 20,
         "heightInches": 16,
-        "priceAUD": 150,
+        "priceAUD": 160,
         "weight": 765.4,
         "meta": {
           "printfulVariantId": "6889"
