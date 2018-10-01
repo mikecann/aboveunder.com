@@ -13,8 +13,8 @@ async function run()
 
     // Grab the settings from the user
     const projectSoucePath = await askQuestion("Above Under source dir path?", `G:\\Photos\\Above Under\\`); // D:\\Media Projects\\Above Under\\
-    const highresExportPath = await askQuestion("Highres export path?", `D:\\Dropbox\\Projects\\Above Under\\Highres\\`); // C:\\Dropbox
-    const lowresExportPath = await askQuestion("Public share export path?", `D:\\Dropbox\\Projects\\Above Under\\Public Share\\`); // C:\\Dropbox
+    const highresExportPath = await askQuestion("Highres export path?", `E:\\Above Under Export\\Highres\\`); // C:\\Dropbox
+    const lowresExportPath = await askQuestion("Public share export path?", `E:\\Above Under Export\\Public Share\\`); // C:\\Dropbox
     const websiteExportPath = `${__dirname}/../../public/images/products`;
 
     // Load the project
