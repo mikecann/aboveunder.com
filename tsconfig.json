@@ -15,8 +15,7 @@
     "noImplicitThis": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true
+    "suppressImplicitAnyIndexErrors": true
   },
   "exclude": [
     "functions",
@@ -29,6 +28,9 @@
     "acceptance-tests",
     "webpack",
     "jest",
-    "src/setupTests.ts"
+    "dist",
+    "src/setupTests.ts",
+    "./jest-preprocessor.js",
+    "public"
   ]
 }
