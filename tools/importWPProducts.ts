@@ -4,7 +4,7 @@ import * as path from "path";
 import * as request from "request";
 import { IPrint } from "../src/lib/types";
 //import * as sharp from 'sharp';
-import * as Jimp from "jimp";
+import Jimp =  require('jimp')
 import * as moment from "moment";
 
 async function run() 

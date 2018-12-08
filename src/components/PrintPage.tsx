@@ -68,6 +68,8 @@ export class PrintPage extends React.Component<IProps, IState> {
   }
 
   componentDidUpdate(prevProps: IProps, prevState: IState) {
+    // console.log("DID UPDATE", { prev: prevState, now: this.state })
+
     // Update the path in the browser bar every time we render
     this.updatePath();
   }
@@ -105,7 +107,7 @@ export class PrintPage extends React.Component<IProps, IState> {
 
           <div style={{ marginBottom: "2em" }}>
             <Breadcrumb size='large'>
-              <Breadcrumb.Section link to="/shop"><Icon name="cart" />Shop</Breadcrumb.Section>
+              <Breadcrumb.Section as={Link} to="/shop"><Icon name="cart" />Shop</Breadcrumb.Section>
               <Breadcrumb.Divider icon='right chevron' />
               <Breadcrumb.Section>{print.title}</Breadcrumb.Section>
             </Breadcrumb>
@@ -300,10 +302,15 @@ export class PrintPage extends React.Component<IProps, IState> {
     const size = this.state.selectedPrintSize as IPrintOptionSize;
     const printer = this.state.selectedPrinter as Printer;
 
-    const path = `/print/${print.id}/${option.id}/${size.id}/${printer}`;
+    const currPath = this.props.history.location.pathname;
+    //const newPath = `/print/${print.id}/${option.id}/${size.id}/${printer}`;
+    const newPath = `/print/${print.id}`;
 
-    if (this.props.history.location.pathname != path)
-      this.props.history.push(path);
+    if (currPath != newPath) {
+      console.log("Pushing path onto the history", {currPath, newPath});
+      this.props.history.push(newPath);
+    }
+      
   }
 
 }

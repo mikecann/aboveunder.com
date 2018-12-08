@@ -5,7 +5,7 @@ import { getDb } from "../src/lib/db";
 import { IPrint, IDB } from '../src/lib/types';
 import { sortByLatestFirst, sortByOldestFirst, getDirectories } from '../src/lib/utils';
 import * as path from "path";
-import * as Jimp from "jimp";
+import Jimp =  require('jimp')
 import { ExifImage } from "exif";
 import * as moment from "moment";
 import { CollectionImage } from "./CollectionImage";
