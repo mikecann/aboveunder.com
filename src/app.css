@@ -1,38 +1,46 @@
 .ui.dropdown .menu {
-    max-height: 300px !important;
-    /* You might also want to add `!important` to automatically override all media-queries. */
+  max-height: 300px !important;
+  /* You might also want to add `!important` to automatically override all media-queries. */
 }
 
 .blogPostPage img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .print-thumb img {
-    box-shadow: 0 3px 5px rgba(33,33,33,.3);
-    transition: box-shadow .3s;
+  box-shadow: 0 3px 5px rgba(33, 33, 33, .3);
+  transition: box-shadow .3s;
 }
 
 .print-thumb:hover img {
-    box-shadow: 0 8px 20px rgba(33,33,33,.5);
+  box-shadow: 0 8px 20px rgba(33, 33, 33, .5);
 }
 
 .blog-post-thumb {
-    box-shadow: 0 3px 5px rgba(33,33,33,.3);
-    transition: box-shadow .3s;
+  box-shadow: 0 3px 5px rgba(33, 33, 33, .3);
+  transition: box-shadow .3s;
 }
 
 .blog-post-thumb:hover {
-    box-shadow: 0 8px 20px rgba(33,33,33,.5);
+  box-shadow: 0 8px 20px rgba(33, 33, 33, .5);
 }
 
 @media screen and (max-width: 600px) {
-    .fb-customerchat {
-      visibility: hidden;
-      display: none;
-    }
-
-    #fb-root {
-        visibility: hidden;
-        display: none;
-    }
+  .fb-customerchat {
+    visibility: hidden;
+    display: none;
   }
+
+  #fb-root {
+    visibility: hidden;
+    display: none;
+  }
+}
+
+.ui.modal {
+  position: relative;
+}
+
+.ui.dimmer {
+  padding: 0
+}
