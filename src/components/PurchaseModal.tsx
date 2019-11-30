@@ -8,10 +8,9 @@ import {
   Icon,
   Modal,
   Button,
-  Message
+  Message,
 } from "semantic-ui-react";
-import { IPrint } from "src/lib/types";
-import { IPrintOptionSize, IPrintOption } from "../lib/types";
+import { IPrintOptionSize, IPrintOption, IPrint } from "../lib/types";
 
 type Props = {
   print: IPrint;
@@ -28,24 +27,20 @@ export const PurchaseModal = ({ print, size, option, onClose }: Props) => (
       <Modal.Description>
         <Header>{print.title}</Header>
         <p>
-          Unfortunately due to hosting costs I can no longer offer automatic
-          ordering via my website.
+          Unfortunately due to hosting costs I can no longer offer automatic ordering via my
+          website.
         </p>
         <p>
           Fear not, you can still order by email. Simply email me at:{" "}
-          <a href="mailto:mike@aboveunder.com">mike@aboveunder.com</a> with the
-          following details:
+          <a href="mailto:mike@aboveunder.com">mike@aboveunder.com</a> with the following details:
         </p>
         <Message info>
           <strong>Title: </strong> {print.title} <br />
           <strong>Option: </strong> {option.name} <br />
-          <strong>Size: </strong> {size.widthInches} x {size.heightInches}{" "}
-          inches
+          <strong>Size: </strong> {size.widthInches} x {size.heightInches} inches
           <br />
         </Message>
-        <p>
-          I will get back to you as soon as you can with info on how to proceed.
-        </p>
+        <p>I will get back to you as soon as you can with info on how to proceed.</p>
         <p>
           <Button
             as="a"

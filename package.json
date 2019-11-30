@@ -3,40 +3,47 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@hot-loader/react-dom": "^16.11.0",
     "@types/csvtojson": "^1.1.5",
-    "@types/fs-extra": "^5.0.4",
-    "@types/google-map-react": "^0.23.9",
-    "@types/googlemaps": "^3.30.16",
+    "@types/fs-extra": "^8.0.1",
+    "@types/google-map-react": "^1.1.3",
+    "@types/googlemaps": "^3.38.0",
     "@types/jimp": "^0.2.28",
-    "@types/lodash": "^4.14.117",
+    "@types/lodash": "^4.14.149",
     "@types/markerclustererplus": "^2.1.33",
-    "@types/react-router-dom": "^4.3.1",
-    "axios": "^0.18.0",
-    "concurrently": "^4.0.1",
-    "csvtojson": "^2.0.8",
+    "@types/react-router-dom": "^5.1.2",
+    "axios": "^0.19.0",
+    "concurrently": "^5.0.0",
+    "csstips": "^1.2.0",
+    "csvtojson": "^2.0.10",
+    "customize-cra": "^0.9.1",
     "exif": "^0.6.0",
-    "fs-extra": "^7.0.0",
-    "jimp": "^0.5.6",
+    "fs-extra": "^8.1.0",
+    "gls": "^3.0.1",
+    "jimp": "^0.8.5",
     "loadash": "^1.0.0",
-    "moment": "^2.22.2",
+    "moment": "^2.24.0",
     "normalize-range": "^0.1.2",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
+    "react": "^16.12.0",
+    "react-app-rewired": "^2.1.5",
+    "react-dom": "^16.12.0",
     "react-google-maps": "^9.4.5",
+    "react-hot-loader": "^4.12.18",
     "react-image-magnify": "^2.7.4",
-    "react-markdown": "^4.0.3",
-    "react-router-dom": "^4.3.1",
-    "react-scripts-ts": "3.1.0",
-    "semantic-ui-react": "^0.87.1"
+    "react-markdown": "^4.2.2",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.2.0",
+    "semantic-ui-react": "^0.88.1",
+    "typestyle": "^2.0.4"
   },
   "scripts": {
     "dev": "concurrently -n src,tools,lambda,test \"yarn dev-src\" \"yarn dev-tools\" \"yarn dev-lambda\" \"yarn test\"",
-    "dev-src": "react-scripts-ts start",
+    "dev-src": "react-app-rewired start",
     "dev-tools": "yarn build-tools -w",
     "dev-lambda": "yarn build-lambda -w",
-    "test": "react-scripts-ts test --env=jsdom -u",
+    "test": "react-app-rewired test --env=jsdom -u",
     "build": "yarn build-src && yarn build-tools && yarn build-lambda",
-    "build-src": "react-scripts-ts build",
+    "build-src": "react-app-rewired build",
     "build-tools": "tsc -p ./tools/tsconfig.json",
     "build-lambda": "tsc -p ./src/lambda/tsconfig.json",
     "deploy": "yarn build-tools && yarn build-lambda && yarn generateProductsJson && yarn build-src && yarn test",
@@ -47,12 +54,35 @@
     "generateThumbs": "node dist/tools/generateThumbs",
     "processImages": "node dist/tools/processImages"
   },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "devDependencies": {
-    "@types/jest": "^23.3.9",
-    "@types/node": "^10.12.2",
-    "@types/react": "^16.4.18",
-    "@types/react-dom": "^16.0.9",
-    "ts-node": "^7.0.1",
-    "typescript": "^3.1.6"
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.12",
+    "@types/react": "^16.9.13",
+    "@types/react-dom": "^16.9.4",
+    "husky": "^3.1.0",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
+    "ts-node": "^8.5.2",
+    "typescript": "^3.7.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }
