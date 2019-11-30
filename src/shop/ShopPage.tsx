@@ -150,7 +150,7 @@ export default function ShopPage() {
           fixToBottom={bottomMenuVisible}
           orderOptions={categroyOptions}
           onSelectedCategoryChanged={cat =>
-            setState(prev => ({ ...prev, category: cat, pageIndex: 0 }))
+            setState(prev => ({ ...prev, category: cat, pageIndex: 0, searchTerm: "" }))
           }
           onSearchTermChanged={term =>
             setState(prev => ({
