@@ -69,3 +69,7 @@ export const getDirectories = (source: string) =>
   readdirSync(source)
     .map(name => join(source, name))
     .filter(isDirectory);
+
+export function narray(count: number) {
+  return new Array(count).fill(null);
+}

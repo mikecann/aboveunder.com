@@ -17,7 +17,7 @@ export default function App() {
           <Route path="/about" component={Pages.About} />
           <Route path="/map/:print?" component={Pages.Map} />
           <Route path="/videos" component={Pages.Videos} />
-          <Route path="/shop/:page?" component={Pages.Shop} />
+          <Route path="/shop" component={Pages.Shop} />
           <Route path="/print/:id/:option?/:size?/:printer?" component={Pages.Print} />
           <Route path="/post/:id?" component={Pages.Post} />
         </Switch>

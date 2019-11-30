@@ -24,6 +24,7 @@
     "loadash": "^1.0.0",
     "moment": "^2.24.0",
     "normalize-range": "^0.1.2",
+    "query-string": "^6.9.0",
     "react": "^16.12.0",
     "react-app-rewired": "^2.1.5",
     "react-dom": "^16.12.0",
