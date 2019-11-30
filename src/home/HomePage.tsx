@@ -68,10 +68,10 @@ export default function HomePage({}: Props) {
             textAlign="center"
             style={{
               minHeight: 700,
-              //backgroundImage: `url("/images/homepage-hero-image.jpg")`,
-              // backgroundSize: "cover",
+              backgroundImage: `url("/images/homepage-hero-image.jpg")`,
+              backgroundSize: "cover",
               padding: "1em 0em",
-              // backroundColor: "black",
+              backroundColor: "black",
               position: "relative",
             }}
             vertical
@@ -87,7 +87,7 @@ export default function HomePage({}: Props) {
                 pointerEvents: "none",
               }}
             >
-              <video
+              {/* <video
                 style={{
                   objectFit: "cover",
                   width: "100%",
@@ -98,7 +98,7 @@ export default function HomePage({}: Props) {
                 loop
                 //controls
                 src="./images/video-hero.m4v"
-              />
+              /> */}
             </div>
 
             <HeaderMenu
