@@ -15,6 +15,7 @@ interface IMyMapProps {
   markers: IMyMapMarker[];
   initiallyOpenMarker?: IMyMapMarker;
   zoom: number;
+  hideSearch?: boolean;
   selectedPrintChanged: (print?: IPrint) => void;
 }
 
@@ -32,6 +33,7 @@ export function MyMap({
   initiallyOpenMarker,
   onMapMounted,
   zoom,
+  hideSearch,
 }: IMyMapProps) {
   const [openMarker, setOpenMarker] = React.useState<IMyMapMarker>();
 
@@ -51,29 +53,31 @@ export function MyMap({
 
   return (
     <GoogleMap ref={onMapMounted} zoom={zoom} center={center}>
-      <SearchBox
-        ref={onSearchBoxMounted}
-        controlPosition={google.maps.ControlPosition.TOP_CENTER}
-        onPlacesChanged={onPlacesChanged}
-      >
-        <input
-          type="text"
-          placeholder="Search"
-          style={{
-            boxSizing: `border-box`,
-            border: `1px solid transparent`,
-            width: `240px`,
-            height: `32px`,
-            marginTop: `15px`,
-            padding: `0 12px`,
-            borderRadius: `3px`,
-            boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
-            fontSize: `14px`,
-            outline: `none`,
-            textOverflow: `ellipses`,
-          }}
-        />
-      </SearchBox>
+      {!hideSearch && (
+        <SearchBox
+          ref={onSearchBoxMounted}
+          controlPosition={google.maps.ControlPosition.TOP_CENTER}
+          onPlacesChanged={onPlacesChanged}
+        >
+          <input
+            type="text"
+            placeholder="Search"
+            style={{
+              boxSizing: `border-box`,
+              border: `1px solid transparent`,
+              width: `240px`,
+              height: `32px`,
+              marginTop: `15px`,
+              padding: `0 12px`,
+              borderRadius: `3px`,
+              boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
+              fontSize: `14px`,
+              outline: `none`,
+              textOverflow: `ellipses`,
+            }}
+          />
+        </SearchBox>
+      )}
       {markers.map((marker, index) => (
         <MyMapMarker
           key={index}

@@ -10,6 +10,8 @@ interface IProps {
   prints: IPrint[];
   initialPrintId?: string;
   selectedPrintChanged?: (print?: IPrint) => void;
+  height?: number;
+  hideSearch?: boolean;
 }
 
 interface IState {
@@ -28,7 +30,13 @@ interface IState {
 //     initiallyOpenMarker: undefined
 //   };
 
-export function PrintsMap({ prints, initialPrintId, selectedPrintChanged }: IProps) {
+export function PrintsMap({
+  prints,
+  initialPrintId,
+  selectedPrintChanged,
+  height,
+  hideSearch,
+}: IProps) {
   const key = "AIzaSyBCVEVAJP-manM_C8v8q9s3lAblDhgaoIM";
   const mapUrl = `https://maps.googleapis.com/maps/api/js?key=${key}&v=3.exp&libraries=places`;
 
@@ -109,9 +117,10 @@ export function PrintsMap({ prints, initialPrintId, selectedPrintChanged }: IPro
   return (
     <ComposedMyMap
       isMarkerShown
+      hideSearch={hideSearch}
       googleMapURL={mapUrl}
       loadingElement={<div style={{ height: `100%` }} />}
-      containerElement={<div style={{ height: `800px` }} />}
+      containerElement={<div style={{ height: height ? height + "px" : `800px` }} />}
       mapElement={<div style={{ height: `100%` }} />}
       onPlacesChanged={onMapPlacesChanged}
       onSearchBoxMounted={ref => (searchboxRef.current = ref)}

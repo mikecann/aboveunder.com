@@ -24,6 +24,12 @@ import { PurchaseModal } from "../components/PurchaseModal";
 import { startPreloading } from "../routes";
 import { useDb } from "../hooks/useDb";
 import { LoadingPage } from "../loading/LoadingPage";
+import { PrintRow } from "./PrintRow";
+import { Vertical, Responsive, Stretch, Content, VerticalSpacer } from "gls/lib";
+import { HeaderMenu } from "../components/HeaderMenu";
+import { PageFooter } from "../components/PageFooter";
+import { PrintsMap } from "../map/PrintsMap";
+import { useScrollToTopOnEnter } from "../hooks/useScrollToTopOnEnter";
 
 interface LocationState {
   option?: string;
@@ -37,7 +43,6 @@ interface IState {
   selectedPrinter?: Printer;
   selectedPrintOption?: IPrintOption;
   selectedPrintSize?: IPrintOptionSize;
-  loadState: number;
   purchaseModalOpen?: boolean;
 }
 
@@ -54,12 +59,10 @@ export default function PrintPage() {
   const [db] = useDb();
   const location = useLocation();
   const history = useHistory();
-  const [state, setState] = React.useState<IState>({
-    loadState: 0,
-  });
+  const [state, setState] = React.useState<IState>({});
+  useScrollToTopOnEnter();
 
   const {
-    loadState,
     purchaseModalOpen,
     selectedPrintOption,
     selectedPrinter,
@@ -80,7 +83,6 @@ export default function PrintPage() {
       selectedPrinter: printer,
       selectedPrintOption: option,
       selectedPrintSize: size,
-      loadState: 0,
     });
   }, [db, params]);
 
@@ -174,153 +176,119 @@ export default function PrintPage() {
   const nextPrintUrl = `/print/${db.prints[wrap(0, db.prints.length - 1, thisIndex + 1)].id}`;
 
   return (
-    <CommonPageLayout activeMenu="shop">
-      <Segment style={{ padding: "4em 0em" }} vertical>
-        <Container>
-          <div style={{ marginBottom: "2em" }}>
-            <Breadcrumb size="large">
-              <Breadcrumb.Section as={Link} to="/shop">
-                <Icon name="cart" />
-                Shop
-              </Breadcrumb.Section>
-              <Breadcrumb.Divider icon="right chevron" />
-              <Breadcrumb.Section>{print.title}</Breadcrumb.Section>
-            </Breadcrumb>
-          </div>
-
-          <Grid stackable>
-            <Grid.Row columns={2}>
-              <Grid.Column width={10}>
-                <div style={{ position: "relative" }}>
-                  <Dimmer active={loadState == 0} inverted>
-                    <Loader />
-                  </Dimmer>
-
-                  <a href={print.image}>
-                    <ReactImageMagnify
-                      alt={print.title}
-                      hoverDelayInMs={100}
-                      style={{
-                        cursor: "zoom-in",
-                        boxShadow: "0 5px 10px 0 rgba(34,36,38,.35)",
-                      }}
-                      enlargedImagePosition="over"
-                      smallImage={{
-                        src: loadState == 0 ? print.thumb : print.image,
-                        isFluidWidth: true,
-                        onLoad: () => setState({ ...state, loadState: loadState + 1 }),
-                      }}
-                      largeImage={{
-                        src: loadState == 0 ? print.thumb : print.image,
-                        width: 1600,
-                        height: 1199,
-                      }}
-                    />
-
-                    <Button icon size="tiny" style={{ top: 10, right: 20, position: "absolute" }}>
-                      <Icon name="expand" />
-                    </Button>
-                  </a>
-                </div>
-
-                <div style={{ textAlign: "center", marginTop: 20 }}>
-                  <Button as={Link} to={prevPrintUrl}>
-                    <Icon name="arrow left" />
-                    Prev
-                  </Button>
-                  <Button as={Link} to={nextPrintUrl}>
-                    Next
-                    <Icon name="arrow right" />
-                  </Button>
-                </div>
-              </Grid.Column>
-              <Grid.Column width={6}>
-                <Segment>
-                  <Header as="h1">{print.title}</Header>
-
-                  <div>
-                    <Label basic>
-                      <Icon name="calendar" />
-                      {moment(print.dateCreated).calendar()}
-                    </Label>
-                    <Label basic as={Link} to={`/map/${print.id}`}>
-                      <Icon name="marker" /> View on Map
-                    </Label>
-                    {print.featured ? (
-                      <Label basic>
-                        <Icon name="star" />
-                        Featured
-                      </Label>
-                    ) : null}
-                  </div>
-
-                  <Segment
-                    color="grey"
-                    dangerouslySetInnerHTML={{ __html: print.description }}
-                    style={{ marginBottom: "2em" }}
-                  />
-
-                  <div>
-                    <Dropdown
-                      fluid
-                      selection
-                      options={printers}
-                      value={selectedPrinter}
-                      onChange={handleSelectedPrinterChange}
-                      style={{ marginBottom: "0.5em" }}
-                    />
-
-                    <Dropdown
-                      fluid
-                      selection
-                      options={selectedPrintOptions}
-                      value={selectedPrintOption.id}
-                      onChange={handleSelectedPrintOptionChange}
-                      style={{ marginBottom: "0.5em" }}
-                    />
-
-                    <Dropdown
-                      fluid
-                      selection
-                      options={selectedPrintSizes}
-                      value={selectedPrintSize.id}
-                      onChange={handleSelectedPrintSizeChange}
-                      style={{ marginBottom: "1em" }}
-                    />
-                  </div>
-
-                  <div>
-                    <Button
-                      primary
-                      className="snipcart-add-item"
-                      data-item-id={`${print.id}-${selectedPrintOption.id}-${selectedPrintSize.id}-${selectedPrinter}`}
-                      data-item-name={print.title}
-                      data-item-image={print.thumb}
-                      data-item-description={`'${print.title}' printed on '${selectedPrintOption.name}' at size '${selectedPrintSize.widthInches}" x ${selectedPrintSize.heightInches}"' using '${printerText}'`}
-                      data-item-url={`https://${window.location.hostname}/products/${print.id}.json`}
-                      data-item-weight={selectedPrintSize.weight}
-                      data-item-price={selectedPrintSize.priceAUD}
-                      data-item-custom1-name="Note to Above Under"
-                      data-item-custom1-type="textarea"
-                      onClick={() => setState({ ...state, purchaseModalOpen: true })}
-                    >
-                      Buy it for $ {selectedPrintSize.priceAUD} AUD
-                      <Icon name="chevron right" />
-                    </Button>
-                  </div>
-                </Segment>
-
-                {/* <Segment>
-                <PrintsMap
-                  prints={this.props.allPrints}
-                  initialPrintId={print.id}
+    <div>
+      <Vertical horizontalAlign="center" spacing={0}>
+        <div
+          style={{
+            width: "100%",
+            zIndex: 100,
+          }}
+        >
+          <HeaderMenu
+            // showLogo={false}
+            // menuProps={{
+            //   inverted: true,
+            //   pointing: true,
+            //   secondary: true,
+            //   style: { border: "none" },
+            //   size: "huge",
+            // }}
+            activeMenu="shop"
+          />
+        </div>
+        <PrintRow print={print} />
+        <VerticalSpacer space={20} />
+        <Header style={{ margin: 0 }} as="h1">
+          {print.title}
+        </Header>
+        <VerticalSpacer space={20} />
+        <Responsive
+          vertical={{ horizontalAlign: "center" }}
+          breakpoint={800}
+          style={{ width: "100%", maxWidth: 900, padding: 10 }}
+        >
+          <Stretch style={{ width: "100%" }}>
+            <Vertical spacing={5} style={{ width: "100%" }}>
+              {print.description && (
+                <Segment
+                  dangerouslySetInnerHTML={{ __html: print.description }}
+                  style={{ marginBottom: "2em" }}
                 />
-              </Segment> */}
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Container>
-      </Segment>
+              )}
+              <PrintsMap hideSearch height={300} prints={[print]} initialPrintId={print.id} />
+            </Vertical>
+          </Stretch>
+          <div>
+            <Segment style={{ maxWidth: 400, width: "100%", margin: 0 }}>
+              <div>
+                <Label basic>
+                  <Icon name="calendar" />
+                  {moment(print.dateCreated).calendar()}
+                </Label>
+                <Label basic as={Link} to={`/map/${print.id}`}>
+                  <Icon name="marker" /> View on Map
+                </Label>
+                {print.featured ? (
+                  <Label basic>
+                    <Icon name="star" />
+                    Featured
+                  </Label>
+                ) : null}
+              </div>
+              <VerticalSpacer space={20} />
+              <div>
+                <Dropdown
+                  fluid
+                  selection
+                  options={printers}
+                  value={selectedPrinter}
+                  onChange={handleSelectedPrinterChange}
+                  style={{ marginBottom: "0.5em" }}
+                />
+
+                <Dropdown
+                  fluid
+                  selection
+                  options={selectedPrintOptions}
+                  value={selectedPrintOption.id}
+                  onChange={handleSelectedPrintOptionChange}
+                  style={{ marginBottom: "0.5em" }}
+                />
+
+                <Dropdown
+                  fluid
+                  selection
+                  options={selectedPrintSizes}
+                  value={selectedPrintSize.id}
+                  onChange={handleSelectedPrintSizeChange}
+                  style={{ marginBottom: "1em" }}
+                />
+              </div>
+
+              <div>
+                <Button
+                  primary
+                  className="snipcart-add-item"
+                  data-item-id={`${print.id}-${selectedPrintOption.id}-${selectedPrintSize.id}-${selectedPrinter}`}
+                  data-item-name={print.title}
+                  data-item-image={print.thumb}
+                  data-item-description={`'${print.title}' printed on '${selectedPrintOption.name}' at size '${selectedPrintSize.widthInches}" x ${selectedPrintSize.heightInches}"' using '${printerText}'`}
+                  data-item-url={`https://${window.location.hostname}/products/${print.id}.json`}
+                  data-item-weight={selectedPrintSize.weight}
+                  data-item-price={selectedPrintSize.priceAUD}
+                  data-item-custom1-name="Note to Above Under"
+                  data-item-custom1-type="textarea"
+                  onClick={() => setState({ ...state, purchaseModalOpen: true })}
+                >
+                  Buy it for $ {selectedPrintSize.priceAUD} AUD
+                  <Icon name="chevron right" />
+                </Button>
+              </div>
+            </Segment>
+          </div>
+        </Responsive>
+        <VerticalSpacer space={20} />
+      </Vertical>
       {purchaseModalOpen && print && selectedPrintSize && selectedPrintOption && (
         <PurchaseModal
           onClose={() => setState({ ...state, purchaseModalOpen: false })}
@@ -329,16 +297,9 @@ export default function PrintPage() {
           size={selectedPrintSize}
         />
       )}
-    </CommonPageLayout>
+      <PageFooter />
+    </div>
   );
 }
-
-// export class PrintPage extends React.Component<IProps, IState> {
-//   constructor(props: IProps) {
-//     super(props);
-//     this.state = this.getInitialState(props);
-//   }
-
-// }
 
 startPreloading();

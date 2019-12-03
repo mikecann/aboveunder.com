@@ -10,7 +10,6 @@ export default function App() {
     <BrowserRouter>
       <Suspense fallback={<SuspenseFallback />}>
         <Switch>
-          {/* <Route component={ScrollToTop} /> */}
           <Route exact path="/" component={Pages.Home} />
           <Route path="/blog" component={Pages.Blog} />
           <Route path="/contact" component={Pages.Contact} />
@@ -25,10 +24,5 @@ export default function App() {
     </BrowserRouter>
   );
 }
-
-// const ScrollToTop = () => {
-//   window.scrollTo(0, 0);
-//   return null;
-// };
 
 export const HotApp = hot(App);

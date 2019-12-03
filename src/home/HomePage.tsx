@@ -22,6 +22,8 @@ import { latestPrints, featuredPrints, latestPosts } from "../lib/db";
 import { startPreloading } from "../routes";
 import { PrintsMap } from "../map/PrintsMap";
 import { useResponsive } from "../hooks/useResponsive";
+import { ProductThumbGrid2 } from "../components/ProductThumbGrid2";
+import { Vertical } from "gls/lib";
 
 interface Props {}
 
@@ -160,27 +162,27 @@ export default function HomePage({}: Props) {
           }}
           vertical
         >
-          <Container>
+          <Vertical horizontalAlign="center">
             <SectionHeading label="Featured Prints" href="/shop" />
-            <ProductThumbGrid featureOneProduct products={state.featuredPrints} />
+            <ProductThumbGrid2 products={state.featuredPrints} />
             <div style={{ textAlign: "center", marginTop: 20 }}>
               <Button as={Link} to="/shop" size="huge" primary>
                 View All
                 <Icon name="arrow right" />
               </Button>
             </div>
-          </Container>
+          </Vertical>
         </Segment>
 
         <Container fluid>
           <PrintsMap prints={db.prints} />
         </Container>
 
-        <Segment style={{ padding: "8em 0em" }} vertical>
-          <Container>
+        <Segment style={{ padding: "4em 0em" }} vertical>
+          <Vertical horizontalAlign="center">
             <SectionHeading label="Latest Prints" href="/shop" />
-            <ProductThumbGrid products={state.latestPrints} />
-          </Container>
+            <ProductThumbGrid2 products={state.latestPrints} />
+          </Vertical>
           <div style={{ textAlign: "center", marginTop: 20 }}>
             <Button as={Link} to="/shop" size="huge" primary>
               {state.numMorePrints} More
