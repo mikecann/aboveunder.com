@@ -12,6 +12,7 @@ import {
   Label,
   Dimmer,
   Loader,
+  Visibility,
 } from "semantic-ui-react";
 import moment from "moment";
 import { getPrintOptionOrDefault, getPrintSizeOrDefault, getPrint } from "../lib/db";
@@ -44,6 +45,7 @@ interface IState {
   selectedPrintOption?: IPrintOption;
   selectedPrintSize?: IPrintOptionSize;
   purchaseModalOpen?: boolean;
+  menuVisible?: boolean;
 }
 
 type PrinterDropdownOption = { text: string; value: Printer };
@@ -68,6 +70,7 @@ export default function PrintPage() {
     selectedPrinter,
     print,
     selectedPrintSize,
+    menuVisible,
   } = state;
 
   React.useEffect(() => {
@@ -181,22 +184,35 @@ export default function PrintPage() {
         <div
           style={{
             width: "100%",
+            position: "absolute",
+            top: 0,
+            left: 0,
             zIndex: 100,
           }}
         >
-          <HeaderMenu
-            // showLogo={false}
-            // menuProps={{
-            //   inverted: true,
-            //   pointing: true,
-            //   secondary: true,
-            //   style: { border: "none" },
-            //   size: "huge",
-            // }}
-            activeMenu="shop"
-          />
+          {menuVisible && (
+            <HeaderMenu
+              // showLogo={false}
+              // menuProps={{
+              //   inverted: true,
+              //   pointing: true,
+              //   secondary: true,
+              //   style: { border: "none" },
+              //   size: "huge",
+              // }}
+              menuProps={{ fixed: "top", size: "huge" }}
+              activeMenu="shop"
+            />
+          )}
         </div>
-        <PrintRow print={print} />
+        <Visibility
+          style={{ width: "100%" }}
+          onTopPassed={() => setState({ ...state, menuVisible: true })}
+          onTopVisible={() => setState({ ...state, menuVisible: false })}
+          once={false}
+        >
+          <PrintRow print={print} />
+        </Visibility>
         <VerticalSpacer space={20} />
         <Header style={{ margin: 0 }} as="h1">
           {print.title}
@@ -215,7 +231,7 @@ export default function PrintPage() {
                   style={{ marginBottom: "2em" }}
                 />
               )}
-              <PrintsMap hideSearch height={300} prints={[print]} initialPrintId={print.id} />
+              <PrintsMap hideSearch height={300} prints={db.prints} initialPrintId={print.id} />
             </Vertical>
           </Stretch>
           <div>

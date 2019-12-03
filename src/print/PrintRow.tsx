@@ -18,7 +18,7 @@ export function PrintRow({ print }: Props) {
         position: "relative",
         width: "100%",
         backgroundColor: "#222",
-        height: innerHeight - 100,
+        height: innerHeight - 40,
         paddingTop: 20,
         paddingBottom: 20,
       }}
