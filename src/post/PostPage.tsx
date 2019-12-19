@@ -8,6 +8,7 @@ import { useDb } from "../hooks/useDb";
 import { LoadingPage } from "../loading/LoadingPage";
 import { useParams } from "react-router";
 import { getPost } from "../lib/db";
+import { Helmet } from "react-helmet";
 
 interface Params {
   id: string;
@@ -32,6 +33,9 @@ export default function PostPage() {
 
   return (
     <CommonPageLayout activeMenu="blog">
+      <Helmet>
+        <title>{post.title} - Above Under</title>
+      </Helmet>
       <Segment className="blogPostPage" style={{ padding: "4em 0em" }} vertical>
         <Container>
           <div style={{ marginBottom: "2em" }}>

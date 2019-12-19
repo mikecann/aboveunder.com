@@ -31,6 +31,7 @@ import { HeaderMenu } from "../components/HeaderMenu";
 import { PageFooter } from "../components/PageFooter";
 import { PrintsMap } from "../map/PrintsMap";
 import { useScrollToTopOnEnter } from "../hooks/useScrollToTopOnEnter";
+import { Helmet } from "react-helmet";
 
 interface LocationState {
   option?: string;
@@ -180,6 +181,9 @@ export default function PrintPage() {
 
   return (
     <div>
+      <Helmet>
+        <title>{print.title} - Above Under </title>
+      </Helmet>
       <Vertical horizontalAlign="center" spacing={0}>
         <div
           style={{

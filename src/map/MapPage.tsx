@@ -6,6 +6,7 @@ import { useHistory, useLocation, useParams } from "react-router";
 import { CommonPageLayout } from "../components/CommonPageLayout";
 import { useDb } from "../hooks/useDb";
 import { LoadingPage } from "../loading/LoadingPage";
+import { Helmet } from "react-helmet";
 
 type Params = {
   print?: string;
@@ -30,6 +31,9 @@ export default function MapPage() {
 
   return (
     <CommonPageLayout activeMenu="home">
+      <Helmet>
+        <title>Above Under - Map</title>
+      </Helmet>
       <Segment style={{ padding: "2em 0em" }} vertical>
         <Container fluid>
           <div style={{ width: "100%", height: 800 }}>

@@ -2,6 +2,7 @@ import * as React from "react";
 import { Segment, Container, Header, Embed } from "semantic-ui-react";
 import { CommonPageLayout } from "../components/CommonPageLayout";
 import { startPreloading } from "../routes";
+import { Helmet } from "react-helmet";
 
 interface IProps {}
 
@@ -10,6 +11,9 @@ interface IState {}
 export default function AboutPage() {
   return (
     <CommonPageLayout activeMenu="home">
+      <Helmet>
+        <title>Above Under - About</title>
+      </Helmet>
       <Segment style={{ padding: "4em 0em" }} vertical>
         <Container>
           <Header as="h1">About Above Under</Header>

@@ -4,10 +4,17 @@ import "./app.css";
 import { SuspenseFallback } from "./components/suspense/SuspenseFallback";
 import { Pages } from "./routes";
 import { hot } from "react-hot-loader/root";
+import { Helmet } from "react-helmet";
 
 export default function App() {
   return (
     <BrowserRouter>
+      {/* <Helmet>
+        <meta
+          name="keywords"
+          content="drone,aerial,photography,quad,australia,beach,sun,water,wa,queensland,perth"
+        />
+      </Helmet> */}
       <Suspense fallback={<SuspenseFallback />}>
         <Switch>
           <Route exact path="/" component={Pages.Home} />

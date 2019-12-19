@@ -29,11 +29,11 @@ export function getPost(db: IDB, id: string): IPost {
   return p;
 }
 
-export const latestPrints = (db: IDB) => sortByLatestFirst(db.prints).slice(0, 12);
+export const latestPrints = (db: IDB) => sortByLatestFirst(db.prints);
 
-export const featuredPrints = (db: IDB) => shuffle(db.prints.filter(p => p.featured)).slice(0, 12);
+export const featuredPrints = (db: IDB) => shuffle(db.prints.filter(p => p.featured));
 
-export const latestPosts = (db: IDB) => sortLatestPosts(db.posts).slice(0, 6);
+export const latestPosts = (db: IDB) => sortLatestPosts(db.posts);
 
 export async function getFirstPrint(): Promise<IPrint> {
   return (await getDb()).prints[0];

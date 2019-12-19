@@ -7,6 +7,7 @@ import { useDb } from "../hooks/useDb";
 import { LoadingPage } from "../loading/LoadingPage";
 import { CommonPageLayout } from "../components/CommonPageLayout";
 import { startPreloading } from "../routes";
+import { Helmet } from "react-helmet";
 
 const orderOptions = [
   {
@@ -69,6 +70,9 @@ export default function BlogPage({}: IProps) {
 
   return (
     <CommonPageLayout activeMenu="blog">
+      <Helmet>
+        <title>Above Under - Blog</title>
+      </Helmet>
       <Segment style={{ padding: "4em 0em" }} vertical>
         <Container>
           <Header as="h1">Blog Posts</Header>

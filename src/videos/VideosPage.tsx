@@ -3,10 +3,14 @@ import { Segment, Container, Header } from "semantic-ui-react";
 import { CommonPageLayout } from "../components/CommonPageLayout";
 import { VideoGrid } from "../components/VideoGrid";
 import { startPreloading } from "../routes";
+import { Helmet } from "react-helmet";
 
 export default function VideosPage() {
   return (
     <CommonPageLayout activeMenu="home">
+      <Helmet>
+        <title>Above Under - Videos</title>
+      </Helmet>
       <Segment style={{ padding: "4em 0em" }} vertical>
         <Container>
           <Header as="h1">Above Under Videos</Header>

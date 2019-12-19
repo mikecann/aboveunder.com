@@ -9,11 +9,12 @@ import { startPreloading } from "../routes";
 import { useDb } from "../hooks/useDb";
 import { LoadingPage } from "../loading/LoadingPage";
 import { useHistory } from "react-router";
-import { ProductThumbGrid2 } from "../components/ProductThumbGrid2";
+import { ProductThumbGrid } from "../components/ProductThumbGrid";
 import { useResponsive } from "../hooks/useResponsive";
 import { Vertical } from "gls/lib";
 import { Pagination } from "./Pagination";
 import { useQuery } from "../hooks/useQuery";
+import { Helmet } from "react-helmet";
 
 type Category = "latest" | "oldest" | "featured";
 
@@ -134,6 +135,9 @@ export default function ShopPage() {
 
   return (
     <CommonPageLayout activeMenu="shop">
+      <Helmet>
+        <title>Above Under - Shop</title>
+      </Helmet>
       <Vertical
         horizontalAlign="center"
         style={{
@@ -162,7 +166,7 @@ export default function ShopPage() {
           }
         />
         <Visibility onUpdate={onVisibilityUpdate}>
-          <ProductThumbGrid2 products={visiblePrints} />
+          <ProductThumbGrid products={visiblePrints} />
         </Visibility>
         <div>
           <Pagination

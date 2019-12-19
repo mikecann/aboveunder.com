@@ -10,27 +10,26 @@ import {
   Visibility,
   Image,
 } from "semantic-ui-react";
-import { ProductThumbGrid } from "../components/ProductThumbGrid";
 import { BlogPostsThumbGrid } from "../blog/BlogPostsThumbGrid";
 import { HeaderMenu } from "../components/HeaderMenu";
 import { PageFooter } from "../components/PageFooter";
 import { Link } from "react-router-dom";
 import { useDb } from "../hooks/useDb";
 import { LoadingPage } from "../loading/LoadingPage";
-import { sortByLatestFirst } from "../lib/utils";
 import { latestPrints, featuredPrints, latestPosts } from "../lib/db";
 import { startPreloading } from "../routes";
 import { PrintsMap } from "../map/PrintsMap";
 import { useResponsive } from "../hooks/useResponsive";
-import { ProductThumbGrid2 } from "../components/ProductThumbGrid2";
 import { Vertical } from "gls/lib";
+import { ProductThumbGrid, thumbsPerRow } from "../components/ProductThumbGrid";
+import { useWindowSize } from "../hooks/useWindowSize";
+import { Helmet } from "react-helmet";
 
 interface Props {}
 
 interface State {
   latestPrints: IPrint[];
   featuredPrints: IPrint[];
-  numMorePrints: number;
 }
 
 export default function HomePage({}: Props) {
@@ -40,11 +39,11 @@ export default function HomePage({}: Props) {
   const hideFixedMenu = () => setVisible(false);
   const showFixedMenu = () => setVisible(true);
   const responsive = useResponsive();
+  const { innerWidth } = useWindowSize();
 
   const [state, setState] = React.useState<State>({
     featuredPrints: [],
     latestPrints: [],
-    numMorePrints: 0,
   });
 
   React.useEffect(() => {
@@ -52,14 +51,19 @@ export default function HomePage({}: Props) {
     setState({
       latestPrints: latestPrints(db),
       featuredPrints: featuredPrints(db),
-      numMorePrints: db.prints.length - latestPrints(db).length,
     });
   }, [db]);
 
   if (!db) return <LoadingPage />;
 
+  const thumbsToShow = thumbsPerRow(innerWidth) * 4;
+  const numMorePrints = state.latestPrints.length - thumbsToShow;
+
   return (
     <div>
+      <Helmet>
+        <title>Above Under</title>
+      </Helmet>
       <div>
         {visible ? (
           <HeaderMenu menuProps={{ fixed: "top", size: "huge" }} activeMenu="home" />
@@ -164,7 +168,7 @@ export default function HomePage({}: Props) {
         >
           <Vertical horizontalAlign="center">
             <SectionHeading label="Featured Prints" href="/shop" />
-            <ProductThumbGrid2 products={state.featuredPrints} />
+            <ProductThumbGrid products={state.featuredPrints.slice(0, thumbsToShow)} />
             <div style={{ textAlign: "center", marginTop: 20 }}>
               <Button as={Link} to="/shop" size="huge" primary>
                 View All
@@ -181,11 +185,11 @@ export default function HomePage({}: Props) {
         <Segment style={{ padding: "4em 0em" }} vertical>
           <Vertical horizontalAlign="center">
             <SectionHeading label="Latest Prints" href="/shop" />
-            <ProductThumbGrid2 products={state.latestPrints} />
+            <ProductThumbGrid products={state.latestPrints.slice(0, thumbsToShow)} />
           </Vertical>
           <div style={{ textAlign: "center", marginTop: 20 }}>
             <Button as={Link} to="/shop" size="huge" primary>
-              {state.numMorePrints} More
+              {numMorePrints} More
               <Icon name="arrow right" />
             </Button>
           </div>
