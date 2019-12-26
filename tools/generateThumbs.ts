@@ -5,14 +5,13 @@ import shell from "shelljs";
 
 async function run() {
   var db = await getDb();
-  // for(var p of db.prints)
-  // {
-  //     const fname = p.title.split(" ").join("-");
-  //     p.image = `/images/products/full/${fname}.jpg`;
-  //     p.thumb = `/images/products/thumb/${fname}.jpg`;
-  //     await generateThumbnail(p);
-  // }
-  // await saveDbPrints(db.prints);
+  for (var p of db.prints) {
+    const fname = p.title.split(" ").join("-");
+    p.image = `/images/products/full/${fname}.jpg`;
+    p.thumb = `/images/products/thumb/${fname}.jpg`;
+    await generateThumbnail(p);
+  }
+  await saveDbPrints(db.prints);
 
   for (let p of db.posts) {
     const fname = path.basename(p.headerImage);
@@ -25,8 +24,6 @@ async function run() {
 
     p.thumbImage = outname;
   }
-
-  await saveDbPosts(db.prints);
 }
 
 run();
