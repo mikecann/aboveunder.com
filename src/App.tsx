@@ -17,7 +17,7 @@ export default function App() {
       </Helmet> */}
       <Suspense fallback={<SuspenseFallback />}>
         <Switch>
-          <Route exact path="/" component={Pages.Hom\e} />
+          <Route exact path="/" component={Pages.Home} />
           <Route path="/blog" component={Pages.Blog} />
           <Route path="/contact" component={Pages.Contact} />
           <Route path="/about" component={Pages.About} />
