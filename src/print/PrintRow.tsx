@@ -29,6 +29,7 @@ export function PrintRow({ print }: Props) {
 
       <a href={print.image}>
         <img
+          alt={print.title}
           style={{ width: "100%", height: "100%", objectFit: "contain" }}
           onLoad={() => setLoadState(loadState + 1)}
           src={loadState == 0 ? print.thumb : print.image}

@@ -16,7 +16,7 @@ export default function ContactPage() {
       </Helmet>
       <Segment style={{ padding: "4em 0em" }} vertical text>
         <Container>
-          <img src="/images/ralph-wave.gif" />
+          <img alt="ralph from simpsons waving" src="/images/ralph-wave.gif" />
           <Header as="h1">Contact Us</Header>
           We'd love to hear from you. To contact us just email us:{" "}
           <a href="mailto:mike@aboveunder.com">mike@aboveunder.com</a> we will aim to get back to

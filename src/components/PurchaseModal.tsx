@@ -23,7 +23,7 @@ export const PurchaseModal = ({ print, size, option, onClose }: Props) => (
   <Modal open={true} size="small" onClose={onClose}>
     <Modal.Header>Email to Purchase</Modal.Header>
     <Modal.Content image>
-      <Image wrapped size="medium" src={print.thumb} />
+      <Image alt={print.title + " thumbnail"} wrapped size="medium" src={print.thumb} />
       <Modal.Description>
         <Header>{print.title}</Header>
         <p>

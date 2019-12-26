@@ -27,7 +27,7 @@ export class BlogPostsThumbGrid extends React.Component<IProps, any> {
 const BlogPostSummary = (post: IPost) => (
   <Grid.Column key={post.id}>
     <Card fluid className="blog-post-thumb" style={{ margin: 10 }}>
-      <Image src={post.headerImage} href={`/post/${post.id}`} />
+      <Image alt="header image" src={post.headerImage} href={`/post/${post.id}`} />
       <Card.Content>
         <Card.Header>{post.title}</Card.Header>
         <Card.Meta>

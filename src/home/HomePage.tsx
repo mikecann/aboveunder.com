@@ -120,7 +120,12 @@ export default function HomePage({}: Props) {
             />
 
             <Container text>
-              <Image centered src="/images/logo-inverted.png" style={{ marginTop: "5em" }} />
+              <Image
+                alt={"logo inverted"}
+                centered
+                src="/images/logo-inverted.png"
+                style={{ marginTop: "5em" }}
+              />
               <Header
                 as="h2"
                 content="Beautiful Australian Photography"

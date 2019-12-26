@@ -30,6 +30,7 @@ export class MyMapMarker extends React.Component<IMapMarkerProps, any> {
     return (
       <Link to={`/print/${print.id}`}>
         <Image
+          alt={print.title + " icon"}
           rounded
           src={print.thumb}
           style={{ maxWidth: 300 }}
