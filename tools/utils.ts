@@ -247,6 +247,7 @@ export async function createPrint(image: CollectionImage, db: IDB): Promise<IPri
     printOptions: undefined,
     image: `/images/products/full/${image.filenameNoSpaces}`,
     thumb: `/images/products/thumb/${image.filenameNoSpaces}`,
+    thumb2x: `/images/products/thumb/${image.filenameNoSpaces.replace(".jpg", "")}@2x.jpg`,
     title: image.name,
     dateCreated: moment().format(),
     description: await askQuestion("Description?", ""),
