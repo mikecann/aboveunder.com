@@ -10,6 +10,7 @@ export const data = [
       lat: -30.99616333333333,
       lng: 115.332115,
     },
+    thumb2x: "/images/products/thumb/Lancelin-Dune@2x.jpg",
   },
   {
     title: "Lancelin Dune Lady",
@@ -22,6 +23,7 @@ export const data = [
       lat: -30.99722,
       lng: 115.32891666666667,
     },
+    thumb2x: "/images/products/thumb/Lancelin-Dune-Lady@2x.jpg",
   },
   {
     title: "Lancelin Dune People",
@@ -35,6 +37,7 @@ export const data = [
       lat: -30.997661666666666,
       lng: 115.32969166666666,
     },
+    thumb2x: "/images/products/thumb/Lancelin-Dune-People@2x.jpg",
   },
   {
     title: "Salt Lake Dragon",
@@ -48,6 +51,7 @@ export const data = [
       lat: -28.192725,
       lng: 114.28017166666666,
     },
+    thumb2x: "/images/products/thumb/Salt-Lake-Dragon@2x.jpg",
   },
   {
     title: "Salt Lake Notch Horizontal",
@@ -61,6 +65,7 @@ export const data = [
       lat: -28.181471666666667,
       lng: 114.27435666666666,
     },
+    thumb2x: "/images/products/thumb/Salt-Lake-Notch-Horizontal@2x.jpg",
   },
   {
     title: "Salt Lake Notch Vertical",
@@ -74,6 +79,7 @@ export const data = [
       lat: -28.181475,
       lng: 114.27435,
     },
+    thumb2x: "/images/products/thumb/Salt-Lake-Notch-Vertical@2x.jpg",
   },
   {
     title: "Kalbarri Coast",
@@ -87,6 +93,7 @@ export const data = [
       lat: -27.752233333333333,
       lng: 114.13601,
     },
+    thumb2x: "/images/products/thumb/Kalbarri-Coast@2x.jpg",
   },
   {
     title: "Vast Kalbarri Salt Lakes",
@@ -100,6 +107,7 @@ export const data = [
       lat: -28.152691666666666,
       lng: 114.25113,
     },
+    thumb2x: "/images/products/thumb/Vast-Kalbarri-Salt-Lakes@2x.jpg",
   },
   {
     title: "Kalbarri Rocks",
@@ -113,6 +121,7 @@ export const data = [
       lat: -27.705981666666666,
       lng: 114.16070166666667,
     },
+    thumb2x: "/images/products/thumb/Kalbarri-Rocks@2x.jpg",
   },
   {
     title: "Red Sands of Shark Bay",
@@ -126,6 +135,7 @@ export const data = [
       lat: -25.774606666666667,
       lng: 113.47605,
     },
+    thumb2x: "/images/products/thumb/Red-Sands-of-Shark-Bay@2x.jpg",
   },
   {
     title: "Monkey Mia Beach",
@@ -138,6 +148,7 @@ export const data = [
       lat: -25.79311,
       lng: 113.71767666666666,
     },
+    thumb2x: "/images/products/thumb/Monkey-Mia-Beach@2x.jpg",
   },
   {
     title: "Monkey Mia",
@@ -151,6 +162,7 @@ export const data = [
       lat: -25.780708333333333,
       lng: 113.72146166666667,
     },
+    thumb2x: "/images/products/thumb/Monkey-Mia@2x.jpg",
   },
   {
     title: "Monkey Mia Boats",
@@ -163,6 +175,7 @@ export const data = [
       lat: -25.793078333333334,
       lng: 113.71644833333333,
     },
+    thumb2x: "/images/products/thumb/Monkey-Mia-Boats@2x.jpg",
   },
   {
     title: "Shell Beach Water",
@@ -176,6 +189,7 @@ export const data = [
       lat: -26.21428,
       lng: 113.77798333333334,
     },
+    thumb2x: "/images/products/thumb/Shell-Beach-Water@2x.jpg",
   },
   {
     title: "Nanga Beach",
@@ -189,6 +203,7 @@ export const data = [
       lat: -26.256038333333333,
       lng: 113.80333666666667,
     },
+    thumb2x: "/images/products/thumb/Nanga-Beach@2x.jpg",
   },
   {
     title: "Hamelin Pool Stromatolites",
@@ -202,6 +217,7 @@ export const data = [
       lat: -26.400286666666666,
       lng: 114.15907833333333,
     },
+    thumb2x: "/images/products/thumb/Hamelin-Pool-Stromatolites@2x.jpg",
   },
   {
     title: "Hamelin Pool",
@@ -215,6 +231,7 @@ export const data = [
       lat: -26.4007,
       lng: 114.16029333333333,
     },
+    thumb2x: "/images/products/thumb/Hamelin-Pool@2x.jpg",
   },
   {
     title: "Hancock Gorge",
@@ -228,6 +245,7 @@ export const data = [
       lat: -22.38844,
       lng: 118.26932833333333,
     },
+    thumb2x: "/images/products/thumb/Hancock-Gorge@2x.jpg",
   },
   {
     title: "Karijini Eco Retreat",
@@ -241,6 +259,7 @@ export const data = [
       lat: -22.387381666666666,
       lng: 118.269915,
     },
+    thumb2x: "/images/products/thumb/Karijini-Eco-Retreat@2x.jpg",
   },
   {
     title: "Dales Gorge",
@@ -254,6 +273,7 @@ export const data = [
       lat: -22.475621666666665,
       lng: 118.56222333333334,
     },
+    thumb2x: "/images/products/thumb/Dales-Gorge@2x.jpg",
   },
   {
     title: "Mount Herbert",
@@ -266,6 +286,7 @@ export const data = [
       lat: -21.325715,
       lng: 117.21453166666667,
     },
+    thumb2x: "/images/products/thumb/Mount-Herbert@2x.jpg",
   },
   {
     title: "Karijini Trains",
@@ -279,6 +300,7 @@ export const data = [
       lat: -21.56853,
       lng: 117.216705,
     },
+    thumb2x: "/images/products/thumb/Karijini-Trains@2x.jpg",
   },
   {
     title: "Eighty Mile Sunset",
@@ -292,6 +314,7 @@ export const data = [
       lat: -19.753256666666665,
       lng: 120.66872166666667,
     },
+    thumb2x: "/images/products/thumb/Eighty-Mile-Sunset@2x.jpg",
   },
   {
     title: "Eighty Mile Low Tide",
@@ -305,6 +328,7 @@ export const data = [
       lat: -19.753988333333332,
       lng: 120.669185,
     },
+    thumb2x: "/images/products/thumb/Eighty-Mile-Low-Tide@2x.jpg",
   },
   {
     title: "Cable Beach Hangout",
@@ -317,6 +341,7 @@ export const data = [
       lat: -17.91758,
       lng: 122.210395,
     },
+    thumb2x: "/images/products/thumb/Cable-Beach-Hangout@2x.jpg",
   },
   {
     title: "Cable Beach Sunset",
@@ -330,6 +355,7 @@ export const data = [
       lat: -17.91717,
       lng: 122.209605,
     },
+    thumb2x: "/images/products/thumb/Cable-Beach-Sunset@2x.jpg",
   },
   {
     title: "Gantheaume Point Light Side",
@@ -343,6 +369,7 @@ export const data = [
       lat: -17.973333333333333,
       lng: 122.176945,
     },
+    thumb2x: "/images/products/thumb/Gantheaume-Point-Light-Side@2x.jpg",
   },
   {
     title: "Gantheaume Point",
@@ -356,6 +383,7 @@ export const data = [
       lat: -17.97409,
       lng: 122.17748,
     },
+    thumb2x: "/images/products/thumb/Gantheaume-Point@2x.jpg",
   },
   {
     title: "Gantheaume Point Dark Side",
@@ -369,6 +397,7 @@ export const data = [
       lat: -17.975303333333333,
       lng: 122.17707,
     },
+    thumb2x: "/images/products/thumb/Gantheaume-Point-Dark-Side@2x.jpg",
   },
   {
     title: "Gantheaume Point Rocks",
@@ -382,6 +411,7 @@ export const data = [
       lat: -17.972976666666668,
       lng: 122.17740333333333,
     },
+    thumb2x: "/images/products/thumb/Gantheaume-Point-Rocks@2x.jpg",
   },
   {
     title: "James Price Point Diagonal",
@@ -395,6 +425,7 @@ export const data = [
       lat: -17.458611666666666,
       lng: 122.151945,
     },
+    thumb2x: "/images/products/thumb/James-Price-Point-Diagonal@2x.jpg",
   },
   {
     title: "James Price Point Fire Wave - Horizontal",
@@ -408,6 +439,7 @@ export const data = [
       lat: -17.480833333333333,
       lng: 122.15083333333334,
     },
+    thumb2x: "/images/products/thumb/James-Price-Point-Fire-Wave---Horizontal@2x.jpg",
   },
   {
     title: "James Price Point Fire Wave - Vertical",
@@ -421,6 +453,7 @@ export const data = [
       lat: -17.480833333333333,
       lng: 122.15111166666667,
     },
+    thumb2x: "/images/products/thumb/James-Price-Point-Fire-Wave---Vertical@2x.jpg",
   },
   {
     title: "James Price Point Fire Cracks",
@@ -434,6 +467,7 @@ export const data = [
       lat: -17.480833333333333,
       lng: 122.150555,
     },
+    thumb2x: "/images/products/thumb/James-Price-Point-Fire-Cracks@2x.jpg",
   },
   {
     title: "James Price Point Crumbles Away",
@@ -447,6 +481,7 @@ export const data = [
       lat: -17.482221666666668,
       lng: 122.15027833333333,
     },
+    thumb2x: "/images/products/thumb/James-Price-Point-Crumbles-Away@2x.jpg",
   },
   {
     title: "Cape Leveque Diagonol",
@@ -460,6 +495,7 @@ export const data = [
       lat: -16.396388333333334,
       lng: 122.92472166666667,
     },
+    thumb2x: "/images/products/thumb/Cape-Leveque-Diagonol@2x.jpg",
   },
   {
     title: "Cape Leveque Waters",
@@ -473,6 +509,7 @@ export const data = [
       lat: -16.388333333333332,
       lng: 122.92472166666667,
     },
+    thumb2x: "/images/products/thumb/Cape-Leveque-Waters@2x.jpg",
   },
   {
     title: "Cape Leveque at Sunset",
@@ -486,6 +523,7 @@ export const data = [
       lat: -16.395555,
       lng: 122.925,
     },
+    thumb2x: "/images/products/thumb/Cape-Leveque-at-Sunset@2x.jpg",
   },
   {
     title: "Cape Leveque Lighthouse",
@@ -499,6 +537,7 @@ export const data = [
       lat: -16.395278333333334,
       lng: 122.92861166666667,
     },
+    thumb2x: "/images/products/thumb/Cape-Leveque-Lighthouse@2x.jpg",
   },
   {
     title: "Cape Leveque Painted Rocks",
@@ -512,6 +551,7 @@ export const data = [
       lat: -16.388888333333334,
       lng: 122.92527833333334,
     },
+    thumb2x: "/images/products/thumb/Cape-Leveque-Painted-Rocks@2x.jpg",
   },
   {
     title: "Cygnet Bay Loner",
@@ -525,6 +565,7 @@ export const data = [
       lat: -16.454166666666666,
       lng: 123.009445,
     },
+    thumb2x: "/images/products/thumb/Cygnet-Bay-Loner@2x.jpg",
   },
   {
     title: "Middle Lagoon Islets",
@@ -538,6 +579,7 @@ export const data = [
       lat: -16.777221666666666,
       lng: 122.57083333333334,
     },
+    thumb2x: "/images/products/thumb/Middle-Lagoon-Islets@2x.jpg",
   },
   {
     title: "Willie Creek Pearl Farm",
@@ -551,6 +593,7 @@ export const data = [
       lat: -17.7625,
       lng: 122.21361166666667,
     },
+    thumb2x: "/images/products/thumb/Willie-Creek-Pearl-Farm@2x.jpg",
   },
   {
     title: "Willie Creek Head",
@@ -564,6 +607,7 @@ export const data = [
       lat: -17.7625,
       lng: 122.20972166666667,
     },
+    thumb2x: "/images/products/thumb/Willie-Creek-Head@2x.jpg",
   },
   {
     title: "Willie Creek Standout",
@@ -577,6 +621,7 @@ export const data = [
       lat: -17.758888333333335,
       lng: 122.20888833333333,
     },
+    thumb2x: "/images/products/thumb/Willie-Creek-Standout@2x.jpg",
   },
   {
     title: "Willie Creek Rainbow",
@@ -590,6 +635,7 @@ export const data = [
       lat: -17.759166666666665,
       lng: 122.20472166666667,
     },
+    thumb2x: "/images/products/thumb/Willie-Creek-Rainbow@2x.jpg",
   },
   {
     title: "Willie Creek Sands",
@@ -603,6 +649,7 @@ export const data = [
       lat: -17.759721666666668,
       lng: 122.20472166666667,
     },
+    thumb2x: "/images/products/thumb/Willie-Creek-Sands@2x.jpg",
   },
   {
     title: "Wolfe Creek Crater",
@@ -616,6 +663,7 @@ export const data = [
       lat: -19.174166666666668,
       lng: 127.786945,
     },
+    thumb2x: "/images/products/thumb/Wolfe-Creek-Crater@2x.jpg",
   },
   {
     title: "Bungle",
@@ -625,6 +673,7 @@ export const data = [
     thumb: "/images/products/thumb/Bungle.jpg",
     featured: false,
     dateCreated: "2017-05-07T03:14:54+08:00",
+    thumb2x: "/images/products/thumb/Bungle@2x.jpg",
   },
   {
     title: "Kununurra",
@@ -638,6 +687,7 @@ export const data = [
       lat: -15.79,
       lng: 128.73666666666668,
     },
+    thumb2x: "/images/products/thumb/Kununurra@2x.jpg",
   },
   {
     title: "Kununurra Bridge",
@@ -651,6 +701,7 @@ export const data = [
       lat: -15.792221666666666,
       lng: 128.69333333333333,
     },
+    thumb2x: "/images/products/thumb/Kununurra-Bridge@2x.jpg",
   },
   {
     title: "Lake Argyle Dam",
@@ -664,6 +715,7 @@ export const data = [
       lat: -16.121945,
       lng: 128.7325,
     },
+    thumb2x: "/images/products/thumb/Lake-Argyle-Dam@2x.jpg",
   },
   {
     title: "Lake Argyle Dam Bus",
@@ -676,6 +728,7 @@ export const data = [
       lat: -16.121945,
       lng: 128.73861166666666,
     },
+    thumb2x: "/images/products/thumb/Lake-Argyle-Dam-Bus@2x.jpg",
   },
   {
     title: "Lake Argyle Hills",
@@ -689,6 +742,7 @@ export const data = [
       lat: -16.125555,
       lng: 128.75166666666667,
     },
+    thumb2x: "/images/products/thumb/Lake-Argyle-Hills@2x.jpg",
   },
   {
     title: "Darwin Skyline",
@@ -702,6 +756,7 @@ export const data = [
       lat: -12.461666666666666,
       lng: 130.830555,
     },
+    thumb2x: "/images/products/thumb/Darwin-Skyline@2x.jpg",
   },
   {
     title: "Darwin Fish",
@@ -715,6 +770,7 @@ export const data = [
       lat: -12.442043333333334,
       lng: 130.831565,
     },
+    thumb2x: "/images/products/thumb/Darwin-Fish@2x.jpg",
   },
   {
     title: "Darwin Shore",
@@ -728,6 +784,7 @@ export const data = [
       lat: -12.433986666666666,
       lng: 130.83375333333333,
     },
+    thumb2x: "/images/products/thumb/Darwin-Shore@2x.jpg",
   },
   {
     title: "Mt Isa Ore",
@@ -741,6 +798,7 @@ export const data = [
       lat: -20.715458333333334,
       lng: 139.49080166666667,
     },
+    thumb2x: "/images/products/thumb/Mt-Isa-Ore@2x.jpg",
   },
   {
     title: "Fitzroy Shore",
@@ -754,6 +812,7 @@ export const data = [
       lat: -16.922658333333334,
       lng: 145.99881166666665,
     },
+    thumb2x: "/images/products/thumb/Fitzroy-Shore@2x.jpg",
   },
   {
     title: "Mini Fitzroy",
@@ -767,6 +826,7 @@ export const data = [
       lat: -16.922633333333334,
       lng: 146.00603333333333,
     },
+    thumb2x: "/images/products/thumb/Mini-Fitzroy@2x.jpg",
   },
   {
     title: "Port Douglas Jetty",
@@ -780,6 +840,7 @@ export const data = [
       lat: -16.479891666666667,
       lng: 145.46157333333332,
     },
+    thumb2x: "/images/products/thumb/Port-Douglas-Jetty@2x.jpg",
   },
   {
     title: "Port Douglas Stingray",
@@ -793,6 +854,7 @@ export const data = [
       lat: -16.479193333333335,
       lng: 145.45615166666667,
     },
+    thumb2x: "/images/products/thumb/Port-Douglas-Stingray@2x.jpg",
   },
   {
     title: "Port Douglas Bay",
@@ -806,6 +868,7 @@ export const data = [
       lat: -16.479231666666667,
       lng: 145.453045,
     },
+    thumb2x: "/images/products/thumb/Port-Douglas-Bay@2x.jpg",
   },
   {
     title: "Port Douglas Trees",
@@ -819,6 +882,7 @@ export const data = [
       lat: -16.47918,
       lng: 145.45276,
     },
+    thumb2x: "/images/products/thumb/Port-Douglas-Trees@2x.jpg",
   },
   {
     title: "Daintree Coast",
@@ -832,6 +896,7 @@ export const data = [
       lat: -16.065555,
       lng: 145.47583333333333,
     },
+    thumb2x: "/images/products/thumb/Daintree-Coast@2x.jpg",
   },
   {
     title: "Cape Tribulation Rocks",
@@ -845,6 +910,7 @@ export const data = [
       lat: -16.069166666666668,
       lng: 145.46916666666667,
     },
+    thumb2x: "/images/products/thumb/Cape-Tribulation-Rocks@2x.jpg",
   },
   {
     title: "Four Mile Surprise",
@@ -858,6 +924,7 @@ export const data = [
       lat: -16.494166666666665,
       lng: 145.46722166666666,
     },
+    thumb2x: "/images/products/thumb/Four-Mile-Surprise@2x.jpg",
   },
   {
     title: "Four Mile Coast",
@@ -871,6 +938,7 @@ export const data = [
       lat: -16.487221666666667,
       lng: 145.46833333333333,
     },
+    thumb2x: "/images/products/thumb/Four-Mile-Coast@2x.jpg",
   },
   {
     title: "Four Mile Sunrise",
@@ -884,6 +952,7 @@ export const data = [
       lat: -16.4875,
       lng: 145.468055,
     },
+    thumb2x: "/images/products/thumb/Four-Mile-Sunrise@2x.jpg",
   },
   {
     title: "Sunrise Over Port Douglas",
@@ -897,6 +966,7 @@ export const data = [
       lat: -16.480833333333333,
       lng: 145.466945,
     },
+    thumb2x: "/images/products/thumb/Sunrise-Over-Port-Douglas@2x.jpg",
   },
   {
     title: "Four Mile Point",
@@ -910,6 +980,7 @@ export const data = [
       lat: -16.485278333333333,
       lng: 145.46916666666667,
     },
+    thumb2x: "/images/products/thumb/Four-Mile-Point@2x.jpg",
   },
   {
     title: "Painted Rocks of Four Mile Beach",
@@ -923,6 +994,7 @@ export const data = [
       lat: -16.485278333333333,
       lng: 145.46916666666667,
     },
+    thumb2x: "/images/products/thumb/Painted-Rocks-of-Four-Mile-Beach@2x.jpg",
   },
   {
     title: "Magnetic Gun Emplacement",
@@ -936,6 +1008,7 @@ export const data = [
       lat: -19.123333333333335,
       lng: 146.871945,
     },
+    thumb2x: "/images/products/thumb/Magnetic-Gun-Emplacement@2x.jpg",
   },
   {
     title: "Magnetic Love",
@@ -949,6 +1022,7 @@ export const data = [
       lat: -19.123055,
       lng: 146.87222166666666,
     },
+    thumb2x: "/images/products/thumb/Magnetic-Love@2x.jpg",
   },
   {
     title: "Magnetic Vibrance",
@@ -962,6 +1036,7 @@ export const data = [
       lat: -19.123333333333335,
       lng: 146.87777833333334,
     },
+    thumb2x: "/images/products/thumb/Magnetic-Vibrance@2x.jpg",
   },
   {
     title: "Magnetic Rainbow",
@@ -975,6 +1050,7 @@ export const data = [
       lat: -19.123055,
       lng: 146.87833333333333,
     },
+    thumb2x: "/images/products/thumb/Magnetic-Rainbow@2x.jpg",
   },
   {
     title: "Magnetic Waves",
@@ -988,6 +1064,7 @@ export const data = [
       lat: -19.123333333333335,
       lng: 146.87833333333333,
     },
+    thumb2x: "/images/products/thumb/Magnetic-Waves@2x.jpg",
   },
   {
     title: "Magnetic Pebbles Vertical",
@@ -1001,6 +1078,7 @@ export const data = [
       lat: -19.135,
       lng: 146.87388833333333,
     },
+    thumb2x: "/images/products/thumb/Magnetic-Pebbles-Vertical@2x.jpg",
   },
   {
     title: "Magnetic Pebbles Horizontal",
@@ -1014,6 +1092,7 @@ export const data = [
       lat: -19.135555,
       lng: 146.87416666666667,
     },
+    thumb2x: "/images/products/thumb/Magnetic-Pebbles-Horizontal@2x.jpg",
   },
   {
     title: "Whitehaven Beach",
@@ -1027,6 +1106,7 @@ export const data = [
       lat: -20.288203333333332,
       lng: 149.04068333333333,
     },
+    thumb2x: "/images/products/thumb/Whitehaven-Beach@2x.jpg",
   },
   {
     title: "Whitehaven Devastation Vertical",
@@ -1040,6 +1120,7 @@ export const data = [
       lat: -20.287491666666668,
       lng: 149.04339166666668,
     },
+    thumb2x: "/images/products/thumb/Whitehaven-Devastation-Vertical@2x.jpg",
   },
   {
     title: "Whitehaven Devastation Horizontal",
@@ -1053,6 +1134,7 @@ export const data = [
       lat: -20.28777,
       lng: 149.04370833333334,
     },
+    thumb2x: "/images/products/thumb/Whitehaven-Devastation-Horizontal@2x.jpg",
   },
   {
     title: "Whitsunday Islands",
@@ -1066,6 +1148,7 @@ export const data = [
       lat: -20.342508333333335,
       lng: 148.84751333333332,
     },
+    thumb2x: "/images/products/thumb/Whitsunday-Islands@2x.jpg",
   },
   {
     title: "Whitsunday Island Coast",
@@ -1079,6 +1162,7 @@ export const data = [
       lat: -20.344556666666666,
       lng: 148.84793166666665,
     },
+    thumb2x: "/images/products/thumb/Whitsunday-Island-Coast@2x.jpg",
   },
   {
     title: "Whitsunday Tropical Paradise",
@@ -1092,6 +1176,7 @@ export const data = [
       lat: -20.344255,
       lng: 148.848575,
     },
+    thumb2x: "/images/products/thumb/Whitsunday-Tropical-Paradise@2x.jpg",
   },
   {
     title: "Whitsunday Island Bay",
@@ -1105,6 +1190,7 @@ export const data = [
       lat: -20.343945,
       lng: 148.84905333333333,
     },
+    thumb2x: "/images/products/thumb/Whitsunday-Island-Bay@2x.jpg",
   },
   {
     title: "Elliot Heads Beach Pebbles",
@@ -1117,6 +1203,7 @@ export const data = [
       lat: -24.922128333333333,
       lng: 152.49217,
     },
+    thumb2x: "/images/products/thumb/Elliot-Heads-Beach-Pebbles@2x.jpg",
   },
   {
     title: "Elliot Heads Spit",
@@ -1129,6 +1216,7 @@ export const data = [
       lat: -24.920833333333334,
       lng: 152.493055,
     },
+    thumb2x: "/images/products/thumb/Elliot-Heads-Spit@2x.jpg",
   },
   {
     title: "Elliot Heads Beach",
@@ -1142,6 +1230,7 @@ export const data = [
       lat: -24.925,
       lng: 152.4925,
     },
+    thumb2x: "/images/products/thumb/Elliot-Heads-Beach@2x.jpg",
   },
   {
     title: "Elliot River",
@@ -1155,6 +1244,7 @@ export const data = [
       lat: -24.926945,
       lng: 152.48972166666667,
     },
+    thumb2x: "/images/products/thumb/Elliot-River@2x.jpg",
   },
   {
     title: "Elliot Heads Rainbow Vertical",
@@ -1168,6 +1258,7 @@ export const data = [
       lat: -24.928055,
       lng: 152.48916666666668,
     },
+    thumb2x: "/images/products/thumb/Elliot-Heads-Rainbow-Vertical@2x.jpg",
   },
   {
     title: "Elliot Heads Rainbow Horizontal",
@@ -1181,6 +1272,7 @@ export const data = [
       lat: -24.928055,
       lng: 152.48916666666668,
     },
+    thumb2x: "/images/products/thumb/Elliot-Heads-Rainbow-Horizontal@2x.jpg",
   },
   {
     title: "Elliot Heads Buoy Far",
@@ -1194,6 +1286,7 @@ export const data = [
       lat: -24.929166666666667,
       lng: 152.490555,
     },
+    thumb2x: "/images/products/thumb/Elliot-Heads-Buoy-Far@2x.jpg",
   },
   {
     title: "Elliot Heads Buoy Close",
@@ -1207,6 +1300,7 @@ export const data = [
       lat: -24.929166666666667,
       lng: 152.490555,
     },
+    thumb2x: "/images/products/thumb/Elliot-Heads-Buoy-Close@2x.jpg",
   },
   {
     title: "Elliot Rainbow Sands",
@@ -1220,6 +1314,7 @@ export const data = [
       lat: -24.923611666666666,
       lng: 152.4875,
     },
+    thumb2x: "/images/products/thumb/Elliot-Rainbow-Sands@2x.jpg",
   },
   {
     title: "Elliot Rainbow Spear",
@@ -1233,6 +1328,7 @@ export const data = [
       lat: -24.924445,
       lng: 152.48722166666667,
     },
+    thumb2x: "/images/products/thumb/Elliot-Rainbow-Spear@2x.jpg",
   },
   {
     title: "Elliot Kayak",
@@ -1246,6 +1342,7 @@ export const data = [
       lat: -24.92362333333333,
       lng: 152.49061333333333,
     },
+    thumb2x: "/images/products/thumb/Elliot-Kayak@2x.jpg",
   },
   {
     title: "Elliot Heads Blue Spine",
@@ -1259,6 +1356,7 @@ export const data = [
       lat: -24.923608333333334,
       lng: 152.49062333333333,
     },
+    thumb2x: "/images/products/thumb/Elliot-Heads-Blue-Spine@2x.jpg",
   },
   {
     title: "Noosa Spit",
@@ -1272,6 +1370,7 @@ export const data = [
       lat: -26.380836666666667,
       lng: 153.08078166666667,
     },
+    thumb2x: "/images/products/thumb/Noosa-Spit@2x.jpg",
   },
   {
     title: "Noosa Bird Patrol",
@@ -1285,6 +1384,7 @@ export const data = [
       lat: -26.388573333333333,
       lng: 153.07175666666666,
     },
+    thumb2x: "/images/products/thumb/Noosa-Bird-Patrol@2x.jpg",
   },
   {
     title: "Golden Waves",
@@ -1298,6 +1398,7 @@ export const data = [
       lat: -28.061595,
       lng: 153.44383333333334,
     },
+    thumb2x: "/images/products/thumb/Golden-Waves@2x.jpg",
   },
   {
     title: "The Gold Coast",
@@ -1311,6 +1412,7 @@ export const data = [
       lat: -28.072331666666667,
       lng: 153.44706833333333,
     },
+    thumb2x: "/images/products/thumb/The-Gold-Coast@2x.jpg",
   },
   {
     title: "Brisbane From Afar",
@@ -1324,6 +1426,7 @@ export const data = [
       lat: -27.479895,
       lng: 152.96245833333333,
     },
+    thumb2x: "/images/products/thumb/Brisbane-From-Afar@2x.jpg",
   },
   {
     title: "Brisbane River",
@@ -1337,6 +1440,7 @@ export const data = [
       lat: -27.472513333333332,
       lng: 153.03307333333333,
     },
+    thumb2x: "/images/products/thumb/Brisbane-River@2x.jpg",
   },
   {
     title: "The Long Road To Nowhere in Central Australia",
@@ -1350,6 +1454,7 @@ export const data = [
       lat: -22.904366666666668,
       lng: 140.37440833333332,
     },
+    thumb2x: "/images/products/thumb/The-Long-Road-To-Nowhere-in-Central-Australia@2x.jpg",
   },
   {
     title: "The West MacDonalds Range",
@@ -1363,6 +1468,7 @@ export const data = [
       lat: -23.6713,
       lng: 132.59179833333334,
     },
+    thumb2x: "/images/products/thumb/The-West-MacDonalds-Range@2x.jpg",
   },
   {
     title: "MacDonalds Range Drone Pano",
@@ -1372,6 +1478,7 @@ export const data = [
     thumb: "/images/products/thumb/MacDonalds-Range-Drone-Pano.jpg",
     featured: false,
     dateCreated: "2017-07-29T16:01:19+08:00",
+    thumb2x: "/images/products/thumb/MacDonalds-Range-Drone-Pano@2x.jpg",
   },
   {
     title: "Gosses Bluff Panorama",
@@ -1381,6 +1488,7 @@ export const data = [
     thumb: "/images/products/thumb/Gosses-Bluff-Panorama.jpg",
     featured: false,
     dateCreated: "2017-07-30T10:36:15+08:00",
+    thumb2x: "/images/products/thumb/Gosses-Bluff-Panorama@2x.jpg",
   },
   {
     title: "Fields of Yellow",
@@ -1394,6 +1502,7 @@ export const data = [
       lat: -33.16057,
       lng: 136.40185,
     },
+    thumb2x: "/images/products/thumb/Fields-of-Yellow@2x.jpg",
   },
   {
     title: "Whale Time",
@@ -1407,6 +1516,7 @@ export const data = [
       lat: -31.991521666666667,
       lng: 132.45326,
     },
+    thumb2x: "/images/products/thumb/Whale-Time@2x.jpg",
   },
   {
     title: "Fowlers Dunes",
@@ -1420,6 +1530,7 @@ export const data = [
       lat: -31.996773333333334,
       lng: 132.42769833333332,
     },
+    thumb2x: "/images/products/thumb/Fowlers-Dunes@2x.jpg",
   },
   {
     title: "Fowlers Bay Mavic Panorama",
@@ -1429,6 +1540,7 @@ export const data = [
     thumb: "/images/products/thumb/Fowlers-Bay-Mavic-Panorama.jpg",
     featured: false,
     dateCreated: "2017-08-11T17:45:29+08:00",
+    thumb2x: "/images/products/thumb/Fowlers-Bay-Mavic-Panorama@2x.jpg",
   },
   {
     title: "Bunda Cliffs from Above",
@@ -1442,6 +1554,7 @@ export const data = [
       lat: -31.608258333333332,
       lng: 129.77557833333333,
     },
+    thumb2x: "/images/products/thumb/Bunda-Cliffs-from-Above@2x.jpg",
   },
   {
     title: "Bunda Cliffs from the Side",
@@ -1455,6 +1568,7 @@ export const data = [
       lat: -31.60887,
       lng: 129.77609666666666,
     },
+    thumb2x: "/images/products/thumb/Bunda-Cliffs-from-the-Side@2x.jpg",
   },
   {
     title: "Lucky Bay Vertical",
@@ -1468,6 +1582,7 @@ export const data = [
       lat: -33.99048666666667,
       lng: 122.22243333333333,
     },
+    thumb2x: "/images/products/thumb/Lucky-Bay-Vertical@2x.jpg",
   },
   {
     title: "Lucky Bay Horizontal",
@@ -1481,6 +1596,7 @@ export const data = [
       lat: -33.990445,
       lng: 122.22271333333333,
     },
+    thumb2x: "/images/products/thumb/Lucky-Bay-Horizontal@2x.jpg",
   },
   {
     title: "Lucky Bay Panorama",
@@ -1490,6 +1606,7 @@ export const data = [
     thumb: "/images/products/thumb/Lucky-Bay-Panorama.jpg",
     featured: false,
     dateCreated: "2017-08-17T14:28:34+08:00",
+    thumb2x: "/images/products/thumb/Lucky-Bay-Panorama@2x.jpg",
   },
   {
     title: "Hellfire Mixture",
@@ -1503,6 +1620,7 @@ export const data = [
       lat: -33.99881,
       lng: 122.20396666666667,
     },
+    thumb2x: "/images/products/thumb/Hellfire-Mixture@2x.jpg",
   },
   {
     title: "Hellfire Waves",
@@ -1516,6 +1634,7 @@ export const data = [
       lat: -33.998938333333335,
       lng: 122.20364333333333,
     },
+    thumb2x: "/images/products/thumb/Hellfire-Waves@2x.jpg",
   },
   {
     title: "Esperance Colours",
@@ -1529,6 +1648,7 @@ export const data = [
       lat: -33.99998333333333,
       lng: 122.203915,
     },
+    thumb2x: "/images/products/thumb/Esperance-Colours@2x.jpg",
   },
   {
     title: "Esperance Beach",
@@ -1541,6 +1661,7 @@ export const data = [
       lat: -34.00310833333333,
       lng: 122.16831166666667,
     },
+    thumb2x: "/images/products/thumb/Esperance-Beach@2x.jpg",
   },
   {
     title: "Esperance From Above",
@@ -1554,6 +1675,7 @@ export const data = [
       lat: -34.003098333333334,
       lng: 122.168305,
     },
+    thumb2x: "/images/products/thumb/Esperance-From-Above@2x.jpg",
   },
   {
     title: "Little Hellfire",
@@ -1567,6 +1689,7 @@ export const data = [
       lat: -34.004666666666665,
       lng: 122.172785,
     },
+    thumb2x: "/images/products/thumb/Little-Hellfire@2x.jpg",
   },
   {
     title: "Little Side of Hellfire",
@@ -1580,6 +1703,7 @@ export const data = [
       lat: -34.005628333333334,
       lng: 122.1731,
     },
+    thumb2x: "/images/products/thumb/Little-Side-of-Hellfire@2x.jpg",
   },
   {
     title: "Hellfire Bay Panorama",
@@ -1589,6 +1713,7 @@ export const data = [
     thumb: "/images/products/thumb/Hellfire-Bay-Panorama.jpg",
     featured: false,
     dateCreated: "2017-08-17T15:12:37+08:00",
+    thumb2x: "/images/products/thumb/Hellfire-Bay-Panorama@2x.jpg",
   },
   {
     title: "Esperance Rainbow",
@@ -1602,6 +1727,7 @@ export const data = [
       lat: -33.97047,
       lng: 122.16775833333334,
     },
+    thumb2x: "/images/products/thumb/Esperance-Rainbow@2x.jpg",
   },
   {
     title: "Esperance Whites and Blacks",
@@ -1615,6 +1741,7 @@ export const data = [
       lat: -33.979641666666666,
       lng: 122.11868333333334,
     },
+    thumb2x: "/images/products/thumb/Esperance-Whites-and-Blacks@2x.jpg",
   },
   {
     title: "Sunset over Esperance",
@@ -1628,6 +1755,7 @@ export const data = [
       lat: -33.87752,
       lng: 121.87957666666667,
     },
+    thumb2x: "/images/products/thumb/Sunset-over-Esperance@2x.jpg",
   },
   {
     title: "Black Waters of Esperance",
@@ -1641,6 +1769,7 @@ export const data = [
       lat: -33.878998333333335,
       lng: 121.88053166666667,
     },
+    thumb2x: "/images/products/thumb/Black-Waters-of-Esperance@2x.jpg",
   },
   {
     title: "Sunset Walk in Esperance",
@@ -1654,6 +1783,7 @@ export const data = [
       lat: -33.877496666666666,
       lng: 121.87954333333333,
     },
+    thumb2x: "/images/products/thumb/Sunset-Walk-in-Esperance@2x.jpg",
   },
   {
     title: "Candyfloss Waters in Esperance",
@@ -1667,6 +1797,7 @@ export const data = [
       lat: -33.88010333333333,
       lng: 121.86886,
     },
+    thumb2x: "/images/products/thumb/Candyfloss-Waters-in-Esperance@2x.jpg",
   },
   {
     title: "Turbulent Clouds of Esperance",
@@ -1680,6 +1811,7 @@ export const data = [
       lat: -33.880105,
       lng: 121.86873666666666,
     },
+    thumb2x: "/images/products/thumb/Turbulent-Clouds-of-Esperance@2x.jpg",
   },
   {
     title: "Esperance Wave of Light",
@@ -1693,6 +1825,7 @@ export const data = [
       lat: -33.88011,
       lng: 121.86872666666666,
     },
+    thumb2x: "/images/products/thumb/Esperance-Wave-of-Light@2x.jpg",
   },
   {
     title: "Dark Aftermath of Esperance",
@@ -1706,6 +1839,7 @@ export const data = [
       lat: -33.880113333333334,
       lng: 121.86872833333334,
     },
+    thumb2x: "/images/products/thumb/Dark-Aftermath-of-Esperance@2x.jpg",
   },
   {
     title: "Side Wave of Esperance",
@@ -1719,6 +1853,7 @@ export const data = [
       lat: -33.880115,
       lng: 121.86872666666666,
     },
+    thumb2x: "/images/products/thumb/Side-Wave-of-Esperance@2x.jpg",
   },
   {
     title: "Sunset Sky Surf in Esperance",
@@ -1732,6 +1867,7 @@ export const data = [
       lat: -33.87859,
       lng: 121.878965,
     },
+    thumb2x: "/images/products/thumb/Sunset-Sky-Surf-in-Esperance@2x.jpg",
   },
   {
     title: "Daintree Coast Rock",
@@ -1740,6 +1876,7 @@ export const data = [
     thumb: "/images/products/thumb/Daintree-Coast-Rock.jpg",
     featured: false,
     dateCreated: "2017-08-22 02:10:18",
+    thumb2x: "/images/products/thumb/Daintree-Coast-Rock@2x.jpg",
   },
   {
     title: "Arthur Bay",
@@ -1748,6 +1885,7 @@ export const data = [
     thumb: "/images/products/thumb/Arthur-Bay.jpg",
     featured: false,
     dateCreated: "2017-08-22 02:10:18",
+    thumb2x: "/images/products/thumb/Arthur-Bay@2x.jpg",
   },
   {
     title: "The Busselton Jetty Sheds",
@@ -1760,6 +1898,7 @@ export const data = [
       lat: -33.643541666666664,
       lng: 115.344955,
     },
+    thumb2x: "/images/products/thumb/The-Busselton-Jetty-Sheds@2x.jpg",
   },
   {
     title: "Busselton and Jetty",
@@ -1772,6 +1911,7 @@ export const data = [
       lat: -33.64324166666667,
       lng: 115.34463166666667,
     },
+    thumb2x: "/images/products/thumb/Busselton-and-Jetty@2x.jpg",
   },
   {
     title: "The Iconic Busselton Jetty",
@@ -1785,6 +1925,7 @@ export const data = [
       lat: -33.643735,
       lng: 115.345345,
     },
+    thumb2x: "/images/products/thumb/The-Iconic-Busselton-Jetty@2x.jpg",
   },
   {
     title: "Meelup Coast From Afar",
@@ -1798,6 +1939,7 @@ export const data = [
       lat: -33.56545333333333,
       lng: 115.08473166666667,
     },
+    thumb2x: "/images/products/thumb/Meelup-Coast-From-Afar@2x.jpg",
   },
   {
     title: "Meelup Coast Up Close",
@@ -1811,6 +1953,7 @@ export const data = [
       lat: -33.56449833333333,
       lng: 115.082815,
     },
+    thumb2x: "/images/products/thumb/Meelup-Coast-Up-Close@2x.jpg",
   },
   {
     title: "Meelup Coastal Road",
@@ -1824,6 +1967,7 @@ export const data = [
       lat: -33.56392833333334,
       lng: 115.07807,
     },
+    thumb2x: "/images/products/thumb/Meelup-Coastal-Road@2x.jpg",
   },
   {
     title: "South Beach Platform",
@@ -1836,6 +1980,7 @@ export const data = [
       lat: -32.075985,
       lng: 115.75094833333333,
     },
+    thumb2x: "/images/products/thumb/South-Beach-Platform@2x.jpg",
   },
   {
     title: "South Beach Spit",
@@ -1848,6 +1993,7 @@ export const data = [
       lat: -32.074621666666665,
       lng: 115.7501,
     },
+    thumb2x: "/images/products/thumb/South-Beach-Spit@2x.jpg",
   },
   {
     title: "Meelup Paddle",
@@ -1860,6 +2006,7 @@ export const data = [
       lat: -33.57541166666667,
       lng: 115.092075,
     },
+    thumb2x: "/images/products/thumb/Meelup-Paddle@2x.jpg",
   },
   {
     title: "Meelup Kayak",
@@ -1872,6 +2019,7 @@ export const data = [
       lat: -33.577753333333334,
       lng: 115.09476333333333,
     },
+    thumb2x: "/images/products/thumb/Meelup-Kayak@2x.jpg",
   },
   {
     title: "Eaglebay Outloook",
@@ -1885,6 +2033,7 @@ export const data = [
       lat: -33.56115833333333,
       lng: 115.07237166666667,
     },
+    thumb2x: "/images/products/thumb/Eaglebay-Outloook@2x.jpg",
   },
   {
     title: "Eaglebay Stretch",
@@ -1897,6 +2046,7 @@ export const data = [
       lat: -33.560878333333335,
       lng: 115.07219,
     },
+    thumb2x: "/images/products/thumb/Eaglebay-Stretch@2x.jpg",
   },
   {
     title: "Eaglebay Serenity",
@@ -1909,6 +2059,7 @@ export const data = [
       lat: -33.56102833333333,
       lng: 115.07230833333334,
     },
+    thumb2x: "/images/products/thumb/Eaglebay-Serenity@2x.jpg",
   },
   {
     title: "Vineyard Lady in Blue",
@@ -1921,6 +2072,7 @@ export const data = [
       lat: -33.79748166666667,
       lng: 115.06672666666667,
     },
+    thumb2x: "/images/products/thumb/Vineyard-Lady-in-Blue@2x.jpg",
   },
   {
     title: "Diagonal Vines",
@@ -1934,6 +2086,7 @@ export const data = [
       lat: -33.798323333333336,
       lng: 115.06970333333334,
     },
+    thumb2x: "/images/products/thumb/Diagonal-Vines@2x.jpg",
   },
   {
     title: "Neon Vines",
@@ -1946,6 +2099,7 @@ export const data = [
       lat: -33.797466666666665,
       lng: 115.07059833333334,
     },
+    thumb2x: "/images/products/thumb/Neon-Vines@2x.jpg",
   },
   {
     title: "Endless Grape Vines",
@@ -1958,6 +2112,7 @@ export const data = [
       lat: -33.797645,
       lng: 115.06933833333333,
     },
+    thumb2x: "/images/products/thumb/Endless-Grape-Vines@2x.jpg",
   },
   {
     title: "Columns of Vines",
@@ -1970,6 +2125,7 @@ export const data = [
       lat: -33.79819333333333,
       lng: 115.06568666666666,
     },
+    thumb2x: "/images/products/thumb/Columns-of-Vines@2x.jpg",
   },
   {
     title: "The Length of the Busselton Jetty",
@@ -1983,6 +2139,7 @@ export const data = [
       lat: -33.628301666666665,
       lng: 115.33881,
     },
+    thumb2x: "/images/products/thumb/The-Length-of-the-Busselton-Jetty@2x.jpg",
   },
   {
     title: "The Little Busselton Jetty",
@@ -1996,6 +2153,7 @@ export const data = [
       lat: -33.64364333333333,
       lng: 115.34340333333333,
     },
+    thumb2x: "/images/products/thumb/The-Little-Busselton-Jetty@2x.jpg",
   },
   {
     title: "The Sheds of the Jetty Afar",
@@ -2008,6 +2166,7 @@ export const data = [
       lat: -33.643633333333334,
       lng: 115.34611166666667,
     },
+    thumb2x: "/images/products/thumb/The-Sheds-of-the-Jetty-Afar@2x.jpg",
   },
   {
     title: "The Sheds of the Jetty Close",
@@ -2021,6 +2180,7 @@ export const data = [
       lat: -33.64378,
       lng: 115.34529833333333,
     },
+    thumb2x: "/images/products/thumb/The-Sheds-of-the-Jetty-Close@2x.jpg",
   },
   {
     title: "Waves of Watermans Reef",
@@ -2034,6 +2194,7 @@ export const data = [
       lat: -31.851213333333334,
       lng: 115.75088166666667,
     },
+    thumb2x: "/images/products/thumb/Waves-of-Watermans-Reef@2x.jpg",
   },
   {
     title: "Waves of Watermans Aftermath",
@@ -2046,6 +2207,7 @@ export const data = [
       lat: -31.851213333333334,
       lng: 115.75087833333333,
     },
+    thumb2x: "/images/products/thumb/Waves-of-Watermans-Aftermath@2x.jpg",
   },
   {
     title: "Watermans Observatory",
@@ -2059,6 +2221,7 @@ export const data = [
       lat: -31.85082,
       lng: 115.75072,
     },
+    thumb2x: "/images/products/thumb/Watermans-Observatory@2x.jpg",
   },
   {
     title: "Watermans Lookout",
@@ -2072,6 +2235,7 @@ export const data = [
       lat: -31.850726666666667,
       lng: 115.75095,
     },
+    thumb2x: "/images/products/thumb/Watermans-Lookout@2x.jpg",
   },
   {
     title: "Watermans Rocks",
@@ -2085,6 +2249,7 @@ export const data = [
       lat: -31.85077,
       lng: 115.75085666666666,
     },
+    thumb2x: "/images/products/thumb/Watermans-Rocks@2x.jpg",
   },
   {
     title: "Watermans Oncoming",
@@ -2098,6 +2263,7 @@ export const data = [
       lat: -31.850736666666666,
       lng: 115.75084833333334,
     },
+    thumb2x: "/images/products/thumb/Watermans-Oncoming@2x.jpg",
   },
   {
     title: "Watermans Reef",
@@ -2111,6 +2277,7 @@ export const data = [
       lat: -31.8503,
       lng: 115.75077833333333,
     },
+    thumb2x: "/images/products/thumb/Watermans-Reef@2x.jpg",
   },
   {
     title: "Jetski Blues",
@@ -2124,6 +2291,7 @@ export const data = [
       lat: -31.85212,
       lng: 115.75033666666667,
     },
+    thumb2x: "/images/products/thumb/Jetski-Blues@2x.jpg",
   },
   {
     title: "Paddle Dalyellup Beach",
@@ -2137,6 +2305,7 @@ export const data = [
       lat: -33.420968333333334,
       lng: 115.593345,
     },
+    thumb2x: "/images/products/thumb/Paddle-Dalyellup-Beach@2x.jpg",
   },
   {
     title: "Landsurfing",
@@ -2150,6 +2319,7 @@ export const data = [
       lat: -33.97703333333333,
       lng: 114.98591833333333,
     },
+    thumb2x: "/images/products/thumb/Landsurfing@2x.jpg",
   },
   {
     title: "Margret River Surfing",
@@ -2163,6 +2333,7 @@ export const data = [
       lat: -33.97649833333333,
       lng: 114.980595,
     },
+    thumb2x: "/images/products/thumb/Margret-River-Surfing@2x.jpg",
   },
   {
     title: "Margret River Ruins",
@@ -2176,6 +2347,7 @@ export const data = [
       lat: -33.970391666666664,
       lng: 114.99784166666667,
     },
+    thumb2x: "/images/products/thumb/Margret-River-Ruins@2x.jpg",
   },
   {
     title: "Sunset over Jurien Bay",
@@ -2189,6 +2361,7 @@ export const data = [
       lat: -30.302728333333334,
       lng: 115.03765333333334,
     },
+    thumb2x: "/images/products/thumb/Sunset-over-Jurien-Bay@2x.jpg",
   },
   {
     title: "Sunset over Jurien Bay Jetty",
@@ -2202,6 +2375,7 @@ export const data = [
       lat: -30.302363333333332,
       lng: 115.03691,
     },
+    thumb2x: "/images/products/thumb/Sunset-over-Jurien-Bay-Jetty@2x.jpg",
   },
   {
     title: "Jurien Bay Jetty Up",
@@ -2215,6 +2389,7 @@ export const data = [
       lat: -30.30223833333333,
       lng: 115.03572666666666,
     },
+    thumb2x: "/images/products/thumb/Jurien-Bay-Jetty-Up@2x.jpg",
   },
   {
     title: "Jurien Bay Jetty Down",
@@ -2228,6 +2403,7 @@ export const data = [
       lat: -30.30200333333333,
       lng: 115.03592,
     },
+    thumb2x: "/images/products/thumb/Jurien-Bay-Jetty-Down@2x.jpg",
   },
   {
     title: "Old Jurien Bay Jetty Horizontal",
@@ -2241,6 +2417,7 @@ export const data = [
       lat: -30.300678333333334,
       lng: 115.03743666666666,
     },
+    thumb2x: "/images/products/thumb/Old-Jurien-Bay-Jetty-Horizontal@2x.jpg",
   },
   {
     title: "Sunrise over Old Jurien Bay Jetty",
@@ -2254,6 +2431,7 @@ export const data = [
       lat: -30.300631666666668,
       lng: 115.03728333333333,
     },
+    thumb2x: "/images/products/thumb/Sunrise-over-Old-Jurien-Bay-Jetty@2x.jpg",
   },
   {
     title: "Old Jurien Bay Jetty Vertical",
@@ -2267,6 +2445,7 @@ export const data = [
       lat: -30.300675,
       lng: 115.03743833333333,
     },
+    thumb2x: "/images/products/thumb/Old-Jurien-Bay-Jetty-Vertical@2x.jpg",
   },
   {
     title: "Jurien Bay Dolphin",
@@ -2280,6 +2459,7 @@ export const data = [
       lat: -30.301861666666667,
       lng: 115.03517,
     },
+    thumb2x: "/images/products/thumb/Jurien-Bay-Dolphin@2x.jpg",
   },
   {
     title: "Jurien Bay Bush",
@@ -2293,6 +2473,7 @@ export const data = [
       lat: -30.526506666666666,
       lng: 115.08089166666667,
     },
+    thumb2x: "/images/products/thumb/Jurien-Bay-Bush@2x.jpg",
   },
   {
     title: "Pinacles",
@@ -2306,6 +2487,7 @@ export const data = [
       lat: -30.604265,
       lng: 115.160725,
     },
+    thumb2x: "/images/products/thumb/Pinacles@2x.jpg",
   },
   {
     title: "Half Dune of Jurien Bay",
@@ -2319,6 +2501,7 @@ export const data = [
       lat: -30.650573333333334,
       lng: 115.13879666666666,
     },
+    thumb2x: "/images/products/thumb/Half-Dune-of-Jurien-Bay@2x.jpg",
   },
   {
     title: "Side June of Jurien Bay",
@@ -2332,6 +2515,7 @@ export const data = [
       lat: -30.650568333333332,
       lng: 115.13881166666667,
     },
+    thumb2x: "/images/products/thumb/Side-June-of-Jurien-Bay@2x.jpg",
   },
   {
     title: "Sand Pattern of Jurien Bay",
@@ -2345,94 +2529,102 @@ export const data = [
       lat: -30.650555,
       lng: 115.138855,
     },
+    thumb2x: "/images/products/thumb/Sand-Pattern-of-Jurien-Bay@2x.jpg",
   },
   {
-    image: "/images/products/full/Canola-Tree.jpg",
-    thumb: "/images/products/thumb/Canola-Tree.jpg",
     title: "Canola Tree",
-    dateCreated: "2018-09-22T10:42:50+08:00",
     description:
       "This is one of those types of pictures that makes you go hmmmm 🤔 when you look at it for the first time.",
+    image: "/images/products/full/Canola-Tree.jpg",
+    thumb: "/images/products/thumb/Canola-Tree.jpg",
     featured: true,
+    dateCreated: "2018-09-22T10:42:50+08:00",
     gps: {
       lat: -32.648415,
       lng: 116.48902833333334,
     },
+    thumb2x: "/images/products/thumb/Canola-Tree@2x.jpg",
   },
   {
+    title: "Death From Above",
+    description: "A stark yet beautiful image.",
     image: "/images/products/full/Death-From-Above.jpg",
     thumb: "/images/products/thumb/Death-From-Above.jpg",
-    title: "Death From Above",
-    dateCreated: "2018-09-22T13:00:12+08:00",
-    description: "A stark yet beautiful image.",
     featured: false,
+    dateCreated: "2018-09-22T13:00:12+08:00",
     gps: {
       lat: -33.824711666666666,
       lng: 117.15190666666666,
     },
+    thumb2x: "/images/products/thumb/Death-From-Above@2x.jpg",
   },
   {
-    image: "/images/products/full/Bluff-Knoll.jpg",
-    thumb: "/images/products/thumb/Bluff-Knoll.jpg",
     title: "Bluff Knoll",
-    dateCreated: "2018-09-23T17:23:22+08:00",
     description:
       "The awesomeness that is Bluff Knoll. Third highest peak in WA and I think this picture summs it up wonderfully.",
+    image: "/images/products/full/Bluff-Knoll.jpg",
+    thumb: "/images/products/thumb/Bluff-Knoll.jpg",
     featured: false,
+    dateCreated: "2018-09-23T17:23:22+08:00",
     gps: {
       lat: -34.319786666666666,
       lng: 118.19386666666666,
     },
+    thumb2x: "/images/products/thumb/Bluff-Knoll@2x.jpg",
   },
   {
-    image: "/images/products/full/Stirling-Ranges-Retreat-Sunset.jpg",
-    thumb: "/images/products/thumb/Stirling-Ranges-Retreat-Sunset.jpg",
     title: "Stirling Ranges Retreat Sunset",
-    dateCreated: "2018-09-23T17:32:42+08:00",
     description:
       "At the end of a hard day admiring the WA countryside, this is the sight you want to be greeted with for sure!",
+    image: "/images/products/full/Stirling-Ranges-Retreat-Sunset.jpg",
+    thumb: "/images/products/thumb/Stirling-Ranges-Retreat-Sunset.jpg",
     featured: false,
+    dateCreated: "2018-09-23T17:32:42+08:00",
     gps: {
       lat: -34.315935,
       lng: 118.19331666666666,
     },
+    thumb2x: "/images/products/thumb/Stirling-Ranges-Retreat-Sunset@2x.jpg",
   },
   {
-    image: "/images/products/full/Framed-Canola-Mill.jpg",
-    thumb: "/images/products/thumb/Framed-Canola-Mill.jpg",
     title: "Framed Canola Mill",
-    dateCreated: "2018-09-24T09:41:26+08:00",
     description:
       "This was an unexpected pitstop but when I saw the mill and the stunning yellow flowers I knew we just had to capture it.",
+    image: "/images/products/full/Framed-Canola-Mill.jpg",
+    thumb: "/images/products/thumb/Framed-Canola-Mill.jpg",
     featured: false,
+    dateCreated: "2018-09-24T09:41:26+08:00",
     gps: {
       lat: -34.22452666666667,
       lng: 118.21931333333333,
     },
+    thumb2x: "/images/products/thumb/Framed-Canola-Mill@2x.jpg",
   },
   {
-    image: "/images/products/full/Canola-and-Mill.jpg",
-    thumb: "/images/products/thumb/Canola-and-Mill.jpg",
     title: "Canola and Mill",
-    dateCreated: "2018-09-24T09:41:43+08:00",
     description:
       "Im not sure if thats an actual mill for canola or even if canola is milled, all I know is it looks incredible.",
+    image: "/images/products/full/Canola-and-Mill.jpg",
+    thumb: "/images/products/thumb/Canola-and-Mill.jpg",
     featured: true,
+    dateCreated: "2018-09-24T09:41:43+08:00",
     gps: {
       lat: -34.22451,
       lng: 118.21879,
     },
+    thumb2x: "/images/products/thumb/Canola-and-Mill@2x.jpg",
   },
   {
+    title: "Eye of the Field",
+    description: "I love these strange voids in the field that the farmers seem to drive around.",
     image: "/images/products/full/Eye-of-the-Field.jpg",
     thumb: "/images/products/thumb/Eye-of-the-Field.jpg",
-    title: "Eye of the Field",
-    dateCreated: "2018-09-24T10:53:35+08:00",
-    description: "I love these strange voids in the field that the farmers seem to drive around.",
     featured: true,
+    dateCreated: "2018-09-24T10:53:35+08:00",
     gps: {
       lat: -33.88400166666667,
       lng: 117.70643333333334,
     },
+    thumb2x: "/images/products/thumb/Eye-of-the-Field@2x.jpg",
   },
 ];

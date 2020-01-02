@@ -14,6 +14,7 @@ export interface IPrint {
   id: string;
   image: string;
   thumb: string;
+  thumb2x: string;
   title: string;
   gps?: google.maps.LatLngLiteral;
   featured: boolean;

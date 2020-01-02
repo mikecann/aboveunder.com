@@ -1,7 +1,6 @@
 import { getDb } from "../src/lib/db";
 import { generateThumbnail, saveDbPrints, resizeImg } from "./utils";
 import * as path from "path";
-import shell from "shelljs";
 
 async function run() {
   var db = await getDb();
@@ -9,6 +8,7 @@ async function run() {
     const fname = p.title.split(" ").join("-");
     p.image = `/images/products/full/${fname}.jpg`;
     p.thumb = `/images/products/thumb/${fname}.jpg`;
+    p.thumb2x = `/images/products/thumb/${fname}@2x.jpg`;
     await generateThumbnail(p);
   }
   await saveDbPrints(db.prints);

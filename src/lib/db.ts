@@ -66,6 +66,7 @@ function transformPrints(prints: Partial<IPrint>[]): IPrint[] {
     description: p.description || "",
     image: p.image || `/images/products/full/${(p.title + "").split(" ").join("-")}.jpg`,
     thumb: p.thumb || `/images/products/thumb/${(p.title + "").split(" ").join("-")}.jpg`,
+    thumb2x: p.thumb2x || `/images/products/thumb/${(p.title + "").split(" ").join("-")}.jpg`,
     printOptions: p.printOptions || {
       fitzgeralds: fitzPrintOptions.data,
       printful: printfulPrintOptions.data,

@@ -136,18 +136,23 @@ export async function saveDbPrints(prints: IPrint[]): Promise<void> {
 
 export async function generateThumbnail(
   product: Partial<IPrint>,
-  size: number = 600,
-  quality: number = 65
+  size: number = 350,
+  quality: number = 80
 ): Promise<void> {
   const fname = path.basename(product.image + "");
   const fullPath = `./public${product.image}`;
   const thumbPath = `./public/images/products/thumb/${fname}`;
+  const thumbPath2X = `./public/images/products/thumb/${fname.replace(".jpg", "")}@2x.jpg`;
 
   console.log("Generating thumb for: ", product.title);
 
   var img = await Jimp.read(fullPath);
-  img.resize(size, Jimp.AUTO);
   img.quality(quality);
+
+  img.resize(size * 2, Jimp.AUTO);
+  await writeImage(img, thumbPath2X);
+
+  img.resize(size, Jimp.AUTO);
   await writeImage(img, thumbPath);
 }
 

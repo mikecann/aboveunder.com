@@ -42,6 +42,7 @@ export class ProductThumb extends React.Component<IProps, IState> {
                 alt={print.title}
                 rounded
                 src={useFull ? print.image : print.thumb}
+                srcSet={useFull ? print.image : `${print.thumb2x} 2x`}
                 style={{ marginTop: "1em", marginBottom: "1em" }}
                 label={{
                   content: print.title,
