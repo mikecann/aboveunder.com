@@ -30,7 +30,7 @@ export default function MapPage() {
   const prints = db.prints;
 
   return (
-    <CommonPageLayout activeMenu="home">
+    <CommonPageLayout activeMenu="map">
       <Helmet>
         <title>Above Under - Map</title>
       </Helmet>
