@@ -11,7 +11,7 @@ import { LoadingPage } from "../loading/LoadingPage";
 import { useHistory } from "react-router";
 import { ProductThumbGrid } from "../components/ProductThumbGrid";
 import { useResponsive } from "../hooks/useResponsive";
-import { Vertical } from "gls/lib";
+import { Vertical } from "../lib/glsCompat";
 import { Pagination } from "./Pagination";
 import { useQuery } from "../hooks/useQuery";
 import { Helmet } from "react-helmet";

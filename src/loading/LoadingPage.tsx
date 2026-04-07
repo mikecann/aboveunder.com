@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Loader } from "semantic-ui-react";
-import { Vertical } from "gls/lib";
+import { Vertical } from "../lib/glsCompat";
 
 export function LoadingPage() {
   return (

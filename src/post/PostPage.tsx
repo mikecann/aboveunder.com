@@ -1,6 +1,6 @@
 import * as React from "react";
 import { IPost } from "../lib/types";
-import * as ReactMarkdown from "react-markdown";
+import ReactMarkdown from "react-markdown";
 import { Segment, Container, Header, Breadcrumb, Icon } from "semantic-ui-react";
 import { CommonPageLayout } from "../components/CommonPageLayout";
 import { startPreloading } from "../routes";
@@ -25,7 +25,7 @@ export default function PostPage() {
     fetch(`/posts/${post.markdownFileName}`)
       .then(resp => resp.text())
       .then(setMarkdown);
-  }, [db]);
+  }, [db, params.id]);
 
   if (!db) return <LoadingPage />;
 
@@ -51,7 +51,7 @@ export default function PostPage() {
 
           <Header as="h1">{post.title}</Header>
 
-          {markdown ? <ReactMarkdown source={markdown} /> : "Loading.."}
+          {markdown ? <ReactMarkdown>{markdown}</ReactMarkdown> : "Loading.."}
         </Container>
       </Segment>
     </CommonPageLayout>

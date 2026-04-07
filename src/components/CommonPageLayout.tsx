@@ -4,6 +4,7 @@ import { HeaderMenu } from "../components/HeaderMenu";
 
 interface IProps {
   activeMenu: string;
+  children?: React.ReactNode;
 }
 
 interface IState {

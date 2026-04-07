@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Vertical } from "gls/lib";
+import { Vertical } from "../../lib/glsCompat";
 import { Loader } from "semantic-ui-react";
 
 interface Props

@@ -1,6 +1,9 @@
 import { handler, CalculateShippingEventBody, SnipcartItem, SnipcartRate, freeShippingToPerthMessage, standardShippingMessage, getFitzPriceFromWeight, combinedShippingMessage } from "./calculateShipping";
 import { callFunction } from "./testUtils";
 import { LambdaEvent } from "./types";
+import example0 from "./examples/example0";
+import example1 from "./examples/example1";
+import example2 from "./examples/example2";
 
 function getEvent(body: Partial<CalculateShippingEventBody>): LambdaEvent {
   const event: LambdaEvent = {
@@ -270,19 +273,19 @@ test('one illegal item to AU address', async () => {
 })
 
 test('example0', async () => {
-  testLambda(require("./examples/example0"),
+  testLambda(example0,
     [{
       cost: 0, description: freeShippingToPerthMessage
     }]);
 });
 
 test('example1', async () => {
-  testLambda(require("./examples/example1"),
+  testLambda(example1,
     [{ "description": "Int\'l Economy with tracking (7-16 business days after fulfillment)", "cost": 85 }]);
 });
 
 test('example2', async () => {
-  const event = getEvent(require("./examples/example2"));
+  const event = getEvent(example2);
   const result = await callFunction(event, {}, handler);
   expect(result.result.body).toContain("Cannot ship canvas to Australia");
 });

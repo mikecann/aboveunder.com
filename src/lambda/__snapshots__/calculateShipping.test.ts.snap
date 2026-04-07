@@ -1,11 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`GET event returns error 1`] = `
-Object {
+{
   "error": null,
-  "result": Object {
-    "body": "{\\"errors\\":[{\\"key\\":\\"exception\\",\\"message\\":\\"Error: Event must be POST\\"}]}",
-    "headers": Object {
+  "result": {
+    "body": "{"errors":[{"key":"exception","message":"Error: Event must be POST"}]}",
+    "headers": {
       "Content-Type": "application/json",
     },
     "statusCode": 200,
@@ -14,11 +14,11 @@ Object {
 `;
 
 exports[`no event returns error 1`] = `
-Object {
+{
   "error": null,
-  "result": Object {
-    "body": "{\\"errors\\":[{\\"key\\":\\"exception\\",\\"message\\":\\"Error: Event must be POST\\"}]}",
-    "headers": Object {
+  "result": {
+    "body": "{"errors":[{"key":"exception","message":"Error: Event must be POST"}]}",
+    "headers": {
       "Content-Type": "application/json",
     },
     "statusCode": 200,

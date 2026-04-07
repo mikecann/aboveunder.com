@@ -1,3 +1,4 @@
+/// <reference types="google.maps" />
 import * as React from "react";
 import { GoogleMap, withScriptjs } from "react-google-maps";
 import SearchBox from "react-google-maps/lib/components/places/SearchBox";

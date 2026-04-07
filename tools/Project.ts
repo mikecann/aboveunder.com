@@ -1,5 +1,5 @@
 import { Collection } from "./Collection";
-import { getDirectories } from "../src/lib/utils";
+import { getDirectories } from "./fsUtils";
 import { CollectionImage } from "./CollectionImage";
 import { IDB } from "../src/lib/types";
 

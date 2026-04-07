@@ -1,10 +1,10 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`something 1`] = `
-Object {
+{
   "error": null,
-  "result": Object {
-    "body": "{\\"msg\\":\\"Hello, World!\\"}",
+  "result": {
+    "body": "{"msg":"Hello, World!"}",
     "statusCode": 200,
   },
 }

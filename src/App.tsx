@@ -3,8 +3,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./app.css";
 import { SuspenseFallback } from "./components/suspense/SuspenseFallback";
 import { Pages } from "./routes";
-import { hot } from "react-hot-loader/root";
-import { Helmet } from "react-helmet";
 
 export default function App() {
   return (
@@ -32,4 +30,3 @@ export default function App() {
   );
 }
 
-export const HotApp = hot(App);

@@ -1,9 +1,9 @@
+/// <reference types="google.maps" />
 import * as React from "react";
 import { IMyMapMarker } from "./IMyMapMarker";
 import { ComposedMyMap } from "./MyMap";
 import SearchBox from "react-google-maps/lib/components/places/SearchBox";
 import { GoogleMap } from "react-google-maps";
-import * as _ from "lodash";
 import { IPrint } from "../lib/types";
 
 interface IProps {
@@ -37,7 +37,25 @@ export function PrintsMap({
   height,
   hideSearch,
 }: IProps) {
-  const key = "AIzaSyBCVEVAJP-manM_C8v8q9s3lAblDhgaoIM";
+  const key = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+  if (!key)
+    return (
+      <div
+        style={{
+          alignItems: "center",
+          background: "#f8f8f8",
+          color: "#666",
+          display: "flex",
+          height: height ? `${height}px` : "800px",
+          justifyContent: "center",
+          padding: "2rem",
+          textAlign: "center",
+        }}
+      >
+        Map unavailable until the Google Maps key is set in `.env.local`
+        as `VITE_GOOGLE_MAPS_API_KEY`.
+      </div>
+    );
   const mapUrl = `https://maps.googleapis.com/maps/api/js?key=${key}&v=3.exp&libraries=places`;
 
   const searchboxRef = React.useRef<SearchBox>();
@@ -78,7 +96,7 @@ export function PrintsMap({
       zoom,
       initiallyOpenMarker: selectedMarker,
     });
-  }, [map]);
+  }, [map, prints, initialPrintId]);
 
   const onMapPlacesChanged = () => {
     if (!searchboxRef.current) throw new Error(`no searchbox`);
@@ -92,7 +110,7 @@ export function PrintsMap({
 
       if (place.geometry.viewport) {
         bounds.union(place.geometry.viewport);
-      } else {
+      } else if (place.geometry.location) {
         bounds.extend(place.geometry.location);
       }
     });
@@ -104,7 +122,10 @@ export function PrintsMap({
       };
     });
 
-    const nextCenter: google.maps.LatLngLiteral = _.get(nextMarkers, "0.position", state.center);
+    const first = nextMarkers[0];
+    const nextCenter: google.maps.LatLngLiteral = first?.position
+      ? { lat: first.position.lat(), lng: first.position.lng() }
+      : state.center;
 
     setState({
       ...state,
@@ -114,8 +135,10 @@ export function PrintsMap({
     map.fitBounds(bounds);
   };
 
+  const MapView = ComposedMyMap as unknown as React.ComponentType<Record<string, unknown>>;
+
   return (
-    <ComposedMyMap
+    <MapView
       isMarkerShown
       hideSearch={hideSearch}
       googleMapURL={mapUrl}
@@ -123,7 +146,7 @@ export function PrintsMap({
       containerElement={<div style={{ height: height ? height + "px" : `800px` }} />}
       mapElement={<div style={{ height: `100%` }} />}
       onPlacesChanged={onMapPlacesChanged}
-      onSearchBoxMounted={ref => (searchboxRef.current = ref)}
+      onSearchBoxMounted={(ref: SearchBox) => (searchboxRef.current = ref)}
       onMapMounted={setMap}
       initiallyOpenMarker={state.initiallyOpenMarker}
       center={state.center}

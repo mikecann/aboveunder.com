@@ -1,6 +1,6 @@
 import * as React from "react";
 import { IPrint } from "../lib/types";
-import { Grid, Content } from "gls";
+import { Grid, GridCell } from "../lib/glsCompat";
 import { ProductThumb } from "./ProductThumb";
 
 interface IProps {
@@ -18,9 +18,9 @@ export function ProductThumbGrid({ products }: IProps) {
   return (
     <Grid justify="center" spacing={[0, thumbSpacing]}>
       {products.map(p => (
-        <Content key={p.id} width={thumbWidth}>
+        <GridCell key={p.id} width={thumbWidth}>
           <ProductThumb print={p} />
-        </Content>
+        </GridCell>
       ))}
     </Grid>
   );

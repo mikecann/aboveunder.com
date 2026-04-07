@@ -3,7 +3,8 @@ import { promisify } from "util";
 import * as readline from "readline";
 import { getDb } from "../src/lib/db";
 import { IPrint, IDB } from "../src/lib/types";
-import { sortByLatestFirst, sortByOldestFirst, getDirectories } from "../src/lib/utils";
+import { sortByLatestFirst, sortByOldestFirst } from "../src/lib/utils";
+import { getDirectories } from "./fsUtils";
 import * as path from "path";
 import Jimp from "jimp";
 import { ExifImage } from "exif";
@@ -189,11 +190,11 @@ export async function limitImageSize(
   await writeImage(img, path);
 }
 
-export async function writeImage(img: Jimp, path: string): Promise<any> {
+export async function writeImage(img: Jimp, path: string): Promise<void> {
   return new Promise((resolve, reject) => {
     img.write(path, err => {
       if (err) reject(err);
-      else resolve();
+      else resolve(undefined);
     });
   });
 }

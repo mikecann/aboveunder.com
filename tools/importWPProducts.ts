@@ -1,7 +1,7 @@
 import csvtojson from "csvtojson";
 import * as fs from "fs";
 import * as path from "path";
-import * as request from "request";
+import request from "request";
 import { IPrint } from "../src/lib/types";
 //import * as sharp from 'sharp';
 import Jimp from "jimp";
@@ -72,12 +72,12 @@ async function generateThumbnail(product: Partial<IPrint>): Promise<void> {
   product.thumb = `/images/products/thumb/${fname}`;
 }
 
-async function writeImage(img: Jimp, path: string): Promise<any> {
+async function writeImage(img: Jimp, path: string): Promise<void> {
   return new Promise((resolve, reject) => {
     console.log("writing..");
     img.write(path, err => {
       if (err) reject(err);
-      else resolve();
+      else resolve(undefined);
     });
   });
 }
@@ -98,7 +98,7 @@ function downloadImg(uri: string, filename: string): Promise<any> {
       console.log("Downloading ", { uri });
       request(uri)
         .pipe(fs.createWriteStream(filename))
-        .on("close", () => resolve());
+        .on("close", () => resolve(undefined));
     });
   });
 }

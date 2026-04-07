@@ -1,5 +1,6 @@
-import { Responsive, Menu, Container, Input, InputOnChangeData, Dropdown } from "semantic-ui-react";
+import { Menu, Container, Input, Dropdown } from "semantic-ui-react";
 import * as React from "react";
+import { MatchMediaWidth } from "./MatchMediaWidth";
 
 interface IShopPageMenuProps {
   fixToBottom?: boolean;
@@ -12,8 +13,8 @@ interface IShopPageMenuProps {
 
 export const ShopPageMenu = (props: IShopPageMenuProps) => (
   <React.Fragment>
-    <Responsive maxWidth={650}>{renderTinyMenu(props)}</Responsive>
-    <Responsive minWidth={650}>{renderNormalMenu(props)}</Responsive>
+    <MatchMediaWidth maxWidth={650}>{renderTinyMenu(props)}</MatchMediaWidth>
+    <MatchMediaWidth minWidth={650}>{renderNormalMenu(props)}</MatchMediaWidth>
   </React.Fragment>
 );
 

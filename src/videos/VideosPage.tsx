@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Segment, Container, Header } from "semantic-ui-react";
 import { CommonPageLayout } from "../components/CommonPageLayout";
-import { VideoGrid } from "../components/VideoGrid";
 import { startPreloading } from "../routes";
 import { Helmet } from "react-helmet";
 
@@ -22,8 +21,6 @@ export default function VideosPage() {
             </a>{" "}
             or <a href="https://www.facebook.com/pg/aboveunder/videos/">Facebook Page</a>
           </p>
-
-          <VideoGrid />
         </Container>
       </Segment>
     </CommonPageLayout>

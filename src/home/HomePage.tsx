@@ -20,7 +20,7 @@ import { latestPrints, featuredPrints, latestPosts } from "../lib/db";
 import { startPreloading } from "../routes";
 import { PrintsMap } from "../map/PrintsMap";
 import { useResponsive } from "../hooks/useResponsive";
-import { Vertical } from "gls/lib";
+import { Vertical } from "../lib/glsCompat";
 import { ProductThumbGrid, thumbsPerRow } from "../components/ProductThumbGrid";
 import { useWindowSize } from "../hooks/useWindowSize";
 import { Helmet } from "react-helmet";

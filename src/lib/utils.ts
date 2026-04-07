@@ -1,7 +1,5 @@
 import { IPrint, IPost } from "./types";
 import moment from "moment";
-import { lstatSync, readdirSync } from "fs";
-import { join } from "path";
 
 export function leftpad(num: number, pad: string = "0000"): string {
   var str = "" + num;
@@ -63,12 +61,6 @@ export function randomOne(arr: any[]): any {
 // {
 //     if
 // }
-
-export const isDirectory = (source: string) => lstatSync(source).isDirectory();
-export const getDirectories = (source: string) =>
-  readdirSync(source)
-    .map(name => join(source, name))
-    .filter(isDirectory);
 
 export function narray(count: number) {
   return new Array(count).fill(null);

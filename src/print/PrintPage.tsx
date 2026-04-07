@@ -26,7 +26,7 @@ import { startPreloading } from "../routes";
 import { useDb } from "../hooks/useDb";
 import { LoadingPage } from "../loading/LoadingPage";
 import { PrintRow } from "./PrintRow";
-import { Vertical, Responsive, Stretch, Content, VerticalSpacer } from "gls/lib";
+import { Vertical, Responsive, Stretch, VerticalSpacer } from "../lib/glsCompat";
 import { HeaderMenu } from "../components/HeaderMenu";
 import { PageFooter } from "../components/PageFooter";
 import { PrintsMap } from "../map/PrintsMap";

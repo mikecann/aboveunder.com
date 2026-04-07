@@ -1,6 +1,7 @@
 import * as React from "react";
-import { Menu, Container, Icon, Image, MenuProps, Responsive, Dropdown } from "semantic-ui-react";
+import { Menu, Container, Icon, Image, MenuProps, Dropdown } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import { MatchMediaWidth } from "./MatchMediaWidth";
 
 interface IProps {
   activeMenu: string;
@@ -38,8 +39,8 @@ const menuItems = [
 
 export const HeaderMenu = (props: IProps) => (
   <React.Fragment>
-    <Responsive maxWidth={650}>{renderTinyMenu(props)}</Responsive>
-    <Responsive minWidth={650}>{renderNormalMenu(props)}</Responsive>
+    <MatchMediaWidth maxWidth={650}>{renderTinyMenu(props)}</MatchMediaWidth>
+    <MatchMediaWidth minWidth={650}>{renderNormalMenu(props)}</MatchMediaWidth>
   </React.Fragment>
 );
 

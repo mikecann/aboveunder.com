@@ -1,4 +1,4 @@
-import { getDirectories } from "../src/lib/utils";
+import { getDirectories } from "./fsUtils";
 import * as fs from "fs";
 import { CollectionImage } from "./CollectionImage";
 import { promisify } from "util";
