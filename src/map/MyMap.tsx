@@ -37,6 +37,7 @@ export function MyMap({
   hideSearch,
 }: IMyMapProps) {
   const [openMarker, setOpenMarker] = React.useState<IMyMapMarker>();
+  const shouldShowSearch = hideSearch === false;
 
   React.useEffect(() => {
     setOpenMarker(undefined);
@@ -54,7 +55,7 @@ export function MyMap({
 
   return (
     <GoogleMap ref={onMapMounted} zoom={zoom} center={center}>
-      {!hideSearch && (
+      {shouldShowSearch && (
         <SearchBox
           ref={onSearchBoxMounted}
           controlPosition={google.maps.ControlPosition.TOP_CENTER}
